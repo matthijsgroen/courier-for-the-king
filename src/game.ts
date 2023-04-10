@@ -112,7 +112,7 @@ const game = world<GameState>({
       textColor: palette.color("farmer"),
     },
     baker: {
-      defaultName: "Gerst",
+      defaultName: "Barley",
       textColor: palette.color("baker"),
     },
     daughter: {
