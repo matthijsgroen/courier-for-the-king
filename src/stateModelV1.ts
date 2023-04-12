@@ -80,6 +80,7 @@ export type GameState = GameDefinition<
       smithsConversation: { states: "fixHorseshoe" | "createNecklace" };
       witchConversation: {};
       inventory: {};
+      travel: {};
       treasureNotes: {};
       plants: {};
     };

@@ -753,9 +753,8 @@
         "No problem, that will be 2 coins.": "Geen probleem, dat is dan 2 geldstukken.",
         "And has a really loud {i}roar{/i}.": "En kan ontzettend hard {i}brullen{/i}.",
         "Ok, please come back when you do.": "Okee, kom maar terug wanneer je genoeg hebt.",
-        "All done. As good as new. You could ride him now if you want.": "All done. As good as new. You could ride him now if you want.",
-        "Sure, no problem.": "Zeker, geen probleem.",
-        "DELETED All done. As good as new. You could {b}ride{/b} him now if you want.": "Klaar. Weer zo goed als nieuw. Je zou hem zelfs kunnen {b}berijden{/b} als je dat zou willen."
+        "All done. As good as new. You could {b}ride{/b} him now if you want.": "Klaar. Weer zo goed als nieuw. Je zou hem zelfs kunnen {b}berijden{/b} als je dat zou willen.",
+        "Sure, no problem.": "Zeker, geen probleem."
       },
       "armorer": {
         "Hah! You big baby! You are plenty sick.": "Hah grote aansteller! Je bent vaak genoeg ziek.",
@@ -912,6 +911,14 @@
       "interactions": {
         "Put note away": "Berg notities op"
       }
+    },
+    "travel": {
+      "text": {
+        "You check your map": "You check your map"
+      },
+      "interactions": {
+        "Dismount horse": "Dismount horse"
+      }
     }
   },
   "global": {
@@ -919,6 +926,10 @@
       "Open your bag": {
         "label": "Bekijk inhoud van tas",
         "shortcutKey": "t"
+      },
+      "Jump on horse": {
+        "label": "Spring op paard",
+        "shortcutKey": "p"
       }
     }
   },

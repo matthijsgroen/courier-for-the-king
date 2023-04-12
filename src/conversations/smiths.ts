@@ -145,7 +145,7 @@ g.defineOverlay(
           "After a while the farrier is finished, and {b}[characters.horse.name]{/b} received new horseshoes."
         );
         g.character("farrier").say(
-          "All done. As good as new. You could ride him now if you want."
+          "All done. As good as new. You could {b}ride{/b} him now if you want."
         );
         g.character("player").decreaseCounter("coins", 2);
         g.character("horse").setFlag("hooves");
