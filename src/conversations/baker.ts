@@ -2,7 +2,7 @@ import g from "../game";
 
 g.defineOverlay(
   "bakerConversation",
-  ({ onEnter, onLeave, interaction, closeOverlay }) => {
+  ({ onEnter, onLeave, interaction, closeOverlay, hasState, setState }) => {
     onEnter(() => {
       g.character("player").say(
         "Hello, my name is {b}[.name]{/b}.",
@@ -14,7 +14,7 @@ g.defineOverlay(
 
     onLeave(() => {
       g.onState(
-        g.character("baker").hasState("unknown"),
+        hasState("unknown"),
         () => {
           g.text("You leave the baker alone and look around in the shop.");
         },
@@ -24,32 +24,28 @@ g.defineOverlay(
       );
     });
 
-    interaction(
-      "Hello, is everything alright?",
-      g.character("baker").hasState("unknown"),
-      () => {
-        g.text("The baker is staring in the distance.");
-        g.character("player").say("Hello? Are you alright?");
-        g.text("The baker is startled. He was not aware you were in his shop.");
-        g.character("baker").say("Oh. Sorry, I was not paying attention.");
-        g.text("The baker bursts out in tears.");
-        g.character("baker").say(
-          "My {i}poor daughter!{/i} I will never see her again!",
-          "That monsterous beast has her! I am sure of it!"
-        );
-        g.character("baker").say(
-          "I baked some {b}cookies{/b} this morning, but I'm out of flour now.",
-          "And that is a problem, especially since the {b}mill{/b} broke down.",
-          "And I need to make more money so that I can hire a {b}knight{/b},",
-          "to slay that monster and save my daughter!"
-        );
-        g.character("baker").setState("intro");
-      }
-    );
+    interaction("Hello, is everything alright?", hasState("unknown"), () => {
+      g.text("The baker is staring in the distance.");
+      g.character("player").say("Hello? Are you alright?");
+      g.text("The baker is startled. He was not aware you were in his shop.");
+      g.character("baker").say("Oh. Sorry, I was not paying attention.");
+      g.text("The baker bursts out in tears.");
+      g.character("baker").say(
+        "My {i}poor daughter!{/i} I will never see her again!",
+        "That monsterous beast has her! I am sure of it!"
+      );
+      g.character("baker").say(
+        "I baked some {b}cookies{/b} this morning, but I'm out of flour now.",
+        "And that is a problem, especially since the {b}mill{/b} broke down.",
+        "And I need to make more money so that I can hire a {b}knight{/b},",
+        "to slay that monster and save my daughter!"
+      );
+      setState("intro");
+    });
 
     interaction(
       "Monster? What are you talking about?",
-      g.character("baker").hasState("intro"),
+      hasState("intro"),
       () => {
         g.character("player").say("Monster? What are you talking about?");
         g.character("baker").say(
@@ -65,7 +61,7 @@ g.defineOverlay(
           "It all started with that big fire at farmer {b}[characters.farmer.name]{/b}'s place.",
           "That creature must have my sweet {b}[characters.daughter.name]{/b}..."
         );
-        g.character("baker").setState("visited");
+        setState("visiting");
         g.onState(g.character("dragon").hasState("unknown"), () => {
           g.character("dragon").setState("known");
         });
@@ -74,10 +70,7 @@ g.defineOverlay(
 
     interaction(
       "Could you tell me more about that monster?",
-      g.and(
-        g.character("baker").hasState("visited"),
-        g.not(g.item("cookies").hasState("buying"))
-      ),
+      hasState("visiting"),
       () => {
         g.character("player").say("Could you tell me more about that monster?");
         g.character("baker").say(
@@ -100,10 +93,7 @@ g.defineOverlay(
 
     interaction(
       "Do you know where I could get any medicine?",
-      g.and(
-        g.character("baker").hasState("visited"),
-        g.not(g.item("cookies").hasState("buying"))
-      ),
+      hasState("visiting"),
       () => {
         g.character("player").say("Do you sell any medicine?");
         g.text("{b}[characters.baker.name]{/b} turns red.");
@@ -129,7 +119,7 @@ g.defineOverlay(
     interaction(
       "Have you heard something about a treasure nearby?",
       g.and(
-        g.character("baker").hasState("visited"),
+        hasState("visiting"),
         g.not(g.item("treasureNotes").hasState("unknown"))
       ),
       () => {
@@ -153,10 +143,7 @@ g.defineOverlay(
 
     interaction(
       "Hello, can I buy something to eat?",
-      g.and(
-        g.character("baker").hasState("visited"),
-        g.item("cookies").hasState("unknown")
-      ),
+      g.and(hasState("visiting"), g.item("cookies").hasState("unknown")),
       () => {
         g.character("player").say("Hello? Can I buy something to eat?");
         g.text(
@@ -173,18 +160,18 @@ g.defineOverlay(
 
     interaction(
       "I would like to buy some cookies",
-      g.item("cookies").hasState("price"),
+      g.and(hasState("visiting"), g.item("cookies").hasState("price")),
       () => {
         g.character("player").say("I would like to buy some cookies.");
         g.character("baker").say("That will be {b}2 coins{/b}.");
-        g.item("cookies").setState("buying");
+        setState("buyCookies");
       }
     );
 
     interaction(
       "Here you go, 2 coins",
       g.and(
-        g.item("cookies").hasState("buying"),
+        hasState("buyCookies"),
         g.character("player").hasCounter("coins").moreThanEquals(2)
       ),
       () => {
@@ -193,32 +180,22 @@ g.defineOverlay(
         g.text("The baker gives a few delicious cookies.");
         g.item("cookies").setState("possession");
         g.character("player").decreaseCounter("coins", 2);
+        setState("visiting");
       }
     );
 
-    interaction(
-      "Hmm, maybe another time",
-      g.item("cookies").hasState("buying"),
-      () => {
-        g.character("player").say("Hmm, maybe another time.");
-        g.character("baker").say("Okay, fine");
-        g.item("cookies").setState("price");
-      }
-    );
+    interaction("Hmm, maybe another time", hasState("buyCookies"), () => {
+      g.character("player").say("Hmm, maybe another time.");
+      g.character("baker").say("Okay, fine");
+      setState("visiting");
+    });
 
-    interaction("Never mind", g.character("baker").hasState("unknown"), () => {
+    interaction("Never mind", hasState("unknown"), () => {
       closeOverlay();
     });
 
-    interaction(
-      "Goodbye",
-      g.and(
-        g.character("baker").hasState("visited"),
-        g.not(g.item("cookies").hasState("buying"))
-      ),
-      () => {
-        closeOverlay();
-      }
-    );
+    interaction("Goodbye", hasState("visiting"), () => {
+      closeOverlay();
+    });
   }
 );

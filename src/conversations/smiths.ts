@@ -2,14 +2,14 @@ import g from "../game";
 
 g.defineOverlay(
   "smithsConversation",
-  ({ onEnter, closeOverlay, interaction }) => {
+  ({ onEnter, closeOverlay, interaction, setState, hasState }) => {
     onEnter(() => {
       g.character("goldsmith").say("Yes?");
     });
 
     interaction(
       "Do you know how I could get some medication?",
-      g.always(),
+      hasState("unknown"),
       () => {
         g.character("player").say(
           "Do you know how I could get some medication?"
@@ -26,7 +26,7 @@ g.defineOverlay(
 
     interaction(
       "Do you know how I could get some transportation?",
-      g.always(),
+      hasState("unknown"),
       () => {
         g.character("player").say(
           "Do you know how I could get some transportation?"
@@ -55,8 +55,23 @@ g.defineOverlay(
     );
 
     interaction(
+      "Could you fix the horseshoe of my horse?",
+      g.and(
+        hasState("unknown"),
+        g.character("horse").hasState("following"),
+        g.not(g.character("horse").hasFlag("hooves"))
+      ),
+      () => {
+        g.character("player").say("Could you fix the horseshoe of my horse?");
+        g.text("{b}[characters.farrier.name]{/b} comes to you.");
+        g.character("farrier").say("No problem, that will be 2 coins.");
+        setState("fixHorseshoe");
+      }
+    );
+
+    interaction(
       "What do you know of the monster in the woods?",
-      g.character("dragon").hasState("known"),
+      g.and(g.character("dragon").hasState("known"), hasState("unknown")),
       () => {
         g.character("player").say(
           "What do you know of the monster in the woods?"
@@ -73,9 +88,107 @@ g.defineOverlay(
       }
     );
 
-    interaction("I think I'll browse", g.always(), () => {
+    interaction(
+      "Could you make an ornament?",
+      g.and(hasState("unknown"), g.item("necklace").hasState("need")),
+      () => {
+        g.character("player").say("Could you make an ornament?");
+        g.text("{b}[characters.goldsmith.name]{/b} approaches you.");
+        g.character("goldsmith").say(
+          "Sure. But you need to bring me materials to work with.",
+          "For example, with some {b}gold{/b} and a {b}gem{/b} I could make a nice {b}necklace{/b} for you."
+        );
+        g.onState(
+          g.and(
+            g.item("gemstone").hasState("possession"),
+            g.item("gold").hasState("possession")
+          ),
+          () => {
+            setState("createNecklace");
+          }
+        );
+      }
+    );
+
+    interaction("I think I'll browse", hasState("unknown"), () => {
       g.character("armorer").say("See you later!");
       closeOverlay();
     });
+
+    interaction(
+      "Oops, I don't have enough money",
+      g.and(
+        hasState("fixHorseshoe"),
+        g.character("player").hasCounter("coins").lessThan(2)
+      ),
+      () => {
+        g.character("player").say("Oops, I don't have enough money");
+        g.character("farrier").say("Ok, please come back when you do.");
+        setState("unknown");
+      }
+    );
+
+    interaction(
+      "Here you go, 2 coins",
+      g.and(
+        hasState("fixHorseshoe"),
+        g.character("player").hasCounter("coins").moreThanEquals(2)
+      ),
+      () => {}
+    );
+
+    interaction(
+      "Here you go, some gold and a gem",
+      hasState("createNecklace"),
+      () => {
+        g.character("player").say("Here you go, some gold and a gem.");
+
+        g.text("{b}[characters.goldsmith.name]{/b} starts to work.");
+        // TODO: Add color
+        g.descriptionText("{i}<Ting, Ting, Ting>{/i}");
+
+        g.text(
+          "After a while, {b}[characters.goldsmith.name]{/b} is finished.",
+          "He made a beautiful {b}necklace{/b}."
+        );
+        g.character("goldsmith").say(
+          "A beautiful necklace, no doubt for a beautiful lady.",
+          "By the way, I didn't use up all the material. Do you mind if I compensate you for the leftover materials?"
+        );
+
+        g.text("You put the {b}necklace{/b} and {b}15 coins{/b} in your bag.");
+        g.character("player").say("Wow, thank you!");
+
+        g.item("gemstone").setState("used");
+        g.item("gold").setState("used");
+        g.character("player").increaseCounter("coins", 15);
+        g.item("necklace").setState("possession");
+        setState("unknown");
+      }
+    );
+
+    interaction(
+      "Hmm, maybe another time",
+      g.or(
+        g.and(
+          hasState("fixHorseshoe"),
+          g.character("player").hasCounter("coins").moreThanEquals(2)
+        ),
+        hasState("createNecklace")
+      ),
+      () => {
+        g.character("player").say("Hmm, maybe another time");
+        g.onState(
+          hasState("fixHorseshoe"),
+          () => {
+            g.character("farrier").say("Sure, no problem.");
+          },
+          () => {
+            g.character("goldsmith").say("Sure, maybe later.");
+          }
+        );
+        setState("unknown");
+      }
+    );
   }
 );

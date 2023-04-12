@@ -28,8 +28,8 @@ export type GameState = GameDefinition<
       millstone: { states: "seen" };
       fabric: { states: "possession" | "used" };
       medicine: { flags: "recipe" };
-      cookies: { states: "price" | "buying" | "possession" | "given" };
-      gemstone: { states: "chopped" | "possession" };
+      cookies: { states: "price" | "possession" | "given" };
+      gemstone: { states: "chopped" | "possession" | "used" };
       sword: { states: "need" | "possession" };
       necklace: { states: "need" | "possession" };
       treasureNotes: {
@@ -38,7 +38,7 @@ export type GameState = GameDefinition<
       };
       treasureHunt: { flags: "active" | "done" };
       moonStone: { states: "possession" };
-      gold: { states: "possession" };
+      gold: { states: "possession" | "used" };
       runeStone: { states: "possession" };
     };
     // lists: { // useful for inventory management
@@ -65,20 +65,23 @@ export type GameState = GameDefinition<
       farmer: { flags: "visited" | "toldDragon" | "returnedHorse" };
       daughter: {};
       witch: { states: "intro" | "visited" };
-      baker: { states: "intro" | "visited"; flags: "toldDragon" };
+      baker: { flags: "toldDragon" };
       farrier: {};
       goldsmith: {};
       armorer: {};
     };
-    overlays:
-      | "dwarfConversation"
-      | "millerConversation"
-      | "farmerConversation"
-      | "bakerConversation"
-      | "smithsConversation"
-      | "witchConversation"
-      | "inventory"
-      | "treasureNotes"
-      | "plants";
+    overlays: {
+      dwarfConversation: {};
+      millerConversation: {};
+      farmerConversation: {};
+      bakerConversation: {
+        states: "buyCookies" | "intro" | "visiting";
+      };
+      smithsConversation: { states: "fixHorseshoe" | "createNecklace" };
+      witchConversation: {};
+      inventory: {};
+      treasureNotes: {};
+      plants: {};
+    };
   }
 >;

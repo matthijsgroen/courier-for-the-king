@@ -53,6 +53,9 @@ g.defineOverlay("inventory", ({ onEnter, interaction, closeOverlay }) => {
     g.onState(g.item("gold").hasState("possession"), () => {
       g.descriptionText("- Pieces of gold");
     });
+    g.onState(g.item("necklace").hasState("possession"), () => {
+      g.descriptionText("- A beautiful necklace");
+    });
     g.onState(g.item("runeStone").hasState("possession"), () => {
       g.descriptionText("- A runestone with inscriptions");
     });

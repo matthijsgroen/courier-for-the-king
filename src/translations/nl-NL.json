@@ -8,9 +8,9 @@
       "Play testing": "Speeltesten"
     },
     "themes": {
-      "Book": "Boek",
       "Terminal": "Terminal",
-      "Terminal (Black & White)": "Terminal (Zwart & Wit)"
+      "Terminal (Black & White)": "Terminal (Zwart & Wit)",
+      "Book": "Boek"
     }
   },
   "settings": {
@@ -639,7 +639,7 @@
         "Could you tell me more about that monster?": "Kunt u me meer vertellen over het monster?",
         "Do you sell any medicine?": "Zijn hier ook medicijnen te koop?",
         "Have you heard something about a treasure nearby?": "Heb jij iets gehoord over een schat in de buurt?",
-        "Hello? Can I buy something to eat?": "Hello? Kan ik iets te eten kopen?",
+        "Hello? Can I buy something to eat?": "Hallo? Kan ik iets te eten kopen?",
         "I would like to buy some cookies.": "Ik wil graag wat koeken kopen.",
         "Here you go, 2 coins.": "Alsjeblieft, 2 geldstukken.",
         "Hmm, maybe another time.": "Hmm, misschien toch een andere keer."
@@ -715,24 +715,44 @@
         "Euhm, didn't you...": "Maar, heb je...",
         "...with a horse?": "...een paard bij je?",
         "I think {b}farmer [characters.farmer.name]{/b} has a horse?": "Volgens mij heeft {b}boer [characters.farmer.name]{/b} een paard?",
-        "We have no idea what his diet looks like, maybe he still needs to eat.": "We hebben geen idee wat het eet, misschien moet hij nog eten..."
+        "We have no idea what his diet looks like, maybe he still needs to eat.": "We hebben geen idee wat het eet, misschien moet hij nog eten...",
+        "Sure. But you need to bring me materials to work with.": "Tuurlijk. Maar je moet me wel materialen brengen om mee te werken.",
+        "For example, with some {b}gold{/b} and a {b}gem{/b} I could make a nice {b}necklace{/b} for you.": "Met wat {b}goud{/b} en een {b}edelsteen{/b} bijvoorbeeld, zou ik een mooie {b}halsketting{/b} kunnen maken.",
+        "A beautiful necklace, no doubt for a beautiful lady.": "Een prachtige halsketting, geen twijfel dat het voor een prachtige dame is.",
+        "By the way, I didn't use up all the material. Do you mind if I compensate you for the leftover materials?": "Ik heb trouwens niet alle materialen opgmaakt. Vindt je het goed als ik je wat compensatie geef voor de restjes?",
+        "Sure, maybe later.": "Tuurlijk, een andere keer kan ook."
       },
       "interactions": {
         "Do you know how I could get some medication?": "Weten jullie hoe ik aan medicijnen zou kunnen komen?",
         "Do you know how I could get some transportation?": "Weten jullie hoe ik aan vervoer zou kunnen komen?",
+        "Could you fix the horseshoe of my horse?": "Kunnen jullie de hoefijzers van mijn paard maken?",
         "What do you know of the monster in the woods?": "Wat weten jullie van het monster in het woud?",
-        "I think I'll browse": "Ik kijk nog even rond"
+        "Could you make an ornament?": "Kunnen jullie een sieraad maken?",
+        "I think I'll browse": "Ik kijk nog even rond",
+        "Oops, I don't have enough money": "Oeps, ik heb niet genoeg geld",
+        "Here you go, 2 coins": "Here you go, 2 coins",
+        "Here you go, some gold and a gem": "Alstublieft, goud en een edelsteen",
+        "Hmm, maybe another time": "Hmm, misschien een andere keer"
       },
       "player": {
         "Do you know how I could get some medication?": "Weten jullie hoe ik aan medicijnen zou kunnen komen?",
         "Do you know how I could get some transportation?": "Weten jullie hoe ik aan vervoer zou kunnen komen?",
-        "What do you know of the monster in the woods?": "Wat weten jullie van het monster in het woud?"
+        "Could you fix the horseshoe of my horse?": "Kunnen jullie de hoefijzers van mijn paard maken?",
+        "What do you know of the monster in the woods?": "Wat weten jullie van het monster in het woud?",
+        "Could you make an ornament?": "Kunnen jullie een sieraad maken?",
+        "Oops, I don't have enough money": "Oeps, ik heb niet genoeg geld",
+        "Here you go, some gold and a gem.": "Alstublieft, goud en een edelsteen.",
+        "Wow, thank you!": "Wauw, bedankt!",
+        "Hmm, maybe another time": "Hmm, misschien een andere keer"
       },
       "farrier": {
         "No clue. I am never sick.": "Geen idee. Ik ben namelijk nooit ziek.",
         "Not true!": "Niet waar!",
         "We do everything by foot around here.": "We doen hier alles te voet.",
-        "And has a really loud {i}roar{/i}.": "En kan ontzettend hard {i}brullen{/i}."
+        "No problem, that will be 2 coins.": "Geen probleem, dat is dan 2 geldstukken.",
+        "And has a really loud {i}roar{/i}.": "En kan ontzettend hard {i}brullen{/i}.",
+        "Ok, please come back when you do.": "Okee, kom maar terug wanneer je genoeg hebt.",
+        "Sure, no problem.": "Zeker, geen probleem."
       },
       "armorer": {
         "Hah! You big baby! You are plenty sick.": "Hah grote aansteller! Je bent vaak genoeg ziek.",
@@ -746,7 +766,16 @@
       "text": {
         "[characters.farrier.name]'s head is getting red.": "[characters.farrier.name] krijgt een rood hoofd.",
         "You feel a bit dumb.": "Je voelt je een beetje dom.",
-        "They all shiver.": "Ze staan alle drie te rillen."
+        "{b}[characters.farrier.name]{/b} comes to you.": "{b}[characters.farrier.name]{/b} komt naar je toe.",
+        "They all shiver.": "Ze staan alle drie te rillen.",
+        "{b}[characters.goldsmith.name]{/b} approaches you.": "{b}[characters.goldsmith.name]{/b} komt op je af.",
+        "{b}[characters.goldsmith.name]{/b} starts to work.": "{b}[characters.goldsmith.name]{/b} gaat aan het werk.",
+        "After a while, {b}[characters.goldsmith.name]{/b} is finished.": "Na een tijdje is {b}[characters.goldsmith.name]{/b} klaar.",
+        "He made a beautiful {b}necklace{/b}.": "Hij heeft een prachtige {b}halsketting{/b} gemaakt.",
+        "You put the {b}necklace{/b} and {b}15 coins{/b} in your bag.": "Je stopt de {b}halsketting{/b} en {b}15 geldstukken{/b} in je tas."
+      },
+      "descriptionText": {
+        "{i}<Ting, Ting, Ting>{/i}": "{i}<Ting, Ting, Ting>{/i}"
       }
     },
     "witchConversation": {
@@ -835,6 +864,7 @@
         "- A giant trunk, probably of a giant": "- Een grote onderbroek, waarschijnlijk van een reus",
         "- A sparkling gemstone": "- Een fonkelende edelsteen",
         "- Pieces of gold": "- Stukken goud",
+        "- A beautiful necklace": "- Een prachtige halsketting",
         "- A runestone with inscriptions": "- Een runesteen met inscripties",
         "- Notes on treasure": "- Schataantekeningen",
         "- Moonstone, it looks dim": "- Maansteen, hij ziet er dof uit",
@@ -887,16 +917,6 @@
     }
   },
   "themes": {
-    "@point-n-click/theme-book": {
-      "menu": "Menu",
-      "settings": "Instellingen",
-      "language": "Taal",
-      "theme": "Thema",
-      "pause": "Pauze Menu",
-      "continuePlaying": "Doorgaan met spelen",
-      "saveGame": "Spel opslaan",
-      "loadGame": "Spel laden"
-    },
     "@point-n-click/theme-cli": {
       "menu": "Menu",
       "settings": "Instellingen",
@@ -907,6 +927,16 @@
       "saveGame": "Spel opslaan",
       "loadGame": "Spel laden",
       "close": "Sluiten"
+    },
+    "@point-n-click/theme-book": {
+      "menu": "Menu",
+      "settings": "Instellingen",
+      "language": "Taal",
+      "theme": "Thema",
+      "pause": "Pauze Menu",
+      "continuePlaying": "Doorgaan met spelen",
+      "saveGame": "Spel opslaan",
+      "loadGame": "Spel laden"
     }
   }
 }

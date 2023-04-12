@@ -116,7 +116,7 @@ const game = world<GameState>({
       textColor: palette.color("baker"),
     },
     daughter: {
-      defaultName: "Bloem",
+      defaultName: "Flower",
       textColor: palette.color("daughter"),
     },
     witch: {
@@ -137,11 +137,11 @@ const game = world<GameState>({
     },
   },
 })(
-  bookTheme("Book", { coverColor: "red" }),
   terminalTheme("Terminal", { color: true }),
   terminalTheme("Terminal (Black & White)", {
     color: false,
-  })
+  }),
+  bookTheme("Book", { coverColor: "red" })
 );
 
 export default game;

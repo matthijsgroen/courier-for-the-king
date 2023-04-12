@@ -116,7 +116,7 @@ g.definePuzzleDependencies<MetaData>({
   },
   createJewelryAtSmith: {
     dependsOn: ["getGem", "getGoldInForest", "talkToWitch"],
-    tags: { location: "village" },
+    tags: { location: "village", state: "text", languages: ["en", "nl"] },
     hierarchy: ["village", "smithy"],
   },
   giveJewelryToWitch: {
@@ -197,7 +197,7 @@ g.definePuzzleDependencies<MetaData>({
   },
   fixHorseshoe: {
     dependsOn: ["getHorse", "payFarrier"],
-    tags: { location: "village" },
+    tags: { location: "village", state: "progress", languages: ["en"] },
     hierarchy: ["village", "smithy"],
   },
   getGiantTrunks: {
@@ -247,7 +247,7 @@ g.definePuzzleDependencies<MetaData>({
   },
   talkToSmiths: {
     dependsOn: ["mainAct"],
-    tags: { location: "village" },
+    tags: { location: "village", state: "progress", languages: ["en", "nl"] },
     hierarchy: ["village", "smithy"],
   },
   getTreasureSubject: {
