@@ -134,7 +134,23 @@ g.defineOverlay(
         hasState("fixHorseshoe"),
         g.character("player").hasCounter("coins").moreThanEquals(2)
       ),
-      () => {}
+      () => {
+        g.character("player").say("Here you go, 2 coins");
+        g.text(
+          "{b}[characters.farrier.name]{/b} starts to work.",
+          "{b}[characters.horse.name]{/b} doesn't mind all the fumbling with his feet."
+        );
+        g.descriptionText("{i}<Ting, Ting, Ting>{/i}");
+        g.text(
+          "After a while the farrier is finished, and {b}[characters.horse.name]{/b} received new horseshoes."
+        );
+        g.character("farrier").say(
+          "All done. As good as new. You could ride him now if you want."
+        );
+        g.character("player").decreaseCounter("coins", 2);
+        g.character("horse").setFlag("hooves");
+        setState("unknown");
+      }
     );
 
     interaction(

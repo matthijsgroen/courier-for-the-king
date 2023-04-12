@@ -730,7 +730,7 @@
         "Could you make an ornament?": "Kunnen jullie een sieraad maken?",
         "I think I'll browse": "Ik kijk nog even rond",
         "Oops, I don't have enough money": "Oeps, ik heb niet genoeg geld",
-        "Here you go, 2 coins": "Here you go, 2 coins",
+        "Here you go, 2 coins": "Alstublieft, 2 geldstukken",
         "Here you go, some gold and a gem": "Alstublieft, goud en een edelsteen",
         "Hmm, maybe another time": "Hmm, misschien een andere keer"
       },
@@ -741,6 +741,7 @@
         "What do you know of the monster in the woods?": "Wat weten jullie van het monster in het woud?",
         "Could you make an ornament?": "Kunnen jullie een sieraad maken?",
         "Oops, I don't have enough money": "Oeps, ik heb niet genoeg geld",
+        "Here you go, 2 coins": "Alstublieft, 2 geldstukken",
         "Here you go, some gold and a gem.": "Alstublieft, goud en een edelsteen.",
         "Wow, thank you!": "Wauw, bedankt!",
         "Hmm, maybe another time": "Hmm, misschien een andere keer"
@@ -752,7 +753,9 @@
         "No problem, that will be 2 coins.": "Geen probleem, dat is dan 2 geldstukken.",
         "And has a really loud {i}roar{/i}.": "En kan ontzettend hard {i}brullen{/i}.",
         "Ok, please come back when you do.": "Okee, kom maar terug wanneer je genoeg hebt.",
-        "Sure, no problem.": "Zeker, geen probleem."
+        "All done. As good as new. You could ride him now if you want.": "All done. As good as new. You could ride him now if you want.",
+        "Sure, no problem.": "Zeker, geen probleem.",
+        "DELETED All done. As good as new. You could {b}ride{/b} him now if you want.": "Klaar. Weer zo goed als nieuw. Je zou hem zelfs kunnen {b}berijden{/b} als je dat zou willen."
       },
       "armorer": {
         "Hah! You big baby! You are plenty sick.": "Hah grote aansteller! Je bent vaak genoeg ziek.",
@@ -769,6 +772,9 @@
         "{b}[characters.farrier.name]{/b} comes to you.": "{b}[characters.farrier.name]{/b} komt naar je toe.",
         "They all shiver.": "Ze staan alle drie te rillen.",
         "{b}[characters.goldsmith.name]{/b} approaches you.": "{b}[characters.goldsmith.name]{/b} komt op je af.",
+        "{b}[characters.farrier.name]{/b} starts to work.": "{b}[characters.farrier.name]{/b} gaat aan het werk.",
+        "{b}[characters.horse.name]{/b} doesn't mind all the fumbling with his feet.": "{b}[characters.horse.name]{/b} vindt al het rommelen aan zijn voeten niet erg.",
+        "After a while the farrier is finished, and {b}[characters.horse.name]{/b} received new horseshoes.": "Na een tijdje is de hoefsmid klaar, en heeft {b}[characters.horse.name]{/b} nieuwe hoefijzers gekregen.",
         "{b}[characters.goldsmith.name]{/b} starts to work.": "{b}[characters.goldsmith.name]{/b} gaat aan het werk.",
         "After a while, {b}[characters.goldsmith.name]{/b} is finished.": "Na een tijdje is {b}[characters.goldsmith.name]{/b} klaar.",
         "He made a beautiful {b}necklace{/b}.": "Hij heeft een prachtige {b}halsketting{/b} gemaakt.",

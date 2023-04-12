@@ -66,7 +66,7 @@ g.definePuzzleDependencies<MetaData>({
   },
   payTwoCoins: {
     dependsOn: ["mainAct"],
-    tags: { location: "village", state: ["progress"], languages: ["en", "nl"] },
+    tags: { location: "village", state: ["text"], languages: ["en", "nl"] },
     hierarchy: ["village"],
   },
   buyCookies: {
@@ -182,7 +182,7 @@ g.definePuzzleDependencies<MetaData>({
   payFarrier: {
     dependsOn: ["payTwoCoins", "getCoinsFromSmith"],
     gateType: "or",
-    tags: { location: "village" },
+    tags: { location: "village", state: "text", languages: ["en", "nl"] },
     hierarchy: ["village", "smithy"],
   },
   getHorse: {
@@ -192,12 +192,12 @@ g.definePuzzleDependencies<MetaData>({
   },
   getCoinsFromSmith: {
     dependsOn: ["createJewelryAtSmith"],
-    tags: { location: "village" },
+    tags: { location: "village", state: "text", languages: ["en", "nl"] },
     hierarchy: ["village", "smithy"],
   },
   fixHorseshoe: {
     dependsOn: ["getHorse", "payFarrier"],
-    tags: { location: "village", state: "progress", languages: ["en"] },
+    tags: { location: "village", state: "text", languages: ["en", "nl"] },
     hierarchy: ["village", "smithy"],
   },
   getGiantTrunks: {
@@ -286,17 +286,17 @@ g.definePuzzleDependencies<MetaData>({
   },
   followMoonStoneTrail: {
     dependsOn: ["findMoonStoneInSwamp", "completeTreasureRouteInfo"],
-    tags: { location: "river", state: "text", languages: ["en"] },
+    tags: { location: "river", state: "text", languages: ["en", "nl"] },
     hierarchy: ["river"],
   },
   getRuneStone: {
     dependsOn: ["followMoonStoneTrail"],
-    tags: { location: "forest", state: "text", languages: ["en"] },
+    tags: { location: "forest", state: "text", languages: ["en", "nl"] },
     hierarchy: ["forest"],
   },
   talkToFarmer: {
     dependsOn: ["mainAct"],
-    tags: { location: "farmland" },
+    tags: { location: "farmland", state: "progress", languages: ["en", "nl"] },
     hierarchy: ["farm"],
   },
   getRope: {
@@ -414,7 +414,7 @@ g.definePuzzleDependencies<MetaData>({
   },
   getGoldInForest: {
     dependsOn: ["followMoonStoneTrail"],
-    tags: { location: "forest", state: "text", languages: ["en"] },
+    tags: { location: "forest", state: "text", languages: ["en", "nl"] },
     hierarchy: ["forest"],
   },
   getMedicineToKing: {
