@@ -913,13 +913,32 @@
       }
     },
     "travel": {
-      "text": {
-        "You check your map": "You check your map"
+      "descriptionText": {
+        "You jump on your horse. You can quickly travel to a destination you've been before.": "Je springt op je paard. Je kan snel naar een bestemming reizen waar je al eerder bent geweest.",
+        "{b}[characters.horse.name]{/b} quickly brings you to the {b}farm{/b}.": "{b}[characters.horse.name]{/b} brengt je snel naar de {b}boerderij{/b}.",
+        "{b}[characters.horse.name]{/b} quickly brings you to the {b}mine{/b}.": "{b}[characters.horse.name]{/b} brengt je snel naar de {b}mijn{/b}.",
+        "{b}[characters.horse.name]{/b} quickly brings you to the {b}smithy{/b}.": "{b}[characters.horse.name]{/b} brengt je snel naar de {b}smederij{/b}.",
+        "You tie {b}[characters.horse.name]{/b} to a pole just outside of the shop.": "Je bindt {b}[characters.horse.name]{/b} vast aan een paaltje net buiten de winkel.",
+        "You enter the smithy.": "Je loopt de smederij binnen.",
+        "{b}[characters.horse.name]{/b} quickly brings you to the {b}bakery{/b}.": "{b}[characters.horse.name]{/b} brengt je snel naar de {b}bakkerij{/b}.",
+        "You enter the bakery.": "Je loopt de bakkerij binnen.",
+        "{b}[characters.horse.name]{/b} quickly brings you to the {b}cabin in the swamp{/b}.": "{b}[characters.horse.name]{/b} brengt je snel naar de {b}hut in het moeras{/b}.",
+        "The last part you had to walk next to him, to make sure you didn't sink too much into the wet surface.": "Het laatste stukje most je naast hem lopen, om zeker te zijn dat je niet te diep in de drassige ondergrond weg zou zakken.",
+        "{b}[characters.horse.name]{/b} quickly brings you to the {b}mill{/b}.": "{b}[characters.horse.name]{/b} brengt je snel naar de {b}molen{/b}."
       },
       "interactions": {
-        "Dismount horse": "Dismount horse"
+        "Farm": "Boerderij",
+        "Mine": "Mijn",
+        "Smithy": "Smederij",
+        "Bakery": "Bakkerij",
+        "Cabin of the witch": "Hut van de heks",
+        "Mill": "Molen",
+        "Dismount horse": "Stijg af"
       }
     }
+  },
+  "prompts": {
+    "Where do you want to go:": "Waar wil je heen:"
   },
   "global": {
     "interactions": {

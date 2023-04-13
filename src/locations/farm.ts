@@ -25,6 +25,7 @@ g.defineLocation("farm", ({ describe, interaction, onLeave }) => {
     g.onState(g.item("rope").hasState("unknown"), () => {
       g.text("A {b}rope{/b} is hanging on the side of the stable.");
     });
+    g.location("farm").setFlag("visited");
   });
 
   interaction("Talk to farmer", g.always(), () => {

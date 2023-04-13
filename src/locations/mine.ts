@@ -39,6 +39,7 @@ g.defineLocation("mine", ({ describe, interaction, onLeave }) => {
     g.onState(g.item("gemstone").hasState("chopped"), () => {
       g.descriptionText("A {b}gemstone{/b} lies at your feet.");
     });
+    g.location("mine").setFlag("visited");
   });
 
   interaction("Talk to the dwarf", g.always(), () => {
