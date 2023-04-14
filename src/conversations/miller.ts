@@ -2,7 +2,9 @@ import g from "../game";
 
 g.defineOverlay(
   "millerConversation",
-  ({ onEnter, interaction, closeOverlay, onLeave }) => {
+  ({ onEnter, interaction, closeOverlay, setPrompt }) => {
+    setPrompt("What will you say:");
+
     onEnter(() => {
       g.character("miller").say("Hey hello there!");
     });

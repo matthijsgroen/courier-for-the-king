@@ -11,17 +11,57 @@ g.defineOverlay("plants", ({ onEnter, interaction, closeOverlay }) => {
   });
 
   interaction("Pick plant with thorny leaves", g.always(), () => {
-    g.text(
-      "You bend over to pick the plant with {b}thorny{/b} leaves.",
-      "Just before you touch it, you stop.",
-      "This plant could be {b}poisonous{/b}."
+    g.onState(
+      g.item("ingredientList").hasFlag("seen"),
+      () => {
+        g.onState(
+          g.item("plants").hasCounter("thornyLeaves").lessThan(10),
+          () => {
+            g.text(
+              "You bend over to pick a few of the plants with {b}thorny leaves{/b}, and put them in your bag"
+            );
+            g.item("plants").setCounter("thornyLeaves", 10);
+            g.item("ingredientList").setFlag("thornyLeaves");
+          },
+          () => {
+            g.character("player").say("Hmm, I have enough of those.");
+          }
+        );
+      },
+      () => {
+        g.text(
+          "You bend over to pick the plant with {b}thorny{/b} leaves.",
+          "Just before you touch it, you stop.",
+          "This plant could be {b}poisonous{/b}."
+        );
+      }
     );
   });
   interaction("Pick plant with round leaves", g.always(), () => {
-    g.text(
-      "You bend over to pick the plant with {b}round{/b} leaves.",
-      "Just before you touch it, you stop.",
-      "This plant could be {b}poisonous{/b}."
+    g.onState(
+      g.item("ingredientList").hasFlag("seen"),
+      () => {
+        g.onState(
+          g.item("plants").hasCounter("roundLeaves").lessThan(10),
+          () => {
+            g.text(
+              "You bend over to pick a few of the plants with {b}round leaves{/b}, and put them in your bag"
+            );
+            g.item("plants").setCounter("roundLeaves", 10);
+            g.item("ingredientList").setFlag("roundLeaves");
+          },
+          () => {
+            g.character("player").say("Hmm, I have enough of those.");
+          }
+        );
+      },
+      () => {
+        g.text(
+          "You bend over to pick the plant with {b}round{/b} leaves.",
+          "Just before you touch it, you stop.",
+          "This plant could be {b}poisonous{/b}."
+        );
+      }
     );
   });
   interaction("Pick plant with diamond-shaped leaves", g.always(), () => {

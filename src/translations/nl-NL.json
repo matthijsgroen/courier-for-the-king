@@ -798,6 +798,11 @@
         "If you can surprise me with a nice {b}Ornament{/b},": "If you can surprise me with a nice {b}Ornament{/b},",
         "I will help you with your with your medicine problem.": "dan zal ik je helpen met je medicatie probleem.",
         "That gem is a real beauty! But it is not an {b}Ornament{/b}.": "Die edelsteen is prachtig! Maar het is geen {b}Sieraad{/b}.",
+        "That {b}necklace{/b} is {i}super{/i}! This will be a magnificent preset for my {b}daughter{/b}!": "Die {b}halsketting{/b} is {i}prachtig{/i}! Dit gaat een geweldig kado zijn voor mijn {b}dochter{/b}!",
+        "One second, I will write you a list of the items I will need for the {b}medicine{/b}.": "Een momentje, dan maak ik een lijstje voor je met de benodigdheden om het {b}medicijn{/b} te kunnen maken.",
+        "Here, this is what I need.": "Hier, dit is wat ik nodig heb.",
+        "Some items could be tricky to come by, but that should be no problem for a strong man like you.": "Sommige items zijn misschien lastig om aan te komen, maar voor een sterke man als jij moet dat geen probleem zijn.",
+        "Some items could be tricky to come by, but that should be no problem for a strong woman like you.": "Sommige items zijn misschien lastig om aan te komen, maar voor een sterke vrouw als jij moet dat geen probleem zijn.",
         "Ah, you should not care about such things.": "Ach daar moet je niets om geven.",
         "The powers of {b}plants{/b} and {b}magic{/b} is much bigger than that of money.": "De krachten van {b}planten{/b} en {b}magie{/b} is vele malen groter dan dat van geld."
       },
@@ -813,6 +818,8 @@
         "You start to suspect she received a letter as well...": "Je begint het vermoeden te krijgen dat ze ook een brief heeft gehad...",
         "{b}[characters.witch.name]{/b} looks at you. There is a smile on her face.": "{b}[characters.witch.name]{/b} kijkt je aan. Er is een glimlach op haar gezicht.",
         "You let her know you will try your best.": "Je laat haar weten je uiterste best te doen.",
+        "{b}[characters.witch.name]{/b} goes inside and closes the door.": "{b}[characters.witch.name]{/b} gaat naar binnen en sluit de deur.",
+        "A while later she returns with a list of items.": "Even later komt ze terug met een lijstje.",
         "This doesn't help you.": "Dit helpt je niet verder."
       },
       "descriptionText": {
@@ -826,7 +833,7 @@
         "That is not possible...": "Dat kan toch niet...",
         "Could you help me with a medicine?": "Kunt u me helpen met een medicijn?",
         "Give gemstone to [characters.witch.name]": "Geef edelsteen aan [characters.witch.name]",
-        "Give necklace to [characters.witch.name]": "Give necklace to [characters.witch.name]",
+        "Give necklace to [characters.witch.name]": "Geef halsketting aan [characters.witch.name]",
         "Did you also hear that there is a treasure hidden somewhere?": "Heb jij ook gehoord dat er een schat ergens verborgen is?",
         "Goodbye": "Tot ziens"
       },
@@ -839,9 +846,11 @@
       "text": {
         "You take your time to take a closer look at all the different plants that grow here in the {b}swamp{/b}.": "Je neemt je tijd om eens rustig alle verschillende planten hier in het {b}moeras{/b} te bekijken.",
         "There are plants with {b}thorny{/b} leaves, {b}round{/b} leaves, {b}diamond-shaped{/b} leaves and {b}heart-shaped{/b} leaves.": "Er staan planten met {b}stekelige{/b} bladeren, {b}ronde{/b} bladeren, {b}ruitvormige{/b} bladeren en {b}hartvormige{/b} bladeren.",
+        "You bend over to pick a few of the plants with {b}thorny leaves{/b}, and put them in your bag": "Je bukt om een aantal planten met {b}stekelige bladeren{/b} te plukken, en stopt ze in je tas.",
         "You bend over to pick the plant with {b}thorny{/b} leaves.": "Je bukt om de plant met {b}stekelige{/b} bladeren te plukken.",
         "Just before you touch it, you stop.": "Vlak voordat je hem aanraakt, stop je.",
         "This plant could be {b}poisonous{/b}.": "Misschien is hij wel {b}giftig{/b}?",
+        "You bend over to pick a few of the plants with {b}round leaves{/b}, and put them in your bag": "Je bukt om een aantal planten met {b}ronde bladeren{/b} te plukken, en stopt ze in je tas.",
         "You bend over to pick the plant with {b}round{/b} leaves.": "Je bukt om de plant met {b}ronde{/b} bladeren te plukken.",
         "You bend over to pick the plant with {b}diamond-shaped{/b} leaves.": "Je bukt om de plant met {b}ruitvormige{/b} bladeren te plukken.",
         "Then you remember what {b}[characters.baker.name]{/b} said about a {b}Moonstone{/b}.": "Dan herinner je je iets wat {b}[characters.baker.name]{/b} had gezegt over een {b}Moonsteen{/b}.",
@@ -855,6 +864,9 @@
         "Pick plant with diamond-shaped leaves": "Pluk de plant met ruitvormige bladeren",
         "Pick plant with heard-shaped leaves": "Pluk de plant met hartvormige bladeren",
         "Stop looking at the plants": "Stop met planten bestuderen"
+      },
+      "player": {
+        "Hmm, I have enough of those.": "Hmm, daar heb ik er genoeg van."
       }
     },
     "inventory": {
@@ -872,6 +884,11 @@
         "- A beautiful necklace": "- Een prachtige halsketting",
         "- A runestone with inscriptions": "- Een runesteen met inscripties",
         "- Notes on treasure": "- Schataantekeningen",
+        "- Ingriedient list for medicine": "- Ingrediëntenlijst voor medicijn",
+        "- [items.plants.counters.thornyLeaves] plants with thorny leaves": "- [items.plants.counters.thornyLeaves] planten met stekelige bladeren",
+        "- 1 plant with thorny leaves": "- 1 plant met stekelige bladeren",
+        "- [items.plants.counters.roundLeaves] plants with round leaves": "- [items.plants.counters.roundLeaves] planten met ronde bladeren",
+        "- 1 plant with round leaves": "- 1 plant met ronde bladeren",
         "- Moonstone, it looks dim": "- Maansteen, hij ziet er dof uit",
         "- Moonstone, it seems to glow lightly": "- Maansteen, hij lijkt licht te gloeien",
         "You carry the following items:": "Je hebt het volgende bij je:"
@@ -879,6 +896,7 @@
       "interactions": {
         "Repair the pickaxe with the branch from the forest": "Repareer houweel met stok uit bos",
         "Check notes on treasure": "Bekijk schataantekeningen",
+        "Check list of ingredients": "Bekijk lijst met ingrediënten",
         "Eat cookies": "Eet koeken",
         "Wait for darkness": "Wacht tot het donker is",
         "Close your bag": "Sluit je tas"
@@ -935,9 +953,30 @@
         "Mill": "Molen",
         "Dismount horse": "Stijg af"
       }
+    },
+    "ingredientList": {
+      "text": {
+        "Sweet {b}[characters.player.name]{/b}, I need the following items:": "Lieve {b}[characters.player.name]{/b}, ik heb het volgende nodig:",
+        "{s}- 2 plants with round leaves{/s}": "{s}- 2 planten met ronde bladeren{/s}",
+        "- 2 plants with round leaves": "- 2 planten met ronde bladeren",
+        "- 2 lightblue toadstools": "- 2 lichtblauwe paddenstoelen",
+        "{s}- 3 plants with thorny leaves{/s}": "{s}- 3 planten met stekelige bladeren{/s}",
+        "- 3 plants with thorny leaves": "- 3 planten met stekelige bladeren",
+        "- 1 tooth of a dragon": "- 1 tand van een draak"
+      },
+      "player": {
+        "What!? A tooth of a {b}dragon{/b}?": "Wat!? De tand van een {b}draak{/b}?"
+      },
+      "descriptionText": {
+        "You look at the list of ingredients:": "Je kijkt naar de lijst met ingrediënten:"
+      },
+      "interactions": {
+        "Put list back": "Stop lijst weg"
+      }
     }
   },
   "prompts": {
+    "What will you say:": "Wat wil je zeggen:",
     "Where do you want to go:": "Waar wil je heen:"
   },
   "global": {

@@ -2,7 +2,17 @@ import g from "../game";
 
 g.defineOverlay(
   "bakerConversation",
-  ({ onEnter, onLeave, interaction, closeOverlay, hasState, setState }) => {
+  ({
+    onEnter,
+    onLeave,
+    interaction,
+    closeOverlay,
+    hasState,
+    setState,
+    setPrompt,
+  }) => {
+    setPrompt("What will you say:");
+
     onEnter(() => {
       g.character("player").say(
         "Hello, my name is {b}[.name]{/b}.",

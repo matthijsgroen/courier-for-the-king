@@ -2,7 +2,9 @@ import g from "../game";
 
 g.defineOverlay(
   "smithsConversation",
-  ({ onEnter, closeOverlay, interaction, setState, hasState }) => {
+  ({ onEnter, closeOverlay, interaction, setState, hasState, setPrompt }) => {
+    setPrompt("What will you say:");
+
     onEnter(() => {
       g.character("goldsmith").say("Yes?");
     });

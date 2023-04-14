@@ -31,15 +31,20 @@ export type GameState = GameDefinition<
       cookies: { states: "price" | "possession" | "given" };
       gemstone: { states: "chopped" | "possession" | "used" };
       sword: { states: "need" | "possession" };
-      necklace: { states: "need" | "possession" };
+      necklace: { states: "need" | "possession" | "given" };
       treasureNotes: {
         states: "existence" | "possession";
         flags: "moonStone" | "route" | "startPoint";
+      };
+      ingredientList: {
+        states: "possession";
+        flags: "seen" | "roundLeaves" | "thornyLeaves" | "tooth" | "toadstools";
       };
       treasureHunt: { flags: "active" | "done" };
       moonStone: { states: "possession" };
       gold: { states: "possession" | "used" };
       runeStone: { states: "possession" };
+      plants: { counters: "roundLeaves" | "thornyLeaves" };
     };
     // lists: { // useful for inventory management
     //   inventory:
@@ -64,7 +69,7 @@ export type GameState = GameDefinition<
       dragon: { states: "known" | "found" };
       farmer: { flags: "visited" | "toldDragon" | "returnedHorse" };
       daughter: {};
-      witch: { states: "intro" | "visited" };
+      witch: {};
       baker: { flags: "toldDragon" };
       farrier: {};
       goldsmith: {};
@@ -78,10 +83,11 @@ export type GameState = GameDefinition<
         states: "buyCookies" | "intro" | "visiting";
       };
       smithsConversation: { states: "fixHorseshoe" | "createNecklace" };
-      witchConversation: {};
+      witchConversation: { states: "intro" | "visited" };
       inventory: {};
       travel: {};
       treasureNotes: {};
+      ingredientList: {};
       plants: {};
     };
   }

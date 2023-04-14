@@ -2,7 +2,9 @@ import g from "../game";
 
 g.defineOverlay(
   "farmerConversation",
-  ({ onEnter, onLeave, interaction, closeOverlay }) => {
+  ({ onEnter, onLeave, interaction, closeOverlay, setPrompt }) => {
+    setPrompt("What will you say:");
+
     onEnter(() => {
       g.onState(
         g.not(g.character("farmer").hasFlag("visited")),

@@ -2,7 +2,9 @@ import g from "../game";
 
 g.defineOverlay(
   "dwarfConversation",
-  ({ onEnter, interaction, closeOverlay, onLeave }) => {
+  ({ onEnter, interaction, closeOverlay, onLeave, setPrompt }) => {
+    setPrompt("What will you say:");
+
     onEnter(() => {
       // potential place to do the posing of characters first.
 

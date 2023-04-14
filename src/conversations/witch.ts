@@ -2,7 +2,17 @@ import g from "../game";
 
 g.defineOverlay(
   "witchConversation",
-  ({ onEnter, interaction, closeOverlay, onLeave }) => {
+  ({
+    onEnter,
+    interaction,
+    closeOverlay,
+    onLeave,
+    setPrompt,
+    hasState,
+    setState,
+  }) => {
+    setPrompt("What will you say:");
+
     onEnter(() => {
       g.onState(
         g.location("cabin").hasFlag("visited"),
@@ -48,12 +58,12 @@ g.defineOverlay(
       g.text("You imagined her very differently.");
       g.character("player").say("...");
       g.character("witch").say("No need to be scared. I was expecting you!");
-      g.character("witch").setState("intro");
+      setState("intro");
     };
 
-    interaction("Euhm...", g.character("witch").hasState("unknown"), intro1);
-    interaction("Uh oh...", g.character("witch").hasState("unknown"), intro1);
-    interaction("Well...", g.character("witch").hasState("unknown"), intro1);
+    interaction("Euhm...", hasState("unknown"), intro1);
+    interaction("Uh oh...", hasState("unknown"), intro1);
+    interaction("Well...", hasState("unknown"), intro1);
 
     const intro2 = () => {
       g.character("player").say("...");
@@ -68,20 +78,16 @@ g.defineOverlay(
         "In the corner of your eye, you see a {b}raven{/b} fly away from a windowsill."
       );
       g.text("You start to suspect she received a letter as well...");
-      g.character("witch").setState("visited");
+      setState("visited");
       g.location("cabin").setFlag("visited");
     };
 
-    interaction("But how...", g.character("witch").hasState("intro"), intro2);
-    interaction(
-      "That is not possible...",
-      g.character("witch").hasState("intro"),
-      intro2
-    );
+    interaction("But how...", hasState("intro"), intro2);
+    interaction("That is not possible...", hasState("intro"), intro2);
 
     interaction(
       "Could you help me with a medicine?",
-      g.character("witch").hasState("visited"),
+      hasState("visited"),
       () => {
         g.text(
           "{b}[characters.witch.name]{/b} looks at you. There is a smile on her face."
@@ -107,7 +113,7 @@ g.defineOverlay(
     interaction(
       "Give gemstone to [characters.witch.name]",
       g.and(
-        g.character("witch").hasState("visited"),
+        hasState("visited"),
         g.item("necklace").hasState("need"),
         g.item("gemstone").hasState("possession")
       ),
@@ -123,31 +129,42 @@ g.defineOverlay(
 
     interaction(
       "Give necklace to [characters.witch.name]",
-      g.and(
-        g.character("witch").hasState("visited"),
-        g.item("necklace").hasState("possession")
-      ),
+      g.and(hasState("visited"), g.item("necklace").hasState("possession")),
       () => {
-        // TODO
-        // "1=12;12=1;2=0;4=2;34=8", "*c2", "Eucalypta kijkt je aan. Er komt een grote glimlach op haar gezicht."
-        // "", "*c13", "Eucalypta: 'Die halsketting is super! Dit gaat een geweldig kado voor mijn dochter zijn!"
-        // "  Momentje, dan schrijf ik een lijstje met benodigdheden.'"
-        // "*c2", "", "Eucalypta gaat naar binnen en doet de deur dicht."
-        // "Even later komt ze terug en geeft ze je een lijstje met benodigheden.", "", "&"
-        // "1=12;12=1;2=0;4=2;34=8;0=2", "*c13"
-        // "Eucalypta: 'Hier, dit heb ik allemaal nodig."
-        // "  Er zit wel een lastig ingrediënt bij, maar een sterke vrouw zoals jij krijgt dat wel voor elkaar.'"
-        // "&4=0;34=9;26=4"
-        // "1=12;12=1;2=0;4=2;34=8;0=1", "*c13"
-        // "Eucalypta: 'Hier, dit heb ik allemaal nodig."
-        // "  Er zit wel een lastig ingrediënt bij, maar een sterke man zoals jij krijgt dat wel voor elkaar.'"
-        // "&4=0;34=9;26=4"
+        g.item("necklace").setState("given");
+        g.text(
+          "{b}[characters.witch.name]{/b} looks at you. There is a smile on her face."
+        );
+        g.character("witch").say(
+          "That {b}necklace{/b} is {i}super{/i}! This will be a magnificent preset for my {b}daughter{/b}!",
+          "One second, I will write you a list of the items I will need for the {b}medicine{/b}."
+        );
+        g.text(
+          "{b}[characters.witch.name]{/b} goes inside and closes the door."
+        );
+        g.text("A while later she returns with a list of items.");
+        g.onState(
+          g.character("player").hasFlag("male"),
+          () => {
+            g.character("witch").say(
+              "Here, this is what I need.",
+              "Some items could be tricky to come by, but that should be no problem for a strong man like you."
+            );
+          },
+          () => {
+            g.character("witch").say(
+              "Here, this is what I need.",
+              "Some items could be tricky to come by, but that should be no problem for a strong woman like you."
+            );
+          }
+        );
+        g.item("ingredientList").setState("possession");
       }
     );
 
     interaction(
       "Did you also hear that there is a treasure hidden somewhere?",
-      g.character("witch").hasState("visited"),
+      hasState("visited"),
       () => {
         g.character("player").say(
           "Did you also hear that there is a treasure hidden somewhere?"
@@ -159,7 +176,8 @@ g.defineOverlay(
         g.text("This doesn't help you.");
       }
     );
-    interaction("Goodbye", g.character("witch").hasState("visited"), () => {
+
+    interaction("Goodbye", hasState("visited"), () => {
       closeOverlay();
     });
   }

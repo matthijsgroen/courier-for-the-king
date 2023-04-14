@@ -62,6 +62,25 @@ g.defineOverlay("inventory", ({ onEnter, interaction, closeOverlay }) => {
     g.onState(g.item("treasureNotes").hasState("possession"), () => {
       g.descriptionText("- Notes on treasure");
     });
+    g.onState(g.item("ingredientList").hasState("possession"), () => {
+      g.descriptionText("- Ingriedient list for medicine");
+    });
+    g.onState(g.item("plants").hasCounter("thornyLeaves").moreThan(1), () => {
+      g.descriptionText(
+        "- [items.plants.counters.thornyLeaves] plants with thorny leaves"
+      );
+    });
+    g.onState(g.item("plants").hasCounter("thornyLeaves").equals(1), () => {
+      g.descriptionText("- 1 plant with thorny leaves");
+    });
+    g.onState(g.item("plants").hasCounter("roundLeaves").moreThan(1), () => {
+      g.descriptionText(
+        "- [items.plants.counters.roundLeaves] plants with round leaves"
+      );
+    });
+    g.onState(g.item("plants").hasCounter("roundLeaves").equals(1), () => {
+      g.descriptionText("- 1 plant with round leaves");
+    });
     g.onState(
       g.and(
         g.item("moonStone").hasState("possession"),
@@ -101,6 +120,13 @@ g.defineOverlay("inventory", ({ onEnter, interaction, closeOverlay }) => {
     g.item("treasureNotes").hasState("possession"),
     () => {
       g.openOverlay("treasureNotes");
+    }
+  );
+  interaction(
+    "Check list of ingredients",
+    g.item("ingredientList").hasState("possession"),
+    () => {
+      g.openOverlay("ingredientList");
     }
   );
   interaction("Eat cookies", g.item("cookies").hasState("possession"), () => {

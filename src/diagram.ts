@@ -121,26 +121,26 @@ g.definePuzzleDependencies<MetaData>({
   },
   giveJewelryToWitch: {
     dependsOn: ["createJewelryAtSmith", "talkToWitch"],
-    tags: { location: "swamp" },
+    tags: { location: "swamp", state: "text", languages: ["en", "nl"] },
     hierarchy: ["swamp", "cabin"],
   },
   getIngredientList: {
     dependsOn: ["giveJewelryToWitch"],
-    tags: { location: "swamp" },
+    tags: { location: "swamp", state: "text", languages: ["en", "nl"] },
     hierarchy: ["swamp", "cabin"],
   },
-  pluckMushRooms: {
+  pluckMushrooms: {
     dependsOn: ["getIngredientList", "theMonster"],
     tags: { location: "darkWood" },
     hierarchy: ["darkWood"],
   },
-  pluckHerbs: {
+  pluckPlants: {
     dependsOn: ["getIngredientList"],
-    tags: { location: "swamp" },
+    tags: { location: "swamp", state: "text", languages: ["en", "nl"] },
     hierarchy: ["swamp"],
   },
   getAccessToCabin: {
-    dependsOn: ["pluckMushRooms", "pluckHerbs", "getDragonTooth"],
+    dependsOn: ["pluckMushrooms", "pluckPlants", "getDragonTooth"],
     tags: { location: "swamp" },
     hierarchy: ["swamp", "cabin"],
   },
@@ -301,7 +301,7 @@ g.definePuzzleDependencies<MetaData>({
   },
   getRope: {
     dependsOn: ["mainAct"],
-    tags: { location: "farmland" },
+    tags: { location: "farmland", state: "text", languages: ["en", "nl"] },
     hierarchy: ["farm"],
   },
   getInfoAboutMonster: {
