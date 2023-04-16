@@ -119,6 +119,7 @@ g.defineOverlay(
         );
         g.text("You put the top if the pickaxe in your bag.");
         g.item("pickaxe").setState("broken");
+        g.list("inventory").add("brokenPickaxe");
       }
     );
 
@@ -126,7 +127,7 @@ g.defineOverlay(
       "Give cookies to [characters.dwarf.name]",
       g.and(
         g.character("dwarf").hasFlag("nameKnown"),
-        g.item("cookies").hasState("possession")
+        g.list("inventory").isInList("cookies")
       ),
       () => {
         g.text("You offer the cookies to [characters.dwarf.name].");
@@ -135,6 +136,7 @@ g.defineOverlay(
         g.text("[characters.dwarf.name] is enjoying the cookies.");
         g.character("dwarf").say("I really needed that, thanks!");
         g.item("cookies").setState("given");
+        g.list("inventory").remove("cookies");
         g.onState(g.item("pickaxe").hasState("given"), () => {
           dwarfHappy();
         });
@@ -153,6 +155,7 @@ g.defineOverlay(
         );
         g.character("dwarf").say("Wow, It's as good as new! Thanks!");
         g.item("pickaxe").setState("given");
+        g.list("inventory").remove("repairedPickaxe");
         g.onState(g.item("cookies").hasState("given"), () => {
           dwarfHappy();
         });

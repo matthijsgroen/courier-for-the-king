@@ -60,6 +60,7 @@ g.defineLocation("farm", ({ describe, interaction, onLeave }) => {
     () => {
       g.text("You pickup the rope");
       g.item("rope").setState("possession");
+      g.list("inventory").add("rope");
     }
   );
 

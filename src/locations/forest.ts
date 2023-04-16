@@ -27,6 +27,7 @@ g.defineLocation("forest", ({ describe, interaction, onLeave }) => {
       g.text("You pick up your bag.");
       g.item("bag").setState("possession");
       g.character("player").setCounter("coins", 3);
+      g.list("inventory").add("coins");
     });
 
     g.onState(g.item("branch").hasState("unknown"), () => {
@@ -42,6 +43,7 @@ g.defineLocation("forest", ({ describe, interaction, onLeave }) => {
       "This branch hurt you quite a bit."
     );
     g.item("branch").setState("possession");
+    g.list("inventory").add("branch");
   });
 
   interaction("Go east, to the farmlands", g.always(), () => {

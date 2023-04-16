@@ -3,99 +3,94 @@ import g from "../game";
 g.defineOverlay("inventory", ({ onEnter, interaction, closeOverlay }) => {
   onEnter(() => {
     g.descriptionText("You carry the following items:");
-    // g.textList("inventory", (displayText) => {
-    //   displayText(
-    //     "coins",
-    //     "[characters.player.counters.coins] coins",
-    //     g.character("player").hasCounter("coins").moreThan(1)
-    //   );
-    //   displayText(
-    //     "coins",
-    //     "[characters.player.counters.coins] coin",
-    //     g.character("player").hasCounter("coins").equals(1)
-    //   );
-    //   displayText("rope", "A long rope");
-    //   displayText("branch", "A branch, picked up in the forest");
-    //   displayText("brokenPickaxe", "A pickaxe with a broken hilt");
-    //   displayText("pickaxe", "A fixed pickaxe");
-    //   displayText("cookies", "Delicious cookies");
-    //   displayText("fabric", "A giant trunk, probably of a giant");
-    //   displayText("gemstone", "A sparkling gemstone");
-    // });
 
-    g.onState(g.character("player").hasCounter("coins").moreThan(1), () => {
-      g.descriptionText("- [characters.player.counters.coins] coins");
+    g.list("inventory").display(({ onItem }) => {
+      onItem("coins", () => {
+        g.onState(
+          g.character("player").hasCounter("coins").equals(1),
+          () => {
+            g.descriptionText("- [characters.player.counters.coins] coin");
+          },
+          () => {
+            g.descriptionText("- [characters.player.counters.coins] coins");
+          }
+        );
+      });
+      onItem("branch", () => {
+        g.descriptionText("- A branch, picked up in the forest");
+      });
+      onItem("rope", () => {
+        g.descriptionText("- A long rope");
+      });
+      onItem("brokenPickaxe", () => {
+        g.descriptionText("- A pickaxe with a broken hilt");
+      });
+      onItem("repairedPickaxe", () => {
+        g.descriptionText("- A fixed pickaxe");
+      });
+      onItem("cookies", () => {
+        g.descriptionText("- Delicious cookies");
+      });
+      onItem("necklace", () => {
+        g.descriptionText("- A beautiful necklace");
+      });
+      onItem("gem", () => {
+        g.descriptionText("- A sparkling gemstone");
+      });
+      onItem("gold", () => {
+        g.descriptionText("- Pieces of gold");
+      });
+      onItem("runeStone", () => {
+        g.descriptionText("- A runestone with inscriptions");
+      });
+      onItem("moonStone", () => {
+        g.onState(
+          g.isLocation("river"),
+          () => {
+            g.descriptionText("- Moonstone, it seems to glow lightly");
+          },
+          () => {
+            g.descriptionText("- Moonstone, it looks dim");
+          }
+        );
+      });
+      onItem("fabric", () => {
+        g.descriptionText("- A giant trunk, probably of a giant");
+      });
+      onItem("treasureNotes", () => {
+        g.descriptionText("- Notes on treasure");
+      });
+      onItem("ingredientList", () => {
+        g.descriptionText("- Ingredient list for medicine");
+      });
+      onItem("thornyLeaves", () => {
+        g.onState(
+          g.item("plants").hasCounter("thornyLeaves").moreThan(1),
+          () => {
+            g.descriptionText(
+              "- [items.plants.counters.thornyLeaves] plants with thorny leaves"
+            );
+          },
+          () => {
+            g.descriptionText("- 1 plant with thorny leaves");
+          }
+        );
+      });
+
+      onItem("roundLeaves", () => {
+        g.onState(
+          g.item("plants").hasCounter("roundLeaves").moreThan(1),
+          () => {
+            g.descriptionText(
+              "- [items.plants.counters.roundLeaves] plants with round leaves"
+            );
+          },
+          () => {
+            g.descriptionText("- 1 plant with round leaves");
+          }
+        );
+      });
     });
-    g.onState(g.character("player").hasCounter("coins").equals(1), () => {
-      g.descriptionText("- [characters.player.counters.coins] coin");
-    });
-    g.onState(g.item("rope").hasState("possession"), () => {
-      g.descriptionText("- A long rope");
-    });
-    g.onState(g.item("branch").hasState("possession"), () => {
-      g.descriptionText("- A branch, picked up in the forest");
-    });
-    g.onState(g.item("pickaxe").hasState("broken"), () => {
-      g.descriptionText("- A pickaxe with a broken hilt");
-    });
-    g.onState(g.item("pickaxe").hasState("fixed"), () => {
-      g.descriptionText("- A fixed pickaxe");
-    });
-    g.onState(g.item("cookies").hasState("possession"), () => {
-      g.descriptionText("- Delicious cookies");
-    });
-    g.onState(g.item("fabric").hasState("possession"), () => {
-      g.descriptionText("- A giant trunk, probably of a giant");
-    });
-    g.onState(g.item("gemstone").hasState("possession"), () => {
-      g.descriptionText("- A sparkling gemstone");
-    });
-    g.onState(g.item("gold").hasState("possession"), () => {
-      g.descriptionText("- Pieces of gold");
-    });
-    g.onState(g.item("necklace").hasState("possession"), () => {
-      g.descriptionText("- A beautiful necklace");
-    });
-    g.onState(g.item("runeStone").hasState("possession"), () => {
-      g.descriptionText("- A runestone with inscriptions");
-    });
-    g.onState(g.item("treasureNotes").hasState("possession"), () => {
-      g.descriptionText("- Notes on treasure");
-    });
-    g.onState(g.item("ingredientList").hasState("possession"), () => {
-      g.descriptionText("- Ingriedient list for medicine");
-    });
-    g.onState(g.item("plants").hasCounter("thornyLeaves").moreThan(1), () => {
-      g.descriptionText(
-        "- [items.plants.counters.thornyLeaves] plants with thorny leaves"
-      );
-    });
-    g.onState(g.item("plants").hasCounter("thornyLeaves").equals(1), () => {
-      g.descriptionText("- 1 plant with thorny leaves");
-    });
-    g.onState(g.item("plants").hasCounter("roundLeaves").moreThan(1), () => {
-      g.descriptionText(
-        "- [items.plants.counters.roundLeaves] plants with round leaves"
-      );
-    });
-    g.onState(g.item("plants").hasCounter("roundLeaves").equals(1), () => {
-      g.descriptionText("- 1 plant with round leaves");
-    });
-    g.onState(
-      g.and(
-        g.item("moonStone").hasState("possession"),
-        g.not(g.isLocation("river"))
-      ),
-      () => {
-        g.descriptionText("- Moonstone, it looks dim");
-      }
-    );
-    g.onState(
-      g.and(g.item("moonStone").hasState("possession"), g.isLocation("river")),
-      () => {
-        g.descriptionText("- Moonstone, it seems to glow lightly");
-      }
-    );
   });
 
   interaction(
@@ -112,6 +107,9 @@ g.defineOverlay("inventory", ({ onEnter, interaction, closeOverlay }) => {
       g.text("It fits! The pickaxe is as good as new.");
       g.item("branch").setState("used");
       g.item("pickaxe").setState("fixed");
+      g.list("inventory").remove("branch");
+      g.list("inventory").remove("brokenPickaxe");
+      g.list("inventory").add("repairedPickaxe");
     }
   );
 

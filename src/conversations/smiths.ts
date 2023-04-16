@@ -181,6 +181,9 @@ g.defineOverlay(
         g.item("gold").setState("used");
         g.character("player").increaseCounter("coins", 15);
         g.item("necklace").setState("possession");
+        g.list("inventory").remove("gem");
+        g.list("inventory").remove("gold");
+        g.list("inventory").add("necklace");
         setState("unknown");
       }
     );

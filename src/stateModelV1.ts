@@ -90,5 +90,24 @@ export type GameState = GameDefinition<
       ingredientList: {};
       plants: {};
     };
+    lists: {
+      inventory:
+        | "branch"
+        | "rope"
+        | "gem"
+        | "gold"
+        | "necklace"
+        | "coins"
+        | "cookies"
+        | "runeStone"
+        | "moonStone"
+        | "fabric"
+        | "treasureNotes"
+        | "ingredientList"
+        | "brokenPickaxe"
+        | "thornyLeaves"
+        | "roundLeaves"
+        | "repairedPickaxe";
+    };
   }
 >;

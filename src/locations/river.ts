@@ -122,25 +122,20 @@ g.defineLocation("river", ({ describe, onLeave, interaction }) => {
     }
   );
 
-  interaction(
-    "Try to pick up fabric",
-    g.item("fabric").hasState("unknown"),
-    () => {
-      g.text(
-        "You slowly climb down to the waterfront.",
-        "When you reach the edge of the water, you grab the big piece of cloth."
-      );
-      g.text(
-        "It looks like a huge underpants! White with red dots!",
-        "Suddenly you see a {b}giant{/b} swimming in the river a bit further down."
-      );
-      g.character("player").say("Whoops! I need to get out of here!");
-      g.text(
-        "Je quickly climb up to the path and take the underpants with you."
-      );
-      g.item("fabric").setState("possession");
-    }
-  );
+  interaction("Pick up fabric", g.item("fabric").hasState("unknown"), () => {
+    g.text(
+      "You slowly climb down to the waterfront.",
+      "When you reach the edge of the water, you grab the big piece of cloth."
+    );
+    g.text(
+      "It looks like a huge underpants! White with red dots!",
+      "Suddenly you see a {b}giant{/b} swimming in the river a bit further down."
+    );
+    g.character("player").say("Whoops! I need to get out of here!");
+    g.text("Je quickly climb up to the path and take the underpants with you.");
+    g.item("fabric").setState("possession");
+    g.list("inventory").add("fabric");
+  });
 
   interaction("Go north, towards the village", g.always(), () => {
     g.travel("village");

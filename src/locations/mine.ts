@@ -54,6 +54,7 @@ g.defineLocation("mine", ({ describe, interaction, onLeave }) => {
         "You pick up the {b}gemstone{/b}. It is sparkling in the sunlight"
       );
       g.item("gemstone").setState("possession");
+      g.list("inventory").add("gem");
     }
   );
 

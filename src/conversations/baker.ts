@@ -147,6 +147,7 @@ g.defineOverlay(
         );
         g.text("You find this very interesting, and make a note of it.");
         g.item("treasureNotes").setState("possession");
+        g.list("inventory").addUnique("treasureNotes");
         g.item("treasureNotes").setFlag("moonStone");
       }
     );
@@ -189,6 +190,7 @@ g.defineOverlay(
         g.character("baker").say("Here you go.");
         g.text("The baker gives a few delicious cookies.");
         g.item("cookies").setState("possession");
+        g.list("inventory").add("cookies");
         g.character("player").decreaseCounter("coins", 2);
         setState("visiting");
       }

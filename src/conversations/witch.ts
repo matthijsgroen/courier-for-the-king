@@ -132,6 +132,7 @@ g.defineOverlay(
       g.and(hasState("visited"), g.item("necklace").hasState("possession")),
       () => {
         g.item("necklace").setState("given");
+        g.list("inventory").remove("necklace");
         g.text(
           "{b}[characters.witch.name]{/b} looks at you. There is a smile on her face."
         );
@@ -159,6 +160,7 @@ g.defineOverlay(
           }
         );
         g.item("ingredientList").setState("possession");
+        g.list("inventory").add("ingredientList");
       }
     );
 

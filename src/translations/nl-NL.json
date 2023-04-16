@@ -368,7 +368,7 @@
         "Pick up [characters.horse.name]": "Haal [characters.horse.name] op",
         "Try to approach horse": "Probeer paard te benaderen",
         "Let [characters.horse.name] drink some water": "Laat [characters.horse.name] water drinken",
-        "Try to pick up fabric": "Probeer stof te pakken",
+        "Pick up fabric": "Pak stof op",
         "Go north, towards the village": "Ga naar het noorden, richting het dorp"
       }
     },
@@ -871,26 +871,26 @@
     },
     "inventory": {
       "descriptionText": {
-        "- [characters.player.counters.coins] coins": "- [characters.player.counters.coins] geldstukken",
         "- [characters.player.counters.coins] coin": "- [characters.player.counters.coins] geldstuk",
-        "- A long rope": "- Een lang stuk touw",
+        "- [characters.player.counters.coins] coins": "- [characters.player.counters.coins] geldstukken",
         "- A branch, picked up in the forest": "- Een stok, opgeraapt in het bos",
+        "- A long rope": "- Een lang stuk touw",
         "- A pickaxe with a broken hilt": "- Houweel met gebroken heft",
         "- A fixed pickaxe": "- Gerepareerde houweel",
         "- Delicious cookies": "- Heerlijke koeken",
-        "- A giant trunk, probably of a giant": "- Een grote onderbroek, waarschijnlijk van een reus",
+        "- A beautiful necklace": "- Een prachtige halsketting",
         "- A sparkling gemstone": "- Een fonkelende edelsteen",
         "- Pieces of gold": "- Stukken goud",
-        "- A beautiful necklace": "- Een prachtige halsketting",
         "- A runestone with inscriptions": "- Een runesteen met inscripties",
+        "- Moonstone, it seems to glow lightly": "- Maansteen, hij lijkt licht te gloeien",
+        "- Moonstone, it looks dim": "- Maansteen, hij ziet er dof uit",
+        "- A giant trunk, probably of a giant": "- Een grote onderbroek, waarschijnlijk van een reus",
         "- Notes on treasure": "- Schataantekeningen",
-        "- Ingriedient list for medicine": "- Ingrediëntenlijst voor medicijn",
+        "- Ingredient list for medicine": "- Ingrediëntenlijst voor medicijn",
         "- [items.plants.counters.thornyLeaves] plants with thorny leaves": "- [items.plants.counters.thornyLeaves] planten met stekelige bladeren",
         "- 1 plant with thorny leaves": "- 1 plant met stekelige bladeren",
         "- [items.plants.counters.roundLeaves] plants with round leaves": "- [items.plants.counters.roundLeaves] planten met ronde bladeren",
         "- 1 plant with round leaves": "- 1 plant met ronde bladeren",
-        "- Moonstone, it looks dim": "- Maansteen, hij ziet er dof uit",
-        "- Moonstone, it seems to glow lightly": "- Maansteen, hij lijkt licht te gloeien",
         "You carry the following items:": "Je hebt het volgende bij je:"
       },
       "interactions": {

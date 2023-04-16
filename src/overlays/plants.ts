@@ -22,6 +22,7 @@ g.defineOverlay("plants", ({ onEnter, interaction, closeOverlay }) => {
             );
             g.item("plants").setCounter("thornyLeaves", 10);
             g.item("ingredientList").setFlag("thornyLeaves");
+            g.list("inventory").addUnique("thornyLeaves");
           },
           () => {
             g.character("player").say("Hmm, I have enough of those.");
@@ -49,6 +50,7 @@ g.defineOverlay("plants", ({ onEnter, interaction, closeOverlay }) => {
             );
             g.item("plants").setCounter("roundLeaves", 10);
             g.item("ingredientList").setFlag("roundLeaves");
+            g.list("inventory").addUnique("roundLeaves");
           },
           () => {
             g.character("player").say("Hmm, I have enough of those.");
@@ -82,9 +84,7 @@ g.defineOverlay("plants", ({ onEnter, interaction, closeOverlay }) => {
           "The {b}color{/b} seems a bit off. You put it in your bag."
         );
         g.item("moonStone").setState("possession");
-        // "*s2", "Dan herinner je wat de bakker had gezegd over de Maansteen."
-        // "Je gaat graven bij de wortels van de plant, en vindt een gladde kleine steen."
-        // "Hij is iets apart van kleur. Je stopt hem in je tas."
+        g.list("inventory").add("moonStone");
       }
     );
   });

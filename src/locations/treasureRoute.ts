@@ -294,6 +294,8 @@ g.defineLocation("treasureRoute", ({ interaction }) => {
       g.item("treasureHunt").setFlag("done");
       g.item("gold").setState("possession");
       g.item("runeStone").setState("possession");
+      g.list("inventory").add("gold");
+      g.list("inventory").add("runeStone");
       g.travel("forest");
     }
   );
