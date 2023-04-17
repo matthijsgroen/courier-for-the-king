@@ -2,17 +2,21 @@ import g from "../game";
 
 g.defineLocation("farm", ({ describe, interaction, onLeave }) => {
   describe(() => {
-    g.text(
-      "You are at a large farm.",
-      "Next to the farm lies a pile of {b}grain{/b}."
+    g.descriptionText("You are at a large farm.");
+    g.onState(g.item("grain").hasState("unknown"), () => {
+      g.descriptionText("Next to the farm lies a pile of {b}grain{/b}.");
+    });
+    g.descriptionText(
+      "",
+      "Big plumes of smoke rise up from the other side of the farm."
     );
-    g.text("Big plumes of smoke rise up from the other side of the farm.");
 
     g.text(
       "You quickly walk to the other side of the farm.",
       "There was clearly a fire here, but the flames have been extinguished."
     );
     g.text("A farmer looks defeated at the smoldering remains...");
+    g.descriptionText("");
     g.onState(
       g.character("horse").hasState("stable"),
       () => {
@@ -36,8 +40,20 @@ g.defineLocation("farm", ({ describe, interaction, onLeave }) => {
     "Bring [characters.horse.name] to the stable",
     g.character("horse").hasState("following"),
     () => {
-      g.text("You bring [characters.horse.name] to his stable.");
-      g.character("horse").setState("stable");
+      g.onState(
+        g.character("horse").hasFlag("cart"),
+        () => {
+          g.text(
+            "You want to return [characters.horse.name] to his stable, but the carriage is still attached.",
+            "",
+            "Maybe return the carriage first?"
+          );
+        },
+        () => {
+          g.text("You bring [characters.horse.name] to his stable.");
+          g.character("horse").setState("stable");
+        }
+      );
     }
   );
 

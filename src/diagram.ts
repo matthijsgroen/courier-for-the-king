@@ -203,7 +203,7 @@ g.definePuzzleDependencies<MetaData>({
   },
   getCart: {
     dependsOn: ["repairMill", "fixHorseshoe"],
-    tags: {},
+    tags: { state: "text", languages: ["en", "nl"] },
     hierarchy: ["hills", "mill"],
   },
   putGrainOnCart: {

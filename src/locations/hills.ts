@@ -2,7 +2,17 @@ import g from "../game";
 
 g.defineLocation("hills", ({ describe, onLeave, interaction }) => {
   onLeave("forest", () => {
-    g.text("You walk east, towards the forest.");
+    g.onState(
+      g.character("horse").hasState("following"),
+      () => {
+        g.text(
+          "Together with {b}[characters.horse.name]{/b} you venture east, towards the forest."
+        );
+      },
+      () => {
+        g.text("You walk east, towards the forest.");
+      }
+    );
   });
   onLeave("mine", () => {
     g.text("You follow the road, towards the entrance of the mine.");
@@ -44,6 +54,17 @@ g.defineLocation("hills", ({ describe, onLeave, interaction }) => {
   });
 
   interaction("Go south, to the swamp", g.always(), () => {
-    g.travel("swamp");
+    g.onState(
+      g.character("horse").hasFlag("cart"),
+      () => {
+        g.text(
+          "You want to go into the {b}swamp{/b}, but the wheels of the carriage would get stuck in the soggy underground.",
+          "You turn around."
+        );
+      },
+      () => {
+        g.travel("swamp");
+      }
+    );
   });
 });

@@ -78,8 +78,18 @@ g.defineLocation("river", ({ describe, onLeave, interaction }) => {
       g.character("player").say(
         "Will you come with me {b}[characters.horse.name]{/b}?"
       );
+      g.onState(
+        g.character("horse").hasFlag("cart"),
+        () => {
+          g.text(
+            "The horse approaches you enthusiastically, and pulls the carriage with him."
+          );
+        },
+        () => {
+          g.text("The horse approaches you enthusiastically.");
+        }
+      );
 
-      g.text("The horse approaches you enthusiastically.");
       g.character("player").say("Nice to see you again!");
       g.text("{b}[characters.horse.name]{/b} is now following you!");
 
@@ -115,8 +125,18 @@ g.defineLocation("river", ({ describe, onLeave, interaction }) => {
     "Let [characters.horse.name] drink some water",
     g.character("horse").hasState("following"),
     () => {
-      g.text(
-        "You bring {b}[characters.horse.name]{/b} to the waterfront to let him drink."
+      g.onState(
+        g.character("horse").hasFlag("cart"),
+        () => {
+          g.text(
+            "You want to bring {b}[characters.horse.name]{/b} to the waterfront, luckily the slope is gentle so the carriage can follow along."
+          );
+        },
+        () => {
+          g.text(
+            "You bring {b}[characters.horse.name]{/b} to the waterfront to let him drink."
+          );
+        }
       );
       g.character("horse").setState("river");
     }

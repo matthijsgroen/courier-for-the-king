@@ -20,7 +20,7 @@ g.defineOverlay(
         g.character("miller").say(
           "I no longer have a horse, just a carriage.",
           "If I need a horse, I borrow [characters.horse.defaultName] from farmer {b}[characters.farmer.defaultName]{/b}.",
-          "It is a really dependable animal. Ideal for pulling the carriage!"
+          "It is a really dependable animal. Ideal for pulling the {b}carriage{/b}!"
         );
       }
     );
@@ -47,6 +47,75 @@ g.defineOverlay(
         g.character("player").say("What did you need again for the repairs?");
         g.character("miller").say("I need a new sail for one of the blades.");
         g.character("player").say("Ah ok, thanks.");
+      }
+    );
+
+    interaction(
+      "I have some fabric that could be used",
+      g.list("inventory").isInList("fabric"),
+      () => {
+        g.character("player").say("I have some fabric that could be used.");
+        g.item("fabric").setState("used");
+        g.list("inventory").remove("fabric");
+        g.text(
+          "Together with the {b}miller{/b} you climb onto the blades of the windmill.",
+          "After some pulling and knotting the {b}underpants{/b} are fitting nicely onto the blade.",
+          "You both climb back down."
+        );
+        g.character("miller").say("Well let's see if this works!");
+        g.text(
+          "The miller turns the windmill towards the wind.",
+          "Slowly but surely the blades start to turn."
+        );
+        g.character("miller").say("Well done!");
+        g.location("mill").setState("fixed");
+      }
+    );
+
+    interaction(
+      "Could I borrow your carriage?",
+      g.and(
+        g.character("horse").hasState("following"),
+        g.not(g.character("horse").hasFlag("cart"))
+      ),
+      () => {
+        g.character("player").say("Could I borrow your carriage?");
+        g.onState(
+          g.location("mill").hasState("fixed"),
+          () => {
+            g.character("miller").say(
+              "Sure, no problem! Thanks for fixing the mill with me."
+            );
+
+            g.text(
+              "Together you hitch the carriage of the {b}miller{/b} behind {b}[characters.horse.name]{/b}."
+            );
+            g.character("horse").setFlag("cart");
+
+            g.character("miller").say(
+              "Be aware, with {b}[characters.horse.name]{/b} hitched to the carriage you cannot ride him."
+            );
+          },
+          () => {
+            g.character("miller").say(
+              "Sorry I rather not. I could need it to get my repairs done."
+            );
+          }
+        );
+
+        //  TODO
+        // "*c9", "Tjasker: 'Mwa, liever niet. Misschien heb ik hem nog nodig voor de reparaties van de molen.'", "&4=0"
+
+        // "1=14;14=2;2=0;4=5", "*c3", "$n: 'Zou ik de wagen mogen lenen?'", ""
+        // "*c9", "Tjasker: 'Ja hoor, geen probleem! bedankt nog voor het helpen repareren van mijn molen!'", "", "*c2", "&"
+
+        // "1=14;14=2;2=0;4=5;33!1;33!2;44!2", "Samen spannen jullie de wagen van de molenaar achter Teun.", "&"
+        // "1=14;14=2;2=0;4=5;33=1","Samen spannen jullie de wagen vol graan achter Teun.", "&"
+        // "1=14;14=2;2=0;4=5;33=2","Samen spannen jullie de wagen vol meel achter Teun.", "&"
+        // "1=14;14=2;2=0;4=5;44=2","Samen spannen jullie de wagen met de molensteen achter Teun.", "&"
+
+        // "1=14;14=2;2=0;4=5","", "*c9", "Tjasker: 'Bedenk wel, met de wagen achter Teun dan kun je hem niet berijden.'"
+        // "&4=0;29=4"
       }
     );
 

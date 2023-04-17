@@ -2,15 +2,17 @@ import g from "../game";
 
 g.defineLocation("mill", ({ describe, onLeave, interaction }) => {
   describe(() => {
-    g.text(
+    g.descriptionText(
       "You are at the windmill.",
-      "The mill misses a {b}sail{/b} of one of its blades."
+      "The mill misses a {b}sail{/b} of one of its blades.",
+      ""
     );
-    g.descriptionText("");
-    g.text(
-      "A big {b}millstone{/b} lies next to the mill.",
-      "An empty {b}carriage{/b} is parked on the other side of the mill."
-    );
+    g.descriptionText("A big {b}millstone{/b} lies next to the mill.");
+    g.onState(g.not(g.character("horse").hasFlag("cart")), () => {
+      g.descriptionText(
+        "An empty {b}carriage{/b} is parked on the other side of the mill."
+      );
+    });
     g.descriptionText("");
     g.text("An old miller appears to be working on restoring the blade.");
 
@@ -31,6 +33,18 @@ g.defineLocation("mill", ({ describe, onLeave, interaction }) => {
   interaction("Talk to the miller", g.always(), () => {
     g.openOverlay("millerConversation");
   });
+
+  interaction(
+    "Bring carriage back",
+    g.and(
+      g.character("horse").hasFlag("cart"),
+      g.character("horse").hasState("following")
+    ),
+    () => {
+      g.text("You unhitch the carriage from {b}[characters.horse.name]{/b}.");
+      g.character("horse").clearFlag("cart");
+    }
+  );
 
   interaction("Check millstone", g.always(), () => {
     g.text("You check the millstone. It looks really {b}heavy{/b}.");

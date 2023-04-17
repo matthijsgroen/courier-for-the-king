@@ -61,6 +61,8 @@
     "farmland": {
       "text": {
         "You are walking to the east, towards the forest.": "Je wandelt naar het oosten, richting het groene bos.",
+        "Together with {b}[characters.horse.name]{/b} and the carriage, you walk onto the barnyard of the farm.": "Samen met {b}[characters.horse.name]{/b} en de wagen, loop je het erf van de boerderij op.",
+        "Together with {b}[characters.horse.name]{/b}, you walk onto the barnyard of the farm.": "Samen met {b}[characters.horse.name]{/b} loop je het erf van de boerderij op.",
         "You walk onto the barnyard of the farm.": "Je loopt het erf van een boerderij op.",
         "Together with [characters.horse.name], you walk south towards the village.": "Je wandelt samen met [characters.horse.name] naar het zuiden, richting het dorp.",
         "You walk south towards the village.": "Je wantelt naar het zuiden, richting het dorp.",
@@ -82,6 +84,7 @@
     },
     "forest": {
       "text": {
+        "You walk east, accompanied by {b}[characters.horse.name]{/b}, to the farmlands.": "Je wandelt naar het oosten, vergezeld door {b}[characters.horse.name]{/b}, richting de akkers.",
         "You walk east, to the farmlands.": "Je wandelt naar het oosten, richting de akkers.",
         "You walk west, towards the hills.": "Je wandelt naar het westen, richting de heuvels.",
         "You pick up your bag.": "Je raapt de tas op",
@@ -107,6 +110,7 @@
     },
     "hills": {
       "text": {
+        "Together with {b}[characters.horse.name]{/b} you venture east, towards the forest.": "Samen met {b}[characters.horse.name]{/b} verkeer je oostwaards, richting het bos.",
         "You walk east, towards the forest.": "Je wandelt naar het oosten, richting het bos.",
         "You follow the road, towards the entrance of the mine.": "Je loopt van de weg af, richting de ingang van de mijn.",
         "You walk towards the mill.": "Je loopt verder, naar de molen.",
@@ -116,7 +120,9 @@
         "A bit farther on the road you see a {b}mine{/b}.": "Verder op het pad zie je een {b}mijn{/b}.",
         "A bit higher up the hill is a {b}windmill{/b}.": "Iets hoger op de heuvel staat een {b}molen{/b}.",
         "There is a road to the {b}forest{/b} to the {b}east{/b}.": "Naar het {b}oosten{/b} loopt het pad naar het {b}bos{/b}.",
-        "To the {b}south{/b}, there is a soggy path going into a {b}swamp{/b}.": "Naar het {b}zuiden{/b} loopt een drassig pad een {b}moeras{/b} in."
+        "To the {b}south{/b}, there is a soggy path going into a {b}swamp{/b}.": "Naar het {b}zuiden{/b} loopt een drassig pad een {b}moeras{/b} in.",
+        "You want to go into the {b}swamp{/b}, but the wheels of the carriage would get stuck in the soggy underground.": "Je wilt richting het {b}moeras{/b} gaan, maar de wielen van de wagen zullen vast komen te zitten in de drassige ondergrond.",
+        "You turn around.": "Je keert weer om."
       },
       "interactions": {
         "Follow the path to the mine": "Volg het pad naar de mijn",
@@ -146,12 +152,15 @@
       }
     },
     "mill": {
-      "text": {
+      "descriptionText": {
+        "An empty {b}carriage{/b} is parked on the other side of the mill.": "Een lege {b}wagen{/b} staat naast de andere kant van de molen.",
         "You are at the windmill.": "Je bent bij de molen.",
         "The mill misses a {b}sail{/b} of one of its blades.": "De molen mist het {b}doek{/b} op een van de wieken.",
-        "A big {b}millstone{/b} lies next to the mill.": "Een {b}molensteen{/b} ligt naast de molen.",
-        "An empty {b}carriage{/b} is parked on the other side of the mill.": "Een lege {b}wagen{/b} staat naast de andere kant van de molen.",
+        "A big {b}millstone{/b} lies next to the mill.": "Een {b}molensteen{/b} ligt naast de molen."
+      },
+      "text": {
         "An old miller appears to be working on restoring the blade.": "Een oude molenaar is aan het werk om de wieken te repareren.",
+        "You unhitch the carriage from {b}[characters.horse.name]{/b}.": "Je spant de wagen af van {b}[characters.horse.name]{/b}.",
         "You check the millstone. It looks really {b}heavy{/b}.": "Je bekijkt de molensteen naast de molen. Het ziet er uit als een {b}zware{/b} steen."
       },
       "miller": {
@@ -165,6 +174,7 @@
       },
       "interactions": {
         "Talk to the miller": "Praat met de molenaar",
+        "Bring carriage back": "Breng de wagen terug",
         "Check millstone": "Bekijk molensteen naast de molen",
         "Walk back to the road": "Loop terug naar de weg"
       }
@@ -200,18 +210,20 @@
     "farm": {
       "descriptionText": {
         "Together with {b}[characters.horse.name]{/b}, you walk back to the road.": "Samen met {b}[characters.horse.name]{/b} loop je terug naar de weg.",
-        "You walk back to the road.": "Je loopt terug naar de weg."
+        "You walk back to the road.": "Je loopt terug naar de weg.",
+        "Next to the farm lies a pile of {b}grain{/b}.": "Naast de boerderij ligt een voorraad {b}graan{/b}.",
+        "You are at a large farm.": "Je bent bij een grote boerderij.",
+        "Big plumes of smoke rise up from the other side of the farm.": "Grote rookpluimen komen van achter de boerderij vandaan."
       },
       "text": {
-        "You are at a large farm.": "Je bent bij een grote boerderij.",
-        "Next to the farm lies a pile of {b}grain{/b}.": "Naast de boerderij ligt een voorraad {b}graan{/b}.",
-        "Big plumes of smoke rise up from the other side of the farm.": "Grote rookpluimen komen van achter de boerderij vandaan.",
         "You quickly walk to the other side of the farm.": "Je loopt snel om de boerderij heen om te gaan kijken.",
         "There was clearly a fire here, but the flames have been extinguished.": "Er is duidelijk een brand geweest. De vlammen zijn wel al gedoofd.",
         "A farmer looks defeated at the smoldering remains...": "De boer staat verslagen naar de smeulende restanten te kijken...",
         "{b}[characters.horse.name]{/b} is in his stable.": "{b}[characters.horse.name]{/b} staat in de stal.",
         "The stable is {b}empty{/b}.": "De stal is {b}leeg{/b}.",
         "A {b}rope{/b} is hanging on the side of the stable.": "Er hangt een lang stuk {b}touw{/b} aan de zijkant van de stal.",
+        "You want to return [characters.horse.name] to his stable, but the carriage is still attached.": "Je wil [characters.horse.name] terugbrengen naar zijn stal, maar de wagen is nog aangekoppeld.",
+        "Maybe return the carriage first?": "Misschien zou je de wagen eerst terug moeten brengen?",
         "You bring [characters.horse.name] to his stable.": "Je brengt [characters.horse.name] naar zijn stal.",
         "You lead [characters.horse.name] out of the stable.": "Je haalt [characters.horse.name] uit zijn stal.",
         "You pickup the rope": "Je pakt het touw."
@@ -340,11 +352,13 @@
         "A big piece of {b}white cloth, with red dots{/b} lies near the waterfront.": "Langs de waterkant ligt een {b}groot stuk witte stof, met rode stippen{/b}.",
         "In the corner of your eye, along the water, you see a {b}horse{/b} drinking.": "In je ooghoek langs het water, zie je een {b}paard{/b} drinken.",
         "In the corner of your eye, along the water, you see {b}[characters.horse.name]{/b} drinking.": "In je ooghoek langs het water, zie je {b}[characters.horse.name]{/b} water drinken.",
+        "The horse approaches you enthusiastically, and pulls the carriage with him.": "Het paard komt enthousiast op je afgelopen en trekt de wagen met zich mee.",
         "The horse approaches you enthusiastically.": "Het paard komt enthousiast op je afgelopen.",
         "{b}[characters.horse.name]{/b} is now following you!": "{b}[characters.horse.name]{/b} volgt je nu!",
         "You carefully approach the horse.": "Je probeert het paard voorzichtig te benaderen.",
         "The horse stays calm, and walks along with you.": "Het paard blijft rustig, en loopt met je mee.",
         "You notice that the horse is limping a bit.": "Het valt je op dat hij wel erg lastig loopt.",
+        "You want to bring {b}[characters.horse.name]{/b} to the waterfront, luckily the slope is gentle so the carriage can follow along.": "Je wilt {b}[characters.horse.name]{/b} naar de waterkant brengen. Gelukkig is de helling vlak genoeg dat de wagen mee kan.",
         "You bring {b}[characters.horse.name]{/b} to the waterfront to let him drink.": "Je brengt {b}[characters.horse.name]{/b} naar de waterkant om hem te laten drinken.",
         "You slowly climb down to the waterfront.": "Je klimt langzaam naar beneden naar de waterkant.",
         "When you reach the edge of the water, you grab the big piece of cloth.": "Wanneer je beneden bent, pak je het grote stuk stof op.",
@@ -545,10 +559,15 @@
         "Hey hello there!": "Hee, hallo daar!",
         "I no longer have a horse, just a carriage.": "Ik heb geen paard meer, alleen een wagen.",
         "If I need a horse, I borrow [characters.horse.defaultName] from farmer {b}[characters.farmer.defaultName]{/b}.": "Als ik een paard nodig heb, dan leen ik [characters.horse.defaultName] af en toe bij boer {b}[characters.farmer.defaultName]{/b}.",
-        "It is a really dependable animal. Ideal for pulling the carriage!": "Dat is een heel goed en trouw beestje. Ideaal om een wagen te trekken!",
+        "It is a really dependable animal. Ideal for pulling the {b}carriage{/b}!": "Dat is een heel goed en trouw beestje. Ideaal om een {b}wagen{/b} te trekken!",
         "Sorry kid{#male/}, I wouldn't know.": "Sorry jongen, dat zou ik echt niet weten.",
         "Sorry kid{#female/}, I wouldn't know.": "Sorry dame, dat zou ik echt niet weten.",
         "I need a new sail for one of the blades.": "Er moet een nieuw doek op een van de wieken komen.",
+        "Well let's see if this works!": "Eens kijken of het werkt!",
+        "Well done!": "Goed gedaan!",
+        "Sure, no problem! Thanks for fixing the mill with me.": "Zeker, geen enkel probleem! Nogmaals bedankt voor het helpen met de reparatie van de molen.",
+        "Be aware, with {b}[characters.horse.name]{/b} hitched to the carriage you cannot ride him.": "Bedenk wel, met {b}[characters.horse.name]{/b} aan de wagen gespannen kun je niet op hem rijden.",
+        "Sorry I rather not. I could need it to get my repairs done.": "Sorry, liever niet. Misschien heb ik hem nodig voor de reparaties aan de molen.",
         "Its just the latest gossip as of late.": "Het is gewoon de laatste onzin waar men over kletst tegenwoordig.",
         "Don't make too much of it. I guess you heard if of those {b}smiths in the village{/b} right?": "Geloof er maar niets van hoor. Zeker van de {b}smeden in het dorp{/b} gehoord?",
         "I think they believe everything. A treasure route that starts at the {b}river{/b}?": "Volgens mij geloven zij alles. Een schatroute die begint bij de {b}rivier{/b}?",
@@ -560,6 +579,8 @@
         "Any idea how I could get any transportation?": "Weet u hoe ik aan vervoer kan komen?",
         "Any idea how I could get any medicine?": "Weet u hoe ik aan medicijnen kan komen?",
         "What did you need again for the repairs?": "Wat was er ook alweer nodig om de molen te maken?",
+        "I have some fabric that could be used": "Ik heb wat stof dat je zou kunnen gebruiken",
+        "Could I borrow your carriage?": "Zou ik je wagen kunnen lenen?",
         "Did you also hear that there is a treasure hidden somewhere?": "Heb jij ook gehoord dat er een schat ergens verborgen is?",
         "Can I have the millstone?": "Zou ik de molensteen mogen hebben?",
         "Goodbye": "Tot ziens"
@@ -569,11 +590,19 @@
         "Any idea how I could get any medicine?": "Weet u hoe ik aan medicijnen kan komen?",
         "What did you need again for the repairs?": "Wat was er ook alweer nodig om de molen te maken?",
         "Ah ok, thanks.": "Oké, bedankt.",
+        "I have some fabric that could be used.": "Ik heb wat stof dat je zou kunnen gebruiken.",
+        "Could I borrow your carriage?": "Zou ik je wagen kunnen lenen?",
         "Did you also hear that there is a treasure hidden somewhere?": "Heb jij ook gehoord dat er een schat ergens verborgen is?",
         "Can I have the millstone?": "Zou ik de molensteen mogen hebben?"
       },
       "text": {
         "The old miller looks at you.": "De oude molenaar kijkt je aan.",
+        "Together with the {b}miller{/b} you climb onto the blades of the windmill.": "Samen met de {b}molenaar{/b} klim je op de wieken van de molen.",
+        "After some pulling and knotting the {b}underpants{/b} are fitting nicely onto the blade.": "Na wat trekken en knopen past de {b}onderbroek{/b} mooi over de wiek.",
+        "You both climb back down.": "Samen klim je weer naar beneden.",
+        "The miller turns the windmill towards the wind.": "De molenaar draait de molen richting de wind.",
+        "Slowly but surely the blades start to turn.": "Langzaam maar zeker beginnen de wieken te draaien.",
+        "Together you hitch the carriage of the {b}miller{/b} behind {b}[characters.horse.name]{/b}.": "Samen spannen jullie de wagen van de {b}molenaar{/b} achter {b}[characters.horse.name]{/b}.",
         "You find this very interesting, and make a note of it.": "Je vindt het erg interessant, en maakt er een aantekening van."
       }
     },
@@ -780,7 +809,8 @@
         "You put the {b}necklace{/b} and {b}15 coins{/b} in your bag.": "Je stopt de {b}halsketting{/b} en {b}15 geldstukken{/b} in je tas."
       },
       "descriptionText": {
-        "{i}<Ting, Ting, Ting>{/i}": "{i}<Ting, Ting, Ting>{/i}"
+        "{i}<Ting, Ting, Ting>{#horseshoe/}{/i}": "{i}<Ting, Ting, Ting>{#horseshoe/}{/i}",
+        "{i}<Ting, Ting, Ting>{#jewelry/}{/i}": "{i}<Ting, Ting, Ting>{#jewelry/}{/i}"
       }
     },
     "witchConversation": {

@@ -142,7 +142,7 @@ g.defineOverlay(
           "{b}[characters.farrier.name]{/b} starts to work.",
           "{b}[characters.horse.name]{/b} doesn't mind all the fumbling with his feet."
         );
-        g.descriptionText("{i}<Ting, Ting, Ting>{/i}");
+        g.descriptionText("{i}<Ting, Ting, Ting>{#horseshoe/}{/i}");
         g.text(
           "After a while the farrier is finished, and {b}[characters.horse.name]{/b} received new horseshoes."
         );
@@ -163,7 +163,7 @@ g.defineOverlay(
 
         g.text("{b}[characters.goldsmith.name]{/b} starts to work.");
         // TODO: Add color
-        g.descriptionText("{i}<Ting, Ting, Ting>{/i}");
+        g.descriptionText("{i}<Ting, Ting, Ting>{#jewelry/}{/i}");
 
         g.text(
           "After a while, {b}[characters.goldsmith.name]{/b} is finished.",
