@@ -1,4 +1,5 @@
 import { default as world } from "./game";
+import "./prolog";
 import "./locations/";
 import "./conversations/";
 import "./overlays/";

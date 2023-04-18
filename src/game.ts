@@ -77,7 +77,7 @@ const game = world<GameState>({
     defaultTextColor: palette.color("default"),
   },
   initialState: {
-    currentLocation: "forest",
+    currentLocation: "home",
     characters: {
       player: {
         flags: {

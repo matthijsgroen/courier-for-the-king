@@ -5,6 +5,7 @@ export type GameState = GameDefinition<
   {
     version: 1;
     locations: {
+      home: { states: "home" };
       forest: { flags: "visited" };
       farmland: { flags: "visited" };
       farm: { flags: "visited" };
@@ -90,6 +91,7 @@ export type GameState = GameDefinition<
       treasureNotes: {};
       ingredientList: {};
       plants: {};
+      gameIntro: { states: "name" };
     };
     lists: {
       inventory:
