@@ -153,6 +153,8 @@
     },
     "mill": {
       "descriptionText": {
+        "A {b}carriage{/b} containing {b}grain{/b} is parked on the other side of the mill.": "Een {b}wagen{/b} met {b}graan{/b} staat aan de andere kant van de molen.",
+        "A {b}carriage{/b} containing {b}flour{/b} is parked on the other side of the mill.": "Een {b}wagen{/b} met {b}meel{/b} staat aan de andere kant van de molen.",
         "An empty {b}carriage{/b} is parked on the other side of the mill.": "Een lege {b}wagen{/b} staat naast de andere kant van de molen.",
         "You are at the windmill.": "Je bent bij de molen.",
         "The mill misses a {b}sail{/b} of one of its blades.": "De molen mist het {b}doek{/b} op een van de wieken.",
@@ -160,17 +162,20 @@
       },
       "text": {
         "An old miller appears to be working on restoring the blade.": "Een oude molenaar is aan het werk om de wieken te repareren.",
-        "You unhitch the carriage from {b}[characters.horse.name]{/b}.": "Je spant de wagen af van {b}[characters.horse.name]{/b}.",
+        "Together with {b}[characters.miller.name]{/b}, you unhitch the carriage from {b}[characters.horse.name]{/b}.": "Samen met {b}[characters.miller.name]{/b}, span je de wagen af van {b}[characters.horse.name]{/b}.",
         "You check the millstone. It looks really {b}heavy{/b}.": "Je bekijkt de molensteen naast de molen. Het ziet er uit als een {b}zware{/b} steen."
       },
       "miller": {
         "Hey hello over there! Could you help me out?": "Hee, hallo daar! Zou je me kunnen helpen?",
         "This old mill needs fixin', but I'm missing a sail!": "Deze oude molen moet gerepareerd worden. Maar ik heb geen goed doek!'",
         "Thanks!": "Bedankt!",
+        "No problem.": "Geen probleem.",
+        "Don't forget you have bags of {b}grain{/b} still lying on the carriage.": "Niet vergeten dat je nog zakken met {b}graan{/b} op de wagen hebt liggen.",
         "Ah yes, that is an old one, really worn out.": "Ach, dat is een oudje, helemaal versleten"
       },
       "player": {
-        "I'll keep my eyes open for something that could fit your needs!": "Ik zal mijn ogen openhouden of ik iets tegenkom voor u!"
+        "I'll keep my eyes open for something that could fit your needs!": "Ik zal mijn ogen openhouden of ik iets tegenkom voor u!",
+        "Thanks for borrowing.": "Bedankt voor het lenen."
       },
       "interactions": {
         "Talk to the miller": "Praat met de molenaar",
@@ -568,6 +573,10 @@
         "Sure, no problem! Thanks for fixing the mill with me.": "Zeker, geen enkel probleem! Nogmaals bedankt voor het helpen met de reparatie van de molen.",
         "Be aware, with {b}[characters.horse.name]{/b} hitched to the carriage you cannot ride him.": "Bedenk wel, met {b}[characters.horse.name]{/b} aan de wagen gespannen kun je niet op hem rijden.",
         "Sorry I rather not. I could need it to get my repairs done.": "Sorry, liever niet. Misschien heb ik hem nodig voor de reparaties aan de molen.",
+        "Sure! Thanks to you the mill is working again!": "Tuurlijk! Dankzij jou werkt de molen tenslotte weer!",
+        "This would be a nice way to test if everything works!": "Dit is een mooie manier om te testen of alles werkt!",
+        "Nice! The mill is fully functional again! This is really nice {b}flour{/b}.": "Geweldig! De molen is weer volledig functioneel! Dit is wel echt fijn {b}meel{/b}.",
+        "I think the {b}baker{/b} in the village will pay good money for this.": "Ik denk dat de {b}bakker{/b} in het dorp hier goed geld voor wil betalen.",
         "Its just the latest gossip as of late.": "Het is gewoon de laatste onzin waar men over kletst tegenwoordig.",
         "Don't make too much of it. I guess you heard if of those {b}smiths in the village{/b} right?": "Geloof er maar niets van hoor. Zeker van de {b}smeden in het dorp{/b} gehoord?",
         "I think they believe everything. A treasure route that starts at the {b}river{/b}?": "Volgens mij geloven zij alles. Een schatroute die begint bij de {b}rivier{/b}?",
@@ -581,6 +590,7 @@
         "What did you need again for the repairs?": "Wat was er ook alweer nodig om de molen te maken?",
         "I have some fabric that could be used": "Ik heb wat stof dat je zou kunnen gebruiken",
         "Could I borrow your carriage?": "Zou ik je wagen kunnen lenen?",
+        "Could you grind this grain for me?": "Zou je dit graan voor me kunnen malen?",
         "Did you also hear that there is a treasure hidden somewhere?": "Heb jij ook gehoord dat er een schat ergens verborgen is?",
         "Can I have the millstone?": "Zou ik de molensteen mogen hebben?",
         "Goodbye": "Tot ziens"
@@ -592,6 +602,8 @@
         "Ah ok, thanks.": "Oké, bedankt.",
         "I have some fabric that could be used.": "Ik heb wat stof dat je zou kunnen gebruiken.",
         "Could I borrow your carriage?": "Zou ik je wagen kunnen lenen?",
+        "Hello, I got some grain from farmer {b}[characters.farmer.name]{/b}.": "Hallo, ik heb wat graan gekregen van boer {b}[characters.farmer.name]{/b}.",
+        "Could you {b}grind{/b} it to {b}flour{/b}?": "Zou je het kunnen {b}malen{/b} tot {b}meel{/b}?",
         "Did you also hear that there is a treasure hidden somewhere?": "Heb jij ook gehoord dat er een schat ergens verborgen is?",
         "Can I have the millstone?": "Zou ik de molensteen mogen hebben?"
       },
@@ -603,6 +615,9 @@
         "The miller turns the windmill towards the wind.": "De molenaar draait de molen richting de wind.",
         "Slowly but surely the blades start to turn.": "Langzaam maar zeker beginnen de wieken te draaien.",
         "Together you hitch the carriage of the {b}miller{/b} behind {b}[characters.horse.name]{/b}.": "Samen spannen jullie de wagen van de {b}molenaar{/b} achter {b}[characters.horse.name]{/b}.",
+        "Together you get the grain from the carriage and attach a millstone to the grain supply.": "Samen halen jullie het graan van de wagen en sluiten de molensteen aan op de graan toevoer.",
+        "After a few turns, fine {b}flour{/b} starts pouring out.": "Na een paar slagen komt er al mooi {b}meel{/b} uit stromen.",
+        "Together you put bags of {b}flour{/b} on the carriage.": "Samen zetten jullie de zakken {b}meel{/b} op de wagen.",
         "You find this very interesting, and make a note of it.": "Je vindt het erg interessant, en maakt er een aantekening van."
       }
     },
@@ -614,6 +629,8 @@
         "Can I help find your horse?": "Hoe zou ik uw paard kunnen vinden?",
         "I found [characters.horse.name]!": "Ik heb [characters.horse.name] teruggevonden!",
         "Did you also hear that there is a treasure hidden somewhere?": "Heb jij ook gehoord dat er een schat ergens verborgen is?",
+        "Could I get some of your grain?": "Zou ik wat graan mogen hebben?",
+        "Hmm I don't have a {b}carriage{/b}.": "Hmm, ik heb geen {b}wagen{/b}.",
         "What could you tell me about the monster in the woods?": "Wat zou je me kunnen vertellen over het monster in het woud?"
       },
       "farmer": {
@@ -628,6 +645,10 @@
         "Drinking water calms him, maybe he is at the {b}river{/b}?": "Van water drinken wordt {b}[characters.horse.name]{/b} rustig, misschien is hij bij de {b}rivier{/b}?",
         "Fantastic!": "Fantastisch!",
         "Hi sweet [characters.horse.name], are you ok?": "Hoi lieve [characters.horse.name], gaat het een beetje?",
+        "Thank you for taking care of {b}[characters.horse.name]{/b}.": "Dank je voor het zorgen voor {b}[characters.horse.name]{/b}.",
+        "I wish I could give something in return!": "Ik wou dat ik je iets terug kon geven!",
+        "Too bad I can't give you any of my {b}delicious apples{/b}, but if you want, I can give you some of my {b}grain{/b}.": "Zonde dat ik je niet mijn {b}heerlijke appels{/b} kan geven, maar als je wilt, kan ik je wel wat van mijn {b}graan{/b} geven.",
+        "Also, if you want to borrow {b}[characters.horse.name]{/b} or any other {b}items{/b} from my farm, go ahead.": "Trouwens, als je {b}[characters.horse.name]{/b} of andere {b}voorwerpen{/b} van mij wilt lenen, ga gerust je gang.",
         "Hey boy, are you hurt?": "Hee, heb je pijn, jongen?",
         "Ah, I see! There is a horseshoe missing!": "Ik zie het al, er mist een hoefijzer!",
         "[characters.horse.name] can't work on the land this way, or pull {b}a cart{/b}.": "Zo kan [characters.horse.name] niet op het land werken, of {b}een wagen{/b} trekken.",
@@ -635,6 +656,7 @@
         "Haha sure! But you should not believe all that rubbish!": "Haha zeker, maar geloof er maar niets van hoor! Het is allemaal onzin!",
         "Someone told me once you had to walk a certain route: {i}NNWNNES{/i}": "Iemand vertelde mij ooit dat je een route moest lopen: {i}NNWNNOZ{/i}",
         "No idea what that is supposed to mean.": "Geen idee wat dat betekent.",
+        "Sure, no problem, if you have a carriage, I could help load some in.": "Tuurlijk, geen probleem, als je een wagen hebt, dan help ik he met opladen",
         "It's a big firebreathin' monsta'! Yeah that's it! My entire apple harvest is destoyed! Those flames are so hot, yes they are.": "Het is een flink vuurspuwend monster! Zekersteweten wel! de hele appel oogst is naar de knoppen! Die vlammen zijn zo heet, ongelofelijk.",
         "There is no {b}armor{/b} in existence that could protect you from it! Its better to be licht on your feet so that you can run!": "I weet zeker dat er geen {b}harnas{/b} bestaat die je daar tegen zou kunnen beschermen! Kan je maar beter vlot zijn zodat je weg kan duiken of rennen!"
       },
@@ -646,6 +668,7 @@
         "The farmer is petting [characters.horse.name].": "De boer staat [characters.horse.name] te aaien.",
         "Farmer [characters.farmer.name] inspects the legs of [characters.horse.name].": "Boer [characters.farmer.name] inspecteert de benen van [characters.horse.name].",
         "You find this very interesting, and make a note of it.": "Je vindt het erg interessant, en maakt er een aantekening van.",
+        "Together you put some bags of {b}grain{/b} on the {b}carriage{/b}.": "Samen tillen jullie een paar zakken {b}graan{/b} op de {b}wagen{/b}.",
         "Hmm... buying an {b}armor{/b} would not help in this case.": "Hmmm... een {b}harnas{/b} kopen zou hier niet gaan helpen."
       },
       "interactions": {
@@ -653,6 +676,7 @@
         "Can I help find your horse?": "Hoe zou ik uw paard kunnen vinden?",
         "I found [characters.horse.name]!": "Ik heb [characters.horse.name] teruggevonden!",
         "Did you also hear that there is a treasure hidden somewhere?": "Heb jij ook gehoord dat er een schat ergens verborgen is?",
+        "Could I get some of your grain?": "Zou ik wat graan mogen hebben?",
         "What could you tell me about the monster?": "Wat zou je me over het monster kunnen vertellen?",
         "Goodbye": "Zeg gedag"
       }
@@ -668,6 +692,9 @@
         "Could you tell me more about that monster?": "Kunt u me meer vertellen over het monster?",
         "Do you sell any medicine?": "Zijn hier ook medicijnen te koop?",
         "Have you heard something about a treasure nearby?": "Heb jij iets gehoord over een schat in de buurt?",
+        "I brought you some grain.": "Ik heb wat graan meegebracht.",
+        "I brought you some flour.": "Ik heb wat meel meegebracht.",
+        "That is way too much!": "Dat is veel te veel!",
         "Hello? Can I buy something to eat?": "Hallo? Kan ik iets te eten kopen?",
         "I would like to buy some cookies.": "Ik wil graag wat koeken kopen.",
         "Here you go, 2 coins.": "Alsjeblieft, 2 geldstukken.",
@@ -684,6 +711,8 @@
         "The baker has trouble not to start crying.": "De bakker heeft moeite om niet in huilen uit te barsten.",
         "{b}[characters.baker.name]{/b} turns red.": "{b}[characters.baker.name]{/b} krijgt een beetje een rood hoofd.",
         "You find this very interesting, and make a note of it.": "Je vindt het erg interessant, en maakt er een aantekening van.",
+        "The baker sighs and starts staring in the distance...": "De bakker zucht en gaat weer voor zich uit staren...",
+        "The baker gives you 100 coins.": "De bakker geeft je 100 geldstukken.",
         "The baker suddenly realizes that there is someone in his store.": "De bakker heeft ineens door dat er iemand in zijn winkel staat.",
         "The baker gives a few delicious cookies.": "De bakker geeft je een paar heerlijke koeken."
       },
@@ -693,6 +722,8 @@
         "Could you tell me more about that monster?": "Vertel me nog eens over het monster?",
         "Do you know where I could get any medicine?": "Zijn hier ook medicijnen te koop?",
         "Have you heard something about a treasure nearby?": "Heb jij iets gehoord over een schat in de buurt?",
+        "I brought you some grain": "Ik heb wat graan meegebracht",
+        "I brought you some flour": "Ik heb wat meel meegebracht",
         "Hello, can I buy something to eat?": "Hallo? Kan ik iets te eten kopen?",
         "I would like to buy some cookies": "Ik wil graag koeken kopen",
         "Here you go, 2 coins": "Alstublieft, 2 geldstukken",
@@ -729,6 +760,9 @@
         "that had some kind of {b}Moonstone{/b} hidden beneath it.": "En dat er onder die plant een {b}Maansteen{/b} verborgen ligt.",
         "And when it starts to glow, that you need to walk a special route.": "En wanneer die gloeit dan moet je een speciale route lopen.",
         "The plant is said to have {b}diamond-shaped leaves{/b}.": "Het schijnt dat de plant {b}ruit vormige bladeren{/b} heeft.",
+        "Really? {i}Aww{/i}, with only grain I can't do much. Would you be able to {b}grind{/b} it to flour?": "Echt? {i}Ai{/i}, met alleen maar graan kan ik niet veel. Zou je het kunnen {b}malen{/b} tot meel?",
+        "Really? Thank you! This wont bring back my {b}[characters.daughter.name]{/b}, but now at least I could bake something as a distraction.": "Echt? Dank je! Dit brengt mijn {b}[characters.daughter.name]{/b} niet terug, maar nu kan ik tenminste iets bakken ter afleiding.",
+        "Why? Money is of no use to me if I can't even save my own daughter?": "Waarom? Geld heb ik niets aan als ik mijn eigen dochter niet eens kan redden?",
         "Oh sorry, I didn't see you there.": "Oh sorry, ik had je even niet in de gaten.",
         "We do have some {b}cookies{/b} for sale.": "We hebben nog wel wat {b}koeken{/b} te koop.",
         "The price is {b}2 coins{/b}.": "Ze kosten {b}2 geldstukken{/b}.",

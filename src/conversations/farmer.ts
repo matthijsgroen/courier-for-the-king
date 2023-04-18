@@ -74,11 +74,15 @@ g.defineOverlay(
         g.onState(
           g.character("horse").hasFlag("hooves"),
           () => {
-            // g.character("farmer").say(
-            //   "Ik wou dat ik je kon bedanken. Helaas kan ik geen appels geven.",
-            //   "Maar als je intresse hebt in wat graan, dan geef ik het graag.",
-            //   "Als je Teun of andere spullen wilt lenen om je te helpen, ga je vooral je gang."
-            // );
+            g.character("farmer").say(
+              "Thank you for taking care of {b}[characters.horse.name]{/b}.",
+              "I wish I could give something in return!",
+              "Too bad I can't give you any of my {b}delicious apples{/b}, but if you want, I can give you some of my {b}grain{/b}."
+            );
+            g.character("farmer").say(
+              "Also, if you want to borrow {b}[characters.horse.name]{/b} or any other {b}items{/b} from my farm, go ahead."
+            );
+            g.item("grain").setState("access");
           },
           () => {
             g.character("farmer").say("Hey boy, are you hurt?");
@@ -112,6 +116,29 @@ g.defineOverlay(
         g.item("treasureNotes").setState("possession");
         g.list("inventory").addUnique("treasureNotes");
         g.item("treasureNotes").setFlag("route");
+      }
+    );
+
+    interaction(
+      "Could I get some of your grain?",
+      g.item("grain").hasState("access"),
+      () => {
+        g.character("player").say("Could I get some of your grain?");
+        g.character("farmer").say(
+          "Sure, no problem, if you have a carriage, I could help load some in."
+        );
+        g.onState(
+          g.character("horse").hasFlag("cart"),
+          () => {
+            g.text(
+              "Together you put some bags of {b}grain{/b} on the {b}carriage{/b}."
+            );
+            g.item("grain").setState("cart");
+          },
+          () => {
+            g.character("player").say("Hmm I don't have a {b}carriage{/b}.");
+          }
+        );
       }
     );
 

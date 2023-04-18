@@ -153,6 +153,47 @@ g.defineOverlay(
     );
 
     interaction(
+      "I brought you some grain",
+      g.and(
+        hasState("visiting"),
+        g.character("horse").hasState("following"),
+        g.character("horse").hasFlag("cart"),
+        g.item("grain").hasState("cart")
+      ),
+      () => {
+        g.character("player").say("I brought you some grain.");
+        g.character("baker").say(
+          "Really? {i}Aww{/i}, with only grain I can't do much. Would you be able to {b}grind{/b} it to flour?"
+        );
+        g.text("The baker sighs and starts staring in the distance...");
+      }
+    );
+
+    interaction(
+      "I brought you some flour",
+      g.and(
+        hasState("visiting"),
+        g.character("horse").hasState("following"),
+        g.character("horse").hasFlag("cart"),
+        g.item("grain").hasState("flour")
+      ),
+      () => {
+        g.character("player").say("I brought you some flour.");
+        g.character("baker").say(
+          "Really? Thank you! This wont bring back my {b}[characters.daughter.name]{/b}, but now at least I could bake something as a distraction."
+        );
+        g.text("The baker gives you 100 coins.");
+        g.character("player").increaseCounter("coins", 100);
+        g.character("player").say("That is way too much!");
+        g.character("baker").say(
+          "Why? Money is of no use to me if I can't even save my own daughter?"
+        );
+        g.text("The baker sighs and starts staring in the distance...");
+        g.item("grain").setState("delivered");
+      }
+    );
+
+    interaction(
       "Hello, can I buy something to eat?",
       g.and(hasState("visiting"), g.item("cookies").hasState("unknown")),
       () => {

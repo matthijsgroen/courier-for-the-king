@@ -102,20 +102,40 @@ g.defineOverlay(
             );
           }
         );
+      }
+    );
 
-        //  TODO
-        // "*c9", "Tjasker: 'Mwa, liever niet. Misschien heb ik hem nog nodig voor de reparaties van de molen.'", "&4=0"
+    interaction(
+      "Could you grind this grain for me?",
+      g.and(
+        g.item("grain").hasState("cart"),
+        g.or(
+          g.character("horse").hasState("following"),
+          g.not(g.character("horse").hasFlag("cart"))
+        )
+      ),
+      () => {
+        g.character("player").say(
+          "Hello, I got some grain from farmer {b}[characters.farmer.name]{/b}.",
+          "Could you {b}grind{/b} it to {b}flour{/b}?"
+        );
+        g.character("miller").say(
+          "Sure! Thanks to you the mill is working again!",
+          "This would be a nice way to test if everything works!"
+        );
 
-        // "1=14;14=2;2=0;4=5", "*c3", "$n: 'Zou ik de wagen mogen lenen?'", ""
-        // "*c9", "Tjasker: 'Ja hoor, geen probleem! bedankt nog voor het helpen repareren van mijn molen!'", "", "*c2", "&"
+        g.text(
+          "Together you get the grain from the carriage and attach a millstone to the grain supply.",
+          "After a few turns, fine {b}flour{/b} starts pouring out."
+        );
 
-        // "1=14;14=2;2=0;4=5;33!1;33!2;44!2", "Samen spannen jullie de wagen van de molenaar achter Teun.", "&"
-        // "1=14;14=2;2=0;4=5;33=1","Samen spannen jullie de wagen vol graan achter Teun.", "&"
-        // "1=14;14=2;2=0;4=5;33=2","Samen spannen jullie de wagen vol meel achter Teun.", "&"
-        // "1=14;14=2;2=0;4=5;44=2","Samen spannen jullie de wagen met de molensteen achter Teun.", "&"
+        g.character("miller").say(
+          "Nice! The mill is fully functional again! This is really nice {b}flour{/b}.",
+          "I think the {b}baker{/b} in the village will pay good money for this."
+        );
 
-        // "1=14;14=2;2=0;4=5","", "*c9", "Tjasker: 'Bedenk wel, met de wagen achter Teun dan kun je hem niet berijden.'"
-        // "&4=0;29=4"
+        g.text("Together you put bags of {b}flour{/b} on the carriage.");
+        g.item("grain").setState("flour");
       }
     );
 

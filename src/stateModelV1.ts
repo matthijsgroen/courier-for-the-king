@@ -26,7 +26,7 @@ export type GameState = GameDefinition<
       pickaxe: { states: "broken" | "fixed" | "given" };
       rope: { states: "possession" };
       millstone: { states: "seen" };
-      grain: { states: "cart" | "flour" | "delivered" };
+      grain: { states: "access" | "cart" | "flour" | "delivered" };
       fabric: { states: "possession" | "used" };
       medicine: { flags: "recipe" };
       cookies: { states: "price" | "possession" | "given" };

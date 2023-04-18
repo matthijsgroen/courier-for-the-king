@@ -9,8 +9,28 @@ g.defineLocation("mill", ({ describe, onLeave, interaction }) => {
     );
     g.descriptionText("A big {b}millstone{/b} lies next to the mill.");
     g.onState(g.not(g.character("horse").hasFlag("cart")), () => {
-      g.descriptionText(
-        "An empty {b}carriage{/b} is parked on the other side of the mill."
+      g.onState(
+        g.item("grain").hasState("cart"),
+        () => {
+          g.descriptionText(
+            "A {b}carriage{/b} containing {b}grain{/b} is parked on the other side of the mill."
+          );
+        },
+        () => {
+          g.onState(
+            g.item("grain").hasState("flour"),
+            () => {
+              g.descriptionText(
+                "A {b}carriage{/b} containing {b}flour{/b} is parked on the other side of the mill."
+              );
+            },
+            () => {
+              g.descriptionText(
+                "An empty {b}carriage{/b} is parked on the other side of the mill."
+              );
+            }
+          );
+        }
       );
     });
     g.descriptionText("");
@@ -41,8 +61,17 @@ g.defineLocation("mill", ({ describe, onLeave, interaction }) => {
       g.character("horse").hasState("following")
     ),
     () => {
-      g.text("You unhitch the carriage from {b}[characters.horse.name]{/b}.");
+      g.text(
+        "Together with {b}[characters.miller.name]{/b}, you unhitch the carriage from {b}[characters.horse.name]{/b}."
+      );
       g.character("horse").clearFlag("cart");
+      g.character("player").say("Thanks for borrowing.");
+      g.character("miller").say("No problem.");
+      g.onState(g.item("grain").hasState("cart"), () => {
+        g.character("miller").say(
+          "Don't forget you have bags of {b}grain{/b} still lying on the carriage."
+        );
+      });
     }
   );
 

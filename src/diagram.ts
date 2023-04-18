@@ -208,27 +208,27 @@ g.definePuzzleDependencies<MetaData>({
   },
   putGrainOnCart: {
     dependsOn: ["getCart", "talkToFarmer"],
-    tags: {},
+    tags: { state: "text", languages: ["en", "nl"] },
     hierarchy: ["farm"],
   },
   deliverGrainToMiller: {
     dependsOn: ["putGrainOnCart"],
-    tags: {},
+    tags: { state: "text", languages: ["en", "nl"] },
     hierarchy: ["hills", "mill"],
   },
   getFlourFromMiller: {
     dependsOn: ["deliverGrainToMiller"],
-    tags: {},
+    tags: { state: "text", languages: ["en", "nl"] },
     hierarchy: ["hills", "mill"],
   },
   deliverFlourToBaker: {
     dependsOn: ["getFlourFromMiller"],
-    tags: {},
-    hierarchy: ["farm"],
+    tags: { state: "text", languages: ["en", "nl"] },
+    hierarchy: ["village", "bakery"],
   },
   get100CoinsFromFlour: {
     dependsOn: ["deliverFlourToBaker"],
-    tags: {},
+    tags: { state: "text", languages: ["en", "nl"] },
     hierarchy: ["village", "bakery"],
   },
   buySword: {
