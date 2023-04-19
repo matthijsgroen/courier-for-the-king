@@ -184,6 +184,7 @@ g.defineOverlay(
         );
         g.text("The baker gives you 100 coins.");
         g.character("player").increaseCounter("coins", 100);
+        g.list("inventory").addUnique("coins");
         g.character("player").say("That is way too much!");
         g.character("baker").say(
           "Why? Money is of no use to me if I can't even save my own daughter?"
@@ -233,6 +234,12 @@ g.defineOverlay(
         g.item("cookies").setState("possession");
         g.list("inventory").add("cookies");
         g.character("player").decreaseCounter("coins", 2);
+        g.onState(
+          g.character("player").hasCounter("coins").lessThanEquals(0),
+          () => {
+            g.list("inventory").remove("coins");
+          }
+        );
         setState("visiting");
       }
     );

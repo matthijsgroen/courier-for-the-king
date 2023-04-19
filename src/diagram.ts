@@ -46,6 +46,7 @@ g.definePuzzleDependencies<MetaData>({
     hierarchy: ["home"],
   },
   mainAct: {
+    name: "Main Act",
     type: "chapter",
     dependsOn: ["readLetter"],
     tags: { state: "text" },
@@ -233,12 +234,12 @@ g.definePuzzleDependencies<MetaData>({
   },
   buySword: {
     dependsOn: ["talkToBaker", "get100CoinsFromFlour"],
-    tags: {},
+    tags: { state: "text", languages: ["en", "nl"] },
     hierarchy: ["village", "smithy"],
   },
   talkToSmiths: {
     dependsOn: ["mainAct"],
-    tags: { state: "progress", languages: ["en", "nl"] },
+    tags: { state: "text", languages: ["en", "nl"] },
     hierarchy: ["village", "smithy"],
   },
   getTreasureSubject: {
@@ -287,7 +288,7 @@ g.definePuzzleDependencies<MetaData>({
   },
   talkToFarmer: {
     dependsOn: ["mainAct"],
-    tags: { state: "progress", languages: ["en", "nl"] },
+    tags: { state: "text", languages: ["en", "nl"] },
     hierarchy: ["farm"],
   },
   getRope: {
@@ -300,9 +301,11 @@ g.definePuzzleDependencies<MetaData>({
     tags: { state: "text", languages: ["en", "nl"] },
   },
   theMonster: {
+    name: "The Monster",
     dependsOn: ["buySword", "getInfoAboutMonster"],
-    tags: {},
+    tags: { state: "progress", languages: ["en", "nl"] },
     type: "chapter",
+    hierarchy: ["darkWood"],
   },
   climbTower: {
     dependsOn: ["theMonster"],

@@ -69,8 +69,7 @@
         "Delivering items was her passion and her life.": "Delivering items was her passion and her life."
       },
       "interactions": {
-        "Play as a {b}boy{/b}": "Play as a {b}boy{/b}",
-        "Play as a {b}girl{/b}": "Play as a {b}girl{/b}"
+        "Skip the rest of the intro for now": "Skip the rest of the intro for now"
       }
     },
     "farmland": {
@@ -308,7 +307,10 @@
         "How can we help you?": "Hoe kunnen we je helpen?",
         "No, that is really nonsense.": "Nee, dat is echt onzin.",
         "And who's treasure would that be?": "En van wie zou die schat moeten zijn?",
-        "{i}Hush!{/i}. Don't talk so loud, we have customers in the shop.": "{i}Ssst!{/i}. Niet zo hard praten, we hebben klanten in de winkel."
+        "{i}Hush!{/i}. Don't talk so loud, we have customers in the shop.": "{i}Ssst!{/i}. Niet zo hard praten, we hebben klanten in de winkel.",
+        "Ah yes, that is some fine craftsmanship. I spent quite some time creating that. It's a real bargain!": "Ah ja, dat is echt vakmanschap. Het heeft me redelijk wat tijd gekost om dat te maken. Het is echt een koopje!",
+        "Thanks! Have fun with the sword!": "Dank je! Veel plezier met je zwaard!",
+        "Ok, feel free to look around for something else.": "Ok, misschien zit er iets anders voor je bij."
       },
       "goldsmith": {
         "How can we help you?": "Hoe kunnen we je helpen?",
@@ -327,13 +329,30 @@
       "interactions": {
         "Talk to smiths": "Praat met de smeden",
         "Browse the shop": "Kijk rond in de winkel",
-        "Leave the shop": "Verlaat de smederij"
+        "Leave the shop": "Verlaat de smederij",
+        "Buy a standard sword, for 99 coins": "Koop een standaard zwaard, voor 99 geldstukken",
+        "Buy tin armor, for 249 coins": "Koop een blikken harnas, voor 249 geldstukken",
+        "Buy steel armor, for 1,490 coins": "Koop een stalen harnas, voor 1.490 geldstukken",
+        "Buy a gigantic sword, for 9,999 coins": "Koop een gigantisch zwaard, voor 9.999 geldstukken",
+        "Stop browsing the shop": "Stop met rondkijken"
       },
       "text": {
         "You start browsing the smithy. Everywhere is gear with all kinds of price tags.": "Je kijkt rond in de smederij. Overal staan spullen met een prijskaartje.",
         "You decide to take a closer look.": "Je besluit om ze van dichterbij te bekijken.",
         "In the meantime, the smiths behind the counter are starting a conversation.": "Ondertussen beginnen de smeden achter de toonbank met elkaar te praten.",
-        "They continue to converse in whispers, but you can't understand it anymore.": "Ze praten fluisterend verder, maar daar kan je niet veel van verstaan."
+        "They continue to converse in whispers, but you can't understand it anymore.": "Ze praten fluisterend verder, maar daar kan je niet veel van verstaan.",
+        "You let {b}[characters.armorer.name]{/b} know you are interested in buying {b}the standard sword{/b}.": "Je laat {b}[characters.armorer.name]{/b} weten dat je {b}het standaard zwaard{/b} wilt kopen.",
+        "You look inside your bag, and see you have {b}[characters.player.counters.coins] coins{/b}.": "Je kijkt in je tas, en ziet dat je {b}[characters.player.counters.coins] geldstukken{/b} hebt.",
+        "You put the sword in your bag and start checking the store for other items.": "Je stopt het zwaard in je tas en kijkt rond of er not andere interessante voorwerpen zijn.",
+        "You look inside your bag, and see you only have {b}[characters.player.counters.coins] coin{/b}.": "Je kijkt in je tas, en ziet dat je maar {b}[characters.player.counters.coins] geldstuk{/b} hebt.",
+        "You look inside your bag, and see you only have {b}[characters.player.counters.coins] coins{/b}.": "Je kijkt in je tas, en ziet dat je maar {b}[characters.player.counters.coins] geldstukken{/b} hebt.",
+        "You let {b}[characters.armorer.name]{/b} know you are interested in buying {b}the tin armor{/b}.": "Je laat {b}[characters.armorer.name]{/b} weten dat je {b}het blikken harnas{/b} wilt kopen.",
+        "You let {b}[characters.armorer.name]{/b} know you are interested in buying {b}the steel armor{/b}.": "Je laat {b}[characters.armorer.name]{/b} weten dat je {b}het stalen harnas{/b} wilt kopen.",
+        "You let {b}[characters.armorer.name]{/b} know you are interested in buying {b}the gigantic sword{/b}.": "Je laat {b}[characters.armorer.name]{/b} weten dat je {b}het gigantische zwaard{/b} wilt kopen."
+      },
+      "player": {
+        "Here you go, {b}99 coins{/b}.": "Alsjeblieft, {b}99 geldstukken{/b}.",
+        "Sorry, I don't have enough coins for that.": "Sorry, daar heb ik niet genoeg geldstukken voor."
       }
     },
     "darkwoods": {
@@ -821,6 +840,7 @@
         "Do you know how I could get some transportation?": "Weten jullie hoe ik aan vervoer zou kunnen komen?",
         "Could you fix the horseshoe of my horse?": "Kunnen jullie de hoefijzers van mijn paard maken?",
         "What do you know of the monster in the woods?": "Wat weten jullie van het monster in het woud?",
+        "Could you craft a weapon for me?": "Zouden jullie een wapen voor mij kunnen maken?",
         "Could you make an ornament?": "Kunnen jullie een sieraad maken?",
         "I think I'll browse": "Ik kijk nog even rond",
         "Oops, I don't have enough money": "Oeps, ik heb niet genoeg geld",
@@ -833,6 +853,7 @@
         "Do you know how I could get some transportation?": "Weten jullie hoe ik aan vervoer zou kunnen komen?",
         "Could you fix the horseshoe of my horse?": "Kunnen jullie de hoefijzers van mijn paard maken?",
         "What do you know of the monster in the woods?": "Wat weten jullie van het monster in het woud?",
+        "Could you craft a weapon for me?": "Zouden jullie een wapen voor mij kunnen maken?",
         "Could you make an ornament?": "Kunnen jullie een sieraad maken?",
         "Oops, I don't have enough money": "Oeps, ik heb niet genoeg geld",
         "Here you go, 2 coins": "Alstublieft, 2 geldstukken",
@@ -857,6 +878,10 @@
         "Walking is good for your health!": "Lopen is goed voor je!",
         "Oi, I think that is a really dangerous one. He has a long tail.": "Oei dat is een gevaarlijke jongen. Hij heeft een lange staart.",
         "brr.": "brr.",
+        "Sure! But we already have all kinds of weaponry on display here in the shop.": "Zeker! Maar we hebben al allerlei wapens uitgestald hier in de winkel.",
+        "Maybe there is an item to your liking?": "Misschien zit er iets voor je bij?",
+        "There are price tags attached.": "Er zitten prijskaartjes aan.",
+        "Let me know if you made a choice.": "Laat me maar weten als je een keuze hebt kunnen maken.",
         "See you later!": "Tot ziens!"
       },
       "text": {
@@ -864,6 +889,7 @@
         "You feel a bit dumb.": "Je voelt je een beetje dom.",
         "{b}[characters.farrier.name]{/b} comes to you.": "{b}[characters.farrier.name]{/b} komt naar je toe.",
         "They all shiver.": "Ze staan alle drie te rillen.",
+        "{b}[characters.armorer.name]{/b} approaches you.": "{b}[characters.armorer.name]{/b} komt naar je toe.",
         "{b}[characters.goldsmith.name]{/b} approaches you.": "{b}[characters.goldsmith.name]{/b} komt op je af.",
         "{b}[characters.farrier.name]{/b} starts to work.": "{b}[characters.farrier.name]{/b} gaat aan het werk.",
         "{b}[characters.horse.name]{/b} doesn't mind all the fumbling with his feet.": "{b}[characters.horse.name]{/b} vindt al het rommelen aan zijn voeten niet erg.",
@@ -986,6 +1012,7 @@
         "- 1 plant with thorny leaves": "- 1 plant met stekelige bladeren",
         "- [items.plants.counters.roundLeaves] plants with round leaves": "- [items.plants.counters.roundLeaves] planten met ronde bladeren",
         "- 1 plant with round leaves": "- 1 plant met ronde bladeren",
+        "- A nice sharp sword": "- Een mooi scherp zwaard",
         "You carry the following items:": "Je hebt het volgende bij je:"
       },
       "interactions": {

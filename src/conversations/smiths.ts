@@ -91,6 +91,25 @@ g.defineOverlay(
     );
 
     interaction(
+      "Could you craft a weapon for me?",
+      g.and(
+        g.character("dragon").hasState("known"),
+        g.item("sword").hasState("need"),
+        hasState("unknown")
+      ),
+      () => {
+        g.character("player").say("Could you craft a weapon for me?");
+        g.text("{b}[characters.armorer.name]{/b} approaches you.");
+        g.character("armorer").say(
+          "Sure! But we already have all kinds of weaponry on display here in the shop.",
+          "Maybe there is an item to your liking?",
+          "There are price tags attached.",
+          "Let me know if you made a choice."
+        );
+      }
+    );
+
+    interaction(
       "Could you make an ornament?",
       g.and(hasState("unknown"), g.item("necklace").hasState("need")),
       () => {
@@ -180,6 +199,7 @@ g.defineOverlay(
         g.item("gemstone").setState("used");
         g.item("gold").setState("used");
         g.character("player").increaseCounter("coins", 15);
+        g.list("inventory").addUnique("coins");
         g.item("necklace").setState("possession");
         g.list("inventory").remove("gem");
         g.list("inventory").remove("gold");

@@ -16,7 +16,7 @@ export type GameState = GameDefinition<
       cabin: { flags: "visited" };
       village: { flags: "visited" };
       bakery: { flags: "visited" };
-      smithy: { flags: "visited" };
+      smithy: { flags: "visited"; states: "browsing" };
       darkwoods: { flags: "visited" };
       river: { flags: "visited" };
       treasureRoute: { counters: "steps" };
@@ -110,6 +110,7 @@ export type GameState = GameDefinition<
         | "brokenPickaxe"
         | "thornyLeaves"
         | "roundLeaves"
+        | "sword"
         | "repairedPickaxe";
     };
   }
