@@ -8,8 +8,26 @@
     "start": "point-n-click dev src/index.ts"
   },
   "dependencies": {
-    "@point-n-click/theme-cli": "1.0.0-alpha.0",
     "@point-n-click/theme-book": "1.0.0-alpha.0",
+    "@point-n-click/theme-cli": "1.0.0-alpha.0",
     "point-n-click": "2.0.0-alpha.1"
+  },
+  "packageManager": "yarn@3.5.0",
+  "resolutions": {
+    "point-n-click-repo": "portal:../point-n-click",
+    "point-n-click": "portal:../point-n-click/apps/point-n-click",
+    "@point-n-click/content-description-text": "portal:../point-n-click/content-plugins/content-description-text",
+    "@point-n-click/content-note-letter": "portal:../point-n-click/content-plugins/content-note-letter",
+    "@point-n-click/content-rename": "portal:../point-n-click/content-plugins/content-rename",
+    "@point-n-click/engine": "portal:../point-n-click/packages/engine",
+    "@point-n-click/parcel-resolver": "portal:../point-n-click/packages/parcel-resolver",
+    "@point-n-click/puzzle-dependency-diagram": "portal:../point-n-click/packages/puzzle-dependency-diagram",
+    "@point-n-click/state": "portal:../point-n-click/packages/state",
+    "@point-n-click/themes": "portal:../point-n-click/packages/themes",
+    "@point-n-click/types": "portal:../point-n-click/packages/types",
+    "@point-n-click/web-client": "portal:../point-n-click/packages/web-client",
+    "@point-n-click/web-engine": "portal:../point-n-click/packages/web-engine",
+    "@point-n-click/theme-book": "portal:../point-n-click/themes/theme-book",
+    "@point-n-click/theme-cli": "portal:../point-n-click/themes/theme-cli"
   }
 }
