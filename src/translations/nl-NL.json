@@ -156,8 +156,8 @@
         "A mining cart lies on its side. [characters.dwarf.name] is working in the mine.": "Er ligt een mijnkarretje op zijn kant. [characters.dwarf.name] de dwerg is in de mijn aan het werk.",
         "He looks happy.": "Hij ziet er vrolijk uit.",
         "A mining cart lies on its side. [characters.dwarf.defaultName] is sitting at the entrance.": "Er ligt een mijnkarretje op zijn kant. Voor de ingang zit [characters.dwarf.defaultName] de dwerg.",
-        "A mining cart lies on its side. A dwarf is sitting at the entrance.": "Er ligt een mijnkarretje. Voor de ingang zit een dwerg.",
         "He looks grumpy.": "Hij ziet er niet al te vrolijk uit.",
+        "A mining cart lies on its side. A dwarf is sitting at the entrance.": "Er ligt een mijnkarretje. Voor de ingang zit een dwerg.",
         "You pick up the {b}gemstone{/b}. It is sparkling in the sunlight": "Je raapt de {b}edelsteen{/b} op. Hij fonkelt mooi in het zonlicht."
       },
       "descriptionText": {
@@ -367,7 +367,16 @@
         "The sunlight can barely reach the forest floor, and trees seem to look at you.": "Het zonlicht raakt de grond amper en de bomen lijken je aan te kijken.",
         "There is a thick fog between the bare branches.": "Mist hangt tussen de kale takken van de bomen.",
         "It is eerily quiet. No animal lives here.": "Het is hier akelig stil. Geen dier leeft hier.",
-        "There went {b}[characters.player.name]{/b}, all alone.": "There went {b}[characters.player.name]{/b}, all alone."
+        "There went {b}[characters.player.name]{/b}, with {b}[characters.horse.name]{/b} pulling the carriage.": "Daar ging {b}[characters.player.name]{/b}, samen met {b}[characters.horse.name]{/b} die de wagen trok.",
+        "There went {b}[characters.player.name]{/b}, with {b}[characters.horse.name]{/b} by his side.": "Daar ging {b}[characters.player.name]{/b}, met {b}[characters.horse.name]{/b} aan zijn zijde.",
+        "There went {b}[characters.player.name]{/b}, with {b}[characters.horse.name]{/b} by her side.": "Daar ging {b}[characters.player.name]{/b}, met {b}[characters.horse.name]{/b} aan haar zijde.",
+        "There went {b}[characters.player.name]{/b}, all alone.": "Daar ging {b}[characters.player.name]{/b}, helemaal alleen.",
+        "He took a deep breath and mustered up his courage.": "Hij haalde diep adem en raapte al zijn moed bij elkaar.",
+        "With only his sword to protect him, he stepped into the dark woods.": "Met alleen zijn zwaard om hem te beschermen, stapte hij het donkere woud in.",
+        "She took a deep breath and mustered up her courage.": "Ze haalde diep adem en raapte al haar moed bij elkaar.",
+        "With only her sword to protect her, she stepped into the dark woods.": "Met alleen haar zwaard om haar te beschermen, stapte ze het donkere woud in.",
+        "In the distance, between the branches of half-dead trees, a silhouette of {b}a tower{/b} started to form.": "In de verte, tussen de takken van halfdode bomen, begon zich een silhouette van een {b}toren{/b} te vormen.",
+        "The tower was incredibly high, and rose high above the trees. A loud {i}roar{/i} could be heard from the top of the tower.": "De toren is enorm hoog en stak ver boven de bomen uit. Uit de top van de toren klinkt luid {i}gebrul{/i}."
       },
       "player": {
         "If there really is a monster here, I need to prepare before I dare enter here.": "Als hier echt een monster is moet ik me eerst gaan voorbereiden voordat ik me hier ga wagen.",
@@ -380,11 +389,31 @@
         "I know enough about the monster.": "Ik weet genoeg over het monster.",
         "I don't know enough about the monster yet...": "Ik weet nog niet genoeg over het monster.",
         "(Maybe other people can {b}tell me more?{/b})": "(Misschien kunnen andere mensen {b}mij meer vertellen?{/b})",
-        "Brr... I have {b}no reason{/b} to be here.": "Brr... Ik heb hier {b}niets te zoeken{/b}."
+        "Brr... I have {b}no reason{/b} to be here.": "Brr... Ik heb hier {b}niets te zoeken{/b}.",
+        "Oh help, where have I gotten myself into.": "O help, waar ben ik aan begonnen."
       },
       "interactions": {
         "Go west, towards the village": "Ga naar het westen, richting het dorp",
         "Continue into the dark woods anyway": "Ga toch verder, het donkere woud in"
+      }
+    },
+    "tower": {
+      "text": {
+        "{b}[characters.player.name]{/b} walked to the base of the tower.": "{b}[characters.player.name]{/b} liep naar de voet van de toren.",
+        "To the {b}right side{/b} of the tower is a wooden elevator.": "Aan de {b}rechterkant{/b} van de toren is een houten liftconstructie.",
+        "At the {b}front{/b} of the tower a big heavy door.": "Aan de {b}voorkant{/b} van de toren is een grote zware deur.",
+        "You walk to the wooden elevator.": "Je loopt naar de houten lift.",
+        "It looks like the platform of the elevator is {b}at the top{/b} of the tower.": "Het ziet er naar uit dat het plateau van de lift {b}aan de bovenkant{/b} van de toren is.",
+        "You cannot get on from this side. You do not see a way to lower the elevator here.": "Je kan er vanaf deze kant niet op. Ook zie je geen manier om de lift vanaf hier te laten zakken.",
+        "Behind the elevator you see a hatch towards a basement.": "Achter de lift zie je een luik naar een kelder.",
+        "But the hatch is {b}locked{/b}.": "Maar het luik is {b}op slot{/b}."
+      },
+      "player": {
+        "{b}[characters.horse.name]{/b} I need to tie you up here, I hope to be back soon.": "{b}[characters.horse.name]{/b}, ik maak je hier vast, hopelijk ben ik snel weer terug."
+      },
+      "interactions": {
+        "Take the elevator up": "Neem de lift naar boven",
+        "Open the door": "Open de deur"
       }
     },
     "river": {
@@ -543,7 +572,7 @@
         "Play as a {b}girl{/b}": "Play as a {b}girl{/b}"
       },
       "renamePrompt": {
-        "What is your new name?": "What is your new name?"
+        "What is your heroes name?": "What is your heroes name?"
       }
     },
     "dwarfConversation": {

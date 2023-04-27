@@ -18,7 +18,7 @@ g.defineOverlay(
       g.text("Nice! And how do you want to name the hero of our story?");
 
       g.text("Your name is currently {b}[characters.player.name]{/b}.");
-      g.character("player").renameByPlayer("What is your new name?");
+      g.character("player").renameByPlayer("What is your heroes name?");
 
       g.text("Hello {b}[characters.player.name]{/b}. Welcome the game!");
 

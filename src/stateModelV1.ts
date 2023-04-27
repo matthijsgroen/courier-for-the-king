@@ -18,6 +18,7 @@ export type GameState = GameDefinition<
       bakery: { flags: "visited" };
       smithy: { flags: "visited"; states: "browsing" };
       darkwoods: { flags: "visited" };
+      tower: { flags: "visited" };
       river: { flags: "visited" };
       treasureRoute: { counters: "steps" };
     };
@@ -65,7 +66,7 @@ export type GameState = GameDefinition<
       dwarf: { flags: "nameKnown"; states: "happy" };
       miller: {};
       horse: {
-        states: "river" | "following" | "stable";
+        states: "river" | "following" | "stable" | "tower";
         flags: "hooves" | "cart" | "found" | "known";
       };
       dragon: { states: "known" | "found" };

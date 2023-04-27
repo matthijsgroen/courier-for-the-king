@@ -85,11 +85,66 @@ g.defineLocation("darkwoods", ({ describe, interaction, onLeave }) => {
       g.character("farmer").hasFlag("toldDragon")
     ),
     () => {
-      g.onState(g.character("horse").hasState("following"), () => {
-        g.text("There went {b}[characters.player.name]{/b}, all alone.");
+      g.onState(
+        g.and(
+          g.character("horse").hasState("following"),
+          g.character("horse").hasFlag("cart")
+        ),
+        () => {
+          g.text(
+            "There went {b}[characters.player.name]{/b}, with {b}[characters.horse.name]{/b} pulling the carriage."
+          );
+        }
+      )
+        .else(
+          g.and(
+            g.character("horse").hasState("following"),
+            g.character("player").hasFlag("male")
+          ),
+          () => {
+            g.text(
+              "There went {b}[characters.player.name]{/b}, with {b}[characters.horse.name]{/b} by his side."
+            );
+          }
+        )
+        .else(
+          g.and(
+            g.character("horse").hasState("following"),
+            g.not(g.character("player").hasFlag("male"))
+          ),
+          () => {
+            g.text(
+              "There went {b}[characters.player.name]{/b}, with {b}[characters.horse.name]{/b} by her side."
+            );
+          }
+        )
+        .else(() => {
+          g.text("There went {b}[characters.player.name]{/b}, all alone.");
+        });
+
+      g.onState(g.character("player").hasFlag("male"), () => {
+        g.text(
+          "He took a deep breath and mustered up his courage.",
+          "With only his sword to protect him, he stepped into the dark woods."
+        );
       }).else(() => {
-        g.text("There went {b}[characters.player.name]{/b}, all alone.");
+        g.text(
+          "She took a deep breath and mustered up her courage.",
+          "With only her sword to protect her, she stepped into the dark woods."
+        );
       });
+
+      g.text(
+        "",
+        "In the distance, between the branches of half-dead trees, a silhouette of {b}a tower{/b} started to form.",
+        "The tower was incredibly high, and rose high above the trees. A loud {i}roar{/i} could be heard from the top of the tower."
+      );
+
+      g.character("player").say("Oh help, where have I gotten myself into.");
+
+      g.location("darkwoods").setFlag("visited");
+
+      g.travel("tower");
     }
   );
 });
