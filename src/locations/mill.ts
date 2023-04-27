@@ -13,17 +13,17 @@ g.defineLocation("mill", ({ describe, onLeave, interaction }) => {
         g.descriptionText(
           "A {b}carriage{/b} containing {b}grain{/b} is parked on the other side of the mill."
         );
-      }).else(() => {
-        g.onState(g.item("grain").hasState("flour"), () => {
+      })
+        .else(g.item("grain").hasState("flour"), () => {
           g.descriptionText(
             "A {b}carriage{/b} containing {b}flour{/b} is parked on the other side of the mill."
           );
-        }).else(() => {
+        })
+        .else(() => {
           g.descriptionText(
             "An empty {b}carriage{/b} is parked on the other side of the mill."
           );
         });
-      });
     });
     g.descriptionText("");
     g.text("An old miller appears to be working on restoring the blade.");

@@ -5,19 +5,25 @@ g.defineLocation("farmland", ({ describe, interaction, onLeave }) => {
     g.text("You are walking to the east, towards the forest.");
   });
   onLeave("farm", () => {
-    g.onState(g.character("horse").hasState("following"), () => {
-      g.onState(g.character("horse").hasFlag("cart"), () => {
+    g.onState(
+      g.and(
+        g.character("horse").hasState("following"),
+        g.character("horse").hasFlag("cart")
+      ),
+      () => {
         g.text(
           "Together with {b}[characters.horse.name]{/b} and the carriage, you walk onto the barnyard of the farm."
         );
-      }).else(() => {
+      }
+    )
+      .else(g.character("horse").hasState("following"), () => {
         g.text(
           "Together with {b}[characters.horse.name]{/b}, you walk onto the barnyard of the farm."
         );
+      })
+      .else(() => {
+        g.text("You walk onto the barnyard of the farm.");
       });
-    }).else(() => {
-      g.text("You walk onto the barnyard of the farm.");
-    });
     g.descriptionText("");
   });
   onLeave("village", () => {

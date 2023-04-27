@@ -34,25 +34,32 @@ g.defineOverlay("plants", ({ onEnter, interaction, closeOverlay }) => {
     });
   });
   interaction("Pick plant with round leaves", g.always(), () => {
-    g.onState(g.item("ingredientList").hasFlag("seen"), () => {
-      g.onState(g.item("plants").hasCounter("roundLeaves").lessThan(10), () => {
+    g.onState(
+      g.and(
+        g.item("ingredientList").hasFlag("seen"),
+        g.item("plants").hasCounter("roundLeaves").lessThan(10)
+      ),
+      () => {
         g.text(
           "You bend over to pick a few of the plants with {b}round leaves{/b}, and put them in your bag"
         );
         g.item("plants").setCounter("roundLeaves", 10);
         g.item("ingredientList").setFlag("roundLeaves");
         g.list("inventory").addUnique("roundLeaves");
-      }).else(() => {
+      }
+    )
+      .else(g.item("ingredientList").hasFlag("seen"), () => {
         g.character("player").say("Hmm, I have enough of those.");
+      })
+      .else(() => {
+        g.text(
+          "You bend over to pick the plant with {b}round{/b} leaves.",
+          "Just before you touch it, you stop.",
+          "This plant could be {b}poisonous{/b}."
+        );
       });
-    }).else(() => {
-      g.text(
-        "You bend over to pick the plant with {b}round{/b} leaves.",
-        "Just before you touch it, you stop.",
-        "This plant could be {b}poisonous{/b}."
-      );
-    });
   });
+
   interaction("Pick plant with diamond-shaped leaves", g.always(), () => {
     g.text(
       "You bend over to pick the plant with {b}diamond-shaped{/b} leaves.",

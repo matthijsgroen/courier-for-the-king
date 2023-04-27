@@ -66,6 +66,22 @@ g.defineLocation(
       g.travel("village");
     });
 
+    const notBuying = () => {
+      g.onState(g.character("player").hasCounter("coins").equals(1), () => {
+        g.text(
+          "You look inside your bag, and see you only have {b}[characters.player.counters.coins] coin{/b}."
+        );
+      }).else(() => {
+        g.text(
+          "You look inside your bag, and see you only have {b}[characters.player.counters.coins] coins{/b}."
+        );
+      });
+      g.character("player").say("Sorry, I don't have enough coins for that.");
+      g.character("armorer").say(
+        "Ok, feel free to look around for something else."
+      );
+    };
+
     interaction(
       "Buy a standard sword, for 99 coins",
       g.and(
@@ -103,23 +119,7 @@ g.defineLocation(
               }
             );
           }
-        ).else(() => {
-          g.onState(g.character("player").hasCounter("coins").equals(1), () => {
-            g.text(
-              "You look inside your bag, and see you only have {b}[characters.player.counters.coins] coin{/b}."
-            );
-          }).else(() => {
-            g.text(
-              "You look inside your bag, and see you only have {b}[characters.player.counters.coins] coins{/b}."
-            );
-          });
-          g.character("player").say(
-            "Sorry, I don't have enough coins for that."
-          );
-          g.character("armorer").say(
-            "Ok, feel free to look around for something else."
-          );
-        });
+        ).else(notBuying);
       }
     );
 
@@ -127,22 +127,7 @@ g.defineLocation(
       g.text(
         "You let {b}[characters.armorer.name]{/b} know you are interested in buying {b}the tin armor{/b}."
       );
-      g.character("armorer").say(
-        "Ah yes, that is some fine craftsmanship. I spent quite some time creating that. It's a real bargain!"
-      );
-      g.onState(g.character("player").hasCounter("coins").equals(1), () => {
-        g.text(
-          "You look inside your bag, and see you only have {b}[characters.player.counters.coins] coin{/b}."
-        );
-      }).else(() => {
-        g.text(
-          "You look inside your bag, and see you only have {b}[characters.player.counters.coins] coins{/b}."
-        );
-      });
-      g.character("player").say("Sorry, I don't have enough coins for that.");
-      g.character("armorer").say(
-        "Ok, feel free to look around for something else."
-      );
+      notBuying();
     });
 
     interaction(
@@ -152,22 +137,7 @@ g.defineLocation(
         g.text(
           "You let {b}[characters.armorer.name]{/b} know you are interested in buying {b}the steel armor{/b}."
         );
-        g.character("armorer").say(
-          "Ah yes, that is some fine craftsmanship. I spent quite some time creating that. It's a real bargain!"
-        );
-        g.onState(g.character("player").hasCounter("coins").equals(1), () => {
-          g.text(
-            "You look inside your bag, and see you only have {b}[characters.player.counters.coins] coin{/b}."
-          );
-        }).else(() => {
-          g.text(
-            "You look inside your bag, and see you only have {b}[characters.player.counters.coins] coins{/b}."
-          );
-        });
-        g.character("player").say("Sorry, I don't have enough coins for that.");
-        g.character("armorer").say(
-          "Ok, feel free to look around for something else."
-        );
+        notBuying();
       }
     );
 
@@ -178,22 +148,7 @@ g.defineLocation(
         g.text(
           "You let {b}[characters.armorer.name]{/b} know you are interested in buying {b}the gigantic sword{/b}."
         );
-        g.character("armorer").say(
-          "Ah yes, that is some fine craftsmanship. I spent quite some time creating that. It's a real bargain!"
-        );
-        g.onState(g.character("player").hasCounter("coins").equals(1), () => {
-          g.text(
-            "You look inside your bag, and see you only have {b}[characters.player.counters.coins] coin{/b}."
-          );
-        }).else(() => {
-          g.text(
-            "You look inside your bag, and see you only have {b}[characters.player.counters.coins] coins{/b}."
-          );
-        });
-        g.character("player").say("Sorry, I don't have enough coins for that.");
-        g.character("armorer").say(
-          "Ok, feel free to look around for something else."
-        );
+        notBuying();
       }
     );
 

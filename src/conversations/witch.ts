@@ -18,18 +18,19 @@ g.defineOverlay(
         g.character("witch").say(
           "Hi {b}[characters.player.name]{/b}, nice to see you back!"
         );
-      }).else(() => {
-        g.onState(g.character("player").hasFlag("male"), () => {
+      })
+        .else(g.character("player").hasFlag("male"), () => {
           g.character("witch").say(
             "Hello handsome stud, what can I do for you!?"
           );
-        }).else(() => {
+          g.text("You startle and jump backwards.");
+        })
+        .else(() => {
           g.character("witch").say(
             "Hello gorgeous lady, what can I do for you!?"
           );
+          g.text("You startle and jump backwards.");
         });
-        g.text("You startle and jump backwards.");
-      });
     });
 
     onLeave(() => {

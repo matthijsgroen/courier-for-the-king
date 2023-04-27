@@ -13,17 +13,21 @@ g.defineLocation("river", ({ describe, onLeave, interaction }) => {
         "You are standing near a collapsed bridge that used to cross the river.",
         "There seems no way to cross it now. The river is too wild."
       );
+
       g.onState(g.not(g.location("river").hasFlag("visited")), () => {
         g.character("player").say(
           "Drat, I can't leave this area. This was the road towards the castle of the King,",
           "and even then I needed a few days on horse to reach it. I have to find a solution to cross the river."
         );
+        g.location("river").setFlag("visited");
       });
+
       g.onState(g.item("fabric").hasState("unknown"), () => {
         g.text(
           "A big piece of {b}white cloth, with red dots{/b} lies near the waterfront."
         );
       });
+
       g.onState(
         g.and(
           g.not(g.character("horse").hasFlag("found")),
@@ -34,8 +38,7 @@ g.defineLocation("river", ({ describe, onLeave, interaction }) => {
             "In the corner of your eye, along the water, you see a {b}horse{/b} drinking."
           );
         }
-      );
-      g.onState(
+      ).else(
         g.and(
           g.character("horse").hasState("river"),
           g.character("horse").hasFlag("found")
@@ -46,7 +49,6 @@ g.defineLocation("river", ({ describe, onLeave, interaction }) => {
           );
         }
       );
-      g.location("river").setFlag("visited");
     });
   });
 
@@ -70,6 +72,7 @@ g.defineLocation("river", ({ describe, onLeave, interaction }) => {
       g.character("player").say(
         "Will you come with me {b}[characters.horse.name]{/b}?"
       );
+
       g.onState(g.character("horse").hasFlag("cart"), () => {
         g.text(
           "The horse approaches you enthusiastically, and pulls the carriage with him."

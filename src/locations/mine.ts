@@ -12,25 +12,28 @@ g.defineLocation("mine", ({ describe, interaction, onLeave }) => {
         "A mining cart lies on its side. [characters.dwarf.name] is working in the mine."
       );
       g.text("He looks happy.");
-    }).else(() => {
-      g.onState(g.character("dwarf").hasFlag("nameKnown"), () => {
+    })
+      .else(g.character("dwarf").hasFlag("nameKnown"), () => {
         g.text(
           "You are at the mine entrance.",
           "A mining cart lies on its side. [characters.dwarf.defaultName] is sitting at the entrance."
         );
-      }).else(() => {
+        g.text("He looks grumpy.");
+      })
+      .else(() => {
         g.character("dwarf").setTranslatableName("Dwarf");
 
         g.text(
           "You are at the mine entrance.",
           "A mining cart lies on its side. A dwarf is sitting at the entrance."
         );
+        g.text("He looks grumpy.");
       });
-      g.text("He looks grumpy.");
-    });
+
     g.onState(g.item("gemstone").hasState("chopped"), () => {
       g.descriptionText("A {b}gemstone{/b} lies at your feet.");
     });
+
     g.location("mine").setFlag("visited");
   });
 

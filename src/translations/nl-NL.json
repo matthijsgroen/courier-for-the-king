@@ -543,8 +543,7 @@
         "Play as a {b}girl{/b}": "Play as a {b}girl{/b}"
       },
       "renamePrompt": {
-        "What is your new name?": "What is your new name?",
-        "DELETED What is your name?": "Hoe heet je?"
+        "What is your new name?": "What is your new name?"
       }
     },
     "dwarfConversation": {
