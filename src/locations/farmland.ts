@@ -5,41 +5,29 @@ g.defineLocation("farmland", ({ describe, interaction, onLeave }) => {
     g.text("You are walking to the east, towards the forest.");
   });
   onLeave("farm", () => {
-    g.onState(
-      g.character("horse").hasState("following"),
-      () => {
-        g.onState(
-          g.character("horse").hasFlag("cart"),
-          () => {
-            g.text(
-              "Together with {b}[characters.horse.name]{/b} and the carriage, you walk onto the barnyard of the farm."
-            );
-          },
-          () => {
-            g.text(
-              "Together with {b}[characters.horse.name]{/b}, you walk onto the barnyard of the farm."
-            );
-          }
+    g.onState(g.character("horse").hasState("following"), () => {
+      g.onState(g.character("horse").hasFlag("cart"), () => {
+        g.text(
+          "Together with {b}[characters.horse.name]{/b} and the carriage, you walk onto the barnyard of the farm."
         );
-      },
-      () => {
-        g.text("You walk onto the barnyard of the farm.");
-      }
-    );
+      }).else(() => {
+        g.text(
+          "Together with {b}[characters.horse.name]{/b}, you walk onto the barnyard of the farm."
+        );
+      });
+    }).else(() => {
+      g.text("You walk onto the barnyard of the farm.");
+    });
     g.descriptionText("");
   });
   onLeave("village", () => {
-    g.onState(
-      g.character("horse").hasState("following"),
-      () => {
-        g.text(
-          "Together with [characters.horse.name], you walk south towards the village."
-        );
-      },
-      () => {
-        g.text("You walk south towards the village.");
-      }
-    );
+    g.onState(g.character("horse").hasState("following"), () => {
+      g.text(
+        "Together with [characters.horse.name], you walk south towards the village."
+      );
+    }).else(() => {
+      g.text("You walk south towards the village.");
+    });
   });
 
   describe(() => {
@@ -73,11 +61,10 @@ g.defineLocation("farmland", ({ describe, interaction, onLeave }) => {
         g.character("player").say(
           "Maybe I have to take him to the farm first?"
         );
-      },
-      () => {
-        g.travel("forest");
       }
-    );
+    ).else(() => {
+      g.travel("forest");
+    });
   });
 
   interaction("Go south, towards the village", g.always(), () => {

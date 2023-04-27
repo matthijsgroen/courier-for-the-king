@@ -14,58 +14,58 @@ g.defineOverlay(
       );
     });
 
-    interaction("Play as a {b}boy{/b}", hasState("unknown"), () => {
-      g.character("player").setFlag("male");
+    const step2 = () => {
       g.text("Nice! And how do you want to name the hero of our story?");
 
-      g.character("player").setName("Matthijs");
+      g.text("Your name is currently {b}[characters.player.name]{/b}.");
+      g.character("player").renameByPlayer("What is your new name?");
 
-      g.character("player").say("My name is {b}[.name]{/b}");
+      g.text("Hello {b}[characters.player.name]{/b}. Welcome the game!");
 
       g.location("home").setState("home");
       closeOverlay();
+    };
+
+    interaction("Play as a {b}boy{/b}", hasState("unknown"), () => {
+      g.character("player").setFlag("male");
+      step2();
     });
 
     interaction("Play as a {b}girl{/b}", hasState("unknown"), () => {
       g.character("player").clearFlag("male");
-      g.text("Nice! And how do you want to name the hero of our story?");
-
-      g.character("player").setName("Pat-Jos");
-
-      g.character("player").say("My name is {b}[.name]{/b}");
-
-      g.location("home").setState("home");
-      closeOverlay();
+      step2();
     });
   }
 );
 
 g.defineLocation("home", ({ describe, interaction, hasState }) => {
   describe(() => {
-    g.onState(
-      hasState("unknown"),
-      () => {
-        g.openOverlay("gameIntro");
-      },
-      () => {
-        g.text("Once upon a time, there was a stalwart courier...");
-        g.onState(
-          g.character("player").hasFlag("male"),
-          () => {
-            g.text("His name was {b}[characters.player.name]{/b}.");
-            g.text("He was super fast in the delivery of letters and parcels.");
-            g.text("Delivering items was his passion and his life.");
-          },
-          () => {
-            g.text("Her name was {b}[characters.player.name]{/b}.");
-            g.text(
-              "She was super fast in the delivery of letters and parcels."
-            );
-            g.text("Delivering items was her passion and her life.");
-          }
+    g.onState(hasState("unknown"), () => {
+      g.openOverlay("gameIntro");
+    }).else(() => {
+      g.text("Once upon a time, there was a stalwart courier...");
+
+      g.onState(g.character("player").hasFlag("male"), () => {
+        g.text("His name was {b}[characters.player.name]{/b}.");
+        g.text("He was super fast in the delivery of letters and parcels.");
+        g.text("Delivering items was his passion and his life.");
+      }).else(() => {
+        g.text("Her name was {b}[characters.player.name]{/b}.");
+        g.text("She was super fast in the delivery of letters and parcels.");
+        g.text("Delivering items was her passion and her life.");
+      });
+
+      g.note(() => {
+        g.text(
+          "A letter of the healer of the king, asking for help",
+          "to deliver a medicine to the castle"
         );
-      }
-    );
+        g.note(() => {
+          g.text("It even had a smaller note attached");
+        });
+        g.text("but that is a story for another time...");
+      });
+    });
   });
 
   interaction("Skip the rest of the intro for now", g.always(), () => {

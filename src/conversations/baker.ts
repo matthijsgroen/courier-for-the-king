@@ -23,15 +23,11 @@ g.defineOverlay(
     });
 
     onLeave(() => {
-      g.onState(
-        hasState("unknown"),
-        () => {
-          g.text("You leave the baker alone and look around in the shop.");
-        },
-        () => {
-          g.text("You say goodbye and start browsing the shop.");
-        }
-      );
+      g.onState(hasState("unknown"), () => {
+        g.text("You leave the baker alone and look around in the shop.");
+      }).else(() => {
+        g.text("You say goodbye and start browsing the shop.");
+      });
     });
 
     interaction("Hello, is everything alright?", hasState("unknown"), () => {

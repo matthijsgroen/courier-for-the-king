@@ -34,25 +34,21 @@ g.defineOverlay(
           "Do you know how I could get some transportation?"
         );
 
-        g.onState(
-          g.character("horse").hasState("following"),
-          () => {
-            g.character("goldsmith").say("Euhm, didn't you...");
-            g.character("armorer").say("...just get here...");
-            g.character("goldsmith").say("...with a horse?");
-            g.text("You feel a bit dumb.");
-          },
-          () => {
-            g.character("goldsmith").say(
-              "I think {b}farmer [characters.farmer.name]{/b} has a horse?"
-            );
-            g.character("armorer").say(
-              "It is a workhorse, so it won't bring you large distances."
-            );
-            g.character("farrier").say("We do everything by foot around here.");
-            g.character("armorer").say("Walking is good for your health!");
-          }
-        );
+        g.onState(g.character("horse").hasState("following"), () => {
+          g.character("goldsmith").say("Euhm, didn't you...");
+          g.character("armorer").say("...just get here...");
+          g.character("goldsmith").say("...with a horse?");
+          g.text("You feel a bit dumb.");
+        }).else(() => {
+          g.character("goldsmith").say(
+            "I think {b}farmer [characters.farmer.name]{/b} has a horse?"
+          );
+          g.character("armorer").say(
+            "It is a workhorse, so it won't bring you large distances."
+          );
+          g.character("farrier").say("We do everything by foot around here.");
+          g.character("armorer").say("Walking is good for your health!");
+        });
       }
     );
 
@@ -219,15 +215,11 @@ g.defineOverlay(
       ),
       () => {
         g.character("player").say("Hmm, maybe another time");
-        g.onState(
-          hasState("fixHorseshoe"),
-          () => {
-            g.character("farrier").say("Sure, no problem.");
-          },
-          () => {
-            g.character("goldsmith").say("Sure, maybe later.");
-          }
-        );
+        g.onState(hasState("fixHorseshoe"), () => {
+          g.character("farrier").say("Sure, no problem.");
+        }).else(() => {
+          g.character("goldsmith").say("Sure, maybe later.");
+        });
         setState("unknown");
       }
     );

@@ -4,25 +4,21 @@ g.defineLocation(
   "smithy",
   ({ describe, interaction, onEnter, hasState, setState }) => {
     onEnter("village", () => {
-      g.onState(
-        g.location("smithy").hasFlag("visited"),
-        () => {
-          g.character("armorer").say("Hey, welcome!");
-          g.character("goldsmith").say("How can we help you?");
-          // TODO: Update text after 'killing' dragon
-        },
-        () => {
-          g.character("armorer").say("Hey, a new customer! Welcome!");
-          g.character("farrier").say(
-            "My name is {b}[characters.farrier.name]{/b}, the {b}farrier{/b}. {b}[characters.goldsmith.name]{/b} here is our {b}goldsmith{/b}."
-          );
-          g.character("goldsmith").say(
-            "And our {b}armorer{/b} here is {b}[characters.armorer.name]{/b}."
-          );
-          g.character("armorer").say("How can we help you?");
-          g.location("smithy").setFlag("visited");
-        }
-      );
+      g.onState(g.location("smithy").hasFlag("visited"), () => {
+        g.character("armorer").say("Hey, welcome!");
+        g.character("goldsmith").say("How can we help you?");
+        // TODO: Update text after 'killing' dragon
+      }).else(() => {
+        g.character("armorer").say("Hey, a new customer! Welcome!");
+        g.character("farrier").say(
+          "My name is {b}[characters.farrier.name]{/b}, the {b}farrier{/b}. {b}[characters.goldsmith.name]{/b} here is our {b}goldsmith{/b}."
+        );
+        g.character("goldsmith").say(
+          "And our {b}armorer{/b} here is {b}[characters.armorer.name]{/b}."
+        );
+        g.character("armorer").say("How can we help you?");
+        g.location("smithy").setFlag("visited");
+      });
     });
 
     describe(() => {
@@ -106,29 +102,24 @@ g.defineLocation(
                 g.list("inventory").remove("coins");
               }
             );
-          },
-          () => {
-            g.onState(
-              g.character("player").hasCounter("coins").equals(1),
-              () => {
-                g.text(
-                  "You look inside your bag, and see you only have {b}[characters.player.counters.coins] coin{/b}."
-                );
-              },
-              () => {
-                g.text(
-                  "You look inside your bag, and see you only have {b}[characters.player.counters.coins] coins{/b}."
-                );
-              }
-            );
-            g.character("player").say(
-              "Sorry, I don't have enough coins for that."
-            );
-            g.character("armorer").say(
-              "Ok, feel free to look around for something else."
-            );
           }
-        );
+        ).else(() => {
+          g.onState(g.character("player").hasCounter("coins").equals(1), () => {
+            g.text(
+              "You look inside your bag, and see you only have {b}[characters.player.counters.coins] coin{/b}."
+            );
+          }).else(() => {
+            g.text(
+              "You look inside your bag, and see you only have {b}[characters.player.counters.coins] coins{/b}."
+            );
+          });
+          g.character("player").say(
+            "Sorry, I don't have enough coins for that."
+          );
+          g.character("armorer").say(
+            "Ok, feel free to look around for something else."
+          );
+        });
       }
     );
 
@@ -139,19 +130,15 @@ g.defineLocation(
       g.character("armorer").say(
         "Ah yes, that is some fine craftsmanship. I spent quite some time creating that. It's a real bargain!"
       );
-      g.onState(
-        g.character("player").hasCounter("coins").equals(1),
-        () => {
-          g.text(
-            "You look inside your bag, and see you only have {b}[characters.player.counters.coins] coin{/b}."
-          );
-        },
-        () => {
-          g.text(
-            "You look inside your bag, and see you only have {b}[characters.player.counters.coins] coins{/b}."
-          );
-        }
-      );
+      g.onState(g.character("player").hasCounter("coins").equals(1), () => {
+        g.text(
+          "You look inside your bag, and see you only have {b}[characters.player.counters.coins] coin{/b}."
+        );
+      }).else(() => {
+        g.text(
+          "You look inside your bag, and see you only have {b}[characters.player.counters.coins] coins{/b}."
+        );
+      });
       g.character("player").say("Sorry, I don't have enough coins for that.");
       g.character("armorer").say(
         "Ok, feel free to look around for something else."
@@ -168,19 +155,15 @@ g.defineLocation(
         g.character("armorer").say(
           "Ah yes, that is some fine craftsmanship. I spent quite some time creating that. It's a real bargain!"
         );
-        g.onState(
-          g.character("player").hasCounter("coins").equals(1),
-          () => {
-            g.text(
-              "You look inside your bag, and see you only have {b}[characters.player.counters.coins] coin{/b}."
-            );
-          },
-          () => {
-            g.text(
-              "You look inside your bag, and see you only have {b}[characters.player.counters.coins] coins{/b}."
-            );
-          }
-        );
+        g.onState(g.character("player").hasCounter("coins").equals(1), () => {
+          g.text(
+            "You look inside your bag, and see you only have {b}[characters.player.counters.coins] coin{/b}."
+          );
+        }).else(() => {
+          g.text(
+            "You look inside your bag, and see you only have {b}[characters.player.counters.coins] coins{/b}."
+          );
+        });
         g.character("player").say("Sorry, I don't have enough coins for that.");
         g.character("armorer").say(
           "Ok, feel free to look around for something else."
@@ -198,19 +181,15 @@ g.defineLocation(
         g.character("armorer").say(
           "Ah yes, that is some fine craftsmanship. I spent quite some time creating that. It's a real bargain!"
         );
-        g.onState(
-          g.character("player").hasCounter("coins").equals(1),
-          () => {
-            g.text(
-              "You look inside your bag, and see you only have {b}[characters.player.counters.coins] coin{/b}."
-            );
-          },
-          () => {
-            g.text(
-              "You look inside your bag, and see you only have {b}[characters.player.counters.coins] coins{/b}."
-            );
-          }
-        );
+        g.onState(g.character("player").hasCounter("coins").equals(1), () => {
+          g.text(
+            "You look inside your bag, and see you only have {b}[characters.player.counters.coins] coin{/b}."
+          );
+        }).else(() => {
+          g.text(
+            "You look inside your bag, and see you only have {b}[characters.player.counters.coins] coins{/b}."
+          );
+        });
         g.character("player").say("Sorry, I don't have enough coins for that.");
         g.character("armorer").say(
           "Ok, feel free to look around for something else."

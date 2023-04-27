@@ -2,17 +2,13 @@ import g from "../game";
 
 g.defineLocation("forest", ({ describe, interaction, onLeave }) => {
   onLeave("farmland", () => {
-    g.onState(
-      g.character("horse").hasState("following"),
-      () => {
-        g.text(
-          "You walk east, accompanied by {b}[characters.horse.name]{/b}, to the farmlands."
-        );
-      },
-      () => {
-        g.text("You walk east, to the farmlands.");
-      }
-    );
+    g.onState(g.character("horse").hasState("following"), () => {
+      g.text(
+        "You walk east, accompanied by {b}[characters.horse.name]{/b}, to the farmlands."
+      );
+    }).else(() => {
+      g.text("You walk east, to the farmlands.");
+    });
   });
   onLeave("hills", () => {
     g.text("You walk west, towards the hills.");

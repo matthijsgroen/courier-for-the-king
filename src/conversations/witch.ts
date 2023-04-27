@@ -14,30 +14,22 @@ g.defineOverlay(
     setPrompt("What will you say:");
 
     onEnter(() => {
-      g.onState(
-        g.location("cabin").hasFlag("visited"),
-        () => {
+      g.onState(g.location("cabin").hasFlag("visited"), () => {
+        g.character("witch").say(
+          "Hi {b}[characters.player.name]{/b}, nice to see you back!"
+        );
+      }).else(() => {
+        g.onState(g.character("player").hasFlag("male"), () => {
           g.character("witch").say(
-            "Hi {b}[characters.player.name]{/b}, nice to see you back!"
+            "Hello handsome stud, what can I do for you!?"
           );
-        },
-        () => {
-          g.onState(
-            g.character("player").hasFlag("male"),
-            () => {
-              g.character("witch").say(
-                "Hello handsome stud, what can I do for you!?"
-              );
-            },
-            () => {
-              g.character("witch").say(
-                "Hello gorgeous lady, what can I do for you!?"
-              );
-            }
+        }).else(() => {
+          g.character("witch").say(
+            "Hello gorgeous lady, what can I do for you!?"
           );
-          g.text("You startle and jump backwards.");
-        }
-      );
+        });
+        g.text("You startle and jump backwards.");
+      });
     });
 
     onLeave(() => {
@@ -144,21 +136,17 @@ g.defineOverlay(
           "{b}[characters.witch.name]{/b} goes inside and closes the door."
         );
         g.text("A while later she returns with a list of items.");
-        g.onState(
-          g.character("player").hasFlag("male"),
-          () => {
-            g.character("witch").say(
-              "Here, this is what I need.",
-              "Some items could be tricky to come by, but that should be no problem for a strong man like you."
-            );
-          },
-          () => {
-            g.character("witch").say(
-              "Here, this is what I need.",
-              "Some items could be tricky to come by, but that should be no problem for a strong woman like you."
-            );
-          }
-        );
+        g.onState(g.character("player").hasFlag("male"), () => {
+          g.character("witch").say(
+            "Here, this is what I need.",
+            "Some items could be tricky to come by, but that should be no problem for a strong man like you."
+          );
+        }).else(() => {
+          g.character("witch").say(
+            "Here, this is what I need.",
+            "Some items could be tricky to come by, but that should be no problem for a strong woman like you."
+          );
+        });
         g.item("ingredientList").setState("possession");
         g.list("inventory").add("ingredientList");
       }

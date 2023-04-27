@@ -6,15 +6,11 @@ g.defineOverlay("inventory", ({ onEnter, interaction, closeOverlay }) => {
 
     g.list("inventory").display(({ onItem }) => {
       onItem("coins", () => {
-        g.onState(
-          g.character("player").hasCounter("coins").equals(1),
-          () => {
-            g.descriptionText("- [characters.player.counters.coins] coin");
-          },
-          () => {
-            g.descriptionText("- [characters.player.counters.coins] coins");
-          }
-        );
+        g.onState(g.character("player").hasCounter("coins").equals(1), () => {
+          g.descriptionText("- [characters.player.counters.coins] coin");
+        }).else(() => {
+          g.descriptionText("- [characters.player.counters.coins] coins");
+        });
       });
       onItem("branch", () => {
         g.descriptionText("- A branch, picked up in the forest");
@@ -44,15 +40,11 @@ g.defineOverlay("inventory", ({ onEnter, interaction, closeOverlay }) => {
         g.descriptionText("- A runestone with inscriptions");
       });
       onItem("moonStone", () => {
-        g.onState(
-          g.isLocation("river"),
-          () => {
-            g.descriptionText("- Moonstone, it seems to glow lightly");
-          },
-          () => {
-            g.descriptionText("- Moonstone, it looks dim");
-          }
-        );
+        g.onState(g.isLocation("river"), () => {
+          g.descriptionText("- Moonstone, it seems to glow lightly");
+        }).else(() => {
+          g.descriptionText("- Moonstone, it looks dim");
+        });
       });
       onItem("fabric", () => {
         g.descriptionText("- A giant trunk, probably of a giant");
@@ -70,11 +62,10 @@ g.defineOverlay("inventory", ({ onEnter, interaction, closeOverlay }) => {
             g.descriptionText(
               "- [items.plants.counters.thornyLeaves] plants with thorny leaves"
             );
-          },
-          () => {
-            g.descriptionText("- 1 plant with thorny leaves");
           }
-        );
+        ).else(() => {
+          g.descriptionText("- 1 plant with thorny leaves");
+        });
       });
 
       onItem("roundLeaves", () => {
@@ -84,11 +75,10 @@ g.defineOverlay("inventory", ({ onEnter, interaction, closeOverlay }) => {
             g.descriptionText(
               "- [items.plants.counters.roundLeaves] plants with round leaves"
             );
-          },
-          () => {
-            g.descriptionText("- 1 plant with round leaves");
           }
-        );
+        ).else(() => {
+          g.descriptionText("- 1 plant with round leaves");
+        });
       });
 
       onItem("sword", () => {

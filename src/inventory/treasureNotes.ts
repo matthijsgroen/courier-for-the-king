@@ -46,11 +46,10 @@ g.defineOverlay("treasureNotes", ({ onEnter, interaction, closeOverlay }) => {
       ),
       () => {
         g.text("You think you have all the information you need.");
-      },
-      () => {
-        g.text("You think you are still missing some information.");
       }
-    );
+    ).else(() => {
+      g.text("You think you are still missing some information.");
+    });
   });
 
   interaction("Put note away", g.always(), () => {

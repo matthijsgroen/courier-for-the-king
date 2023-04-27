@@ -18,45 +18,33 @@ g.defineLocation("village", ({ describe, interaction, onLeave }) => {
   });
 
   onLeave("farmland", () => {
-    g.onState(
-      g.character("horse").hasState("following"),
-      () => {
-        g.text(
-          "Together with [characters.horse.name], you walk northwards, to the farmlands."
-        );
-      },
-      () => {
-        g.text("You walk northwards, to the farmlands.");
-      }
-    );
+    g.onState(g.character("horse").hasState("following"), () => {
+      g.text(
+        "Together with [characters.horse.name], you walk northwards, to the farmlands."
+      );
+    }).else(() => {
+      g.text("You walk northwards, to the farmlands.");
+    });
   });
 
   onLeave("darkwoods", () => {
-    g.onState(
-      g.character("horse").hasState("following"),
-      () => {
-        g.text(
-          "Together with [characters.horse.name], you walk over a small twisting path, towards the dark woods."
-        );
-      },
-      () => {
-        g.text("You walk over a small twisting path, towards the dark woods.");
-      }
-    );
+    g.onState(g.character("horse").hasState("following"), () => {
+      g.text(
+        "Together with [characters.horse.name], you walk over a small twisting path, towards the dark woods."
+      );
+    }).else(() => {
+      g.text("You walk over a small twisting path, towards the dark woods.");
+    });
   });
 
   onLeave("river", () => {
-    g.onState(
-      g.character("horse").hasState("following"),
-      () => {
-        g.text(
-          "Together with [characters.horse.name] you walk towards the river."
-        );
-      },
-      () => {
-        g.text("You walk southwards, towards the river.");
-      }
-    );
+    g.onState(g.character("horse").hasState("following"), () => {
+      g.text(
+        "Together with [characters.horse.name] you walk towards the river."
+      );
+    }).else(() => {
+      g.text("You walk southwards, towards the river.");
+    });
   });
 
   onLeave("bakery", () => {
@@ -68,17 +56,13 @@ g.defineLocation("village", ({ describe, interaction, onLeave }) => {
   });
 
   onLeave("smithy", () => {
-    g.onState(
-      g.character("horse").hasState("following"),
-      () => {
-        g.text(
-          "You tie up [characters.horse.name] to a pole near the smithy and enter."
-        );
-      },
-      () => {
-        g.text("You enter the large smithy.");
-      }
-    );
+    g.onState(g.character("horse").hasState("following"), () => {
+      g.text(
+        "You tie up [characters.horse.name] to a pole near the smithy and enter."
+      );
+    }).else(() => {
+      g.text("You enter the large smithy.");
+    });
   });
 
   interaction("Go to bakery", g.always(), () => {

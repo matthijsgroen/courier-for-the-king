@@ -66,7 +66,11 @@
         "Delivering items was his passion and his life.": "Delivering items was his passion and his life.",
         "Her name was {b}[characters.player.name]{/b}.": "Her name was {b}[characters.player.name]{/b}.",
         "She was super fast in the delivery of letters and parcels.": "She was super fast in the delivery of letters and parcels.",
-        "Delivering items was her passion and her life.": "Delivering items was her passion and her life."
+        "Delivering items was her passion and her life.": "Delivering items was her passion and her life.",
+        "A letter of the healer of the king, asking for help": "A letter of the healer of the king, asking for help",
+        "to deliver a medicine to the castle": "to deliver a medicine to the castle",
+        "It even had a smaller note attached": "It even had a smaller note attached",
+        "but that is a story for another time...": "but that is a story for another time..."
       },
       "interactions": {
         "Skip the rest of the intro for now": "Skip the rest of the intro for now"
@@ -362,23 +366,25 @@
         "You are on the edge of a dark wood. It looks dangerous.": "Je staat aan de rand van een donker woud. Het ziet er gevaarlijk uit.",
         "The sunlight can barely reach the forest floor, and trees seem to look at you.": "Het zonlicht raakt de grond amper en de bomen lijken je aan te kijken.",
         "There is a thick fog between the bare branches.": "Mist hangt tussen de kale takken van de bomen.",
-        "It is eerily quiet. No animal lives here.": "Het is hier akelig stil. Geen dier leeft hier."
+        "It is eerily quiet. No animal lives here.": "Het is hier akelig stil. Geen dier leeft hier.",
+        "There went {b}[characters.player.name]{/b}, all alone.": "There went {b}[characters.player.name]{/b}, all alone."
       },
       "player": {
         "If there really is a monster here, I need to prepare before I dare enter here.": "Als hier echt een monster is moet ik me eerst gaan voorbereiden voordat ik me hier ga wagen.",
-        "I know enough about the monster.": "Ik weet genoeg over het monster.",
-        "I don't know enough about the monster yet...": "Ik weet nog niet genoeg over het monster.",
-        "(Maybe other people can {b}tell me more?{/b})": "(Misschien kunnen andere mensen {b}mij meer vertellen?{/b})",
         "It sounds like a flying firebreathing dragon.": "Het klinkt als een vliegende, vuurspugende draak.",
         "Having a heavy armor is useless.": "Een zwaar harnas zal nutteloos zijn.",
         "Maybe I need to buy some {b}armor{/b}.": "Misschien moet ik iets van een {b}harnas{/b} kopen.",
-        "At least I have a {b}weapon{/b} to defend myself.": "Ik heb tenminste een {b}wapen{/b} nodig om mijzelf te verdedigen.",
+        "At least I have a {b}weapon{/b} to defend myself.": "Ik heb tenminste een {b}wapen{/b} om mijzelf te verdedigen.",
         "I still need a {b}weapon{/b} to defend myself.": "Ik heb een {b}wapen{/b} nodig om mijzelf te verdedigen.",
         "And maybe I need a {b}weapon{/b} to defend myself?": "En misschien moet ik een {b}wapen{/b} hebben om me te verdedigen?",
+        "I know enough about the monster.": "Ik weet genoeg over het monster.",
+        "I don't know enough about the monster yet...": "Ik weet nog niet genoeg over het monster.",
+        "(Maybe other people can {b}tell me more?{/b})": "(Misschien kunnen andere mensen {b}mij meer vertellen?{/b})",
         "Brr... I have {b}no reason{/b} to be here.": "Brr... Ik heb hier {b}niets te zoeken{/b}."
       },
       "interactions": {
-        "Go west, towards the village": "Ga naar het westen, richting het dorp"
+        "Go west, towards the village": "Ga naar het westen, richting het dorp",
+        "Continue into the dark woods anyway": "Ga toch verder, het donkere woud in"
       }
     },
     "river": {
@@ -528,14 +534,17 @@
         "In this adventure you make the choices. Will you go into the swamp? Or do you rather want to talk to the baker? Its your decision.": "In this adventure you make the choices. Will you go into the swamp? Or do you rather want to talk to the baker? Its your decision.",
         "Let's start with our first choice!": "Let's start with our first choice!",
         "Do you want to play as a {b}boy{/b} or a {b}girl{/b}?": "Do you want to play as a {b}boy{/b} or a {b}girl{/b}?",
-        "Nice! And how do you want to name the hero of our story?": "Nice! And how do you want to name the hero of our story?"
+        "Nice! And how do you want to name the hero of our story?": "Nice! And how do you want to name the hero of our story?",
+        "Your name is currently {b}[characters.player.name]{/b}.": "Your name is currently {b}[characters.player.name]{/b}.",
+        "Hello {b}[characters.player.name]{/b}. Welcome the game!": "Hello {b}[characters.player.name]{/b}. Welcome the game!"
       },
       "interactions": {
         "Play as a {b}boy{/b}": "Play as a {b}boy{/b}",
         "Play as a {b}girl{/b}": "Play as a {b}girl{/b}"
       },
-      "player": {
-        "My name is {b}[.name]{/b}": "My name is {b}[.name]{/b}"
+      "renamePrompt": {
+        "What is your new name?": "What is your new name?",
+        "DELETED What is your name?": "Hoe heet je?"
       }
     },
     "dwarfConversation": {

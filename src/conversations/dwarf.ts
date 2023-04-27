@@ -8,17 +8,13 @@ g.defineOverlay(
     onEnter(() => {
       // potential place to do the posing of characters first.
 
-      g.onState(
-        g.character("dwarf").hasFlag("nameKnown"),
-        () => {
-          g.character("dwarf").say("Hello [characters.player.name]");
-        },
-        () => {
-          g.character("player").say("Hello, can you help me?");
-          g.text("The dwarf looks grumpy in your direction.");
-          g.character("dwarf").say("Grr. Stupid thing, stupid thing!");
-        }
-      );
+      g.onState(g.character("dwarf").hasFlag("nameKnown"), () => {
+        g.character("dwarf").say("Hello [characters.player.name]");
+      }).else(() => {
+        g.character("player").say("Hello, can you help me?");
+        g.text("The dwarf looks grumpy in your direction.");
+        g.character("dwarf").say("Grr. Stupid thing, stupid thing!");
+      });
     });
 
     const dwarfIntro = () => {
@@ -92,16 +88,14 @@ g.defineOverlay(
               "Do you have any food for me?",
               "And a new pickaxe?"
             );
-          },
-          () => {
-            g.onState(g.not(g.item("cookies").hasState("given")), () => {
-              g.character("dwarf").say("Do you have any food for me?");
-            });
-            g.onState(g.not(g.item("pickaxe").hasState("given")), () => {
-              g.character("dwarf").say("I really need a new pickaxe.");
-            });
           }
-        );
+        )
+          .else(g.not(g.item("cookies").hasState("given")), () => {
+            g.character("dwarf").say("Do you have any food for me?");
+          })
+          .else(g.not(g.item("pickaxe").hasState("given")), () => {
+            g.character("dwarf").say("I really need a new pickaxe.");
+          });
       }
     );
 

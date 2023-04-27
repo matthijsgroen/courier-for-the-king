@@ -29,15 +29,11 @@ g.defineOverlay(
       g.character("player").say("Any idea how I could get any medicine?");
       g.text("The old miller looks at you.");
 
-      g.onState(
-        g.character("player").hasFlag("male"),
-        () => {
-          g.character("miller").say("Sorry kid{#male/}, I wouldn't know.");
-        },
-        () => {
-          g.character("miller").say("Sorry kid{#female/}, I wouldn't know.");
-        }
-      );
+      g.onState(g.character("player").hasFlag("male"), () => {
+        g.character("miller").say("Sorry kid{#male/}, I wouldn't know.");
+      }).else(() => {
+        g.character("miller").say("Sorry kid{#female/}, I wouldn't know.");
+      });
     });
 
     interaction(
@@ -80,28 +76,24 @@ g.defineOverlay(
       ),
       () => {
         g.character("player").say("Could I borrow your carriage?");
-        g.onState(
-          g.location("mill").hasState("fixed"),
-          () => {
-            g.character("miller").say(
-              "Sure, no problem! Thanks for fixing the mill with me."
-            );
+        g.onState(g.location("mill").hasState("fixed"), () => {
+          g.character("miller").say(
+            "Sure, no problem! Thanks for fixing the mill with me."
+          );
 
-            g.text(
-              "Together you hitch the carriage of the {b}miller{/b} behind {b}[characters.horse.name]{/b}."
-            );
-            g.character("horse").setFlag("cart");
+          g.text(
+            "Together you hitch the carriage of the {b}miller{/b} behind {b}[characters.horse.name]{/b}."
+          );
+          g.character("horse").setFlag("cart");
 
-            g.character("miller").say(
-              "Be aware, with {b}[characters.horse.name]{/b} hitched to the carriage you cannot ride him."
-            );
-          },
-          () => {
-            g.character("miller").say(
-              "Sorry I rather not. I could need it to get my repairs done."
-            );
-          }
-        );
+          g.character("miller").say(
+            "Be aware, with {b}[characters.horse.name]{/b} hitched to the carriage you cannot ride him."
+          );
+        }).else(() => {
+          g.character("miller").say(
+            "Sorry I rather not. I could need it to get my repairs done."
+          );
+        });
       }
     );
 

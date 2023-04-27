@@ -6,32 +6,28 @@ g.defineOverlay(
     setPrompt("What will you say:");
 
     onEnter(() => {
-      g.onState(
-        g.not(g.character("farmer").hasFlag("visited")),
-        () => {
-          g.character("player").say("Can I help you? I hope nobody got hurt?");
-          g.character("farmer").say(
-            "Nobody got hurt, but that is the only good thing.",
-            "My entire orchard has been burned to the ground,",
-            "and my horse ran off."
-          );
-          g.character("farmer").say(
-            "That monstrous beast in the tower burned everything down! We have to get rid of it!"
-          );
-          g.text(
-            "You want to ask something about possible transportation,",
-            "but since his horse is gone, it would not be appropriate to ask."
-          );
-          g.character("farmer").setFlag("visited");
-          g.onState(g.character("dragon").hasState("unknown"), () => {
-            g.character("dragon").setState("known");
-          });
-        },
-        () => {
-          g.character("player").say("Hey, Can I help you?");
-          g.character("farmer").say("Heya pal, I don't know.");
-        }
-      );
+      g.onState(g.not(g.character("farmer").hasFlag("visited")), () => {
+        g.character("player").say("Can I help you? I hope nobody got hurt?");
+        g.character("farmer").say(
+          "Nobody got hurt, but that is the only good thing.",
+          "My entire orchard has been burned to the ground,",
+          "and my horse ran off."
+        );
+        g.character("farmer").say(
+          "That monstrous beast in the tower burned everything down! We have to get rid of it!"
+        );
+        g.text(
+          "You want to ask something about possible transportation,",
+          "but since his horse is gone, it would not be appropriate to ask."
+        );
+        g.character("farmer").setFlag("visited");
+        g.onState(g.character("dragon").hasState("unknown"), () => {
+          g.character("dragon").setState("known");
+        });
+      }).else(() => {
+        g.character("player").say("Hey, Can I help you?");
+        g.character("farmer").say("Heya pal, I don't know.");
+      });
     });
 
     onLeave(() => {
@@ -71,31 +67,27 @@ g.defineOverlay(
         );
         g.text("The farmer is petting [characters.horse.name].");
 
-        g.onState(
-          g.character("horse").hasFlag("hooves"),
-          () => {
-            g.character("farmer").say(
-              "Thank you for taking care of {b}[characters.horse.name]{/b}.",
-              "I wish I could give something in return!",
-              "Too bad I can't give you any of my {b}delicious apples{/b}, but if you want, I can give you some of my {b}grain{/b}."
-            );
-            g.character("farmer").say(
-              "Also, if you want to borrow {b}[characters.horse.name]{/b} or any other {b}items{/b} from my farm, go ahead."
-            );
-            g.item("grain").setState("access");
-          },
-          () => {
-            g.character("farmer").say("Hey boy, are you hurt?");
-            g.text(
-              "Farmer [characters.farmer.name] inspects the legs of [characters.horse.name]."
-            );
-            g.character("farmer").say(
-              "Ah, I see! There is a horseshoe missing!",
-              "[characters.horse.name] can't work on the land this way, or pull {b}a cart{/b}.",
-              "Could you bring him to the {b}farrier{/b} for a {b}new horseshoe{/b}?"
-            );
-          }
-        );
+        g.onState(g.character("horse").hasFlag("hooves"), () => {
+          g.character("farmer").say(
+            "Thank you for taking care of {b}[characters.horse.name]{/b}.",
+            "I wish I could give something in return!",
+            "Too bad I can't give you any of my {b}delicious apples{/b}, but if you want, I can give you some of my {b}grain{/b}."
+          );
+          g.character("farmer").say(
+            "Also, if you want to borrow {b}[characters.horse.name]{/b} or any other {b}items{/b} from my farm, go ahead."
+          );
+          g.item("grain").setState("access");
+        }).else(() => {
+          g.character("farmer").say("Hey boy, are you hurt?");
+          g.text(
+            "Farmer [characters.farmer.name] inspects the legs of [characters.horse.name]."
+          );
+          g.character("farmer").say(
+            "Ah, I see! There is a horseshoe missing!",
+            "[characters.horse.name] can't work on the land this way, or pull {b}a cart{/b}.",
+            "Could you bring him to the {b}farrier{/b} for a {b}new horseshoe{/b}?"
+          );
+        });
       }
     );
 
@@ -127,18 +119,14 @@ g.defineOverlay(
         g.character("farmer").say(
           "Sure, no problem, if you have a carriage, I could help load some in."
         );
-        g.onState(
-          g.character("horse").hasFlag("cart"),
-          () => {
-            g.text(
-              "Together you put some bags of {b}grain{/b} on the {b}carriage{/b}."
-            );
-            g.item("grain").setState("cart");
-          },
-          () => {
-            g.character("player").say("Hmm I don't have a {b}carriage{/b}.");
-          }
-        );
+        g.onState(g.character("horse").hasFlag("cart"), () => {
+          g.text(
+            "Together you put some bags of {b}grain{/b} on the {b}carriage{/b}."
+          );
+          g.item("grain").setState("cart");
+        }).else(() => {
+          g.character("player").say("Hmm I don't have a {b}carriage{/b}.");
+        });
       }
     );
 

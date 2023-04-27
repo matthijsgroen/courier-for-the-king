@@ -7,19 +7,15 @@ g.defineLocation("bakery", ({ describe, onEnter, onLeave, interaction }) => {
       "No cakes, pies or bread."
     );
     g.text("The only thing for sale seem to be {b}cookies{/b}.");
-    g.onState(
-      g.location("bakery").hasFlag("visited"),
-      () => {
-        g.text("The baker looks really sad.");
-      },
-      () => {
-        g.text(
-          "You somehow expected to be greeted by the baker, but no luck.",
-          "The baker looks really sad."
-        );
-        g.location("bakery").setFlag("visited");
-      }
-    );
+    g.onState(g.location("bakery").hasFlag("visited"), () => {
+      g.text("The baker looks really sad.");
+    }).else(() => {
+      g.text(
+        "You somehow expected to be greeted by the baker, but no luck.",
+        "The baker looks really sad."
+      );
+      g.location("bakery").setFlag("visited");
+    });
   });
 
   onEnter("village", () => {
@@ -30,20 +26,16 @@ g.defineLocation("bakery", ({ describe, onEnter, onLeave, interaction }) => {
   });
 
   onLeave("village", () => {
-    g.onState(
-      g.character("horse").hasState("following"),
-      () => {
-        g.text(
-          "You have no idea how to deal with the situation, so you walk back outside.",
-          "You untie {b}[characters.horse.name]{/b}."
-        );
-      },
-      () => {
-        g.text(
-          "You have no idea how to deal with the situation, so you walk back outside."
-        );
-      }
-    );
+    g.onState(g.character("horse").hasState("following"), () => {
+      g.text(
+        "You have no idea how to deal with the situation, so you walk back outside.",
+        "You untie {b}[characters.horse.name]{/b}."
+      );
+    }).else(() => {
+      g.text(
+        "You have no idea how to deal with the situation, so you walk back outside."
+      );
+    });
   });
 
   interaction("Talk to baker", g.always(), () => {

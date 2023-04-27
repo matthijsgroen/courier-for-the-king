@@ -9,25 +9,17 @@ g.defineOverlay("ingredientList", ({ onEnter, closeOverlay, interaction }) => {
         "Sweet {b}[characters.player.name]{/b}, I need the following items:",
         ""
       );
-      g.onState(
-        g.item("ingredientList").hasFlag("roundLeaves"),
-        () => {
-          g.text("{s}- 2 plants with round leaves{/s}");
-        },
-        () => {
-          g.text("- 2 plants with round leaves");
-        }
-      );
+      g.onState(g.item("ingredientList").hasFlag("roundLeaves"), () => {
+        g.text("{s}- 2 plants with round leaves{/s}");
+      }).else(() => {
+        g.text("- 2 plants with round leaves");
+      });
       g.text("- 2 lightblue toadstools");
-      g.onState(
-        g.item("ingredientList").hasFlag("thornyLeaves"),
-        () => {
-          g.text("{s}- 3 plants with thorny leaves{/s}");
-        },
-        () => {
-          g.text("- 3 plants with thorny leaves");
-        }
-      );
+      g.onState(g.item("ingredientList").hasFlag("thornyLeaves"), () => {
+        g.text("{s}- 3 plants with thorny leaves{/s}");
+      }).else(() => {
+        g.text("- 3 plants with thorny leaves");
+      });
       g.text("- 1 tooth of a dragon");
     });
 

@@ -175,24 +175,20 @@ g.defineLocation("treasureRoute", ({ interaction }) => {
             "You walk between the trees {b}northwards{/b}, until you come to an open clearing."
           );
           g.location("treasureRoute").increaseCounter("steps", 1);
-        },
-        () => {
-          g.onState(
-            g.location("treasureRoute").hasCounter("steps").equals(4),
-            () => {
-              g.descriptionText(
-                "You walk between the trees {b}northwards{/b}, until you come to another open clearing."
-              );
-              g.location("treasureRoute").increaseCounter("steps", 1);
-            },
-            () => {
-              g.descriptionText(
-                "You walk between the trees {b}northwards{/b}."
-              );
-            }
-          );
         }
-      );
+      ).else(() => {
+        g.onState(
+          g.location("treasureRoute").hasCounter("steps").equals(4),
+          () => {
+            g.descriptionText(
+              "You walk between the trees {b}northwards{/b}, until you come to another open clearing."
+            );
+            g.location("treasureRoute").increaseCounter("steps", 1);
+          }
+        ).else(() => {
+          g.descriptionText("You walk between the trees {b}northwards{/b}.");
+        });
+      });
     }
   );
   interaction(
@@ -221,12 +217,11 @@ g.defineLocation("treasureRoute", ({ interaction }) => {
             "You continue on until you reach a small stream flowing through the forest."
           );
           g.location("treasureRoute").increaseCounter("steps", 1);
-        },
-        () => {
-          g.descriptionText("You walk between the trees {b}eastwards{/b}.");
-          endRoute();
         }
-      );
+      ).else(() => {
+        g.descriptionText("You walk between the trees {b}eastwards{/b}.");
+        endRoute();
+      });
     }
   );
   interaction(
@@ -242,9 +237,8 @@ g.defineLocation("treasureRoute", ({ interaction }) => {
         () => {
           g.descriptionText("You reach a fallen tree.");
           g.location("treasureRoute").increaseCounter("steps", 1);
-        },
-        endRoute
-      );
+        }
+      ).else(endRoute);
     }
   );
   interaction(
