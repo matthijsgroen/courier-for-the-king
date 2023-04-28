@@ -18,8 +18,8 @@ export type GameState = GameDefinition<
       bakery: { flags: "visited" };
       smithy: { flags: "visited"; states: "browsing" };
       darkwoods: { flags: "visited" };
-      tower: { flags: "visited"; states: "firstVisit" | "inside" | "atTop" };
-      towerTop: { flags: "visited" };
+      tower: { flags: "visited"; states: "firstVisit" | "inside" };
+      towerTop: { flags: "visited"; states: "sneakIn" };
       river: { flags: "visited" };
       treasureRoute: { counters: "steps" };
     };
@@ -88,6 +88,7 @@ export type GameState = GameDefinition<
       };
       smithsConversation: { states: "fixHorseshoe" | "createNecklace" };
       witchConversation: { states: "intro" | "visited" };
+      daughterConversation: {};
       inventory: {};
       travel: {};
       treasureNotes: {};

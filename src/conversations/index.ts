@@ -4,3 +4,4 @@ import "./farmer";
 import "./baker";
 import "./smiths";
 import "./witch";
+import "./daughter";

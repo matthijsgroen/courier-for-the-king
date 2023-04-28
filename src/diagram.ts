@@ -303,18 +303,18 @@ g.definePuzzleDependencies<MetaData>({
   theMonster: {
     name: "The Monster",
     dependsOn: ["buySword", "getInfoAboutMonster"],
-    tags: { state: "progress", languages: ["en", "nl"] },
+    tags: { state: "text", languages: ["en", "nl"] },
     type: "chapter",
     hierarchy: ["darkWood"],
   },
   climbTower: {
     dependsOn: ["theMonster"],
-    tags: {},
+    tags: { state: "text", languages: ["en", "nl"] },
     hierarchy: ["darkWood", "tower"],
   },
   talkToDaughter: {
     dependsOn: ["climbTower"],
-    tags: {},
+    tags: { state: "progress", languages: ["en", "nl"] },
     hierarchy: ["darkWood", "tower"],
   },
   putMillstoneOnCart: {

@@ -10,6 +10,7 @@ import "./bakery";
 import "./smithy";
 import "./darkwoods";
 import "./tower";
+import "./towerTop";
 import "./river";
 import "./cabin";
 import "./treasureRoute";

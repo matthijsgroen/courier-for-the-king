@@ -417,13 +417,7 @@
         "You tremble with {i}fear{/i}. You have no idea what you are up against.": "Je trilt van {i}angst{/i}. Je hebt geen idee wat je aan gaat treffen.",
         "The {b}monster{/b} does not sound friendly.": "Het {b}monster{/b} klinkt niet vriendelijk.",
         "You grip your sword tightly and slowly creep up the stairs, step by step.": "Je pakt je zwaard stevig vast en je sluipt langzaam trede voor trede de trap op.",
-        "You try to peek into the darkness to make out your surroundings.": "Je tuurt in de duisternis om je omgeving te kunnen zien.",
-        "Now and then you come by a window that lets in a shaft of light, so that it is not entirely pitch black.": "Af en toe passeer je een raam waardoor een bundel licht naar binnen komt, zodat het niet helemaal donker is.",
-        "At the top of the stairs is a {b}door{/b}.": "Bovenaan de trap is een {b}deur{/b}.",
-        "{b}{i}<GGRROOAAAAARRRRH!!!!!>{/i}{/b}": "{b}{i}<GGRROOAAAAARRRRH!!!!!>{/i}{/b}",
-        "Suddenly, underneath the sound of the loud roar, you also hear a women's voice.": "Ineens hoor je onder het luide gebrul ook een vrouwenstem.",
-        "But you can not make out what she is saying.": "Maar je kan haar niet verstaan.",
-        "Would that be {b}[characters.daughter.name]{/b}? Is she still alive!?": "Is dat {b}[characters.daughter.name]{/b}? Leeft ze nog!?"
+        "You try to peek into the darkness to make out your surroundings.": "Je tuurt in de duisternis om je omgeving te kunnen zien."
       },
       "player": {
         "{b}[characters.horse.name]{/b} I need to tie you up here, I hope to be back soon.": "{b}[characters.horse.name]{/b}, ik maak je hier vast, hopelijk ben ik snel weer terug."
@@ -431,9 +425,33 @@
       "interactions": {
         "Take the elevator up": "Neem de lift naar boven",
         "Open the door": "Open de deur",
-        "Go up the stairs": "Ga de trap op",
+        "Go up the stairs": "Ga de trap op"
+      }
+    },
+    "towerTop": {
+      "text": {
+        "Now and then you come by a window that lets in a shaft of light, so that it is not entirely pitch black.": "Af en toe passeer je een raam waardoor een bundel licht naar binnen komt, zodat het niet helemaal donker is.",
+        "At the top of the stairs is a {b}door{/b}.": "Bovenaan de trap is een {b}deur{/b}.",
+        "{b}{i}<GGRROOAAAAARRRRH!!!!!>{/i}{/b}": "{b}{i}<GGRROOAAAAARRRRH!!!!!>{/i}{/b}",
+        "Suddenly, underneath the sound of the loud roar, you also hear a women's voice.": "Ineens hoor je onder het luide gebrul ook een vrouwenstem.",
+        "But you can not make out what she is saying.": "Maar je kan haar niet verstaan.",
+        "Would that be {b}[characters.daughter.name]{/b}? Is she still alive!?": "Is dat {b}[characters.daughter.name]{/b}? Leeft ze nog!?",
+        "With your sword in your hand you brace yourself. You push open the door hard and storm into the room. You will see a giant dragon lying on the floor. He has a huge tail, huge wings and big teeth.": "Met je zwaard in je hand zet je je schrap. Je duwt hard de deur open en stormt de kamer in. Je ziet een gigantische draak op de vloer liggen. Hij heeft een enorme staart, enorme vleugels en grote tanden.",
+        "At the other side of the room you see a {b}young women{/b}.": "Aan de andere kant van de kamer zie je een {b}jonge vrouw{/b} staan.",
+        "With sword in hand you try to open the door as silent as possible...": "Met je zwaard in je hand probeer je zo stil mogelijk de deur open te krijgen...",
+        "To your luck, this door does not squeak and creak!": "Gelukkig, deze piept en kraakt niet!",
+        "You carefully take a step inside the room.": "Je neemt voorzichtig een stap de kamer in.",
+        "You see a gigantic dragon lying on the floor.": "Je ziet een gigantische draak op de vloer liggen.",
+        "He has an enormous tail, enormous wings and large teeth.": "Hij heeft een enorme staart, enorme vleugels en grote tanden.",
+        "{i}<creaaaaak!>{/i}": "{i}<kraaaak!>{/i}",
+        "Oh no! A loose floorboard!": "O nee! een losliggende plank!",
+        "You try to dive away behind some stuff.": "Je probeert achter wat spullen weg te duiken."
+      },
+      "interactions": {
         "Open the door, and storm in": "Open de deur, en storm naar binnen",
-        "Open the door, and sneak in": "Open de deur, en sluip naar binnen"
+        "Open the door, and sneak in": "Open de deur, en sluip naar binnen",
+        "Dive left, behind some boxes": "Duik naar links, achter wat dozen",
+        "Dive right, behind a pile of books": "Duik naar links, achter een stapel boeken"
       }
     },
     "river": {
@@ -1018,6 +1036,23 @@
       "player": {
         "...": "...",
         "Did you also hear that there is a treasure hidden somewhere?": "Heb jij ook gehoord dat er een schat ergens verborgen is?"
+      }
+    },
+    "daughterConversation": {
+      "daughter": {
+        "Hey! Who are you? What are you doing here? Put that sword away!": "He! Wie ben jij? En wat doe jij hier? Doe dat zwaard eens snel weg!",
+        "You might hurt someone!": "Straks bezeer je nog iemand!",
+        "Yes you! What are you doing here? It is difficult enough as it is already!": "Ja jij! Wat kom je doen? Het is al moeilijk genoeg zo!"
+      },
+      "text": {
+        "You are perplexed.": "Je staat perplex.",
+        "Difficult enough? What is she talking about?": "Moeilijk genoeg? Waar heeft ze het over?",
+        "You decide to put away your sword.": "Je bergt je zwaard maar op."
+      },
+      "interactions": {
+        "Are you [characters.daughter.name]?": "Are you [characters.daughter.name]?",
+        "Look out! There is a dragon over there!": "Look out! There is a dragon over there!",
+        "I'm coming to save you!": "I'm coming to save you!"
       }
     },
     "plants": {
