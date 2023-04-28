@@ -50,18 +50,6 @@ export type GameState = GameDefinition<
       runeStone: { states: "possession" };
       plants: { counters: "roundLeaves" | "thornyLeaves" };
     };
-    // lists: { // useful for inventory management
-    //   inventory:
-    //     | "branch"
-    //     | "coins"
-    //     | "pickaxe"
-    //     | "brokenPickaxe"
-    //     | "rope"
-    //     | "fabric"
-    //     | "cookies"
-    //     | "gemstone"
-    //     | "sword";
-    // };
     characters: {
       player: { counters: "coins"; flags: "male" };
       dwarf: { flags: "nameKnown"; states: "happy" };
@@ -88,7 +76,7 @@ export type GameState = GameDefinition<
       };
       smithsConversation: { states: "fixHorseshoe" | "createNecklace" };
       witchConversation: { states: "intro" | "visited" };
-      daughterConversation: {};
+      daughterConversation: { states: "intro" };
       inventory: {};
       travel: {};
       treasureNotes: {};

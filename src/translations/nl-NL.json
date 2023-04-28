@@ -1042,7 +1042,13 @@
       "daughter": {
         "Hey! Who are you? What are you doing here? Put that sword away!": "He! Wie ben jij? En wat doe jij hier? Doe dat zwaard eens snel weg!",
         "You might hurt someone!": "Straks bezeer je nog iemand!",
-        "Yes you! What are you doing here? It is difficult enough as it is already!": "Ja jij! Wat kom je doen? Het is al moeilijk genoeg zo!"
+        "Yes you! What are you doing here? It is difficult enough as it is already!": "Ja jij! Wat kom je doen? Het is al moeilijk genoeg zo!",
+        "Yes that's me. And who are you?": "Ja dat ben ik. En wie ben jij?",
+        "Rescue me? Why? I don't need to be rescued. I came here on my own account. We need to {b}save the dragon{/b}!": "Mij redden? Waarom? Ik hoef niet gered te worden. Ik ben hier zelf naar toe gekomen. We moeten {b}de draak redden{/b}!",
+        "Ha, I know that, I came to him myself. He is really not dangerous you know. Who are you anyway?": "Ha, dat weet ik ook wel, ik ben zelf naar hem toegegaan. Hij is echt niet gevaarlijk hoor. Wie ben jij eigenlijk?",
+        "Rescue me? Why? I don't need to be rescued. We need to {b}save the dragon{/b}!": "Mij redden? Waarom? Ik hoef niet gered te worden. We moeten {b}de draak redden{/b}!",
+        "Rescue me? Ha! I can take care of myself! Who are you anyway?": "Mij redden? Ha! Ik red mijzelf wel hoor! Wie ben jij eigenlijk?",
+        "If you desperately want to save someone here, you can help me {b}save this dragon{/b}!": "Als je iemand hier wil komen redden, dan kan je me mooi helpen met het {b}redden van deze draak{/b}!"
       },
       "text": {
         "You are perplexed.": "Je staat perplex.",
@@ -1050,9 +1056,17 @@
         "You decide to put away your sword.": "Je bergt je zwaard maar op."
       },
       "interactions": {
-        "Are you [characters.daughter.name]?": "Are you [characters.daughter.name]?",
-        "Look out! There is a dragon over there!": "Look out! There is a dragon over there!",
-        "I'm coming to save you!": "I'm coming to save you!"
+        "Are you [characters.daughter.name]?": "Ben jij [characters.daughter.name]?",
+        "Look out! There is a dragon over there!": "Kijk uit! Er zit daar een draak!",
+        "I'm coming to save you!": "Ik kom je redden!",
+        "The dragon needs to be rescued?": "De draak moet gered worden?"
+      },
+      "player": {
+        "Are you {b}[characters.daughter.name]{/b}? The daughter of the {b}baker{/b}?": "Ben jij {b}[characters.daughter.name]{/b}? De dochter van de {b}bakker{/b}?",
+        "I'm {b}[characters.player.name]{/b}, I'm here to rescue you!": "Ik ben {b}[characters.player.name]{/b}, ik ben hier om je te redden!",
+        "Look out! There is a dragon over there!": "Kijk uit! Er zit daar een draak!",
+        "I'm here to rescue you!": "Ik ben hier om je te redden!",
+        "I am {b}[characters.player.name]{/b}.": "Ik ben {b}[characters.player.name]{/b}."
       }
     },
     "plants": {
