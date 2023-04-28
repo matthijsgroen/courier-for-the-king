@@ -406,14 +406,34 @@
         "It looks like the platform of the elevator is {b}at the top{/b} of the tower.": "Het ziet er naar uit dat het plateau van de lift {b}aan de bovenkant{/b} van de toren is.",
         "You cannot get on from this side. You do not see a way to lower the elevator here.": "Je kan er vanaf deze kant niet op. Ook zie je geen manier om de lift vanaf hier te laten zakken.",
         "Behind the elevator you see a hatch towards a basement.": "Achter de lift zie je een luik naar een kelder.",
-        "But the hatch is {b}locked{/b}.": "Maar het luik is {b}op slot{/b}."
+        "But the hatch is {b}locked{/b}.": "Maar het luik is {b}op slot{/b}.",
+        "You push against the door. It squeaks and creaks terribly. The door starts to move.": "Je duwt tegen de deur. Hij piept en kraakt vreselijk. Er komt beweging in.",
+        "You open it just enough to squeeze through.": "Je opent hem ver genoeg zodat je er tussendoor kan.",
+        "You are now inside the tower. It is {i}really{/i} {b}dark{/b}.": "Je bent nu in de toren. Het is hier {i}erg{/i} {b}donker{/b}.",
+        "{i}<Ggrrooaaaaarrrrh!!!!!>{/i}": "{i}<Ggrrooaaaaarrrrh!!!!!>{/i}",
+        "You startle and dive aside. That sound was really close. Still it seems to come from the top of the tower.": "Je schrikt en duikt opzij. Het geluid klinkt erg dichtbij. Toch lijkt het van boven in de toren te komen.",
+        "For a moment you are lying still in the {b}darkness{/b} and decide to stand up.": "Je ligt even stil in de {b}duisternis{/b} en staat dan op.",
+        "Your vision starts to adjust to the darkness. You can slowly make out a spiraling staircase leading upwards.": "Je ogen beginnen te wennen aan het donker. Langzaam ontwaart zich een wenteltrap naar boven.",
+        "You tremble with {i}fear{/i}. You have no idea what you are up against.": "Je trilt van {i}angst{/i}. Je hebt geen idee wat je aan gaat treffen.",
+        "The {b}monster{/b} does not sound friendly.": "Het {b}monster{/b} klinkt niet vriendelijk.",
+        "You grip your sword tightly and slowly creep up the stairs, step by step.": "Je pakt je zwaard stevig vast en je sluipt langzaam trede voor trede de trap op.",
+        "You try to peek into the darkness to make out your surroundings.": "Je tuurt in de duisternis om je omgeving te kunnen zien.",
+        "Now and then you come by a window that lets in a shaft of light, so that it is not entirely pitch black.": "Af en toe passeer je een raam waardoor een bundel licht naar binnen komt, zodat het niet helemaal donker is.",
+        "At the top of the stairs is a {b}door{/b}.": "Bovenaan de trap is een {b}deur{/b}.",
+        "{b}{i}<GGRROOAAAAARRRRH!!!!!>{/i}{/b}": "{b}{i}<GGRROOAAAAARRRRH!!!!!>{/i}{/b}",
+        "Suddenly, underneath the sound of the loud roar, you also hear a women's voice.": "Ineens hoor je onder het luide gebrul ook een vrouwenstem.",
+        "But you can not make out what she is saying.": "Maar je kan haar niet verstaan.",
+        "Would that be {b}[characters.daughter.name]{/b}? Is she still alive!?": "Is dat {b}[characters.daughter.name]{/b}? Leeft ze nog!?"
       },
       "player": {
         "{b}[characters.horse.name]{/b} I need to tie you up here, I hope to be back soon.": "{b}[characters.horse.name]{/b}, ik maak je hier vast, hopelijk ben ik snel weer terug."
       },
       "interactions": {
         "Take the elevator up": "Neem de lift naar boven",
-        "Open the door": "Open de deur"
+        "Open the door": "Open de deur",
+        "Go up the stairs": "Ga de trap op",
+        "Open the door, and storm in": "Open de deur, en storm naar binnen",
+        "Open the door, and sneak in": "Open de deur, en sluip naar binnen"
       }
     },
     "river": {

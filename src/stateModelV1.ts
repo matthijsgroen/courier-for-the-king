@@ -18,7 +18,8 @@ export type GameState = GameDefinition<
       bakery: { flags: "visited" };
       smithy: { flags: "visited"; states: "browsing" };
       darkwoods: { flags: "visited" };
-      tower: { flags: "visited" };
+      tower: { flags: "visited"; states: "firstVisit" | "inside" | "atTop" };
+      towerTop: { flags: "visited" };
       river: { flags: "visited" };
       treasureRoute: { counters: "steps" };
     };
