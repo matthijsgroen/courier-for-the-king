@@ -18,7 +18,7 @@ export type GameState = GameDefinition<
       bakery: { flags: "visited" };
       smithy: { flags: "visited"; states: "browsing" };
       darkwoods: { flags: "visited" };
-      tower: { flags: "visited"; states: "firstVisit" | "inside" };
+      tower: { flags: "visited"; states: "firstVisit" | "inside" | "visited" };
       towerTop: { flags: "visited"; states: "sneakIn" };
       river: { flags: "visited" };
       treasureRoute: { counters: "steps" };
@@ -55,7 +55,7 @@ export type GameState = GameDefinition<
       dwarf: { flags: "nameKnown"; states: "happy" };
       miller: {};
       horse: {
-        states: "river" | "following" | "stable" | "tower";
+        states: "river" | "following" | "stable";
         flags: "hooves" | "cart" | "found" | "known";
       };
       dragon: { states: "known" | "found" };
@@ -76,7 +76,7 @@ export type GameState = GameDefinition<
       };
       smithsConversation: { states: "fixHorseshoe" | "createNecklace" };
       witchConversation: { states: "intro" | "visited" };
-      daughterConversation: { states: "intro" };
+      daughterConversation: { states: "intro" | "visited" };
       inventory: {};
       travel: {};
       treasureNotes: {};

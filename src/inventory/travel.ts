@@ -103,6 +103,22 @@ g.defineOverlay(
       }
     );
 
+    interaction(
+      "Tower",
+      g.and(
+        g.location("tower").hasState("visited"),
+        g.not(g.isLocation("tower"))
+      ),
+      () => {
+        closeOverlay();
+        g.descriptionText(
+          "{b}[characters.horse.name]{/b} quickly brings you to the {b}tower{/b}.",
+          ""
+        );
+        g.travel("tower");
+      }
+    );
+
     interaction("Dismount horse", g.always(), () => {
       closeOverlay();
     });
@@ -117,7 +133,17 @@ g.globalInteraction(
     g.character("horse").hasFlag("hooves"),
     g.not(g.isOverlayOpen()),
     g.not(g.character("horse").hasFlag("cart")),
-    g.not(g.or(g.isLocation("smithy"), g.isLocation("bakery")))
+    g.not(
+      g.or(
+        g.isLocation("smithy"),
+        g.isLocation("bakery"),
+        g.and(
+          g.isLocation("tower"),
+          g.not(g.location("tower").hasState("visited"))
+        ),
+        g.isLocation("towerTop")
+      )
+    )
   ),
   () => {
     g.openOverlay("travel");

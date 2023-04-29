@@ -394,14 +394,18 @@
       },
       "interactions": {
         "Go west, towards the village": "Ga naar het westen, richting het dorp",
-        "Continue into the dark woods anyway": "Ga toch verder, het donkere woud in"
+        "Continue into the dark woods anyway": "Ga toch verder, het donkere woud in",
+        "Continue into the dark woods": "Ga verder het donkere woud in"
       }
     },
     "tower": {
       "text": {
+        "You go down the stairs to the base of the tower.": "Je gaat de trap af naar de voet van de toren.",
         "{b}[characters.player.name]{/b} walked to the base of the tower.": "{b}[characters.player.name]{/b} liep naar de voet van de toren.",
         "To the {b}right side{/b} of the tower is a wooden elevator.": "Aan de {b}rechterkant{/b} van de toren is een houten liftconstructie.",
         "At the {b}front{/b} of the tower a big heavy door.": "Aan de {b}voorkant{/b} van de toren is een grote zware deur.",
+        "A trail goes from the tower into the wood.": "Een pad loopt het donkere woud in.",
+        "{b}[characters.horse.name]{/b} is tied to the base of the tower.": "{b}[characters.horse.name]{/b} is vastgemaakt aan de voet van de toren.",
         "You walk to the wooden elevator.": "Je loopt naar de houten lift.",
         "It looks like the platform of the elevator is {b}at the top{/b} of the tower.": "Het ziet er naar uit dat het plateau van de lift {b}aan de bovenkant{/b} van de toren is.",
         "You cannot get on from this side. You do not see a way to lower the elevator here.": "Je kan er vanaf deze kant niet op. Ook zie je geen manier om de lift vanaf hier te laten zakken.",
@@ -420,19 +424,27 @@
         "You try to peek into the darkness to make out your surroundings.": "Je tuurt in de duisternis om je omgeving te kunnen zien."
       },
       "player": {
-        "{b}[characters.horse.name]{/b} I need to tie you up here, I hope to be back soon.": "{b}[characters.horse.name]{/b}, ik maak je hier vast, hopelijk ben ik snel weer terug."
+        "{b}[characters.horse.name]{/b} I need to tie you up here, I hope to be back soon.": "{b}[characters.horse.name]{/b}, ik maak je hier vast, hopelijk ben ik snel weer terug.",
+        "{b}[characters.horse.name]{/b}, I'll tie you up here.": "{b}[characters.horse.name]{/b}, ik bind je hier weer even vast."
       },
       "interactions": {
         "Take the elevator up": "Neem de lift naar boven",
         "Open the door": "Open de deur",
-        "Go up the stairs": "Ga de trap op"
+        "Go up the stairs": "Ga de trap op",
+        "Enter the tower": "Ga de toren in",
+        "Go to the elevator": "Ga naar de lift",
+        "Go into the dark wood": "Ga het donkere woud in"
       }
     },
     "towerTop": {
       "text": {
+        "You go up the stairs to the top of the tower.": "Je gaat de trap op naar de top van de toren.",
+        "You are at the top of the tower. There is a great opening in the wall, with an wooden elevator going outside.": "Je staat bovenin de toren. Je ziet een grote opening in de buitenmuur met een lift.",
+        "The daughter of the baker, {b}[characters.daughter.name]{/b} is here.": "De dochter van de bakker, {b}[characters.daughter.name]{/b} is hier.",
+        "A large dragon is lying on the floor, roaring of pain.": "Een grote draak ligt op de grond te brullen van de pijn.",
+        "{b}{i}<GGRROOAAAAARRRRH!!!!!>{/i}{/b}": "{b}{i}<GGRROOAAAAARRRRGH!!!!!>{/i}{/b}",
         "Now and then you come by a window that lets in a shaft of light, so that it is not entirely pitch black.": "Af en toe passeer je een raam waardoor een bundel licht naar binnen komt, zodat het niet helemaal donker is.",
         "At the top of the stairs is a {b}door{/b}.": "Bovenaan de trap is een {b}deur{/b}.",
-        "{b}{i}<GGRROOAAAAARRRRH!!!!!>{/i}{/b}": "{b}{i}<GGRROOAAAAARRRRH!!!!!>{/i}{/b}",
         "Suddenly, underneath the sound of the loud roar, you also hear a women's voice.": "Ineens hoor je onder het luide gebrul ook een vrouwenstem.",
         "But you can not make out what she is saying.": "Maar je kan haar niet verstaan.",
         "Would that be {b}[characters.daughter.name]{/b}? Is she still alive!?": "Is dat {b}[characters.daughter.name]{/b}? Leeft ze nog!?",
@@ -451,7 +463,10 @@
         "Open the door, and storm in": "Open de deur, en storm naar binnen",
         "Open the door, and sneak in": "Open de deur, en sluip naar binnen",
         "Dive left, behind some boxes": "Duik naar links, achter wat dozen",
-        "Dive right, behind a pile of books": "Duik naar links, achter een stapel boeken"
+        "Dive right, behind a pile of books": "Duik naar links, achter een stapel boeken",
+        "Go to the elevator": "Ga naar de lift",
+        "Talk to [characters.daughter.name]": "Praat met [characters.daughter.name]",
+        "Go down the stairs": "Ga de trap af"
       }
     },
     "river": {
@@ -942,7 +957,7 @@
         "We do everything by foot around here.": "We doen hier alles te voet.",
         "No problem, that will be 2 coins.": "Geen probleem, dat is dan 2 geldstukken.",
         "And has a really loud {i}roar{/i}.": "En kan ontzettend hard {i}brullen{/i}.",
-        "Ok, please come back when you do.": "Okee, kom maar terug wanneer je genoeg hebt.",
+        "Ok, please come back when you do.": "Oké, kom maar terug wanneer je genoeg hebt.",
         "All done. As good as new. You could {b}ride{/b} him now if you want.": "Klaar. Weer zo goed als nieuw. Je zou hem zelfs kunnen {b}berijden{/b} als je dat zou willen.",
         "Sure, no problem.": "Zeker, geen probleem."
       },
@@ -1048,7 +1063,10 @@
         "Ha, I know that, I came to him myself. He is really not dangerous you know. Who are you anyway?": "Ha, dat weet ik ook wel, ik ben zelf naar hem toegegaan. Hij is echt niet gevaarlijk hoor. Wie ben jij eigenlijk?",
         "Rescue me? Why? I don't need to be rescued. We need to {b}save the dragon{/b}!": "Mij redden? Waarom? Ik hoef niet gered te worden. We moeten {b}de draak redden{/b}!",
         "Rescue me? Ha! I can take care of myself! Who are you anyway?": "Mij redden? Ha! Ik red mijzelf wel hoor! Wie ben jij eigenlijk?",
-        "If you desperately want to save someone here, you can help me {b}save this dragon{/b}!": "Als je iemand hier wil komen redden, dan kan je me mooi helpen met het {b}redden van deze draak{/b}!"
+        "If you desperately want to save someone here, you can help me {b}save this dragon{/b}!": "Als je iemand hier wil komen redden, dan kan je me mooi helpen met het {b}redden van deze draak{/b}!",
+        "Yes, didn't you hear the terrible roars?": "Ja, heb je dat vreselijke gebrul niet gehoord?",
+        "The poor beast has a terrible toothache. His {b}tooth{/b} needs to be pulled, but I can't.": "Het arme beest heeft een vreselijke tandpijn. Zijn {b}tand{/b} moet getrokken worden, maar het lukt mij niet.",
+        "Ok.": "Oké."
       },
       "text": {
         "You are perplexed.": "Je staat perplex.",
@@ -1059,14 +1077,20 @@
         "Are you [characters.daughter.name]?": "Ben jij [characters.daughter.name]?",
         "Look out! There is a dragon over there!": "Kijk uit! Er zit daar een draak!",
         "I'm coming to save you!": "Ik kom je redden!",
-        "The dragon needs to be rescued?": "De draak moet gered worden?"
+        "The dragon needs to be rescued?": "De draak moet gered worden?",
+        "How can I help?": "Hoe kan ik helpen?",
+        "You have to come with me, your dad is worried!": "You have to come with me, your dad is worried!",
+        "What do you know of this dragon?": "Wat weet je van deze draak?",
+        "I will see what I can do": "Ik kijk wat ik kan doen"
       },
       "player": {
         "Are you {b}[characters.daughter.name]{/b}? The daughter of the {b}baker{/b}?": "Ben jij {b}[characters.daughter.name]{/b}? De dochter van de {b}bakker{/b}?",
         "I'm {b}[characters.player.name]{/b}, I'm here to rescue you!": "Ik ben {b}[characters.player.name]{/b}, ik ben hier om je te redden!",
         "Look out! There is a dragon over there!": "Kijk uit! Er zit daar een draak!",
         "I'm here to rescue you!": "Ik ben hier om je te redden!",
-        "I am {b}[characters.player.name]{/b}.": "Ik ben {b}[characters.player.name]{/b}."
+        "I am {b}[characters.player.name]{/b}.": "Ik ben {b}[characters.player.name]{/b}.",
+        "The dragon needs to be rescued?": "De draak moet gered worden?",
+        "I will see what I can do.": "Ik kijk wat ik kan doen."
       }
     },
     "plants": {
@@ -1170,7 +1194,8 @@
         "You enter the bakery.": "Je loopt de bakkerij binnen.",
         "{b}[characters.horse.name]{/b} quickly brings you to the {b}cabin in the swamp{/b}.": "{b}[characters.horse.name]{/b} brengt je snel naar de {b}hut in het moeras{/b}.",
         "The last part you had to walk next to him, to make sure you didn't sink too much into the wet surface.": "Het laatste stukje most je naast hem lopen, om zeker te zijn dat je niet te diep in de drassige ondergrond weg zou zakken.",
-        "{b}[characters.horse.name]{/b} quickly brings you to the {b}mill{/b}.": "{b}[characters.horse.name]{/b} brengt je snel naar de {b}molen{/b}."
+        "{b}[characters.horse.name]{/b} quickly brings you to the {b}mill{/b}.": "{b}[characters.horse.name]{/b} brengt je snel naar de {b}molen{/b}.",
+        "{b}[characters.horse.name]{/b} quickly brings you to the {b}tower{/b}.": "{b}[characters.horse.name]{/b} brengt je snel naar de {b}toren{/b}."
       },
       "interactions": {
         "Farm": "Boerderij",
@@ -1179,6 +1204,7 @@
         "Bakery": "Bakkerij",
         "Cabin of the witch": "Hut van de heks",
         "Mill": "Molen",
+        "Tower": "Toren",
         "Dismount horse": "Stijg af"
       }
     },
