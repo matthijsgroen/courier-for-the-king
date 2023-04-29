@@ -2,21 +2,29 @@ import g from "../game";
 
 g.defineOverlay(
   "daughterConversation",
-  ({ onEnter, interaction, hasState, setState, closeOverlay }) => {
-    onEnter(() => {
-      g.character("daughter").say(
-        "Hey! Who are you? What are you doing here? Put that sword away!",
-        "You might hurt someone!"
-      );
-      g.text("You are perplexed.");
-      g.character("daughter").say(
-        "Yes you! What are you doing here? It is difficult enough as it is already!"
-      );
+  ({ onEnter, interaction, hasState, setState, closeOverlay, setPrompt }) => {
+    setPrompt("What will you say:");
 
-      g.text(
-        "Difficult enough? What is she talking about?",
-        "You decide to put away your sword."
-      );
+    onEnter(() => {
+      g.onState(hasState("visited"), () => {
+        g.character("daughter").say(
+          "Hi {b}[characters.player.name]{/b}, are you here to help with the toothache?"
+        );
+      }).else(() => {
+        g.character("daughter").say(
+          "Hey! Who are you? What are you doing here? Put that sword away!",
+          "You might hurt someone!"
+        );
+        g.text("You are perplexed.");
+        g.character("daughter").say(
+          "Yes you! What are you doing here? It is difficult enough as it is already!"
+        );
+
+        g.text(
+          "Difficult enough? What is she talking about?",
+          "You decide to put away your sword."
+        );
+      });
     });
 
     interaction(
@@ -77,26 +85,34 @@ g.defineOverlay(
     });
 
     interaction("How can I help?", hasState("visited"), () => {
-      // "1=17;2=0;17=2;4=2", "*c3", "$n: 'Hoe kan ik je helpen?'"
-      // "", "*c13", "Bloem: 'We moeten iets bedenken om zijn tand eruit te krijgen. Ik studeer"
-      // "  voor tandarts. Met zoveel mensen die taartjes eten bij mijn vader moet er"
-      // "  werk genoeg zijn voor mij. Nooit gedacht dat mijn eerste klant een draak zou zijn.'"
-      // "", "Bloem: 'Het probleem met een draak is dat alles groter en sterker is dan bij mensen."
-      // "  Bij mensen kun je een tand eruit trekken met een touwtje aan een deur en dan"
-      // "  de deur dichtslaan. Wij moeten iets groters gaan bedenken hier."
-      // "  Kan jij een zware steen regelen?'"
-      // "&4=1"
+      g.character("player").say("How can I help you?");
+
+      g.character("daughter").say(
+        "We have to think of something to {b}pull{/b} his teeth out.",
+        "I'm studying to be {b}a dentist{/b}. With so many people eating the pastries of my father there should be enough work for me.",
+        "Never thought my first client would be a dragon."
+      );
+
+      g.character("daughter").say(
+        "The problem with a dragon is that everything is bigger and stronger than by people.",
+        "With people you could tie the tooth with {b}a rope{/b} to a door, and slam the door shut.",
+        "We need to think bigger here. Could you arrange a {b}heavy stone{/b}?"
+      );
     });
 
     interaction(
       "You have to come with me, your dad is worried!",
       hasState("visited"),
       () => {
-        // "1=17;2=0;17=2;4=3;45=0", "*c3", "$n: 'Je moet meekomen, je vader is hartstikke ongerust!'"
-        // "", "*c13", "Bloem: 'Mijn vader? Gerst kan alleen goed bakken en geeft alleen om geld."
-        // "  Ik blijf hier totdat ik de draak heb kunnen helpen. Hij had toch ook zelf hier"
-        // "  naar toe kunnen komen? Daarom heeft hij jou waarschijnlijk gestuurd, omdat hij niet"
-        // "  een echte ridder kon betalen.'", "&4=1"
+        g.character("player").say(
+          "You have to come with me, your dad is worried!"
+        );
+        g.character("daughter").say(
+          "My dad? {b}[characters.baker.name]{/b} is only good at baking, and only cares for {b}money{/b}.",
+          "I'm staying here till I've helped this dragon. Why didn't {i}he{/i} come here himself?",
+          "That's why he sent you here right? Because he could not afford a proper knight."
+        );
+
         // "1=17;2=0;17=2;4=3;45!0", "*c3", "$n: 'Je moet meekomen, je vader is hartstikke ongerust!'"
         // "", "*c13", "Bloem: 'Ja, je hebt gelijk. Die tand trekken was echt super! Mijn carrière"
         // "  voor tandarts maakt zo wel een geweldige start, denk je niet?'"

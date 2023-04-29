@@ -367,6 +367,8 @@
         "The sunlight can barely reach the forest floor, and trees seem to look at you.": "Het zonlicht raakt de grond amper en de bomen lijken je aan te kijken.",
         "There is a thick fog between the bare branches.": "Mist hangt tussen de kale takken van de bomen.",
         "It is eerily quiet. No animal lives here.": "Het is hier akelig stil. Geen dier leeft hier.",
+        "Deep in the woods stands a tall tower.": "Diep in het woud staat een hoge toren.",
+        "There is a road leading to the {b}west{/b}, towards the village.": "Een weg leid naar het {b}westen{/b}, richting het dorp.",
         "There went {b}[characters.player.name]{/b}, with {b}[characters.horse.name]{/b} pulling the carriage.": "Daar ging {b}[characters.player.name]{/b}, samen met {b}[characters.horse.name]{/b} die de wagen trok.",
         "There went {b}[characters.player.name]{/b}, with {b}[characters.horse.name]{/b} by his side.": "Daar ging {b}[characters.player.name]{/b}, met {b}[characters.horse.name]{/b} aan zijn zijde.",
         "There went {b}[characters.player.name]{/b}, with {b}[characters.horse.name]{/b} by her side.": "Daar ging {b}[characters.player.name]{/b}, met {b}[characters.horse.name]{/b} aan haar zijde.",
@@ -393,9 +395,10 @@
         "Oh help, where have I gotten myself into.": "O help, waar ben ik aan begonnen."
       },
       "interactions": {
+        "Search for mushrooms": "Search for mushrooms",
+        "Go to the tower of the dragon": "Ga naar de toren van de draak",
         "Go west, towards the village": "Ga naar het westen, richting het dorp",
-        "Continue into the dark woods anyway": "Ga toch verder, het donkere woud in",
-        "Continue into the dark woods": "Ga verder het donkere woud in"
+        "Continue into the dark woods anyway": "Ga toch verder, het donkere woud in"
       }
     },
     "tower": {
@@ -1055,6 +1058,7 @@
     },
     "daughterConversation": {
       "daughter": {
+        "Hi {b}[characters.player.name]{/b}, are you here to help with the toothache?": "Hoi {b}[characters.player.name]{/b}, kom je me helpen met de kiespijn?",
         "Hey! Who are you? What are you doing here? Put that sword away!": "He! Wie ben jij? En wat doe jij hier? Doe dat zwaard eens snel weg!",
         "You might hurt someone!": "Straks bezeer je nog iemand!",
         "Yes you! What are you doing here? It is difficult enough as it is already!": "Ja jij! Wat kom je doen? Het is al moeilijk genoeg zo!",
@@ -1066,6 +1070,15 @@
         "If you desperately want to save someone here, you can help me {b}save this dragon{/b}!": "Als je iemand hier wil komen redden, dan kan je me mooi helpen met het {b}redden van deze draak{/b}!",
         "Yes, didn't you hear the terrible roars?": "Ja, heb je dat vreselijke gebrul niet gehoord?",
         "The poor beast has a terrible toothache. His {b}tooth{/b} needs to be pulled, but I can't.": "Het arme beest heeft een vreselijke tandpijn. Zijn {b}tand{/b} moet getrokken worden, maar het lukt mij niet.",
+        "We have to think of something to {b}pull{/b} his teeth out.": "We moeten iets bedenken om zijn tand eruit te {b}trekken{/b}.",
+        "I'm studying to be {b}a dentist{/b}. With so many people eating the pastries of my father there should be enough work for me.": "Ik studeer voor {b}tandarts{/b}. Met zoveel mensen die de gebakjes van mijn vader eten moet er genoeg werk voor mij zijn.",
+        "Never thought my first client would be a dragon.": "Nooit gedacht dat mijn eerste klant een draak zou zijn.",
+        "The problem with a dragon is that everything is bigger and stronger than by people.": "Het probleem met een draak is dat alles groter en sterker is dan bij mensen.",
+        "With people you could tie the tooth with {b}a rope{/b} to a door, and slam the door shut.": "Bij mensen zou je de tand met {b}een touw{/b} aan de deur kunnen binden, en dan de deur dicht kunnen slaan.",
+        "We need to think bigger here. Could you arrange a {b}heavy stone{/b}?": "We moeten iets groters bedenken hier. Zou jij {b}een zware steen{/b} kunnen regelen?",
+        "My dad? {b}[characters.baker.name]{/b} is only good at baking, and only cares for {b}money{/b}.": "Mijn vader? {b}[characters.baker.name]{/b} kan alleen goed bakken en geeft alleen om geld.",
+        "I'm staying here till I've helped this dragon. Why didn't {i}he{/i} come here himself?": "Ik blijf here tot ik de draak heb kunnen helpen. Hij had toch ook {i}zelf{/i} hier heen kunnen komen?",
+        "That's why he sent you here right? Because he could not afford a proper knight.": "Daarom heeft hij jou gestuurd toch? Omdat hij niet een echte ridder kon betalen.",
         "Ok.": "Oké."
       },
       "text": {
@@ -1079,7 +1092,7 @@
         "I'm coming to save you!": "Ik kom je redden!",
         "The dragon needs to be rescued?": "De draak moet gered worden?",
         "How can I help?": "Hoe kan ik helpen?",
-        "You have to come with me, your dad is worried!": "You have to come with me, your dad is worried!",
+        "You have to come with me, your dad is worried!": "Je moet meekomen, je vader is hartstikke ongerust!",
         "What do you know of this dragon?": "Wat weet je van deze draak?",
         "I will see what I can do": "Ik kijk wat ik kan doen"
       },
@@ -1090,6 +1103,8 @@
         "I'm here to rescue you!": "Ik ben hier om je te redden!",
         "I am {b}[characters.player.name]{/b}.": "Ik ben {b}[characters.player.name]{/b}.",
         "The dragon needs to be rescued?": "De draak moet gered worden?",
+        "How can I help you?": "Hoe kan ik je helpen?",
+        "You have to come with me, your dad is worried!": "Je moet meekomen, je vader is hartstikke ongerust!",
         "I will see what I can do.": "Ik kijk wat ik kan doen."
       }
     },

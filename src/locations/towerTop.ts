@@ -102,7 +102,9 @@ g.defineLocation(
     interaction(
       "Talk to [characters.daughter.name]",
       hasFlag("visited"),
-      () => {}
+      () => {
+        g.openOverlay("daughterConversation");
+      }
     );
 
     interaction("Go down the stairs", hasFlag("visited"), () => {

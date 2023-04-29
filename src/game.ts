@@ -96,7 +96,7 @@ const game = world<GameState>({
       textColor: palette.color("dwarf"),
     },
     miller: {
-      defaultName: "Tjasker",
+      defaultName: "Smock",
       textColor: palette.color("miller"),
     },
     horse: {
@@ -108,7 +108,7 @@ const game = world<GameState>({
       textColor: palette.color("dragon"),
     },
     farmer: {
-      defaultName: "Joe",
+      defaultName: "Piedmont",
       textColor: palette.color("farmer"),
     },
     baker: {

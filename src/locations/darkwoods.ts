@@ -9,7 +9,11 @@ g.defineLocation("darkwoods", ({ describe, interaction, onLeave, hasFlag }) => {
       "It is eerily quiet. No animal lives here."
     );
     g.onState(hasFlag("visited"), () => {
-      // Mushrooms if list of witch?
+      g.text(
+        "",
+        "Deep in the woods stands a tall tower.",
+        "There is a road leading to the {b}west{/b}, towards the village."
+      );
     }).else(() => {
       g.onState(g.character("dragon").hasState("known"), () => {
         g.character("player").say(
@@ -75,6 +79,18 @@ g.defineLocation("darkwoods", ({ describe, interaction, onLeave, hasFlag }) => {
     }).else(() => {
       g.text("You walk westwards, towards the village.");
     });
+  });
+
+  interaction(
+    "Search for mushrooms",
+    g.item("ingredientList").hasState("possession"),
+    () => {
+      // open overlay
+    }
+  );
+
+  interaction("Go to the tower of the dragon", hasFlag("visited"), () => {
+    g.travel("tower");
   });
 
   interaction("Go west, towards the village", g.always(), () => {
@@ -152,8 +168,4 @@ g.defineLocation("darkwoods", ({ describe, interaction, onLeave, hasFlag }) => {
       g.travel("tower");
     }
   );
-
-  interaction("Continue into the dark woods", hasFlag("visited"), () => {
-    g.travel("tower");
-  });
 });
