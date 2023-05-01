@@ -146,14 +146,6 @@ g.defineOverlay(
       g.character("daughter").say(
         "The horseshoe and the teeth need to be taken out."
       );
-
-      // "1=17;2=0;17=2;4=4", "*c3", "$n: 'Wat weet je van deze draak?'"
-      // "", "*c13", "Bloem: 'Ow best wel wat eigenlijk. Deze draak is een Dins.'"
-      // "", "*c3", "$n: 'Een Dins?'", "", "*c13", "Bloem: 'Ja, een Dins... Hij kan vliegen, vuur spuwen en is gek op appels."
-      // "  Waarschijnlijk heeft hij appels proberen te eten bij de boer, en is hij toen aangevallen.'"
-      // "", "*c3", "$n: 'Aangevallen?? Deze draak?'", "", "&"
-      // "1=17;2=0;17=2;4=4;30=18;45=0", "*c13", "Bloem: 'Ja, en de dader staat beneden. Er zat een hoefijzer in de tand van de Dins. Hij is door jouw paard getrapt. De hoefijzer en de tand moeten eruit.'", "&4=1"
-      // "1=17;2=0;17=2;4=4;30!18;45=0", "*c13", "Bloem: 'Ja, en de dader is een paard. Er zat een hoefijzer in de tand van de Dins. De hoefijzer en de tand moeten eruit.'", "&4=1"
       // "1=17;2=0;17=2;4=4;45!0", "*c13", "Bloem: 'Ja, maar gelukkig hebben we de tand er nu uitgetrokken!'", "&4=1"
     });
 
@@ -162,16 +154,10 @@ g.defineOverlay(
       g.character("daughter").say("Ok.");
       g.location("towerTop").setFlag("visited");
       g.location("tower").setState("visited");
-      //   "1=17;2=0;17=2;4=5;45=0", "*c3", "$n: 'Ik ga kijken wat ik kan doen.'";
-      //   "", "*c13", "Bloem: 'Oké.'", "&4=0;20=1";
       closeOverlay();
     });
 
-    // "2=0;1=17;17=2;4=1;45=0", "Zeg: 'Hoe kan ik je helpen?'", "4=2"
-    // "2=0;1=17;17=2;4=1", "Zeg: 'Je moet meekomen, je vader is hartstikke ongerust!'", "4=3"
-    // "2=0;1=17;17=2;4=1", "Zeg: 'Wat weet je van deze draak?'", "4=4"
     // "2=0;1=17;17=2;4=1;30=18;44=2;29=4", "Zeg: 'Zou je me kunnen helpen uitladen?'", "4=8"
-    // "2=0;1=17;17=2;4=1;45=0", "Zeg: 'Ik ga kijken wat ik kan doen'", "4=5"
     // "2=0;1=17;17=2;4=1;45!0", "Zeg: 'Tot later'", "4=5"
   }
 );
