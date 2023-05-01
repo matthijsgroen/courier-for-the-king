@@ -1079,6 +1079,13 @@
         "My dad? {b}[characters.baker.name]{/b} is only good at baking, and only cares for {b}money{/b}.": "Mijn vader? {b}[characters.baker.name]{/b} kan alleen goed bakken en geeft alleen om geld.",
         "I'm staying here till I've helped this dragon. Why didn't {i}he{/i} come here himself?": "Ik blijf here tot ik de draak heb kunnen helpen. Hij had toch ook {i}zelf{/i} hier heen kunnen komen?",
         "That's why he sent you here right? Because he could not afford a proper knight.": "Daarom heeft hij jou gestuurd toch? Omdat hij niet een echte ridder kon betalen.",
+        "Oh quite a bit actually. This dragon is called a {b}[characters.dragon.name]{/b}.": "O best wel wat eigenlijk. Deze draak heet een {b}[characters.dragon.name]{/b}.",
+        "Yes, a {b}[characters.dragon.name]{/b}... He can fly, breathe fire and loves {b}apples{/b}.": "Ja, een {b}[characters.dragon.name]{/b}... Hij kan vliegen, spuwt vuur en is gek op {b}appels{/b}.",
+        "That is probably why he wanted to eat some {b}apples{/b} at the farm. And that is when he was {b}attacked{/b}.": "Dat is waarschijnlijk waarom hij een paar {b}apples{/b} wilde eten bij de boer. En dat is wanneer hij aangevallen werd.",
+        "Yes, and the perpetrator is downstairs. There is a horseshoe stuck in the teeth of the [characters.dragon.name].": "Ja, en de dader staat beneden. Er zit een hoefijzer klem in de tand van de [characters.dragon.name].",
+        "He got kicked by your horse.": "Hij is getrapt door jouw paard.",
+        "Yes, and the perpetrator is {b}a horse{/b}. There is a horseshoe stuck in the teeth of the [characters.dragon.name].": "Ja, en de dader is {b}een paard{/b}. Er zit een hoefijzer klem in de tand van de [characters.dragon.name].",
+        "The horseshoe and the teeth need to be taken out.": "Het hoefijzer en de tand moeten eruit getrokken worden.",
         "Ok.": "Oké."
       },
       "text": {
@@ -1105,6 +1112,9 @@
         "The dragon needs to be rescued?": "De draak moet gered worden?",
         "How can I help you?": "Hoe kan ik je helpen?",
         "You have to come with me, your dad is worried!": "Je moet meekomen, je vader is hartstikke ongerust!",
+        "What do you know of this dragon?": "Wat weet je van deze draak?",
+        "A {b}[characters.dragon.name]{/b}?": "Een {b}[characters.dragon.name]{/b}?",
+        "{b}Attacked??{/b} This dragon?": "{b}Aangevallen??{/b} Deze draak?",
         "I will see what I can do.": "Ik kijk wat ik kan doen."
       }
     },

@@ -122,6 +122,31 @@ g.defineOverlay(
     );
 
     interaction("What do you know of this dragon?", hasState("visited"), () => {
+      g.character("player").say("What do you know of this dragon?");
+      g.character("daughter").say(
+        "Oh quite a bit actually. This dragon is called a {b}[characters.dragon.name]{/b}."
+      );
+      g.character("player").say("A {b}[characters.dragon.name]{/b}?");
+      g.character("daughter").say(
+        "Yes, a {b}[characters.dragon.name]{/b}... He can fly, breathe fire and loves {b}apples{/b}.",
+        "That is probably why he wanted to eat some {b}apples{/b} at the farm. And that is when he was {b}attacked{/b}."
+      );
+      g.character("player").say("{b}Attacked??{/b} This dragon?");
+
+      g.onState(g.character("horse").hasState("following"), () => {
+        g.character("daughter").say(
+          "Yes, and the perpetrator is downstairs. There is a horseshoe stuck in the teeth of the [characters.dragon.name].",
+          "He got kicked by your horse."
+        );
+      }).else(() => {
+        g.character("daughter").say(
+          "Yes, and the perpetrator is {b}a horse{/b}. There is a horseshoe stuck in the teeth of the [characters.dragon.name]."
+        );
+      });
+      g.character("daughter").say(
+        "The horseshoe and the teeth need to be taken out."
+      );
+
       // "1=17;2=0;17=2;4=4", "*c3", "$n: 'Wat weet je van deze draak?'"
       // "", "*c13", "Bloem: 'Ow best wel wat eigenlijk. Deze draak is een Dins.'"
       // "", "*c3", "$n: 'Een Dins?'", "", "*c13", "Bloem: 'Ja, een Dins... Hij kan vliegen, vuur spuwen en is gek op appels."
