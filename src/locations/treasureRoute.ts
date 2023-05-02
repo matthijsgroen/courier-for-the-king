@@ -176,30 +176,25 @@ g.defineLocation("treasureRoute", ({ interaction }) => {
           );
           g.location("treasureRoute").increaseCounter("steps", 1);
         }
-      ).else(() => {
-        g.onState(
-          g.location("treasureRoute").hasCounter("steps").equals(4),
-          () => {
-            g.descriptionText(
-              "You walk between the trees {b}northwards{/b}, until you come to another open clearing."
-            );
-            g.location("treasureRoute").increaseCounter("steps", 1);
-          }
-        ).else(() => {
+      )
+        .else(g.location("treasureRoute").hasCounter("steps").equals(4), () => {
+          g.descriptionText(
+            "You walk between the trees {b}northwards{/b}, until you come to another open clearing."
+          );
+          g.location("treasureRoute").increaseCounter("steps", 1);
+        })
+        .else(() => {
           g.descriptionText("You walk between the trees {b}northwards{/b}.");
         });
-      });
     }
   );
   interaction(
     "Go east, to the farmlands",
     g.location("treasureRoute").hasCounter("steps").equals(3),
     () => {
-      () => {
-        g.descriptionText("You walk {b}eastwards{/b}, to the farmlands.");
-        g.descriptionText("you were here before.");
-        endRoute();
-      };
+      g.descriptionText("You walk {b}eastwards{/b}, to the farmlands.");
+      g.descriptionText("You were here before.");
+      endRoute();
     }
   );
   interaction(

@@ -80,7 +80,10 @@ g.defineOverlay(
 
     interaction(
       "Could you help me with a medicine?",
-      hasState("visited"),
+      g.and(
+        hasState("visited"),
+        g.not(g.list("inventory").isInList("ingredientList"))
+      ),
       () => {
         g.text(
           "{b}[characters.witch.name]{/b} looks at you. There is a smile on her face."

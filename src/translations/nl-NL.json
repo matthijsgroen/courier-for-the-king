@@ -395,7 +395,7 @@
         "Oh help, where have I gotten myself into.": "O help, waar ben ik aan begonnen."
       },
       "interactions": {
-        "Search for mushrooms": "Search for mushrooms",
+        "Search for mushrooms": "Ga op zoek naar paddenstoelen",
         "Go to the tower of the dragon": "Ga naar de toren van de draak",
         "Go west, towards the village": "Ga naar het westen, richting het dorp",
         "Continue into the dark woods anyway": "Ga toch verder, het donkere woud in"
@@ -598,6 +598,8 @@
         "You walk between the trees {b}northwards{/b}, until you come to an open clearing.": "Je loopt tussen de bomen door naar het {b}noorden{/b}, tot je bij een open plek aankomt.",
         "You walk between the trees {b}northwards{/b}, until you come to another open clearing.": "Je loopt tussen de bomen door naar het {b}noorden{/b}, tot je bij een andere open plek aankomt.",
         "You walk between the trees {b}northwards{/b}.": "Je loopt {b}noordwaards{/b} tussen de boen door.",
+        "You walk {b}eastwards{/b}, to the farmlands.": "Je loopt in {b}oostelijke{/b} richting, naar de akkers.",
+        "You were here before.": "Je bent hier al geweest.",
         "You walk {b}eastwards{/b} through the forest, using your {b}Moonstone{/b} to illuminate the forest floor.": "Je loopt door het bos richting het {b}oosten{/b} en gebruikt de {b}Maansteen{/b} om licht te schijnen op de ondergrond.",
         "You continue on until you reach a small stream flowing through the forest.": "Je vervolgd je pad tot je bij een klein beekje aankomt die door het bos loopt.",
         "You walk between the trees {b}eastwards{/b}.": "Je loopt tussen de bomen door richting het {b}oosten{/b}.",
@@ -1147,16 +1149,28 @@
     },
     "mushrooms": {
       "text": {
-        "Je gaat op zoek naar paddestoelen. Na een tijdje zie je allerlei verschillende soorten staan.": "Je gaat op zoek naar paddestoelen. Na een tijdje zie je allerlei verschillende soorten staan.",
-        "Je ziet rode paddenstoelen met witte stippen, ": "Je ziet rode paddenstoelen met witte stippen, ",
-        "lichtbruine boomzwammen, lichtblauwe paddenstoelen en oranje zwammen.": "lichtbruine boomzwammen, lichtblauwe paddenstoelen en oranje zwammen."
+        "You are searching for mushrooms. After a while you have discovered different kinds.": "Je gaat op zoek naar paddenstoelen. Na een tijdje heb je verschillende soorten ontdekt.",
+        "You see red toadstools with white spots, light brown tree fungi,": "Je ziet rode paddenstoelen met witte stippen, lichtbruine boomzwammen,",
+        "light blue toadstools and orange fungi.": "lichtblauwe paddenstoelen en oranje zwammen.",
+        "You decide not to collect them.": "Je besluit ze niet te verzamelen.",
+        "You carefully collect some {b}light blue toadstools{/b}.": "Voorzichtig verzamel je een aantal {b}lichtblauwe paddenstoelen{/b}.",
+        "You go back to the road.": "Je gaat terug naar de weg."
       },
-      "DELETED interactions": {
-        "Pick plant with thorny leaves": "Pick plant with thorny leaves",
-        "Pick plant with round leaves": "Pick plant with round leaves",
-        "Pick plant with diamond-shaped leaves": "Pick plant with diamond-shaped leaves",
-        "Pick plant with heard-shaped leaves": "Pick plant with heard-shaped leaves",
-        "Stop looking at the plants": "Stop looking at the plants"
+      "interactions": {
+        "Collect the red toadstools with white spots": "Verzamel de rode paddenstoelen met witte stippen",
+        "Collect the light brown tree fungi": "Verzamel de lichtbruine boomzwammen",
+        "Collect the light blue toadstools": "Verzamel de lichtblauwe paddenstoelen",
+        "Collect the orange fungi": "Verzamel de oranje zwammen",
+        "Go back to the road": "Ga terug naar de weg"
+      },
+      "player": {
+        "Hmm mushrooms can be poisonous as well.": "Hmm, paddenstoelen kunnen ook giftig zijn.",
+        "I need to be careful which ones to pick.": "Ik moet voorzichtig zijn met welke ik pluk.",
+        "I'm not sure if I need the {b}red toadstools with white spots{/b}.": "Ik heb geen idee of ik de {b}rode paddenstoelen met witte stippen{/b} wel nodig heb.",
+        "I'm not sure if I need the {b}light brown tree fungi{/b}.": "Ik heb geen idee of ik de {b}lichtbruine booomzwammen{/b} wel nodig heb.",
+        "I have enough of these mushrooms already.": "Ik heb al genoeg van deze paddenstoelen.",
+        "I'm not sure if I need the {b}light blue toadstools{/b}.": "Ik heb geen idee of ik de {b}lichtblauwe paddenstoelen{/b} wel nodig heb.",
+        "I'm not sure if I need the {b}orange fungi{/b}.": "Ik heb geen idee of ik de {b}oranje zwammen{/b} wel nodig heb."
       }
     },
     "inventory": {
@@ -1181,6 +1195,8 @@
         "- 1 plant with thorny leaves": "- 1 plant met stekelige bladeren",
         "- [items.plants.counters.roundLeaves] plants with round leaves": "- [items.plants.counters.roundLeaves] planten met ronde bladeren",
         "- 1 plant with round leaves": "- 1 plant met ronde bladeren",
+        "- [items.mushrooms.counters.lightblue] lightblue mushrooms": "- [items.mushrooms.counters.lightblue] lichtblauwe paddenstoelen",
+        "- 1 lightblue mushroom": "- 1 lichtblauwe paddenstoel",
         "- A nice sharp sword": "- Een mooi scherp zwaard",
         "You carry the following items:": "Je hebt het volgende bij je:"
       },
@@ -1252,6 +1268,7 @@
         "Sweet {b}[characters.player.name]{/b}, I need the following items:": "Lieve {b}[characters.player.name]{/b}, ik heb het volgende nodig:",
         "{s}- 2 plants with round leaves{/s}": "{s}- 2 planten met ronde bladeren{/s}",
         "- 2 plants with round leaves": "- 2 planten met ronde bladeren",
+        "{s}- 2 lightblue toadstools{/s}": "{s}- 2 lichtblauwe paddenstoelen{/s}",
         "- 2 lightblue toadstools": "- 2 lichtblauwe paddenstoelen",
         "{s}- 3 plants with thorny leaves{/s}": "{s}- 3 planten met stekelige bladeren{/s}",
         "- 3 plants with thorny leaves": "- 3 planten met stekelige bladeren",

@@ -14,7 +14,12 @@ g.defineOverlay("ingredientList", ({ onEnter, closeOverlay, interaction }) => {
       }).else(() => {
         g.text("- 2 plants with round leaves");
       });
-      g.text("- 2 lightblue toadstools");
+      g.onState(g.item("ingredientList").hasFlag("toadstools"), () => {
+        g.text("{s}- 2 lightblue toadstools{/s}");
+      }).else(() => {
+        g.text("- 2 lightblue toadstools");
+      });
+
       g.onState(g.item("ingredientList").hasFlag("thornyLeaves"), () => {
         g.text("{s}- 3 plants with thorny leaves{/s}");
       }).else(() => {

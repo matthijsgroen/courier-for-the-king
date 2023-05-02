@@ -81,6 +81,19 @@ g.defineOverlay("inventory", ({ onEnter, interaction, closeOverlay }) => {
         });
       });
 
+      onItem("lightblueMushrooms", () => {
+        g.onState(
+          g.item("mushrooms").hasCounter("lightblue").moreThan(1),
+          () => {
+            g.descriptionText(
+              "- [items.mushrooms.counters.lightblue] lightblue mushrooms"
+            );
+          }
+        ).else(() => {
+          g.descriptionText("- 1 lightblue mushroom");
+        });
+      });
+
       onItem("sword", () => {
         g.descriptionText("- A nice sharp sword");
       });

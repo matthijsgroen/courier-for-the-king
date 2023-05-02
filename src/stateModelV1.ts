@@ -49,6 +49,7 @@ export type GameState = GameDefinition<
       gold: { states: "possession" | "used" };
       runeStone: { states: "possession" };
       plants: { counters: "roundLeaves" | "thornyLeaves" };
+      mushrooms: { counters: "lightblue" };
     };
     characters: {
       player: { counters: "coins"; flags: "male" };
@@ -102,6 +103,7 @@ export type GameState = GameDefinition<
         | "brokenPickaxe"
         | "thornyLeaves"
         | "roundLeaves"
+        | "lightblueMushrooms"
         | "sword"
         | "repairedPickaxe";
     };
