@@ -145,7 +145,6 @@ g.defineOverlay(
           "I've been at the river plenty of times, but believe me, there is nothing there."
         );
         g.text("You find this very interesting, and make a note of it.");
-        g.item("treasureNotes").setState("possession");
         g.list("inventory").addUnique("treasureNotes");
         g.item("treasureNotes").setFlag("startPoint");
       }

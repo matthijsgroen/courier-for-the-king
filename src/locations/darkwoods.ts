@@ -28,7 +28,6 @@ g.defineLocation("darkwoods", ({ describe, interaction, onLeave, hasFlag }) => {
         }).else(() => {
           g.character("player").say("Maybe I need to buy some {b}armor{/b}.");
         });
-
         g.onState(
           g.and(
             g.character("baker").hasFlag("toldDragon"),

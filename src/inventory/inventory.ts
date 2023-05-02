@@ -109,7 +109,7 @@ g.defineOverlay("inventory", ({ onEnter, interaction, closeOverlay }) => {
 
   interaction(
     "Check notes on treasure",
-    g.item("treasureNotes").hasState("possession"),
+    g.list("inventory").isInList("treasureNotes"),
     () => {
       g.openOverlay("treasureNotes");
     }
@@ -131,6 +131,7 @@ g.defineOverlay("inventory", ({ onEnter, interaction, closeOverlay }) => {
     g.and(
       g.isLocation("river"),
       g.item("moonStone").hasState("possession"),
+      g.item("treasureNotes").hasFlag("startPoint"),
       g.not(g.item("treasureHunt").hasFlag("done"))
     ),
     () => {

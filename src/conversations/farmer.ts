@@ -105,7 +105,6 @@ g.defineOverlay(
         g.character("farmer").say("No idea what that is supposed to mean.");
 
         g.text("You find this very interesting, and make a note of it.");
-        g.item("treasureNotes").setState("possession");
         g.list("inventory").addUnique("treasureNotes");
         g.item("treasureNotes").setFlag("route");
       }

@@ -92,7 +92,9 @@ g.defineOverlay(
           "You won't happen to have a {b}sword{/b} do you?",
           "You definitely would need a {b}sword{/b} to defend you against that monster."
         );
-        g.item("sword").setState("need");
+        g.onState(g.item("sword").hasState("unknown"), () => {
+          g.item("sword").setState("need");
+        });
         g.character("baker").setFlag("toldDragon");
       }
     );
@@ -142,7 +144,6 @@ g.defineOverlay(
           "The plant is said to have {b}diamond-shaped leaves{/b}."
         );
         g.text("You find this very interesting, and make a note of it.");
-        g.item("treasureNotes").setState("possession");
         g.list("inventory").addUnique("treasureNotes");
         g.item("treasureNotes").setFlag("moonStone");
       }

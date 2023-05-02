@@ -543,8 +543,8 @@
         "Go north, towards the farmlands": "Ga naar het noorden, richting de akkers",
         "Go east, towards the dark wood": "Ga naar het oosten, naar het donkere woud",
         "Go south, towards the river": "Ga naar het zuiden, naar de rivier",
-        "Go west, between some shops": "Go naar het westen, tussen een paar winkels door",
-        "Go north, between the meadows": "Go naar het noorden, tussen de weilanden door",
+        "Go west, between some shops": "Ga naar het westen, tussen een paar winkels door",
+        "Go north, between the meadows": "Ga naar het noorden, tussen de weilanden door",
         "Go east, to the other side of the farm": "Ga naar het oosten, naar de andere kant van de boerderij",
         "Go south, towards village": "Ga naar het zuiden, naar het dorp",
         "Go west, towards the forest": "Ga naar het westen, naar het bos",
@@ -1157,9 +1157,6 @@
         "Pick plant with diamond-shaped leaves": "Pick plant with diamond-shaped leaves",
         "Pick plant with heard-shaped leaves": "Pick plant with heard-shaped leaves",
         "Stop looking at the plants": "Stop looking at the plants"
-      },
-      "DELETED player": {
-        "Hmm, I have enough of those.": "Hmm, I have enough of those."
       }
     },
     "inventory": {
@@ -1202,10 +1199,10 @@
         "The cookies smell delicious, but you decide to keep them for later.": "De koeken ruiken heerlijk, maar toch besluit je om ze voor later te bewaren.",
         "You are patiently sitting at the bank of the river, waiting for darkness.": "Je wacht geduldig aan de oever van de rivier, tot het donker is.",
         "The darker it gets, the more the moonstone starts to {b}glow{/b}.": "Des te donker het wordt, des te meer begint de maansteen te {b}gloeien{/b}.",
-        "{b}[characters.horse.name]{/b} goes to the waterfront to drink some water.": "{b}[characters.horse.name]{/b} goes to the waterfront to drink some water."
+        "{b}[characters.horse.name]{/b} goes to the waterfront to drink some water.": "{b}[characters.horse.name]{/b} gaat naar de oever om water te drinken."
       },
       "player": {
-        "{b}[characters.horse.name]{/b} will you wait here for me?": "{b}[characters.horse.name]{/b} will you wait here for me?"
+        "{b}[characters.horse.name]{/b} will you wait here for me?": "{b}[characters.horse.name]{/b} wacht je hier op mij?"
       }
     },
     "treasureNotes": {
