@@ -1,1 +1,2 @@
 import "./plants";
+import "./mushrooms";

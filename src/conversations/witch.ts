@@ -155,7 +155,10 @@ g.defineOverlay(
 
     interaction(
       "Did you also hear that there is a treasure hidden somewhere?",
-      hasState("visited"),
+      g.and(
+        hasState("visited"),
+        g.not(g.item("treasureNotes").hasState("unknown"))
+      ),
       () => {
         g.character("player").say(
           "Did you also hear that there is a treasure hidden somewhere?"

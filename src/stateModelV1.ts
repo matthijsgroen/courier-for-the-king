@@ -82,6 +82,7 @@ export type GameState = GameDefinition<
       treasureNotes: {};
       ingredientList: {};
       plants: {};
+      mushrooms: {};
       gameIntro: { states: "name" };
     };
     lists: {

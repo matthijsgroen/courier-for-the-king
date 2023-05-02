@@ -123,7 +123,7 @@ g.definePuzzleDependencies<MetaData>({
   },
   pluckMushrooms: {
     dependsOn: ["getIngredientList", "theMonster"],
-    tags: {},
+    tags: { state: "progress", languages: ["en", "nl"] },
     hierarchy: ["darkWood"],
   },
   pluckPlants: {

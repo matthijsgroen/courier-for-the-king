@@ -1009,7 +1009,7 @@
         "Of course I can help you!": "Natuurlijk kan ik je helpen!",
         "But it won't be for free {b}honey{/b}.": "Maar ik doe het niet voor niets, {b}lieverd{/b}.",
         "I want something from you first. A nice gift befitting of a lady.": "Ik wil dan eerst iets van jou. Een mooi geschenk geschikt voor een dame.",
-        "If you can surprise me with a nice {b}Ornament{/b},": "If you can surprise me with a nice {b}Ornament{/b},",
+        "If you can surprise me with a nice {b}Ornament{/b},": "Als je me kan verassen met een mooi {b}Sieraad{/b},",
         "I will help you with your with your medicine problem.": "dan zal ik je helpen met je medicatie probleem.",
         "That gem is a real beauty! But it is not an {b}Ornament{/b}.": "Die edelsteen is prachtig! Maar het is geen {b}Sieraad{/b}.",
         "That {b}necklace{/b} is {i}super{/i}! This will be a magnificent preset for my {b}daughter{/b}!": "Die {b}halsketting{/b} is {i}prachtig{/i}! Dit gaat een geweldig kado zijn voor mijn {b}dochter{/b}!",
@@ -1143,6 +1143,23 @@
       },
       "player": {
         "Hmm, I have enough of those.": "Hmm, daar heb ik er genoeg van."
+      }
+    },
+    "mushrooms": {
+      "text": {
+        "Je gaat op zoek naar paddestoelen. Na een tijdje zie je allerlei verschillende soorten staan.": "Je gaat op zoek naar paddestoelen. Na een tijdje zie je allerlei verschillende soorten staan.",
+        "Je ziet rode paddenstoelen met witte stippen, ": "Je ziet rode paddenstoelen met witte stippen, ",
+        "lichtbruine boomzwammen, lichtblauwe paddenstoelen en oranje zwammen.": "lichtbruine boomzwammen, lichtblauwe paddenstoelen en oranje zwammen."
+      },
+      "DELETED interactions": {
+        "Pick plant with thorny leaves": "Pick plant with thorny leaves",
+        "Pick plant with round leaves": "Pick plant with round leaves",
+        "Pick plant with diamond-shaped leaves": "Pick plant with diamond-shaped leaves",
+        "Pick plant with heard-shaped leaves": "Pick plant with heard-shaped leaves",
+        "Stop looking at the plants": "Stop looking at the plants"
+      },
+      "DELETED player": {
+        "Hmm, I have enough of those.": "Hmm, I have enough of those."
       }
     },
     "inventory": {

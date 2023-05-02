@@ -58,7 +58,10 @@ g.defineLocation("swamp", ({ describe, interaction, onLeave }) => {
 
   interaction(
     "Inspect the plants",
-    g.location("swamp").hasFlag("allowEntrance"),
+    g.and(
+      g.location("swamp").hasFlag("allowEntrance"),
+      g.item("treasureNotes").hasFlag("moonStone")
+    ),
     () => {
       g.openOverlay("plants");
     }

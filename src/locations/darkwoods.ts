@@ -85,7 +85,7 @@ g.defineLocation("darkwoods", ({ describe, interaction, onLeave, hasFlag }) => {
     "Search for mushrooms",
     g.item("ingredientList").hasState("possession"),
     () => {
-      // open overlay
+      g.openOverlay("mushrooms");
     }
   );
 
