@@ -82,6 +82,7 @@ g.defineOverlay(
         "The poor beast has a terrible toothache. His {b}tooth{/b} needs to be pulled, but I can't."
       );
       setState("visited");
+      g.character("dragon").setState("found");
     });
 
     interaction("How can I help?", hasState("visited"), () => {

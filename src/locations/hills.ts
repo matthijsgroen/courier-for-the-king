@@ -10,12 +10,15 @@ g.defineLocation("hills", ({ describe, onLeave, interaction }) => {
       g.text("You walk east, towards the forest.");
     });
   });
+
   onLeave("mine", () => {
     g.text("You follow the road, towards the entrance of the mine.");
   });
+
   onLeave("mill", () => {
     g.text("You walk towards the mill.");
   });
+
   onLeave("swamp", () => {
     g.text("You go south, over a soggy trail, towards the swamp.");
   });

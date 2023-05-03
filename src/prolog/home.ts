@@ -68,6 +68,17 @@ g.defineLocation("home", ({ describe, interaction, hasState }) => {
     });
   });
 
+  interaction("Roll some dice!", g.always(), () => {
+    g.text("You want to roll some dice!");
+    g.item("testDice").setCounter("dice3", 1, 5);
+    g.item("testDice").setCounter("dice2", 1, 5);
+    g.item("testDice").setCounter("dice1", 1, 5);
+
+    g.character("player").say(
+      "Ok, I've rolled {b}[items.testDice.counters.dice1.value], [items.testDice.counters.dice2.value] and [items.testDice.counters.dice3.value]{/b}"
+    );
+  });
+
   interaction("Skip the rest of the intro for now", g.always(), () => {
     g.travel("forest");
   });

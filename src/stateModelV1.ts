@@ -20,15 +20,17 @@ export type GameState = GameDefinition<
       darkwoods: { flags: "visited" };
       tower: { flags: "visited"; states: "firstVisit" | "inside" | "visited" };
       towerTop: { flags: "visited"; states: "sneakIn" };
+      towerTopElevator: {};
       river: { flags: "visited" };
       treasureRoute: { counters: "steps" };
     };
     items: {
+      testDice: { counters: "dice1" | "dice2" | "dice3" };
       bag: { states: "known" | "possession" };
       branch: { states: "possession" | "used" };
       pickaxe: { states: "broken" | "fixed" | "given" };
       rope: { states: "possession" };
-      millstone: { states: "seen" };
+      millstone: { states: "seen" | "cart" };
       grain: { states: "access" | "cart" | "flour" | "delivered" };
       fabric: { states: "possession" | "used" };
       medicine: { flags: "recipe" };

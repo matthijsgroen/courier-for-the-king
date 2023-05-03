@@ -156,9 +156,31 @@ g.defineOverlay(
       () => {
         g.character("player").say("Can I have the millstone?");
         g.character("miller").say(
-          "Whay could you possibly want with this millstone?",
+          "What could you possibly want with this millstone?",
           "It is only {b}heavy{/b} and worn out."
         );
+        g.onState(g.character("dragon").hasState("found"), () => {
+          g.character("player").say("I have still a use for it.");
+          g.character("miller").say("Well I don't mind you having it.");
+
+          g.onState(
+            g.and(
+              g.character("horse").hasState("following"),
+              g.character("horse").hasFlag("cart")
+            ),
+            () => {
+              g.character("miller").say(
+                "We will need to lift the stone together, it is impossible to do alone. The stone is too heavy for that."
+              );
+              g.text("Together you lift the stone on the carriage.");
+              g.item("millstone").setState("cart");
+            }
+          ).else(() => {
+            g.character("miller").say(
+              "You need to have the {b}carriage{/b} here with your {b}horse{/b}, it is too heavy to transport otherwise."
+            );
+          });
+        });
       }
     );
 

@@ -319,12 +319,12 @@ g.definePuzzleDependencies<MetaData>({
   },
   putMillstoneOnCart: {
     dependsOn: ["talkToDaughter"],
-    tags: {},
+    tags: { state: "text", languages: ["en", "nl"] },
     hierarchy: ["hills", "mill"],
   },
   putMillstoneOnElevator: {
     dependsOn: ["putMillstoneOnCart", "talkToDaughter"],
-    tags: {},
+    tags: { state: "progress", languages: ["en", "nl"] },
     hierarchy: ["darkWood", "tower"],
   },
   raiseElevatorWithMillstone: {

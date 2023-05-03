@@ -70,10 +70,15 @@
         "A letter of the healer of the king, asking for help": "A letter of the healer of the king, asking for help",
         "to deliver a medicine to the castle": "to deliver a medicine to the castle",
         "It even had a smaller note attached": "It even had a smaller note attached",
-        "but that is a story for another time...": "but that is a story for another time..."
+        "but that is a story for another time...": "but that is a story for another time...",
+        "You want to roll some dice!": "You want to roll some dice!"
       },
       "interactions": {
+        "Roll some dice!": "Roll some dice!",
         "Skip the rest of the intro for now": "Skip the rest of the intro for now"
+      },
+      "player": {
+        "Ok, I've rolled {b}[items.testDice.counters.dice1.value], [items.testDice.counters.dice2.value] and [items.testDice.counters.dice3.value]{/b}": "Ok, I've rolled {b}[items.testDice.counters.dice1.value], [items.testDice.counters.dice2.value] and [items.testDice.counters.dice3.value]{/b}"
       }
     },
     "farmland": {
@@ -170,18 +175,23 @@
       }
     },
     "mill": {
-      "descriptionText": {
-        "A {b}carriage{/b} containing {b}grain{/b} is parked on the other side of the mill.": "Een {b}wagen{/b} met {b}graan{/b} staat aan de andere kant van de molen.",
-        "A {b}carriage{/b} containing {b}flour{/b} is parked on the other side of the mill.": "Een {b}wagen{/b} met {b}meel{/b} staat aan de andere kant van de molen.",
-        "An empty {b}carriage{/b} is parked on the other side of the mill.": "Een lege {b}wagen{/b} staat naast de andere kant van de molen.",
-        "You are at the windmill.": "Je bent bij de molen.",
-        "The mill misses a {b}sail{/b} of one of its blades.": "De molen mist het {b}doek{/b} op een van de wieken.",
-        "A big {b}millstone{/b} lies next to the mill.": "Een {b}molensteen{/b} ligt naast de molen."
-      },
       "text": {
+        "Together with {b}[characters.horse.name]{/b} you walk to the path in the hills.": "Samen met {b}[characters.horse.name]{/b} loop je over het pad door de heuvels.",
+        "{b}[characters.horse.name]{/b} has no trouble with pulling the carriage.": "{b}[characters.horse.name]{/b} heeft geen enkele moeite met het trekken van de wagen.",
+        "You walk to the path in the hills.": "Je loopt over het pad door de heuvels.",
         "An old miller appears to be working on restoring the blade.": "Een oude molenaar is aan het werk om de wieken te repareren.",
         "Together with {b}[characters.miller.name]{/b}, you unhitch the carriage from {b}[characters.horse.name]{/b}.": "Samen met {b}[characters.miller.name]{/b}, span je de wagen af van {b}[characters.horse.name]{/b}.",
         "You check the millstone. It looks really {b}heavy{/b}.": "Je bekijkt de molensteen naast de molen. Het ziet er uit als een {b}zware{/b} steen."
+      },
+      "descriptionText": {
+        "The mill is rotating slowly in the wind. A giant {b}trunk{/b} is used as sail for one of the blades.": "De molen draait rustig in de wind. Een grote {b}onderbroek{/b} is als doek gebruikt voor een van de wieken.",
+        "The mill misses a {b}sail{/b} of one of its blades.": "De molen mist het {b}doek{/b} op een van de wieken.",
+        "A big {b}millstone{/b} lies next to the mill.": "Een {b}molensteen{/b} ligt naast de molen.",
+        "A {b}carriage{/b} containing {b}grain{/b} is parked on the other side of the mill.": "Een {b}wagen{/b} met {b}graan{/b} staat aan de andere kant van de molen.",
+        "A {b}carriage{/b} containing {b}flour{/b} is parked on the other side of the mill.": "Een {b}wagen{/b} met {b}meel{/b} staat aan de andere kant van de molen.",
+        "A {b}carriage{/b} containing a {b}millstone{/b} is parked on the other side of the mill.": "Een {b}wagen{/b} met een {b}molensteen{/b} staat aan de andere kant van de molen.",
+        "An empty {b}carriage{/b} is parked on the other side of the mill.": "Een lege {b}wagen{/b} staat naast de andere kant van de molen.",
+        "You are at the windmill.": "Je bent bij de molen."
       },
       "miller": {
         "Hey hello over there! Could you help me out?": "Hee, hallo daar! Zou je me kunnen helpen?",
@@ -726,8 +736,11 @@
         "Don't make too much of it. I guess you heard if of those {b}smiths in the village{/b} right?": "Geloof er maar niets van hoor. Zeker van de {b}smeden in het dorp{/b} gehoord?",
         "I think they believe everything. A treasure route that starts at the {b}river{/b}?": "Volgens mij geloven zij alles. Een schatroute die begint bij de {b}rivier{/b}?",
         "I've been at the river plenty of times, but believe me, there is nothing there.": "Ik ben vaak genoeg bij de rivier geweest, maar geloof me, er is daar niets te vinden.",
-        "Whay could you possibly want with this millstone?": "Wat zou je met deze steen moeten?",
-        "It is only {b}heavy{/b} and worn out.": "Hij is alleen maar {b}zwaar{/b} en versleten."
+        "What could you possibly want with this millstone?": "Wat zou je met deze steen moeten?",
+        "It is only {b}heavy{/b} and worn out.": "Hij is alleen maar {b}zwaar{/b} en versleten.",
+        "Well I don't mind you having it.": "Well I don't mind you having it.",
+        "We will need to lift the stone together, it is impossible to do alone. The stone is too heavy for that.": "We will need to lift the stone together, it is impossible to do alone. The stone is too heavy for that.",
+        "You need to have the {b}carriage{/b} here with your {b}horse{/b}, it is too heavy to transport otherwise.": "You need to have the {b}carriage{/b} here with your {b}horse{/b}, it is too heavy to transport otherwise."
       },
       "interactions": {
         "Any idea how I could get any transportation?": "Weet u hoe ik aan vervoer kan komen?",
@@ -750,7 +763,8 @@
         "Hello, I got some grain from farmer {b}[characters.farmer.name]{/b}.": "Hallo, ik heb wat graan gekregen van boer {b}[characters.farmer.name]{/b}.",
         "Could you {b}grind{/b} it to {b}flour{/b}?": "Zou je het kunnen {b}malen{/b} tot {b}meel{/b}?",
         "Did you also hear that there is a treasure hidden somewhere?": "Heb jij ook gehoord dat er een schat ergens verborgen is?",
-        "Can I have the millstone?": "Zou ik de molensteen mogen hebben?"
+        "Can I have the millstone?": "Zou ik de molensteen mogen hebben?",
+        "I have still a use for it.": "I have still a use for it."
       },
       "text": {
         "The old miller looks at you.": "De oude molenaar kijkt je aan.",
@@ -763,7 +777,8 @@
         "Together you get the grain from the carriage and attach a millstone to the grain supply.": "Samen halen jullie het graan van de wagen en sluiten de molensteen aan op de graan toevoer.",
         "After a few turns, fine {b}flour{/b} starts pouring out.": "Na een paar slagen komt er al mooi {b}meel{/b} uit stromen.",
         "Together you put bags of {b}flour{/b} on the carriage.": "Samen zetten jullie de zakken {b}meel{/b} op de wagen.",
-        "You find this very interesting, and make a note of it.": "Je vindt het erg interessant, en maakt er een aantekening van."
+        "You find this very interesting, and make a note of it.": "Je vindt het erg interessant, en maakt er een aantekening van.",
+        "Together you lift the stone on the carriage.": "Together you lift the stone on the carriage."
       }
     },
     "farmerConversation": {
