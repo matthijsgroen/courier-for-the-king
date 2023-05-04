@@ -415,6 +415,7 @@
       "text": {
         "You go down the stairs to the base of the tower.": "Je gaat de trap af naar de voet van de toren.",
         "{b}[characters.player.name]{/b} walked to the base of the tower.": "{b}[characters.player.name]{/b} liep naar de voet van de toren.",
+        "You walk to the front side of the tower.": "Je loopt weer naar de voorzijde van de toren.",
         "To the {b}right side{/b} of the tower is a wooden elevator.": "Aan de {b}rechterkant{/b} van de toren is een houten liftconstructie.",
         "At the {b}front{/b} of the tower a big heavy door.": "Aan de {b}voorkant{/b} van de toren is een grote zware deur.",
         "A trail goes from the tower into the wood.": "Een pad loopt het donkere woud in.",
@@ -480,6 +481,45 @@
         "Go to the elevator": "Ga naar de lift",
         "Talk to [characters.daughter.name]": "Praat met [characters.daughter.name]",
         "Go down the stairs": "Ga de trap af"
+      }
+    },
+    "towerTopElevator": {
+      "text": {
+        "You walk to a large opening in the top of the tower. This has to be where the {b}dragon{/b} can fly in and out. You can see all over the {b}dark wood{/b}. In the distance, you can even see a {b}mill on a hill{/b}. On the outside of the tower is a wooden elevator.": "Je loopt naar de grote opening bovenin de toren. Dit moet zijn waar de {b}draak{/b} naar binnen en naar buiten kan vliegen. Je kan ver over het {b}donkere woud{/b} kijken. In de verte kan je zelfs de {b}molen op een heuvel{/b} zien. Aan de buitenkant van de toren is een houten lift.",
+        "At the top of the tower, you step off.": "Bovenaan de toren stap je er weer van af.",
+        "You are now at the top of the tower.": "Je bent nu aan de bovenkant van de toren.",
+        "At this moment the elevator is {b}at the bottom{/b} of the tower.": "Op dit moment is de lift aan {b}de onderkant{/b} van de toren.",
+        "There is a {b}handle{/b} here to control the elevator.": "Er is een {b}hendel{/b} om de lift te bedienen.",
+        "At this moment the elevator is {b}at the top{/b} of the tower.": "Op dit moment is de lift aan {b}de bovenkant{/b} van de toren.",
+        "If you look down, you see {b}[characters.horse.name]{/b} with the carriage.": "Als je naar beneden kijkt, zie je {b}[characters.horse.name]{/b} met de wagen staan.",
+        "If you look down, you see {b}[characters.horse.name]{/b}.": "Als je naar beneden kijkt zie je {b}[characters.horse.name]{/b} staan.",
+        "You pull the handle.": "Je trekt aan de hendel.",
+        "The elevator slowly starts moving {b}down{/b}.": "De lift begint langzaam naar {b}beneden{/b} te bewegen.",
+        "You push the handle.": "Je duwt tegen de hendel.",
+        "The elevator slowly starts moving {b}up{/b}.": "De lift begint langzaam naar {b}boven{/b} te bewegen."
+      },
+      "interactions": {
+        "Take the elevator down": "Neem de lift naar beneden",
+        "Use handle": "Gebruik de hendel",
+        "Walk back into the room": "Loop terug de kamer in"
+      }
+    },
+    "towerBaseElevator": {
+      "text": {
+        "You take the elevator down. It is very unstable and wobbly.": "Je neemt de lift naar beneden. Hij is erg onstabiel en wiebelig.",
+        "Lucky for you it holds and you step off with a relief.": "Gelukkig voor je houdt hij en je stapt af met een zucht van verlichting.",
+        "You are at the side of the {b}tower{/b}.": "Je staat aan de zijkant van de {b}toren{/b}.",
+        "There is a wooden elevator construction here. It does not look very stable.": "Er is hier een houten liftconstructie. Het ziet er niet heel stabiel uit.",
+        "Next to the elevator is a large wooden {b}hatch door{/b}.": "Naast de lift is een groot houten {b}luik{/b}.",
+        "Which could lead to a basement below.": "Waarschijnlijk leidt dat naar een kelder.",
+        "You use the elevator to go up the tower.": "Je gebruikt de lift om naar de bovenkant van de toren te gaan.",
+        "The elevator is currently at the top of the tower.": "De lift is nu aan de bovenkant van de toren.",
+        "There is no way to lower it from here.": "Er is geen manier om hem vanaf hier te laten zakken."
+      },
+      "interactions": {
+        "Open cellar door": "Open kelderdeur",
+        "Use elevator": "Gebruik lift",
+        "Go to front of tower": "Ga naar de voorkant van de toren"
       }
     },
     "river": {

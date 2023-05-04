@@ -46,6 +46,10 @@ g.defineLocation(
       });
     });
 
+    onEnter("towerBaseElevator", () => {
+      g.text("You walk to the front side of the tower.", "");
+    });
+
     interaction("Take the elevator up", hasState("firstVisit"), () => {
       g.text(
         "You walk to the wooden elevator.",
@@ -90,7 +94,7 @@ g.defineLocation(
     });
 
     interaction("Go to the elevator", hasState("visited"), () => {
-      // g.travel("elevatorBase")
+      g.travel("towerBaseElevator");
     });
 
     interaction("Go into the dark wood", hasState("visited"), () => {

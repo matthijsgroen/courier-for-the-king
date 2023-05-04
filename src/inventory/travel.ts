@@ -141,7 +141,8 @@ g.globalInteraction(
           g.isLocation("tower"),
           g.not(g.location("tower").hasState("visited"))
         ),
-        g.isLocation("towerTop")
+        g.isLocation("towerTop"),
+        g.isLocation("towerTopElevator")
       )
     )
   ),

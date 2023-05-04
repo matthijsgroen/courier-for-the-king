@@ -21,16 +21,18 @@ export type GameState = GameDefinition<
       tower: { flags: "visited"; states: "firstVisit" | "inside" | "visited" };
       towerTop: { flags: "visited"; states: "sneakIn" };
       towerTopElevator: {};
+      towerBaseElevator: {};
       river: { flags: "visited" };
       treasureRoute: { counters: "steps" };
     };
     items: {
       testDice: { counters: "dice1" | "dice2" | "dice3" };
+      elevator: { states: "down" | "broken" };
       bag: { states: "known" | "possession" };
       branch: { states: "possession" | "used" };
       pickaxe: { states: "broken" | "fixed" | "given" };
       rope: { states: "possession" };
-      millstone: { states: "seen" | "cart" };
+      millstone: { states: "seen" | "cart" | "elevator" | "used" | "rope" };
       grain: { states: "access" | "cart" | "flour" | "delivered" };
       fabric: { states: "possession" | "used" };
       medicine: { flags: "recipe" };

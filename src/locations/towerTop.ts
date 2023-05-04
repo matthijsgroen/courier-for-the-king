@@ -97,7 +97,9 @@ g.defineLocation(
       }
     );
 
-    interaction("Go to the elevator", hasFlag("visited"), () => {});
+    interaction("Go to the elevator", hasFlag("visited"), () => {
+      g.travel("towerTopElevator");
+    });
 
     interaction(
       "Talk to [characters.daughter.name]",
@@ -115,6 +117,5 @@ g.defineLocation(
     // "2=0;1=17;17=2;4=0;6=0", "Ga naar de draak", "4=10"
     // "2=0;1=17;17=2;4=0;6=0;31=3", "Knoop touw aan tand van de draak", "4=13"
     // "2=0;1=17;17=2;4=0;6=0;31=2;44=4;43=0", "Knoop touw aan molensteen", "4=14"
-    // "2=0;1=17;17=2;4=0;6=0", "Ga met de trap naar beneden", "1=18;3=5"
   }
 );

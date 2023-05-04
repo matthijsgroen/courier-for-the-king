@@ -11,6 +11,8 @@ import "./smithy";
 import "./darkwoods";
 import "./tower";
 import "./towerTop";
+import "./towerTopElevator";
+import "./towerBaseElevator";
 import "./river";
 import "./cabin";
 import "./treasureRoute";
