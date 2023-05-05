@@ -103,7 +103,7 @@ g.definePuzzleDependencies<MetaData>({
   },
   talkToWitch: {
     dependsOn: ["getEntranceToSwamp"],
-    tags: { state: "progress", languages: ["en", "nl"] },
+    tags: { state: "text", languages: ["en", "nl"] },
     hierarchy: ["swamp", "cabin"],
   },
   createJewelryAtSmith: {
@@ -314,7 +314,7 @@ g.definePuzzleDependencies<MetaData>({
   },
   talkToDaughter: {
     dependsOn: ["climbTower"],
-    tags: { state: "progress", languages: ["en", "nl"] },
+    tags: { state: "text", languages: ["en", "nl"] },
     hierarchy: ["darkWood", "tower"],
   },
   putMillstoneOnCart: {
@@ -324,12 +324,12 @@ g.definePuzzleDependencies<MetaData>({
   },
   putMillstoneOnElevator: {
     dependsOn: ["putMillstoneOnCart", "talkToDaughter"],
-    tags: { state: "progress", languages: ["en", "nl"] },
+    tags: { state: "text", languages: ["en", "nl"] },
     hierarchy: ["darkWood", "tower"],
   },
   raiseElevatorWithMillstone: {
     dependsOn: ["putMillstoneOnElevator"],
-    tags: {},
+    tags: { state: "progress", languages: ["en", "nl"] },
     hierarchy: ["darkWood", "tower"],
   },
   bindRopeToMillstone: {

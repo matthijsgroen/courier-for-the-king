@@ -65,7 +65,7 @@ export type GameState = GameDefinition<
       };
       dragon: { states: "known" | "found" };
       farmer: { flags: "visited" | "toldDragon" | "returnedHorse" };
-      daughter: {};
+      daughter: { states: "unloadStone" };
       witch: {};
       baker: { flags: "toldDragon" };
       farrier: {};

@@ -93,12 +93,56 @@ g.defineLocation(
       g.travel("towerTop");
     });
 
+    interaction(
+      "Place millstone on elevator",
+      g.and(
+        g.item("millstone").hasState("cart"),
+        g.character("horse").hasState("following"),
+        g.character("horse").hasFlag("cart")
+      ),
+      () => {
+        g.onState(g.character("daughter").hasState("unloadStone"), () => {
+          g.text(
+            "You lead {b}[characters.horse.name]{/b} with the carriage towards the elevator.",
+            "{b}[characters.daughter.name]{/b} is just arriving at the bottom."
+          );
+          g.character("player").say(
+            "Let's try to lift this thing on the elevator."
+          );
+          g.text(
+            "Even with the two of you it is a heavy struggle to push the stone from the cart onto the elevator.",
+            "After a while you succeed."
+          );
+
+          g.character("daughter").say(
+            "Phew! We made it! I see you back inside ok?"
+          );
+
+          g.text(
+            "{b}[characters.daughter.name]{/b} hurries back inside and runs up the stairs."
+          );
+        }).else(() => {
+          g.text(
+            "You want to carry the {b}millstone{/b} from the carriage to the elevator, but it is way too heavy to lift by yourself."
+          );
+        });
+        g.character("daughter").setState("unknown");
+        g.item("millstone").setState("elevator");
+      }
+    );
+
     interaction("Go to the elevator", hasState("visited"), () => {
       g.travel("towerBaseElevator");
     });
 
     interaction("Go into the dark wood", hasState("visited"), () => {
-      g.travel("darkwoods");
+      g.onState(g.character("daughter").hasState("unloadStone"), () => {
+        g.character("player").say(
+          "{b}[characters.daughter.name]{/b} should be here soon to help unload the millstone."
+        );
+      }).else(() => {
+        g.travel("darkwoods");
+      });
     });
   }
 );

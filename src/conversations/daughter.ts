@@ -150,6 +150,28 @@ g.defineOverlay(
       // "1=17;2=0;17=2;4=4;45!0", "*c13", "Bloem: 'Ja, maar gelukkig hebben we de tand er nu uitgetrokken!'", "&4=1"
     });
 
+    interaction(
+      "Could you help me unload?",
+      g.and(
+        hasState("visited"),
+        g.character("horse").hasState("following"),
+        g.character("horse").hasFlag("cart"),
+        g.item("millstone").hasState("cart")
+      ),
+      () => {
+        g.character("player").say("Could you help me unload?");
+        g.character("daughter").say("Sure, what did you bring?");
+        g.character("player").say(
+          "I brought an old millstone, but it is too heavy to get of the carriage by myself."
+        );
+        g.character("daughter").say(
+          "Ah nice! I think we both have the same plan in mind. I'll take the elevator. Do I see you downstairs?"
+        );
+        g.character("daughter").setState("unloadStone");
+        closeOverlay();
+      }
+    );
+
     interaction("I will see what I can do", hasState("visited"), () => {
       g.character("player").say("I will see what I can do.");
       g.character("daughter").say("Ok.");

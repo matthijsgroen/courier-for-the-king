@@ -98,14 +98,26 @@ g.defineLocation(
     );
 
     interaction("Go to the elevator", hasFlag("visited"), () => {
-      g.travel("towerTopElevator");
+      g.onState(g.character("daughter").hasState("unloadStone"), () => {
+        g.character("player").say(
+          "{b}[characters.daughter.name]{/b} will go down the elevator, I should use the stairs."
+        );
+      }).else(() => {
+        g.travel("towerTopElevator");
+      });
     });
 
     interaction(
       "Talk to [characters.daughter.name]",
       hasFlag("visited"),
       () => {
-        g.openOverlay("daughterConversation");
+        g.onState(g.character("daughter").hasState("unloadStone"), () => {
+          g.character("daughter").say(
+            "I wanted to go downstairs to help you, we talk later ok?"
+          );
+        }).else(() => {
+          g.openOverlay("daughterConversation");
+        });
       }
     );
 

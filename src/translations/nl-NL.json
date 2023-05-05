@@ -435,19 +435,31 @@
         "You tremble with {i}fear{/i}. You have no idea what you are up against.": "Je trilt van {i}angst{/i}. Je hebt geen idee wat je aan gaat treffen.",
         "The {b}monster{/b} does not sound friendly.": "Het {b}monster{/b} klinkt niet vriendelijk.",
         "You grip your sword tightly and slowly creep up the stairs, step by step.": "Je pakt je zwaard stevig vast en je sluipt langzaam trede voor trede de trap op.",
-        "You try to peek into the darkness to make out your surroundings.": "Je tuurt in de duisternis om je omgeving te kunnen zien."
+        "You try to peek into the darkness to make out your surroundings.": "Je tuurt in de duisternis om je omgeving te kunnen zien.",
+        "You lead {b}[characters.horse.name]{/b} with the carriage towards the elevator.": "Je leidt {b}[characters.horse.name]{/b} met de wagen naar de lift.",
+        "{b}[characters.daughter.name]{/b} is just arriving at the bottom.": "{b}[characters.daughter.name]{/b} komt net beneden aan.",
+        "Even with the two of you it is a heavy struggle to push the stone from the cart onto the elevator.": "Zelfs met z'n tweeën is het nog een hele klus om de de steen op de lift te duwen.",
+        "After a while you succeed.": "Na een tijdje is het toch gelukt.",
+        "{b}[characters.daughter.name]{/b} hurries back inside and runs up the stairs.": "{b}[characters.daughter.name]{/b} gaat weer naar binnen en rent de trap op.",
+        "You want to carry the {b}millstone{/b} from the carriage to the elevator, but it is way too heavy to lift by yourself.": "Je wil de {b}molensteen{/b{ van de wagen naar de lift tillen. Maar hij is echt te zwaar om alleen te tillen."
       },
       "player": {
         "{b}[characters.horse.name]{/b} I need to tie you up here, I hope to be back soon.": "{b}[characters.horse.name]{/b}, ik maak je hier vast, hopelijk ben ik snel weer terug.",
-        "{b}[characters.horse.name]{/b}, I'll tie you up here.": "{b}[characters.horse.name]{/b}, ik bind je hier weer even vast."
+        "{b}[characters.horse.name]{/b}, I'll tie you up here.": "{b}[characters.horse.name]{/b}, ik bind je hier weer even vast.",
+        "Let's try to lift this thing on the elevator.": "Laten we proberen om het op de lift te krijgen.",
+        "{b}[characters.daughter.name]{/b} should be here soon to help unload the millstone.": "{b}[characters.daughter.name]{/b} zal zo hier zijn om de molensteen uit te laden."
       },
       "interactions": {
         "Take the elevator up": "Neem de lift naar boven",
         "Open the door": "Open de deur",
         "Go up the stairs": "Ga de trap op",
         "Enter the tower": "Ga de toren in",
+        "Place millstone on elevator": "Til molensteen op de lift",
         "Go to the elevator": "Ga naar de lift",
         "Go into the dark wood": "Ga het donkere woud in"
+      },
+      "daughter": {
+        "Phew! We made it! I see you back inside ok?": "Poe! Gelukt! Ik zie je zo weer binnen, oké?"
       }
     },
     "towerTop": {
@@ -481,6 +493,12 @@
         "Go to the elevator": "Ga naar de lift",
         "Talk to [characters.daughter.name]": "Praat met [characters.daughter.name]",
         "Go down the stairs": "Ga de trap af"
+      },
+      "player": {
+        "{b}[characters.daughter.name]{/b} will go down the elevator, I should use the stairs.": "{b}[characters.daughter.name]{/b} gaat zo met de lift naar beneden, ik ga wel met de trap."
+      },
+      "daughter": {
+        "I wanted to go downstairs to help you, we talk later ok?": "Ik wilde naar beneden gaan om je te helpen, we praten straks wel, oké?"
       }
     },
     "towerTopElevator": {
@@ -1143,6 +1161,8 @@
         "He got kicked by your horse.": "Hij is getrapt door jouw paard.",
         "Yes, and the perpetrator is {b}a horse{/b}. There is a horseshoe stuck in the teeth of the [characters.dragon.name].": "Ja, en de dader is {b}een paard{/b}. Er zit een hoefijzer klem in de tand van de [characters.dragon.name].",
         "The horseshoe and the teeth need to be taken out.": "Het hoefijzer en de tand moeten eruit getrokken worden.",
+        "Sure, what did you bring?": "Tuurlijk, wat heb je meegenomen?",
+        "Ah nice! I think we both have the same plan in mind. I'll take the elevator. Do I see you downstairs?": "Oké, mooi! Volgens mij hebben we allebei het zelfde plan. Ik neem de lift wel. Zie ik je beneden?",
         "Ok.": "Oké."
       },
       "text": {
@@ -1158,6 +1178,7 @@
         "How can I help?": "Hoe kan ik helpen?",
         "You have to come with me, your dad is worried!": "Je moet meekomen, je vader is hartstikke ongerust!",
         "What do you know of this dragon?": "Wat weet je van deze draak?",
+        "Could you help me unload?": "Kan je me helpen met uitladen?",
         "I will see what I can do": "Ik kijk wat ik kan doen"
       },
       "player": {
@@ -1172,6 +1193,8 @@
         "What do you know of this dragon?": "Wat weet je van deze draak?",
         "A {b}[characters.dragon.name]{/b}?": "Een {b}[characters.dragon.name]{/b}?",
         "{b}Attacked??{/b} This dragon?": "{b}Aangevallen??{/b} Deze draak?",
+        "Could you help me unload?": "Kan je me helpen met uitladen?",
+        "I brought an old millstone, but it is too heavy to get of the carriage by myself.": "Ik heb een oude molensteen bij me, maar hij is te zwaar om alleen van de wagen te tillen.",
         "I will see what I can do.": "Ik kijk wat ik kan doen."
       }
     },
