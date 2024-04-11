@@ -428,7 +428,7 @@
         "You push against the door. It squeaks and creaks terribly. The door starts to move.": "Je duwt tegen de deur. Hij piept en kraakt vreselijk. Er komt beweging in.",
         "You open it just enough to squeeze through.": "Je opent hem ver genoeg zodat je er tussendoor kan.",
         "You are now inside the tower. It is {i}really{/i} {b}dark{/b}.": "Je bent nu in de toren. Het is hier {i}erg{/i} {b}donker{/b}.",
-        "{i}<Ggrrooaaaaarrrrh!!!!!>{/i}": "{i}<Ggrrooaaaaarrrrh!!!!!>{/i}",
+        "{i}<Ggrrooaaaaarrrrh!!!!!>{/i}": "{i}<Ggrrooaaaaarrrrh!!!!!>{/i}{#nl/}",
         "You startle and dive aside. That sound was really close. Still it seems to come from the top of the tower.": "Je schrikt en duikt opzij. Het geluid klinkt erg dichtbij. Toch lijkt het van boven in de toren te komen.",
         "For a moment you are lying still in the {b}darkness{/b} and decide to stand up.": "Je ligt even stil in de {b}duisternis{/b} en staat dan op.",
         "Your vision starts to adjust to the darkness. You can slowly make out a spiraling staircase leading upwards.": "Je ogen beginnen te wennen aan het donker. Langzaam ontwaart zich een wenteltrap naar boven.",
@@ -441,7 +441,7 @@
         "Even with the two of you it is a heavy struggle to push the stone from the cart onto the elevator.": "Zelfs met z'n tweeën is het nog een hele klus om de de steen op de lift te duwen.",
         "After a while you succeed.": "Na een tijdje is het toch gelukt.",
         "{b}[characters.daughter.name]{/b} hurries back inside and runs up the stairs.": "{b}[characters.daughter.name]{/b} gaat weer naar binnen en rent de trap op.",
-        "You want to carry the {b}millstone{/b} from the carriage to the elevator, but it is way too heavy to lift by yourself.": "Je wil de {b}molensteen{/b{ van de wagen naar de lift tillen. Maar hij is echt te zwaar om alleen te tillen."
+        "You want to carry the {b}millstone{/b} from the carriage to the elevator, but it is way too heavy to lift by yourself.": "Je wil de {b}molensteen{/b} van de wagen naar de lift tillen. Maar hij is echt te zwaar om alleen te tillen."
       },
       "player": {
         "{b}[characters.horse.name]{/b} I need to tie you up here, I hope to be back soon.": "{b}[characters.horse.name]{/b}, ik maak je hier vast, hopelijk ben ik snel weer terug.",
@@ -509,10 +509,14 @@
         "At this moment the elevator is {b}at the bottom{/b} of the tower.": "Op dit moment is de lift aan {b}de onderkant{/b} van de toren.",
         "There is a {b}handle{/b} here to control the elevator.": "Er is een {b}hendel{/b} om de lift te bedienen.",
         "At this moment the elevator is {b}at the top{/b} of the tower.": "Op dit moment is de lift aan {b}de bovenkant{/b} van de toren.",
+        "A {b}heavy{/b} millstone lies on the elevator.": "Een {b}zware{/b} molensteen ligt op de lift.",
         "If you look down, you see {b}[characters.horse.name]{/b} with the carriage.": "Als je naar beneden kijkt, zie je {b}[characters.horse.name]{/b} met de wagen staan.",
         "If you look down, you see {b}[characters.horse.name]{/b}.": "Als je naar beneden kijkt zie je {b}[characters.horse.name]{/b} staan.",
         "You pull the handle.": "Je trekt aan de hendel.",
         "The elevator slowly starts moving {b}down{/b}.": "De lift begint langzaam naar {b}beneden{/b} te bewegen.",
+        "You push the handle. A thick rope slowly starts moving at the outside of the tower.": "Je haalt de hendel om. Een groot dik touw komt in beweging aan de buitenkant van de toren.",
+        "The elevator slowly starts moving {b}up{/b}, carrying the {b}millstone{/b}.": "De lift schuift langzaam {b}met de molensteen omhoog{/b}.",
+        "The elevator creaks. It really has trouble lifting the heavy weight.": "De lift kraakt. Het touw van de lift heeft heel veel moeite met dit gewicht.",
         "You push the handle.": "Je duwt tegen de hendel.",
         "The elevator slowly starts moving {b}up{/b}.": "De lift begint langzaam naar {b}boven{/b} te bewegen."
       },
@@ -520,6 +524,9 @@
         "Take the elevator down": "Neem de lift naar beneden",
         "Use handle": "Gebruik de hendel",
         "Walk back into the room": "Loop terug de kamer in"
+      },
+      "player": {
+        "The rope is so under tension, I don't think it is wise if I would also stand on the elevator. I could fall down.": "Het touw staat zo onder spanning, ik denk niet dat het verstandig is als ik er ook op ga staan. Straks val ik nog naar beneden."
       }
     },
     "towerBaseElevator": {
@@ -530,6 +537,7 @@
         "There is a wooden elevator construction here. It does not look very stable.": "Er is hier een houten liftconstructie. Het ziet er niet heel stabiel uit.",
         "Next to the elevator is a large wooden {b}hatch door{/b}.": "Naast de lift is een groot houten {b}luik{/b}.",
         "Which could lead to a basement below.": "Waarschijnlijk leidt dat naar een kelder.",
+        "You try to open the hatch to the cellar, but the hatch seems to be {b}locked{/b}.": "Je probeert het luik richting de kelder te openen, maar het luik lijkt {b}op slot{/b} te zitten.",
         "You use the elevator to go up the tower.": "Je gebruikt de lift om naar de bovenkant van de toren te gaan.",
         "The elevator is currently at the top of the tower.": "De lift is nu aan de bovenkant van de toren.",
         "There is no way to lower it from here.": "Er is geen manier om hem vanaf hier te laten zakken."
@@ -538,6 +546,9 @@
         "Open cellar door": "Open kelderdeur",
         "Use elevator": "Gebruik lift",
         "Go to front of tower": "Ga naar de voorkant van de toren"
+      },
+      "player": {
+        "The rope is so under tension, I don't think it is wise if I would also stand on the elevator. The rope could snap.": "Het touw staat zo onder spanning, ik denk niet dat het verstandig is als ik er ook op ga staan. Straks knapt het touw nog."
       }
     },
     "river": {
@@ -1068,8 +1079,8 @@
         "You put the {b}necklace{/b} and {b}15 coins{/b} in your bag.": "Je stopt de {b}halsketting{/b} en {b}15 geldstukken{/b} in je tas."
       },
       "descriptionText": {
-        "{i}<Ting, Ting, Ting>{#horseshoe/}{/i}": "{i}<Ting, Ting, Ting>{#horseshoe/}{/i}",
-        "{i}<Ting, Ting, Ting>{#jewelry/}{/i}": "{i}<Ting, Ting, Ting>{#jewelry/}{/i}"
+        "{i}<Ting, Ting, Ting>{#horseshoe/}{/i}": "{i}<Ting, Ting, Ting>{#horseshoe/}{#nl/}{/i}",
+        "{i}<Ting, Ting, Ting>{#jewelry/}{/i}": "{i}<Ting, Ting, Ting>{#jewelry/}{#nl/}{/i}"
       }
     },
     "witchConversation": {

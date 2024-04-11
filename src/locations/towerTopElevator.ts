@@ -26,6 +26,9 @@ g.defineLocation("towerTopElevator", ({ describe, onEnter, interaction }) => {
       g.text("At this moment the elevator is {b}at the top{/b} of the tower.");
       g.text("There is a {b}handle{/b} here to control the elevator.");
     });
+    g.onState(g.item("millstone").hasState("elevator"), () => {
+      g.text("A {b}heavy{/b} millstone lies on the elevator.");
+    });
 
     // "1=17;2=0;44!3;17=2;4=0;6=2;44=4;43!2", "Een zware molensteen ligt op de lift.", "&"
     // "1=17;2=0;44!3;17=2;4=0;6=2;43>1", "De lift is kapot. Beneden liggen allerlei stukken verspreid op de grond.", "&"
@@ -53,7 +56,13 @@ g.defineLocation("towerTopElevator", ({ describe, onEnter, interaction }) => {
     "Take the elevator down",
     g.item("elevator").hasState("unknown"),
     () => {
-      g.travel("towerBaseElevator");
+      g.onState(g.item("millstone").hasState("elevator"), () => {
+        g.character("player").say(
+          "The rope is so under tension, I don't think it is wise if I would also stand on the elevator. I could fall down."
+        );
+      }).else(() => {
+        g.travel("towerBaseElevator");
+      });
     }
   );
 
@@ -65,10 +74,18 @@ g.defineLocation("towerTopElevator", ({ describe, onEnter, interaction }) => {
       );
       g.item("elevator").setState("down");
     }).else(g.item("elevator").hasState("down"), () => {
-      g.text(
-        "You push the handle.",
-        "The elevator slowly starts moving {b}up{/b}."
-      );
+      g.onState(g.item("millstone").hasState("elevator"), () => {
+        g.text(
+          "You push the handle. A thick rope slowly starts moving at the outside of the tower.",
+          "The elevator slowly starts moving {b}up{/b}, carrying the {b}millstone{/b}.",
+          "The elevator creaks. It really has trouble lifting the heavy weight."
+        );
+      }).else(() => {
+        g.text(
+          "You push the handle.",
+          "The elevator slowly starts moving {b}up{/b}."
+        );
+      });
       g.item("elevator").setState("unknown");
     });
   });

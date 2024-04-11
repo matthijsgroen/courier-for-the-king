@@ -20,3 +20,9 @@ Options:
 ```sh
   yarn start --help
 ```
+
+# Viewing Puzzle Dependency Diagram
+
+```
+http://localhost:3456/diagram.html
+```

@@ -5,7 +5,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "point-n-click dev src/index.ts"
+    "start": "point-n-click dev src/index.ts",
+    "pnc": "point-n-click"
   },
   "dependencies": {
     "@point-n-click/theme-book": "1.0.0-alpha.0",

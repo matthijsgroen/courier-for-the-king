@@ -97,6 +97,7 @@ g.defineLocation(
       "Place millstone on elevator",
       g.and(
         g.item("millstone").hasState("cart"),
+        g.item("elevator").hasState("down"),
         g.character("horse").hasState("following"),
         g.character("horse").hasFlag("cart")
       ),
@@ -121,13 +122,13 @@ g.defineLocation(
           g.text(
             "{b}[characters.daughter.name]{/b} hurries back inside and runs up the stairs."
           );
+          g.character("daughter").setState("unknown");
+          g.item("millstone").setState("elevator");
         }).else(() => {
           g.text(
             "You want to carry the {b}millstone{/b} from the carriage to the elevator, but it is way too heavy to lift by yourself."
           );
         });
-        g.character("daughter").setState("unknown");
-        g.item("millstone").setState("elevator");
       }
     );
 

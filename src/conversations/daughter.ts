@@ -180,7 +180,6 @@ g.defineOverlay(
       closeOverlay();
     });
 
-    // "2=0;1=17;17=2;4=1;30=18;44=2;29=4", "Zeg: 'Zou je me kunnen helpen uitladen?'", "4=8"
     // "2=0;1=17;17=2;4=1;45!0", "Zeg: 'Tot later'", "4=5"
   }
 );

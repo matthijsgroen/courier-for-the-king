@@ -22,14 +22,24 @@ g.defineLocation("towerBaseElevator", ({ describe, onEnter, interaction }) => {
     );
   });
 
-  interaction("Open cellar door", g.always(), () => {});
+  interaction("Open cellar door", g.always(), () => {
+    g.text(
+      "You try to open the hatch to the cellar, but the hatch seems to be {b}locked{/b}."
+    );
+  });
 
   interaction("Use elevator", g.always(), () => {
     g.onState(g.item("elevator").hasState("down"), () => {
-      g.text("You use the elevator to go up the tower.");
-      g.text("");
-      g.item("elevator").setState("unknown");
-      g.travel("towerTopElevator");
+      g.onState(g.item("millstone").hasState("elevator"), () => {
+        g.character("player").say(
+          "The rope is so under tension, I don't think it is wise if I would also stand on the elevator. The rope could snap."
+        );
+      }).else(() => {
+        g.text("You use the elevator to go up the tower.");
+        g.text("");
+        g.item("elevator").setState("unknown");
+        g.travel("towerTopElevator");
+      });
     }).else(() => {
       g.text(
         "The elevator is currently at the top of the tower.",
