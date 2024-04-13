@@ -344,12 +344,12 @@ g.definePuzzleDependencies<MetaData>({
   },
   cutRopeOfElevator: {
     dependsOn: ["bindRopeToMillstone", "bindRopeToTeeth"],
-    tags: { state: "progress", languages: [] },
+    tags: { state: "text", languages: ["en", "nl"] },
     hierarchy: ["darkWood", "tower"],
   },
   pullToothOfDragon: {
     dependsOn: ["cutRopeOfElevator"],
-    tags: {},
+    tags: { state: "text", languages: ["en", "nl"] },
     hierarchy: ["darkWood", "tower"],
   },
   getDragonTooth: {

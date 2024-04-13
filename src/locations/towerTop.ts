@@ -19,13 +19,18 @@ g.defineLocation(
           "The daughter of the baker, {b}[characters.daughter.name]{/b} is here."
         );
 
-        g.text(
-          "",
-          "A large dragon is lying on the floor, roaring of pain.",
-          "{b}{i}<GGRROOAAAAARRRRH!!!!!>{/i}{/b}"
-        );
-
-        // "1=17;2=0;17=2;4=0;6=0;45!0", "Een grote draak ligt op de grond te suffen.", "&"
+        g.onState(g.item("tooth").hasState("unknown"), () => {
+          g.text(
+            "",
+            "A large dragon is lying on the floor, roaring of pain.",
+            "{b}{i}<GGRROOAAAAARRRRH!!!!!>{/i}{/b}"
+          );
+        }).else(() => {
+          g.text(
+            "",
+            "A large dragon is lying on the floor, looking really tired."
+          );
+        });
 
         g.onState(
           g.and(

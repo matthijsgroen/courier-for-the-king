@@ -126,6 +126,36 @@ g.defineLocation("towerTopElevator", ({ describe, onEnter, interaction }) => {
     });
   });
 
+  interaction(
+    "Cut rope of elevator",
+    g.and(
+      g.item("rope").hasFlag("tiedElevator"),
+      g.item("rope").hasFlag("tiedTooth"),
+      g.item("rope").hasState("tying"),
+      g.list("inventory").isInList("sword")
+    ),
+    () => {
+      g.text(
+        "You take your sword and in one fluent motion you cut through the thick rope of the elevator.",
+        "With a loud rattle the elevator with the {b}millstone{/b} falls down.",
+        "",
+        "The rope tied to the {b}millstone{/b} is instantly at full tension. With a sharp jerk the dragon's tooth flies {b}out of the window{/b}.",
+        ""
+      );
+      // TODO: Add color
+      g.text("{b}{i}<Gggrrrrrooaaaaaaaarggggggggh!!!!!>{/i}{/b}");
+      g.text(
+        "",
+        "The enormous dragon's roar echoes far into the distance.",
+        "",
+        "And like that, it is silent again."
+      );
+
+      g.item("rope").setState("cut");
+      g.item("tooth").setState("pulled");
+    }
+  );
+
   interaction("Walk back into the room", g.always(), () => {
     g.travel("towerTop");
   });

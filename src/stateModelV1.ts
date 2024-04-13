@@ -32,7 +32,7 @@ export type GameState = GameDefinition<
       branch: { states: "possession" | "used" };
       pickaxe: { states: "broken" | "fixed" | "given" };
       rope: {
-        states: "possession" | "tying";
+        states: "possession" | "tying" | "cut";
         flags: "tiedElevator" | "tiedTooth";
       };
       millstone: { states: "seen" | "cart" | "elevator" | "used" | "rope" };
@@ -57,6 +57,7 @@ export type GameState = GameDefinition<
       runeStone: { states: "possession" };
       plants: { counters: "roundLeaves" | "thornyLeaves" };
       mushrooms: { counters: "lightblue" };
+      tooth: { states: "pulled" | "possession" };
     };
     characters: {
       player: { counters: "coins"; flags: "male" };

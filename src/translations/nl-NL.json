@@ -472,6 +472,7 @@
         "The daughter of the baker, {b}[characters.daughter.name]{/b} is here.": "De dochter van de bakker, {b}[characters.daughter.name]{/b} is hier.",
         "A large dragon is lying on the floor, roaring of pain.": "Een grote draak ligt op de grond te brullen van de pijn.",
         "{b}{i}<GGRROOAAAAARRRRH!!!!!>{/i}{/b}": "{b}{i}<GGRROOAAAAARRRRGH!!!!!>{/i}{/b}",
+        "A large dragon is lying on the floor, looking really tired.": "Een grote draak ligt op de grond, en ziet er heel moe uit.",
         "A rope is tied to the tooth of the dragon, and leading towards the elevator.": "Een touw is vastgeknoopt aan de tand van de draak, en ligt over de vloer richting de lift.",
         "A rope is tied to the elevator, and lying here on the floor.": "Een touw is vastgemaakt aan de lift, en ligt hier op de vloer.",
         "A rope is tied between the {b}tooth of the dragon{/b} and the {b}elevator{/b}.": "Er is een touw gespannen tussen de {b}tand van de draak{/b} en de {b}lift{/b}.",
@@ -532,12 +533,19 @@
         "The elevator slowly starts moving {b}up{/b}, carrying the {b}millstone{/b}.": "De lift schuift langzaam {b}met de molensteen omhoog{/b}.",
         "The elevator creaks. It really has trouble lifting the heavy weight.": "De lift kraakt. Het touw van de lift heeft heel veel moeite met dit gewicht.",
         "You push the handle.": "Je duwt tegen de hendel.",
-        "The elevator slowly starts moving {b}up{/b}.": "De lift begint langzaam naar {b}boven{/b} te bewegen."
+        "The elevator slowly starts moving {b}up{/b}.": "De lift begint langzaam naar {b}boven{/b} te bewegen.",
+        "You take your sword and in one fluent motion you cut through the thick rope of the elevator.": "Je pakt je zwaard en in één vloeiende beweging hak je door het dikke touw van de lift.",
+        "With a loud rattle the elevator with the {b}millstone{/b} falls down.": "Met een luid gerommel valt de lift samen met de {b}molensteen{/b} naar beneden.",
+        "The rope tied to the {b}millstone{/b} is instantly at full tension. With a sharp jerk the dragon's tooth flies {b}out of the window{/b}.": "Het touw dat aan de {b}molensteen{/b} zit staat meteen op volle spanning. Met een harde ruk vliegt de tand van de draak {b}door het raam{/b} naar buiten.",
+        "{b}{i}<Gggrrrrrooaaaaaaaarggggggggh!!!!!>{/i}{/b}": "{b}{i}<Gggrrrrrooaaaaaaaarggggggggh!!!!!>{/i}{/b}",
+        "The enormous dragon's roar echoes far into the distance.": "De brul van de draak is tot in de verre omgeving te horen.",
+        "And like that, it is silent again.": "En ineens is het weer helemaal stil."
       },
       "interactions": {
         "Tie rope to elevator": "Knoop touw aan de lift",
         "Take the elevator down": "Neem de lift naar beneden",
         "Use handle": "Gebruik de hendel",
+        "Cut rope of elevator": "Snij touw van de lift",
         "Walk back into the room": "Loop terug de kamer in"
       },
       "player": {
