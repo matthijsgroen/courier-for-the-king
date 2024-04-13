@@ -371,6 +371,8 @@
     },
     "darkwoods": {
       "text": {
+        "You untie [characters.horse.name], and together you walk back into the dark woods.": "Je maakt [characters.horse.name] weer los, en samen lopen jullie terug het donkere woud in.",
+        "You walk back into the dark woods.": "Je loopt terug het donkere woud in.",
         "Together with [characters.horse.name] you walk westwards, towards the village.": "Samen met [characters.horse.name] wandel je naar het westen, richting het dorp.",
         "You walk westwards, towards the village.": "Je wandelt naar het westen, richting het dorp.",
         "You are on the edge of a dark wood. It looks dangerous.": "Je staat aan de rand van een donker woud. Het ziet er gevaarlijk uit.",
@@ -420,6 +422,7 @@
         "At the {b}front{/b} of the tower a big heavy door.": "Aan de {b}voorkant{/b} van de toren is een grote zware deur.",
         "A trail goes from the tower into the wood.": "Een pad loopt het donkere woud in.",
         "{b}[characters.horse.name]{/b} is tied to the base of the tower.": "{b}[characters.horse.name]{/b} is vastgemaakt aan de voet van de toren.",
+        "The cart is here, containing the {b}millstone{/b}.": "De wagen staat hier, met de {b}molensteen{/b} erin.",
         "You walk to the wooden elevator.": "Je loopt naar de houten lift.",
         "It looks like the platform of the elevator is {b}at the top{/b} of the tower.": "Het ziet er naar uit dat het plateau van de lift {b}aan de bovenkant{/b} van de toren is.",
         "You cannot get on from this side. You do not see a way to lower the elevator here.": "Je kan er vanaf deze kant niet op. Ook zie je geen manier om de lift vanaf hier te laten zakken.",
@@ -469,6 +472,9 @@
         "The daughter of the baker, {b}[characters.daughter.name]{/b} is here.": "De dochter van de bakker, {b}[characters.daughter.name]{/b} is hier.",
         "A large dragon is lying on the floor, roaring of pain.": "Een grote draak ligt op de grond te brullen van de pijn.",
         "{b}{i}<GGRROOAAAAARRRRH!!!!!>{/i}{/b}": "{b}{i}<GGRROOAAAAARRRRGH!!!!!>{/i}{/b}",
+        "A rope is tied to the tooth of the dragon, and leading towards the elevator.": "Een touw is vastgeknoopt aan de tand van de draak, en ligt over de vloer richting de lift.",
+        "A rope is tied to the elevator, and lying here on the floor.": "Een touw is vastgemaakt aan de lift, en ligt hier op de vloer.",
+        "A rope is tied between the {b}tooth of the dragon{/b} and the {b}elevator{/b}.": "Er is een touw gespannen tussen de {b}tand van de draak{/b} en de {b}lift{/b}.",
         "Now and then you come by a window that lets in a shaft of light, so that it is not entirely pitch black.": "Af en toe passeer je een raam waardoor een bundel licht naar binnen komt, zodat het niet helemaal donker is.",
         "At the top of the stairs is a {b}door{/b}.": "Bovenaan de trap is een {b}deur{/b}.",
         "Suddenly, underneath the sound of the loud roar, you also hear a women's voice.": "Ineens hoor je onder het luide gebrul ook een vrouwenstem.",
@@ -483,15 +489,18 @@
         "He has an enormous tail, enormous wings and large teeth.": "Hij heeft een enorme staart, enorme vleugels en grote tanden.",
         "{i}<creaaaaak!>{/i}": "{i}<kraaaak!>{/i}",
         "Oh no! A loose floorboard!": "O nee! een losliggende plank!",
-        "You try to dive away behind some stuff.": "Je probeert achter wat spullen weg te duiken."
+        "You try to dive away behind some stuff.": "Je probeert achter wat spullen weg te duiken.",
+        "The dragon has his eyes closed from the pain. You quietly get closer.": "De draak heeft zijn ogen gesloten van de pijn. Stilletjes sluip je dichterbij.",
+        "When you reach the dragon, you silently but firmly tie the rope around its {b}aching tooth{/b}.": "Wanneer je bij de draak bent, knoop je stilletjes maar wel stevig het touw om zijn {b}zere tand{/b}."
       },
       "interactions": {
         "Open the door, and storm in": "Open de deur, en storm naar binnen",
         "Open the door, and sneak in": "Open de deur, en sluip naar binnen",
         "Dive left, behind some boxes": "Duik naar links, achter wat dozen",
-        "Dive right, behind a pile of books": "Duik naar links, achter een stapel boeken",
+        "Dive right, behind a pile of books": "Duik naar rechts, achter een stapel boeken",
         "Go to the elevator": "Ga naar de lift",
         "Talk to [characters.daughter.name]": "Praat met [characters.daughter.name]",
+        "Tie rope to tooth of dragon": "Knoop touw aan tand van de draak",
         "Go down the stairs": "Ga de trap af"
       },
       "player": {
@@ -510,8 +519,13 @@
         "There is a {b}handle{/b} here to control the elevator.": "Er is een {b}hendel{/b} om de lift te bedienen.",
         "At this moment the elevator is {b}at the top{/b} of the tower.": "Op dit moment is de lift aan {b}de bovenkant{/b} van de toren.",
         "A {b}heavy{/b} millstone lies on the elevator.": "Een {b}zware{/b} molensteen ligt op de lift.",
+        "A rope lies on the floor, with one end tied to the {b}tooth of the dragon{/b}.": "Er ligt een touw op de grond, waarbij een kant vastgeknoopt zit aan de {b}tand van de draak{/b}.",
+        "A rope leads further into the room, with one end tied to the {b}elevator{/b}.": "Een touw loopt over de vloer vanaf {b}de lift{/b} naar verder de kamer in.",
+        "A rope is tied between the {b}elevator{/b} and the {b}tooth of the dragon{/b}.": "Er is een touw gespannen tussen de {b}lift{/b} en de {b}tand van de draak{/b}.",
         "If you look down, you see {b}[characters.horse.name]{/b} with the carriage.": "Als je naar beneden kijkt, zie je {b}[characters.horse.name]{/b} met de wagen staan.",
         "If you look down, you see {b}[characters.horse.name]{/b}.": "Als je naar beneden kijkt zie je {b}[characters.horse.name]{/b} staan.",
+        "You tie the rope firmly to the elevator.": "Je knoopt het touw stevig vast aan de lift.",
+        "You are about to pull the lever to lower the elevator.": "Je staat op het punt om de lift te laten zakken.",
         "You pull the handle.": "Je trekt aan de hendel.",
         "The elevator slowly starts moving {b}down{/b}.": "De lift begint langzaam naar {b}beneden{/b} te bewegen.",
         "You push the handle. A thick rope slowly starts moving at the outside of the tower.": "Je haalt de hendel om. Een groot dik touw komt in beweging aan de buitenkant van de toren.",
@@ -521,12 +535,14 @@
         "The elevator slowly starts moving {b}up{/b}.": "De lift begint langzaam naar {b}boven{/b} te bewegen."
       },
       "interactions": {
+        "Tie rope to elevator": "Knoop touw aan de lift",
         "Take the elevator down": "Neem de lift naar beneden",
         "Use handle": "Gebruik de hendel",
         "Walk back into the room": "Loop terug de kamer in"
       },
       "player": {
-        "The rope is so under tension, I don't think it is wise if I would also stand on the elevator. I could fall down.": "Het touw staat zo onder spanning, ik denk niet dat het verstandig is als ik er ook op ga staan. Straks val ik nog naar beneden."
+        "The rope is so under tension, I don't think it is wise if I would also stand on the elevator. I could fall down.": "Het touw staat zo onder spanning, ik denk niet dat het verstandig is als ik er ook op ga staan. Straks val ik nog naar beneden.",
+        "I don't think it is wise to mess with this handle now.": "Ik denk niet dat het verstandig is om nu met de hendel te rommelen."
       }
     },
     "towerBaseElevator": {
@@ -792,7 +808,7 @@
         "Sorry kid{#male/}, I wouldn't know.": "Sorry jongen, dat zou ik echt niet weten.",
         "Sorry kid{#female/}, I wouldn't know.": "Sorry dame, dat zou ik echt niet weten.",
         "I need a new sail for one of the blades.": "Er moet een nieuw doek op een van de wieken komen.",
-        "Well let's see if this works!": "Eens kijken of het werkt!",
+        "Well, let's see if this works!": "Eens kijken of het werkt!",
         "Well done!": "Goed gedaan!",
         "Sure, no problem! Thanks for fixing the mill with me.": "Zeker, geen enkel probleem! Nogmaals bedankt voor het helpen met de reparatie van de molen.",
         "Be aware, with {b}[characters.horse.name]{/b} hitched to the carriage you cannot ride him.": "Bedenk wel, met {b}[characters.horse.name]{/b} aan de wagen gespannen kun je niet op hem rijden.",
@@ -807,9 +823,9 @@
         "I've been at the river plenty of times, but believe me, there is nothing there.": "Ik ben vaak genoeg bij de rivier geweest, maar geloof me, er is daar niets te vinden.",
         "What could you possibly want with this millstone?": "Wat zou je met deze steen moeten?",
         "It is only {b}heavy{/b} and worn out.": "Hij is alleen maar {b}zwaar{/b} en versleten.",
-        "Well I don't mind you having it.": "Well I don't mind you having it.",
-        "We will need to lift the stone together, it is impossible to do alone. The stone is too heavy for that.": "We will need to lift the stone together, it is impossible to do alone. The stone is too heavy for that.",
-        "You need to have the {b}carriage{/b} here with your {b}horse{/b}, it is too heavy to transport otherwise.": "You need to have the {b}carriage{/b} here with your {b}horse{/b}, it is too heavy to transport otherwise."
+        "Well, I don't mind you having it.": "Nou, van mij mag je hem hebben.",
+        "We will need to lift the stone together, it is impossible to do alone. The stone is too heavy for that.": "We moeten de steen samen tillen, het is onmogelijk om dat alleen te doen. De steen is daar veel te zwaar voor.",
+        "You need to have the {b}carriage{/b} here with your {b}horse{/b}, it is too heavy to transport otherwise.": "Je hebt dan een {b}paard{/b} en {b}wagen{/b} nodig, het is anders te zwaar om te vervoeren."
       },
       "interactions": {
         "Any idea how I could get any transportation?": "Weet u hoe ik aan vervoer kan komen?",
@@ -833,7 +849,7 @@
         "Could you {b}grind{/b} it to {b}flour{/b}?": "Zou je het kunnen {b}malen{/b} tot {b}meel{/b}?",
         "Did you also hear that there is a treasure hidden somewhere?": "Heb jij ook gehoord dat er een schat ergens verborgen is?",
         "Can I have the millstone?": "Zou ik de molensteen mogen hebben?",
-        "I have still a use for it.": "I have still a use for it."
+        "I have still a use for it.": "Ik kan hem nog wel ergens voor gebruiken."
       },
       "text": {
         "The old miller looks at you.": "De oude molenaar kijkt je aan.",
@@ -847,7 +863,7 @@
         "After a few turns, fine {b}flour{/b} starts pouring out.": "Na een paar slagen komt er al mooi {b}meel{/b} uit stromen.",
         "Together you put bags of {b}flour{/b} on the carriage.": "Samen zetten jullie de zakken {b}meel{/b} op de wagen.",
         "You find this very interesting, and make a note of it.": "Je vindt het erg interessant, en maakt er een aantekening van.",
-        "Together you lift the stone on the carriage.": "Together you lift the stone on the carriage."
+        "Together you lift the stone on the carriage.": "Samen tillen jullie de steen op de wagen."
       }
     },
     "farmerConversation": {
@@ -1294,6 +1310,8 @@
         "Check notes on treasure": "Bekijk schataantekeningen",
         "Check list of ingredients": "Bekijk lijst met ingrediënten",
         "Eat cookies": "Eet koeken",
+        "Tie rope to millstone": "Knoop touw aan molensteen",
+        "Tie rope to dragon's tooth": "Knoop touw aan tand van de draak",
         "Wait for darkness": "Wacht tot het donker is",
         "Close your bag": "Sluit je tas"
       },
@@ -1302,6 +1320,10 @@
         "and replace the hilt with the branch from the forest.": "en vervangt het met de stok uit het bos.",
         "It fits! The pickaxe is as good as new.": "Het past! Het houweel is weer zo goed als nieuw.",
         "The cookies smell delicious, but you decide to keep them for later.": "De koeken ruiken heerlijk, maar toch besluit je om ze voor later te bewaren.",
+        "You tie the rope firmly to the {b}millstone{/b}, and toss the other end into the room.": "Je knoopt het touw stevig vast aan de {b}molensteen{/b}, en werpt de andere kant van het touw de kamer in.",
+        "The dragon has his eyes closed from the pain. You quietly get closer.": "De draak heeft zijn ogen gesloten van de pijn. Stilletjes sluip je dichterbij.",
+        "When you reach the dragon, you silently but firmly tie the rope around its {b}aching tooth{/b}.": "Wanneer je bij de draak bent, knoop je stilletjes maar wel stevig het touw om zijn {b}zere tand{/b}.",
+        "You toss the other end of the rope towards the elevator.": "Je werpt de andere kant van het touw richting de lift.",
         "You are patiently sitting at the bank of the river, waiting for darkness.": "Je wacht geduldig aan de oever van de rivier, tot het donker is.",
         "The darker it gets, the more the moonstone starts to {b}glow{/b}.": "Des te donker het wordt, des te meer begint de maansteen te {b}gloeien{/b}.",
         "{b}[characters.horse.name]{/b} goes to the waterfront to drink some water.": "{b}[characters.horse.name]{/b} gaat naar de oever om water te drinken."

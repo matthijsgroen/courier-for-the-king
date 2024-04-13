@@ -27,6 +27,43 @@ g.defineLocation(
 
         // "1=17;2=0;17=2;4=0;6=0;45!0", "Een grote draak ligt op de grond te suffen.", "&"
 
+        g.onState(
+          g.and(
+            g.item("rope").hasState("tying"),
+            g.not(g.item("rope").hasFlag("tiedElevator"))
+          ),
+          () => {
+            g.text(
+              "",
+              "A rope is tied to the tooth of the dragon, and leading towards the elevator."
+            );
+          }
+        );
+        g.onState(
+          g.and(
+            g.item("rope").hasState("tying"),
+            g.not(g.item("rope").hasFlag("tiedTooth"))
+          ),
+          () => {
+            g.text(
+              "",
+              "A rope is tied to the elevator, and lying here on the floor."
+            );
+          }
+        );
+        g.onState(
+          g.and(
+            g.item("rope").hasState("tying"),
+            g.item("rope").hasFlag("tiedTooth"),
+            g.item("rope").hasFlag("tiedElevator")
+          ),
+          () => {
+            g.text(
+              "",
+              "A rope is tied between the {b}tooth of the dragon{/b} and the {b}elevator{/b}."
+            );
+          }
+        );
         // "1=17;2=0;17=2;4=0;6=0;31=2", "", "*c2", "Een touw loopt van de tand van de draak naar het midden van de kamer.", "&"
         // "1=17;2=0;17=2;4=0;6=0;31=3", "", "*c2", "Een touw loopt van de molensteen naar het midden van de kamer.", "&"
         // "1=17;2=0;17=2;4=0;6=0;31=4", "", "*c2", "Een touw loopt van de molensteen naar de zere tand van de draak.", "&"
@@ -121,13 +158,23 @@ g.defineLocation(
       }
     );
 
+    interaction(
+      "Tie rope to tooth of dragon",
+      g.and(
+        g.item("rope").hasState("tying"),
+        g.not(g.item("rope").hasFlag("tiedTooth"))
+      ),
+      () => {
+        g.text(
+          "The dragon has his eyes closed from the pain. You quietly get closer.",
+          "When you reach the dragon, you silently but firmly tie the rope around its {b}aching tooth{/b}."
+        );
+        g.item("rope").setFlag("tiedTooth");
+      }
+    );
+
     interaction("Go down the stairs", hasFlag("visited"), () => {
       g.travel("tower");
     });
-
-    // "2=0;1=17;17=2;4=0;6=0;46=0", "Praat met Bloem", "4=1"
-    // "2=0;1=17;17=2;4=0;6=0", "Ga naar de draak", "4=10"
-    // "2=0;1=17;17=2;4=0;6=0;31=3", "Knoop touw aan tand van de draak", "4=13"
-    // "2=0;1=17;17=2;4=0;6=0;31=2;44=4;43=0", "Knoop touw aan molensteen", "4=14"
   }
 );

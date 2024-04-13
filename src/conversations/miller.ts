@@ -58,7 +58,7 @@ g.defineOverlay(
           "After some pulling and knotting the {b}underpants{/b} are fitting nicely onto the blade.",
           "You both climb back down."
         );
-        g.character("miller").say("Well let's see if this works!");
+        g.character("miller").say("Well, let's see if this works!");
         g.text(
           "The miller turns the windmill towards the wind.",
           "Slowly but surely the blades start to turn."
@@ -161,7 +161,7 @@ g.defineOverlay(
         );
         g.onState(g.character("dragon").hasState("found"), () => {
           g.character("player").say("I have still a use for it.");
-          g.character("miller").say("Well I don't mind you having it.");
+          g.character("miller").say("Well, I don't mind you having it.");
 
           g.onState(
             g.and(

@@ -127,6 +127,7 @@ g.defineOverlay("inventory", ({ onEnter, interaction, closeOverlay }) => {
       g.openOverlay("treasureNotes");
     }
   );
+
   interaction(
     "Check list of ingredients",
     g.item("ingredientList").hasState("possession"),
@@ -134,11 +135,51 @@ g.defineOverlay("inventory", ({ onEnter, interaction, closeOverlay }) => {
       g.openOverlay("ingredientList");
     }
   );
+
   interaction("Eat cookies", g.item("cookies").hasState("possession"), () => {
     g.text(
       "The cookies smell delicious, but you decide to keep them for later."
     );
   });
+
+  interaction(
+    "Tie rope to millstone",
+    g.and(
+      g.isLocation("towerTopElevator"),
+      g.item("millstone").hasState("elevator"),
+      g.item("elevator").hasState("unknown"),
+      g.item("rope").hasState("possession")
+    ),
+    () => {
+      g.text(
+        "You tie the rope firmly to the {b}millstone{/b}, and toss the other end into the room."
+      );
+      g.item("rope").setState("tying");
+      g.item("rope").setFlag("tiedElevator");
+      g.list("inventory").remove("rope");
+    }
+  );
+
+  interaction(
+    "Tie rope to dragon's tooth",
+    g.and(
+      g.isLocation("towerTop"),
+      g.item("millstone").hasState("elevator"),
+      g.item("elevator").hasState("unknown"),
+      g.item("rope").hasState("possession")
+    ),
+    () => {
+      g.text(
+        "The dragon has his eyes closed from the pain. You quietly get closer.",
+        "When you reach the dragon, you silently but firmly tie the rope around its {b}aching tooth{/b}.",
+        "You toss the other end of the rope towards the elevator."
+      );
+      g.item("rope").setState("tying");
+      g.item("rope").setFlag("tiedTooth");
+      g.list("inventory").remove("rope");
+    }
+  );
+
   interaction(
     "Wait for darkness",
     g.and(

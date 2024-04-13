@@ -329,22 +329,22 @@ g.definePuzzleDependencies<MetaData>({
   },
   raiseElevatorWithMillstone: {
     dependsOn: ["putMillstoneOnElevator"],
-    tags: { state: "progress", languages: ["en", "nl"] },
+    tags: { state: "text", languages: ["en", "nl"] },
     hierarchy: ["darkWood", "tower"],
   },
   bindRopeToMillstone: {
     dependsOn: ["raiseElevatorWithMillstone", "getRope"],
-    tags: {},
+    tags: { state: "text", languages: ["en", "nl"] },
     hierarchy: ["darkWood", "tower"],
   },
   bindRopeToTeeth: {
     dependsOn: ["getRope", "talkToDaughter"],
-    tags: {},
+    tags: { state: "text", languages: ["en", "nl"] },
     hierarchy: ["darkWood", "tower"],
   },
   cutRopeOfElevator: {
     dependsOn: ["bindRopeToMillstone", "bindRopeToTeeth"],
-    tags: {},
+    tags: { state: "progress", languages: [] },
     hierarchy: ["darkWood", "tower"],
   },
   pullToothOfDragon: {

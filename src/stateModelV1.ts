@@ -31,7 +31,10 @@ export type GameState = GameDefinition<
       bag: { states: "known" | "possession" };
       branch: { states: "possession" | "used" };
       pickaxe: { states: "broken" | "fixed" | "given" };
-      rope: { states: "possession" };
+      rope: {
+        states: "possession" | "tying";
+        flags: "tiedElevator" | "tiedTooth";
+      };
       millstone: { states: "seen" | "cart" | "elevator" | "used" | "rope" };
       grain: { states: "access" | "cart" | "flour" | "delivered" };
       fabric: { states: "possession" | "used" };
