@@ -67,7 +67,7 @@ export type GameState = GameDefinition<
         states: "river" | "following" | "stable";
         flags: "hooves" | "cart" | "found" | "known";
       };
-      dragon: { states: "known" | "found" };
+      dragon: { states: "known" | "found"; flags: "toothPulled" };
       farmer: { flags: "visited" | "toldDragon" | "returnedHorse" };
       daughter: { states: "unloadStone" };
       witch: {};
@@ -75,6 +75,7 @@ export type GameState = GameDefinition<
       farrier: {};
       goldsmith: {};
       armorer: {};
+      villager: {};
     };
     overlays: {
       dwarfConversation: {};

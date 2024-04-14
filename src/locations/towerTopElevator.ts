@@ -3,9 +3,16 @@ import g from "../game";
 g.defineLocation("towerTopElevator", ({ describe, onEnter, interaction }) => {
   onEnter("towerTop", () => {
     g.text(
-      "You walk to a large opening in the top of the tower. This has to be where the {b}dragon{/b} can fly in and out. You can see all over the {b}dark wood{/b}. In the distance, you can even see a {b}mill on a hill{/b}. On the outside of the tower is a wooden elevator.",
-      ""
+      "You walk to a large opening in the top of the tower. This has to be where the {b}dragon{/b} can fly in and out. You can see all over the {b}dark wood{/b}. In the distance, you can even see a {b}mill on a hill{/b}."
     );
+    g.onState(g.item("elevator").hasState("broken"), () => {
+      g.text(
+        "On the outside of the tower are some broken remains of what once was an elevator."
+      );
+    }).else(() => {
+      g.text("On the outside of the tower is a wooden elevator.");
+    });
+    g.text("");
   });
 
   onEnter("towerBaseElevator", () => {
@@ -22,13 +29,27 @@ g.defineLocation("towerTopElevator", ({ describe, onEnter, interaction }) => {
         "At this moment the elevator is {b}at the bottom{/b} of the tower."
       );
       g.text("There is a {b}handle{/b} here to control the elevator.");
-    }).else(() => {
-      g.text("At this moment the elevator is {b}at the top{/b} of the tower.");
-      g.text("There is a {b}handle{/b} here to control the elevator.");
-    });
-    g.onState(g.item("millstone").hasState("elevator"), () => {
-      g.text("A {b}heavy{/b} millstone lies on the elevator.");
-    });
+    })
+      .else(g.item("elevator").hasState("unknown"), () => {
+        g.text(
+          "At this moment the elevator is {b}at the top{/b} of the tower."
+        );
+        g.text("There is a {b}handle{/b} here to control the elevator.");
+      })
+      .else(() => {
+        g.text(
+          "The elevator is {b}broken{/b}. Down below you see all kinds of debris from the collapse."
+        );
+      });
+    g.onState(
+      g.and(
+        g.item("millstone").hasState("elevator"),
+        g.not(g.item("elevator").hasState("broken"))
+      ),
+      () => {
+        g.text("A {b}heavy{/b} millstone lies on the elevator.");
+      }
+    );
 
     g.onState(g.item("rope").hasState("tying"), () => {
       g.text("");
@@ -48,8 +69,6 @@ g.defineLocation("towerTopElevator", ({ describe, onEnter, interaction }) => {
           );
         });
     });
-
-    // "1=17;2=0;44!3;17=2;4=0;6=2;43>1", "De lift is kapot. Beneden liggen allerlei stukken verspreid op de grond.", "&"
 
     g.onState(
       g.and(
@@ -74,8 +93,6 @@ g.defineLocation("towerTopElevator", ({ describe, onEnter, interaction }) => {
       g.not(g.item("rope").hasFlag("tiedElevator"))
     ),
     () => {
-      // "1=17;2=0;17=2;4=14;6=0", "*c2", "Je loopt met de andere kant van touw voorzichtig naar de lift."
-      // "Je knoopt het touw stevig vast aan de molensteen. De lift kraakt een beetje onder het zware gewicht van de steen.", "&31=4;6=2"
       g.text("You tie the rope firmly to the elevator.");
       g.item("rope").setFlag("tiedElevator");
     }
@@ -153,6 +170,8 @@ g.defineLocation("towerTopElevator", ({ describe, onEnter, interaction }) => {
 
       g.item("rope").setState("cut");
       g.item("tooth").setState("pulled");
+      g.item("elevator").setState("broken");
+      g.character("dragon").setFlag("toothPulled");
     }
   );
 

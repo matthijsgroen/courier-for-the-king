@@ -2,8 +2,22 @@ import g from "../game";
 
 g.defineLocation("village", ({ describe, interaction, onLeave }) => {
   describe(() => {
-    g.text("You are in the village. It is eery quiet.");
-    g.descriptionText("");
+    g.onState(g.character("dragon").hasFlag("toothPulled"), () => {
+      g.text(
+        "You are in the village. Where is was eery and quiet before, everything is now in a {b}festive{/b} atmosphere."
+      );
+      g.descriptionText("");
+      g.text("Flags, banners and garlands are hanging everywhere.");
+      g.descriptionText("");
+      g.text("A villager you've never seen before comes to you.");
+      g.character("villager").say(
+        "Hurray for {b}[characters.player.name]{/b}! The dragonslayer!",
+        "We all heard the last outcry, you are a {b}hero{/b}!"
+      );
+    }).else(() => {
+      g.text("You are in the village. It is eery quiet.");
+      g.descriptionText("");
+    });
 
     g.text(
       "At the left side of the road is is a {b}bakery{/b}.",

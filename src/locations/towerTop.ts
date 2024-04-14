@@ -11,9 +11,15 @@ g.defineLocation(
 
     describe(() => {
       g.onState(hasFlag("visited"), () => {
-        g.text(
-          "You are at the top of the tower. There is a great opening in the wall, with an wooden elevator going outside."
-        );
+        g.onState(g.item("elevator").hasState("broken"), () => {
+          g.text(
+            "You are at the top of the tower. There is a great opening in the wall, with broken woodwork what was once an elevator."
+          );
+        }).else(() => {
+          g.text(
+            "You are at the top of the tower. There is a great opening in the wall, with an wooden elevator going outside."
+          );
+        });
 
         g.text(
           "The daughter of the baker, {b}[characters.daughter.name]{/b} is here."

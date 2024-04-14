@@ -55,6 +55,9 @@
     },
     "armorer": {
       "defaultName": "Lucy"
+    },
+    "villager": {
+      "defaultName": "Dorpeling"
     }
   },
   "locations": {
@@ -283,11 +286,18 @@
         "You tie up [characters.horse.name] to the store. You enter the store with your mouth watering.": "Je knoopt [characters.horse.name] vast aan de winkel. Je stapt watertandend de winkel binnen.",
         "You tie up [characters.horse.name] to a pole near the smithy and enter.": "Je knoopt [characters.horse.name] vast aan een paaltje bij de smederij en loopt naar binnen.",
         "You enter the large smithy.": "Je loopt de grote smederij binnen.",
+        "You are in the village. Where is was eery and quiet before, everything is now in a {b}festive{/b} atmosphere.": "Je bent in het dorp. Waar het eerst heel stil was, hangt nu overal een {b}feeststemming{/b}.",
+        "Flags, banners and garlands are hanging everywhere.": "Vlaggen, banners en slingers hangen overal.",
+        "A villager you've never seen before comes to you.": "Een dorpsbewoner die je nog nooit eerder hebt gezien komt op je af.",
         "You are in the village. It is eery quiet.": "Je bent in het dorp. Er hangt een rare stilte.",
         "At the left side of the road is is a {b}bakery{/b}.": "Aan de linkerkant van de weg zit een {b}bakker{/b}.",
         "At the right side of the road a large {b}smithy{/b}.": "Aan de rechterkant van de weg een grote {b}smederij{/b}.",
         "The road continues {b}southwards{/b}, to a {b}river{/b}.": "De weg loopt verder naar het {b}zuiden{/b}, richting een {b}rivier{/b}.",
         "A small hidden path goes {b}eastwards{/b}, to a {b}dark wood{/b}.": "Een klein verborgen pad leidt naar het {b}oosten{/b}, richting een {b}donker woud{/b}."
+      },
+      "villager": {
+        "Hurray for {b}[characters.player.name]{/b}! The dragonslayer!": "Hoera voor {b}[characters.player.name]{/b}! De drakendoder!",
+        "We all heard the last outcry, you are a {b}hero{/b}!": "We hadden allemaal die laatste brul gehoord, je bent een {b}held{/b}!"
       },
       "interactions": {
         "Go to bakery": "Wandel naar de bakkerij",
@@ -468,6 +478,7 @@
     "towerTop": {
       "text": {
         "You go up the stairs to the top of the tower.": "Je gaat de trap op naar de top van de toren.",
+        "You are at the top of the tower. There is a great opening in the wall, with broken woodwork what was once an elevator.": "Je staat bovenin de toren. Je ziet een grote opening in de buitenmuur met kapot houtwerk, wat ooit een lift was.",
         "You are at the top of the tower. There is a great opening in the wall, with an wooden elevator going outside.": "Je staat bovenin de toren. Je ziet een grote opening in de buitenmuur met een lift.",
         "The daughter of the baker, {b}[characters.daughter.name]{/b} is here.": "De dochter van de bakker, {b}[characters.daughter.name]{/b} is hier.",
         "A large dragon is lying on the floor, roaring of pain.": "Een grote draak ligt op de grond te brullen van de pijn.",
@@ -513,12 +524,15 @@
     },
     "towerTopElevator": {
       "text": {
-        "You walk to a large opening in the top of the tower. This has to be where the {b}dragon{/b} can fly in and out. You can see all over the {b}dark wood{/b}. In the distance, you can even see a {b}mill on a hill{/b}. On the outside of the tower is a wooden elevator.": "Je loopt naar de grote opening bovenin de toren. Dit moet zijn waar de {b}draak{/b} naar binnen en naar buiten kan vliegen. Je kan ver over het {b}donkere woud{/b} kijken. In de verte kan je zelfs de {b}molen op een heuvel{/b} zien. Aan de buitenkant van de toren is een houten lift.",
+        "You walk to a large opening in the top of the tower. This has to be where the {b}dragon{/b} can fly in and out. You can see all over the {b}dark wood{/b}. In the distance, you can even see a {b}mill on a hill{/b}.": "Je loopt naar de grote opening bovenin de toren. Dit moet zijn waar de {b}draak{/b} naar binnen en naar buiten kan vliegen. Je kan ver over het {b}donkere woud{/b} kijken. In de verte kan je zelfs de {b}molen op een heuvel{/b} zien. Aan de buitenkant van de toren is een houten lift.",
+        "On the outside of the tower are some broken remains of what once was an elevator.": "Aan de buitenkant van de toren zijn resten van wat ooit een lift was.",
+        "On the outside of the tower is a wooden elevator.": "Aan de buitenkant van de toren is een houten lift.",
         "At the top of the tower, you step off.": "Bovenaan de toren stap je er weer van af.",
         "You are now at the top of the tower.": "Je bent nu aan de bovenkant van de toren.",
         "At this moment the elevator is {b}at the bottom{/b} of the tower.": "Op dit moment is de lift aan {b}de onderkant{/b} van de toren.",
         "There is a {b}handle{/b} here to control the elevator.": "Er is een {b}hendel{/b} om de lift te bedienen.",
         "At this moment the elevator is {b}at the top{/b} of the tower.": "Op dit moment is de lift aan {b}de bovenkant{/b} van de toren.",
+        "The elevator is {b}broken{/b}. Down below you see all kinds of debris from the collapse.": "De lift is {b}kapot{/b}. Beneden zie je allemaal puin liggen van de instorting.",
         "A {b}heavy{/b} millstone lies on the elevator.": "Een {b}zware{/b} molensteen ligt op de lift.",
         "A rope lies on the floor, with one end tied to the {b}tooth of the dragon{/b}.": "Er ligt een touw op de grond, waarbij een kant vastgeknoopt zit aan de {b}tand van de draak{/b}.",
         "A rope leads further into the room, with one end tied to the {b}elevator{/b}.": "Een touw loopt over de vloer vanaf {b}de lift{/b} naar verder de kamer in.",
@@ -1168,6 +1182,7 @@
     },
     "daughterConversation": {
       "daughter": {
+        "Wow, we pulled the tooth! That was incredible!": "Wow, we hebben de tand kunnen trekken! Dat was te gek!",
         "Hi {b}[characters.player.name]{/b}, are you here to help with the toothache?": "Hoi {b}[characters.player.name]{/b}, kom je me helpen met de kiespijn?",
         "Hey! Who are you? What are you doing here? Put that sword away!": "He! Wie ben jij? En wat doe jij hier? Doe dat zwaard eens snel weg!",
         "You might hurt someone!": "Straks bezeer je nog iemand!",
@@ -1200,23 +1215,8 @@
         "Ah nice! I think we both have the same plan in mind. I'll take the elevator. Do I see you downstairs?": "Oké, mooi! Volgens mij hebben we allebei het zelfde plan. Ik neem de lift wel. Zie ik je beneden?",
         "Ok.": "Oké."
       },
-      "text": {
-        "You are perplexed.": "Je staat perplex.",
-        "Difficult enough? What is she talking about?": "Moeilijk genoeg? Waar heeft ze het over?",
-        "You decide to put away your sword.": "Je bergt je zwaard maar op."
-      },
-      "interactions": {
-        "Are you [characters.daughter.name]?": "Ben jij [characters.daughter.name]?",
-        "Look out! There is a dragon over there!": "Kijk uit! Er zit daar een draak!",
-        "I'm coming to save you!": "Ik kom je redden!",
-        "The dragon needs to be rescued?": "De draak moet gered worden?",
-        "How can I help?": "Hoe kan ik helpen?",
-        "You have to come with me, your dad is worried!": "Je moet meekomen, je vader is hartstikke ongerust!",
-        "What do you know of this dragon?": "Wat weet je van deze draak?",
-        "Could you help me unload?": "Kan je me helpen met uitladen?",
-        "I will see what I can do": "Ik kijk wat ik kan doen"
-      },
       "player": {
+        "Yes, that was quite a job, but we did it!": "Ja, dat was een flinke klus, maar we hebben het voor elkaar gekregen!",
         "Are you {b}[characters.daughter.name]{/b}? The daughter of the {b}baker{/b}?": "Ben jij {b}[characters.daughter.name]{/b}? De dochter van de {b}bakker{/b}?",
         "I'm {b}[characters.player.name]{/b}, I'm here to rescue you!": "Ik ben {b}[characters.player.name]{/b}, ik ben hier om je te redden!",
         "Look out! There is a dragon over there!": "Kijk uit! Er zit daar een draak!",
@@ -1230,7 +1230,27 @@
         "{b}Attacked??{/b} This dragon?": "{b}Aangevallen??{/b} Deze draak?",
         "Could you help me unload?": "Kan je me helpen met uitladen?",
         "I brought an old millstone, but it is too heavy to get of the carriage by myself.": "Ik heb een oude molensteen bij me, maar hij is te zwaar om alleen van de wagen te tillen.",
-        "I will see what I can do.": "Ik kijk wat ik kan doen."
+        "I will see what I can do.": "Ik kijk wat ik kan doen.",
+        "I will see you later!": "Ik zie je later!"
+      },
+      "text": {
+        "You give {b}[characters.daughter.name]{/b} a high-five.": "Je geeft {b}[characters.daughter.name]{/b} een high-five.",
+        "The dragon lies tired but now without pain in the corner, slightly dozing off.": "De draak ligt moe maar zonder pijn in de hoek, een beetje in te dutten.",
+        "You are perplexed.": "Je staat perplex.",
+        "Difficult enough? What is she talking about?": "Moeilijk genoeg? Waar heeft ze het over?",
+        "You decide to put away your sword.": "Je bergt je zwaard maar op."
+      },
+      "interactions": {
+        "Are you [characters.daughter.name]?": "Ben jij [characters.daughter.name]?",
+        "Look out! There is a dragon over there!": "Kijk uit! Er zit daar een draak!",
+        "I'm coming to save you!": "Ik kom je redden!",
+        "The dragon needs to be rescued?": "De draak moet gered worden?",
+        "How can I help?": "Hoe kan ik helpen?",
+        "You have to come with me, your dad is worried!": "Je moet meekomen, je vader is hartstikke ongerust!",
+        "What do you know of this dragon?": "Wat weet je van deze draak?",
+        "Could you help me unload?": "Kan je me helpen met uitladen?",
+        "I will see what I can do": "Ik kijk wat ik kan doen",
+        "See you later": "Tot later!"
       }
     },
     "plants": {

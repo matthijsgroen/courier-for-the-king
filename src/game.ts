@@ -17,6 +17,7 @@ const palette = createColorPalette([
   "farrier",
   "goldsmith",
   "armorer",
+  "villager",
 ]);
 
 const darkColors = palette.defineColorScheme({
@@ -33,6 +34,7 @@ const darkColors = palette.defineColorScheme({
   farrier: hexColor("e0e3d7"),
   goldsmith: hexColor("ffd700"),
   armorer: hexColor("2879C0"),
+  villager: hexColor("ee4040"),
 });
 
 const lightColors = palette.defineColorScheme({
@@ -49,6 +51,7 @@ const lightColors = palette.defineColorScheme({
   farrier: hexColor("30cc30"),
   goldsmith: hexColor("806C00"),
   armorer: hexColor("2879C0"),
+  villager: hexColor("ee4040"),
 });
 
 const game = world<GameState>({
@@ -134,6 +137,10 @@ const game = world<GameState>({
     armorer: {
       defaultName: "Lucy",
       textColor: palette.color("armorer"),
+    },
+    villager: {
+      defaultName: "Villager",
+      textColor: palette.color("villager"),
     },
   },
 })(

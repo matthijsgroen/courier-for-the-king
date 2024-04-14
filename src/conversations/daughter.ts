@@ -6,25 +6,38 @@ g.defineOverlay(
     setPrompt("What will you say:");
 
     onEnter(() => {
-      g.onState(hasState("visited"), () => {
+      g.onState(g.character("dragon").hasFlag("toothPulled"), () => {
         g.character("daughter").say(
-          "Hi {b}[characters.player.name]{/b}, are you here to help with the toothache?"
+          "Wow, we pulled the tooth! That was incredible!"
         );
-      }).else(() => {
-        g.character("daughter").say(
-          "Hey! Who are you? What are you doing here? Put that sword away!",
-          "You might hurt someone!"
-        );
-        g.text("You are perplexed.");
-        g.character("daughter").say(
-          "Yes you! What are you doing here? It is difficult enough as it is already!"
-        );
+        g.character("player").say("Yes, that was quite a job, but we did it!");
+
+        g.text("You give {b}[characters.daughter.name]{/b} a high-five.", "");
 
         g.text(
-          "Difficult enough? What is she talking about?",
-          "You decide to put away your sword."
+          "The dragon lies tired but now without pain in the corner, slightly dozing off."
         );
-      });
+      })
+        .else(hasState("visited"), () => {
+          g.character("daughter").say(
+            "Hi {b}[characters.player.name]{/b}, are you here to help with the toothache?"
+          );
+        })
+        .else(() => {
+          g.character("daughter").say(
+            "Hey! Who are you? What are you doing here? Put that sword away!",
+            "You might hurt someone!"
+          );
+          g.text("You are perplexed.");
+          g.character("daughter").say(
+            "Yes you! What are you doing here? It is difficult enough as it is already!"
+          );
+
+          g.text(
+            "Difficult enough? What is she talking about?",
+            "You decide to put away your sword."
+          );
+        });
     });
 
     interaction(
@@ -85,21 +98,28 @@ g.defineOverlay(
       g.character("dragon").setState("found");
     });
 
-    interaction("How can I help?", hasState("visited"), () => {
-      g.character("player").say("How can I help you?");
+    interaction(
+      "How can I help?",
+      g.and(
+        hasState("visited"),
+        g.not(g.character("dragon").hasFlag("toothPulled"))
+      ),
+      () => {
+        g.character("player").say("How can I help you?");
 
-      g.character("daughter").say(
-        "We have to think of something to {b}pull{/b} his teeth out.",
-        "I'm studying to be {b}a dentist{/b}. With so many people eating the pastries of my father there should be enough work for me.",
-        "Never thought my first client would be a dragon."
-      );
+        g.character("daughter").say(
+          "We have to think of something to {b}pull{/b} his teeth out.",
+          "I'm studying to be {b}a dentist{/b}. With so many people eating the pastries of my father there should be enough work for me.",
+          "Never thought my first client would be a dragon."
+        );
 
-      g.character("daughter").say(
-        "The problem with a dragon is that everything is bigger and stronger than by people.",
-        "With people you could tie the tooth with {b}a rope{/b} to a door, and slam the door shut.",
-        "We need to think bigger here. Could you arrange a {b}heavy stone{/b}?"
-      );
-    });
+        g.character("daughter").say(
+          "The problem with a dragon is that everything is bigger and stronger than by people.",
+          "With people you could tie the tooth with {b}a rope{/b} to a door, and slam the door shut.",
+          "We need to think bigger here. Could you arrange a {b}heavy stone{/b}?"
+        );
+      }
+    );
 
     interaction(
       "You have to come with me, your dad is worried!",
@@ -172,14 +192,29 @@ g.defineOverlay(
       }
     );
 
-    interaction("I will see what I can do", hasState("visited"), () => {
-      g.character("player").say("I will see what I can do.");
-      g.character("daughter").say("Ok.");
-      g.location("towerTop").setFlag("visited");
-      g.location("tower").setState("visited");
-      closeOverlay();
-    });
+    interaction(
+      "I will see what I can do",
+      g.and(
+        hasState("visited"),
+        g.not(g.character("dragon").hasFlag("toothPulled"))
+      ),
+      () => {
+        g.character("player").say("I will see what I can do.");
+        g.character("daughter").say("Ok.");
+        g.location("towerTop").setFlag("visited");
+        g.location("tower").setState("visited");
+        closeOverlay();
+      }
+    );
 
-    // "2=0;1=17;17=2;4=1;45!0", "Zeg: 'Tot later'", "4=5"
+    interaction(
+      "See you later",
+      g.and(hasState("visited"), g.character("dragon").hasFlag("toothPulled")),
+      () => {
+        g.character("player").say("I will see you later!");
+        g.character("daughter").say("Ok.");
+        closeOverlay();
+      }
+    );
   }
 );
