@@ -313,11 +313,19 @@
         "You step into the shop with a mouth watering.": "Je stapt watertandend de winkel binnen.",
         "You have no idea how to deal with the situation, so you walk back outside.": "Je hebt geen idee wat je met de situatie aan moet, dus je loopt weer naar buiten.",
         "You untie {b}[characters.horse.name]{/b}.": "Je maakt {b}[characters.horse.name]{/b} weer los.",
+        "You are in the bakery. {b}[characters.baker.name]{/b}, the baker, looks incredibly happy.": "Je bent in de bakkerij. {b}[characters.baker.name]{/b}, de bakker, kijkt ontzettend blij.",
+        "A smell of freshly baked bread and pies hangs in the air.": "Er hangt een geur van vers gebakken broden en taarten.",
+        "The daughter of the baker, {b}[characters.daughter.name]{/b}, is also here.": "De dochter van de bakker, {b}[characters.daughter.name]{/b}, is er ook.",
+        "{b}[characters.daughter.name]{/b} gives you a wink.": "{b}[characters.daughter.name]{/b} geeft je een knipoog.",
         "You are in the bakery. It is surprisingly empty.": "Je bent in de bakkerij. Het is er verrassend leeg.",
         "No cakes, pies or bread.": "Geen gebak, taart of brood",
         "The only thing for sale seem to be {b}cookies{/b}.": "Het enige dat te koop lijkt te zijn, zijn {b}koeken{/b}.",
         "The baker looks really sad.": "De bakker ziet er verdietig uit.",
         "You somehow expected to be greeted by the baker, but no luck.": "Je had verwacht op een vriendelijke manier door de bakker begroet te worden, maar helaas."
+      },
+      "baker": {
+        "Thank you so much for killing the dragon and saving my daughter!": "Ontzettend bedankt voor het doden van de draak en het redden van mijn dochter!",
+        "I thought I would never see her again!": "Ik was bang haar nooit meer te zien!"
       },
       "interactions": {
         "Talk to baker": "Praat met de bakker",
