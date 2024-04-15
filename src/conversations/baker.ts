@@ -14,12 +14,25 @@ g.defineOverlay(
     setPrompt("What will you say:");
 
     onEnter(() => {
-      g.character("player").say(
-        "Hello, my name is {b}[.name]{/b}.",
-        "I'm urgently looking for a medicine for the king.",
-        "Could you help me?"
-      );
-      g.text("The baker does not respond and is staring in the distance.");
+      g.onState(
+        g.and(
+          g.not(g.character("baker").hasFlag("toldDaughter")),
+          g.character("dragon").hasFlag("toothPulled")
+        ),
+        () => {
+          g.character("baker").say(
+            "People told me the dragon was slain. I heard the really loud roar.",
+            "Did you see {b}[characters.daughter.name]{/b}? Is she still alive?"
+          );
+        }
+      ).else(() => {
+        g.character("player").say(
+          "Hello, my name is {b}[.name]{/b}.",
+          "I'm urgently looking for a medicine for the king.",
+          "Could you help me?"
+        );
+        g.text("The baker does not respond and is staring in the distance.");
+      });
     });
 
     onLeave(() => {
@@ -75,8 +88,28 @@ g.defineOverlay(
     );
 
     interaction(
+      "Yes, I've seen [characters.daughter.name].",
+      g.and(
+        hasState("visiting"),
+        g.character("dragon").hasFlag("toothPulled"),
+        g.not(g.character("baker").hasFlag("toldDaughter"))
+      ),
+      () => {
+        g.character("player").say(
+          "Yes, I've seen [characters.daughter.name]! She is alive and well.",
+          "I think she will be back here shortly."
+        );
+        g.character("baker").say("Thank you! I cannot wait!");
+        g.character("baker").setFlag("toldDaughter");
+      }
+    );
+
+    interaction(
       "Could you tell me more about that monster?",
-      hasState("visiting"),
+      g.and(
+        hasState("visiting"),
+        g.not(g.character("dragon").hasFlag("toothPulled"))
+      ),
       () => {
         g.character("player").say("Could you tell me more about that monster?");
         g.character("baker").say(

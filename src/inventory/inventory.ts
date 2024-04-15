@@ -97,6 +97,9 @@ g.defineOverlay("inventory", ({ onEnter, interaction, closeOverlay }) => {
       onItem("sword", () => {
         g.descriptionText("- A nice sharp sword");
       });
+      onItem("dragonTooth", () => {
+        g.descriptionText("- The tooth of a dragon");
+      });
     });
   });
 

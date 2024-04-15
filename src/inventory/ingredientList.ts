@@ -25,7 +25,11 @@ g.defineOverlay("ingredientList", ({ onEnter, closeOverlay, interaction }) => {
       }).else(() => {
         g.text("- 3 plants with thorny leaves");
       });
-      g.text("- 1 tooth of a dragon");
+      g.onState(g.item("ingredientList").hasFlag("tooth"), () => {
+        g.text("{s}- 1 tooth of a dragon{/s}");
+      }).else(() => {
+        g.text("- 1 tooth of a dragon");
+      });
     });
 
     g.onState(g.not(g.item("ingredientList").hasFlag("seen")), () => {

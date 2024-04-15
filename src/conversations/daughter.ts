@@ -125,20 +125,34 @@ g.defineOverlay(
       "You have to come with me, your dad is worried!",
       hasState("visited"),
       () => {
-        g.character("player").say(
-          "You have to come with me, your dad is worried!"
-        );
-        g.character("daughter").say(
-          "My dad? {b}[characters.baker.name]{/b} is only good at baking, and only cares for {b}money{/b}.",
-          "I'm staying here till I've helped this dragon. Why didn't {i}he{/i} come here himself?",
-          "That's why he sent you here right? Because he could not afford a proper knight."
-        );
-
-        // "1=17;2=0;17=2;4=3;45!0", "*c3", "$n: 'Je moet meekomen, je vader is hartstikke ongerust!'"
-        // "", "*c13", "Bloem: 'Ja, je hebt gelijk. Die tand trekken was echt super! Mijn carrière"
-        // "  voor tandarts maakt zo wel een geweldige start, denk je niet?'"
-        // "", "Bloem: 'Nou dan ga ik nu wel naar de bakkerij. Zie ik je later misschien daar weer?'"
-        // "", "*c2", "Bloem geeft jou en de draak een knuffel en gaat de toren uit richting de bakkerij.", "&4=0;46=1;20=1"
+        g.onState(g.character("dragon").hasFlag("toothPulled"), () => {
+          g.character("player").say(
+            "You have to come with me, your dad is worried!"
+          );
+          g.character("daughter").say(
+            "Yes, you are right. Pulling that tooth was awesome!",
+            "My career as dentist is making a great start, don't you think?"
+          );
+          g.text("...");
+          g.character("daughter").say(
+            "Well, I'm off to the bakery. Will I see you there later?"
+          );
+          g.text(
+            "{b}[characters.daughter.name]{/b} gives you and the {b}dragon{/b} a hug and leaves for the bakery."
+          );
+          g.character("daughter").setState("bakery");
+          g.descriptionText("");
+          closeOverlay();
+        }).else(() => {
+          g.character("player").say(
+            "You have to come with me, your dad is worried!"
+          );
+          g.character("daughter").say(
+            "My dad? {b}[characters.baker.name]{/b} is only good at baking, and only cares for {b}money{/b}.",
+            "I'm staying here till I've helped this dragon. Why didn't {i}he{/i} come here himself?",
+            "That's why he sent you here right? Because he could not afford a proper knight."
+          );
+        });
       }
     );
 
@@ -154,20 +168,25 @@ g.defineOverlay(
       );
       g.character("player").say("{b}Attacked??{/b} This dragon?");
 
-      g.onState(g.character("horse").hasState("following"), () => {
+      g.onState(g.character("dragon").hasFlag("toothPulled"), () => {
         g.character("daughter").say(
-          "Yes, and the perpetrator is downstairs. There is a horseshoe stuck in the teeth of the [characters.dragon.name].",
-          "He got kicked by your horse."
+          "Yes, but luckily we got the bad tooth out now!"
         );
       }).else(() => {
+        g.onState(g.character("horse").hasState("following"), () => {
+          g.character("daughter").say(
+            "Yes, and the perpetrator is downstairs. There is a horseshoe stuck in the teeth of the [characters.dragon.name].",
+            "He got kicked by your horse."
+          );
+        }).else(() => {
+          g.character("daughter").say(
+            "Yes, and the perpetrator is {b}a horse{/b}. There is a horseshoe stuck in the teeth of the [characters.dragon.name]."
+          );
+        });
         g.character("daughter").say(
-          "Yes, and the perpetrator is {b}a horse{/b}. There is a horseshoe stuck in the teeth of the [characters.dragon.name]."
+          "The horseshoe and the teeth need to be taken out."
         );
       });
-      g.character("daughter").say(
-        "The horseshoe and the teeth need to be taken out."
-      );
-      // "1=17;2=0;17=2;4=4;45!0", "*c13", "Bloem: 'Ja, maar gelukkig hebben we de tand er nu uitgetrokken!'", "&4=1"
     });
 
     interaction(

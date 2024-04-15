@@ -354,12 +354,12 @@ g.definePuzzleDependencies<MetaData>({
   },
   getDragonTooth: {
     dependsOn: ["getIngredientList", "pullToothOfDragon"],
-    tags: {},
+    tags: { state: "text", languages: ["en", "nl"] },
     hierarchy: ["darkWood", "tower"],
   },
   bringDaughterToBaker: {
     dependsOn: ["pullToothOfDragon"],
-    tags: {},
+    tags: { state: "text", languages: ["en", "nl"] },
     hierarchy: ["darkWood", "tower"],
   },
   getApplePieFromBaker: {

@@ -67,11 +67,11 @@ export type GameState = GameDefinition<
         states: "river" | "following" | "stable";
         flags: "hooves" | "cart" | "found" | "known";
       };
-      dragon: { states: "known" | "found"; flags: "toothPulled" };
+      dragon: { states: "known" | "found"; flags: "toothPulled" | "canTalk" };
       farmer: { flags: "visited" | "toldDragon" | "returnedHorse" };
-      daughter: { states: "unloadStone" };
+      daughter: { states: "unloadStone" | "bakery" };
       witch: {};
-      baker: { flags: "toldDragon" };
+      baker: { flags: "toldDragon" | "toldDaughter" };
       farrier: {};
       goldsmith: {};
       armorer: {};
@@ -87,6 +87,7 @@ export type GameState = GameDefinition<
       smithsConversation: { states: "fixHorseshoe" | "createNecklace" };
       witchConversation: { states: "intro" | "visited" };
       daughterConversation: { states: "intro" | "visited" };
+      dragonConversation: {};
       inventory: {};
       travel: {};
       treasureNotes: {};
@@ -114,7 +115,8 @@ export type GameState = GameDefinition<
         | "roundLeaves"
         | "lightblueMushrooms"
         | "sword"
-        | "repairedPickaxe";
+        | "repairedPickaxe"
+        | "dragonTooth";
     };
   }
 >;

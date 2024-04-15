@@ -5,9 +5,13 @@ g.defineLocation(
   ({ describe, interaction, onEnter, hasState, setState }) => {
     onEnter("village", () => {
       g.onState(g.location("smithy").hasFlag("visited"), () => {
-        g.character("armorer").say("Hey, welcome!");
-        g.character("goldsmith").say("How can we help you?");
-        // TODO: Update text after 'killing' dragon
+        g.onState(g.character("dragon").hasFlag("toothPulled"), () => {
+          g.character("armorer").say("Hey, welcome dragon slayer!");
+          g.character("goldsmith").say("How can we help our hero today?");
+        }).else(() => {
+          g.character("armorer").say("Hey, welcome!");
+          g.character("goldsmith").say("How can we help you?");
+        });
       }).else(() => {
         g.character("armorer").say("Hey, a new customer! Welcome!");
         g.character("farrier").say(

@@ -21,9 +21,11 @@ g.defineLocation(
           );
         });
 
-        g.text(
-          "The daughter of the baker, {b}[characters.daughter.name]{/b} is here."
-        );
+        g.onState(g.not(g.character("daughter").hasState("bakery")), () => {
+          g.text(
+            "The daughter of the baker, {b}[characters.daughter.name]{/b} is here."
+          );
+        });
 
         g.onState(g.item("tooth").hasState("unknown"), () => {
           g.text(
@@ -75,9 +77,6 @@ g.defineLocation(
             );
           }
         );
-        // "1=17;2=0;17=2;4=0;6=0;31=2", "", "*c2", "Een touw loopt van de tand van de draak naar het midden van de kamer.", "&"
-        // "1=17;2=0;17=2;4=0;6=0;31=3", "", "*c2", "Een touw loopt van de molensteen naar het midden van de kamer.", "&"
-        // "1=17;2=0;17=2;4=0;6=0;31=4", "", "*c2", "Een touw loopt van de molensteen naar de zere tand van de draak.", "&"
       }).else(() => {
         g.text(
           "Now and then you come by a window that lets in a shaft of light, so that it is not entirely pitch black.",
@@ -157,7 +156,10 @@ g.defineLocation(
 
     interaction(
       "Talk to [characters.daughter.name]",
-      hasFlag("visited"),
+      g.and(
+        hasFlag("visited"),
+        g.not(g.character("daughter").hasState("bakery"))
+      ),
       () => {
         g.onState(g.character("daughter").hasState("unloadStone"), () => {
           g.character("daughter").say(
@@ -166,6 +168,14 @@ g.defineLocation(
         }).else(() => {
           g.openOverlay("daughterConversation");
         });
+      }
+    );
+
+    interaction(
+      "Go to dragon",
+      g.and(hasFlag("visited"), g.character("dragon").hasFlag("toothPulled")),
+      () => {
+        g.openOverlay("dragonConversation");
       }
     );
 

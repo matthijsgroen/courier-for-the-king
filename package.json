@@ -6,6 +6,7 @@
   "license": "MIT",
   "scripts": {
     "start": "point-n-click dev src/index.ts",
+    "validate": "point-n-click validate src/index.ts",
     "pnc": "point-n-click"
   },
   "dependencies": {

@@ -326,6 +326,7 @@
     },
     "smithy": {
       "armorer": {
+        "Hey, welcome dragon slayer!": "Hee, welkom draken doder!",
         "Hey, welcome!": "Hee, welkom!",
         "Hey, a new customer! Welcome!": "Een nieuwe klant! Welkom!",
         "How can we help you?": "Hoe kunnen we je helpen?",
@@ -337,6 +338,7 @@
         "Ok, feel free to look around for something else.": "Ok, misschien zit er iets anders voor je bij."
       },
       "goldsmith": {
+        "How can we help our hero today?": "Hoe kunnen we onze held vandaag helpen?",
         "How can we help you?": "Hoe kunnen we je helpen?",
         "And our {b}armorer{/b} here is {b}[characters.armorer.name]{/b}.": "En onze {b}wapensmid{/b} hier is {b}[characters.armorer.name]{/b}.",
         "I'm telling you its true. There is a treasure hidden here in the area.": "Ik zeg het je, het is echt waar. Er is een schat hier verborgen in de omgeving."
@@ -512,6 +514,7 @@
         "Dive right, behind a pile of books": "Duik naar rechts, achter een stapel boeken",
         "Go to the elevator": "Ga naar de lift",
         "Talk to [characters.daughter.name]": "Praat met [characters.daughter.name]",
+        "Go to dragon": "Ga naar de draak",
         "Tie rope to tooth of dragon": "Knoop touw aan tand van de draak",
         "Go down the stairs": "Ga de trap af"
       },
@@ -572,17 +575,24 @@
         "You take the elevator down. It is very unstable and wobbly.": "Je neemt de lift naar beneden. Hij is erg onstabiel en wiebelig.",
         "Lucky for you it holds and you step off with a relief.": "Gelukkig voor je houdt hij en je stapt af met een zucht van verlichting.",
         "You are at the side of the {b}tower{/b}.": "Je staat aan de zijkant van de {b}toren{/b}.",
+        "There was a wooden elevator construction here. But now it is completely destroyed. Debris is lying everywhere.": "Er was een houten liftconstructie here. Maar nu is die volledig kapot. Overal ligt puin.",
+        "Next to the remains of the elevator is a large wooden {b}hatch door{/b}.": "Naast de resten van de lift is een groot houten {b}luik{/b}.",
+        "Which could lead to a basement below.": "Waarschijnlijk leidt dat naar een kelder.",
         "There is a wooden elevator construction here. It does not look very stable.": "Er is hier een houten liftconstructie. Het ziet er niet heel stabiel uit.",
         "Next to the elevator is a large wooden {b}hatch door{/b}.": "Naast de lift is een groot houten {b}luik{/b}.",
-        "Which could lead to a basement below.": "Waarschijnlijk leidt dat naar een kelder.",
         "You try to open the hatch to the cellar, but the hatch seems to be {b}locked{/b}.": "Je probeert het luik richting de kelder te openen, maar het luik lijkt {b}op slot{/b} te zitten.",
         "You use the elevator to go up the tower.": "Je gebruikt de lift om naar de bovenkant van de toren te gaan.",
         "The elevator is currently at the top of the tower.": "De lift is nu aan de bovenkant van de toren.",
-        "There is no way to lower it from here.": "Er is geen manier om hem vanaf hier te laten zakken."
+        "There is no way to lower it from here.": "Er is geen manier om hem vanaf hier te laten zakken.",
+        "You search through the debris of the elevator.": "Je zoekt door het puin van de lift.",
+        "Pieces of the millstone and the wooden construction are everywhere.": "Overal liggen stukjes van de molensteen en de houten liftconstructie.",
+        "After a while of searching, you find the {b}tooth of the dragon{/b}.": "Na een tijdje zoeken, vind je de {b}tand van de draak{/b}.",
+        "You pick up the {b}tooth{/b}.": "Je raapt de {b}tand{/b} op."
       },
       "interactions": {
         "Open cellar door": "Open kelderdeur",
         "Use elevator": "Gebruik lift",
+        "Search the debris of the elevator": "Doorzoek het de puin van de lift",
         "Go to front of tower": "Ga naar de voorkant van de toren"
       },
       "player": {
@@ -949,6 +959,48 @@
       }
     },
     "bakerConversation": {
+      "baker": {
+        "People told me the dragon was slain. I heard the really loud roar.": "Men vertelde me dat de draak verslagen was. Ik hoorde de luide brul ook.",
+        "Did you see {b}[characters.daughter.name]{/b}? Is she still alive?": "Heb je {b}[characters.daughter.name]{/b} gezien? Leeft ze nog?",
+        "Oh. Sorry, I was not paying attention.": "Oh. Sorry, ik had het even niet in de gaten.",
+        "My {i}poor daughter!{/i} I will never see her again!": "Mijn {i}arme dochter{/i}! Ik zie haar nooit meer terug!",
+        "That monsterous beast has her! I am sure of it!": "Dat smerige monster heeft haar te pakken! Ik weet het zeker!'",
+        "I baked some {b}cookies{/b} this morning, but I'm out of flour now.": "Ik heb vanochtend nog wat {b}koekjes{/b} gebakken, maar nu zit ik zonder meel.",
+        "And that is a problem, especially since the {b}mill{/b} broke down.": "En dat is een probleem, zeker nu de {b}molen{/b} stuk is.",
+        "And I need to make more money so that I can hire a {b}knight{/b},": "Ik kan het geld goed gebruiken om een {b}ridder{/b} te huren,",
+        "to slay that monster and save my daughter!": "om het monster te verslaan en mijn dochter te redden!",
+        "That ... beast ... in that tower ... in the woods.": "Dat ... beest ... in die toren ... in het woud.",
+        "My daughter is now missing for two days,": "Mijn dochter is nu al twee dagen vermist.",
+        "and there is a {i}terrifying roar{/i} coming out of the dark woods for two days as well.": "en sinds twee dagen komt er {i}vreselijk gebrul{/i} uit het donkere woud!",
+        "It all started with that big fire at farmer {b}[characters.farmer.name]{/b}'s place.": "Het begon allemaal met die grote brand bij boer {b}[characters.farmer.name]{/b}.",
+        "That creature must have my sweet {b}[characters.daughter.name]{/b}...": "Dat beest moet mijn lieve {b}[characters.daughter.name]{/b} wel hebben...",
+        "Thank you! I cannot wait!": "Dank je! Ik kan niet wachten!",
+        "That creature lives {b}east{/b} of here, in the {b}dark woods{/b}.": "Het beest leeft in het {b}donkere woud{/b}, ten {b}oosten{/b} van hier.",
+        "We have to slay the beast! And save my daughter!": "We moeten dat beest verslaan! En mijn dochter redden!",
+        "You won't happen to have a {b}sword{/b} do you?": "Je hebt toch niet toevallig een {b}zwaard{/b} he?",
+        "You definitely would need a {b}sword{/b} to defend you against that monster.": "Je moet zeker een {b}zwaard{/b} hebben om je tegen het monster te kunnen verdedigen!",
+        "Uh, maybe... There is this lady see... uh...": "Euh, nee dat niet... Kijk er is een dame...",
+        "She lives in the {b}swamp{/b}. Lots of people are calling her a witch.": "Ze leeft in het {b}moeras{/b}. Veel mensen noemen haar een heks.",
+        "She could definitely help you.": "Zij kan je zeker weten helpen.",
+        "Don't tell anyone, but if people come here for medicine I always get those from her.": "Niet doorvertellen hoor, maar als mensen bij mij komen voor medicijnen dan regel ik het altijd via haar.",
+        "People don't dare to visit her. But she practically makes all medication for everyone here.": "Mensen durven niet bij haar langs te gaan. Maar eigenljk maakt zij alle medicijnen voor iedereen in de omgeving.",
+        "Normally I would arrange it for you, but with the current situation with my daughter {b}[characters.daughter.name]{/b}...": "Normaal zou ik het voor je regelen, maar nu met de situatie met {b}[characters.daughter.name]{/b}...",
+        "... Let's say I'm avoiding her for the moment.": "... Laten we zeggen dat ik nu even liever niet bij haar langs ga.",
+        "There are rumors.": "Er gaan geruchten.",
+        "But I don't believe any of it. But what I heard was that there is a special plant in the {b}swamp{/b},": "Maar ik geloof er niets van hoor, maar wat ik had gehoord is dat er een speiale plant in het {b}moeras{/b} is.",
+        "that had some kind of {b}Moonstone{/b} hidden beneath it.": "En dat er onder die plant een {b}Maansteen{/b} verborgen ligt.",
+        "And when it starts to glow, that you need to walk a special route.": "En wanneer die gloeit dan moet je een speciale route lopen.",
+        "The plant is said to have {b}diamond-shaped leaves{/b}.": "Het schijnt dat de plant {b}ruit vormige bladeren{/b} heeft.",
+        "Really? {i}Aww{/i}, with only grain I can't do much. Would you be able to {b}grind{/b} it to flour?": "Echt? {i}Ai{/i}, met alleen maar graan kan ik niet veel. Zou je het kunnen {b}malen{/b} tot meel?",
+        "Really? Thank you! This wont bring back my {b}[characters.daughter.name]{/b}, but now at least I could bake something as a distraction.": "Echt? Dank je! Dit brengt mijn {b}[characters.daughter.name]{/b} niet terug, maar nu kan ik tenminste iets bakken ter afleiding.",
+        "Why? Money is of no use to me if I can't even save my own daughter?": "Waarom? Geld heb ik niets aan als ik mijn eigen dochter niet eens kan redden?",
+        "Oh sorry, I didn't see you there.": "Oh sorry, ik had je even niet in de gaten.",
+        "We do have some {b}cookies{/b} for sale.": "We hebben nog wel wat {b}koeken{/b} te koop.",
+        "The price is {b}2 coins{/b}.": "Ze kosten {b}2 geldstukken{/b}.",
+        "That will be {b}2 coins{/b}.": "Dat is dan {b}2 geldstukken{/b}.",
+        "Here you go.": "Alsjeblieft.",
+        "Okay, fine": "Oké, prima."
+      },
       "player": {
         "Hello, my name is {b}[.name]{/b}.": "Hallo, mijn naam is {b}[.name]{/b}.",
         "I'm urgently looking for a medicine for the king.": "Ik ben dringend op zoek naar medicijnen voor de koning.",
@@ -956,6 +1008,8 @@
         "Hello? Are you alright?": "Hallo? Is alles goed met u?",
         "Monster? What are you talking about?": "Monster? Waar heb je het over?",
         "Why do you think the 'monster' has your daughter?": "Waarom denkt u dat het 'monster' uw dochter heeft?",
+        "Yes, I've seen [characters.daughter.name]! She is alive and well.": "Ja, ik heb [characters.daughter.name] gezien! Alles gaat goed met haar.",
+        "I think she will be back here shortly.": "Ik denk dat ze hier binnenkort moet zijn.",
         "Could you tell me more about that monster?": "Kunt u me meer vertellen over het monster?",
         "Do you sell any medicine?": "Zijn hier ook medicijnen te koop?",
         "Have you heard something about a treasure nearby?": "Heb jij iets gehoord over een schat in de buurt?",
@@ -986,6 +1040,7 @@
       "interactions": {
         "Hello, is everything alright?": "Hallo, is alles goed met u?",
         "Monster? What are you talking about?": "Monster? Waar heb je het over?",
+        "Yes, I've seen [characters.daughter.name].": "Ja, ik heb [characters.daughter.name] gezien.",
         "Could you tell me more about that monster?": "Vertel me nog eens over het monster?",
         "Do you know where I could get any medicine?": "Zijn hier ook medicijnen te koop?",
         "Have you heard something about a treasure nearby?": "Heb jij iets gehoord over een schat in de buurt?",
@@ -997,45 +1052,6 @@
         "Hmm, maybe another time": "Hmm, misschien toch een andere keer",
         "Never mind": "Laat maar",
         "Goodbye": "Tot ziens"
-      },
-      "baker": {
-        "Oh. Sorry, I was not paying attention.": "Oh. Sorry, ik had het even niet in de gaten.",
-        "My {i}poor daughter!{/i} I will never see her again!": "Mijn {i}arme dochter{/i}! Ik zie haar nooit meer terug!",
-        "That monsterous beast has her! I am sure of it!": "Dat smerige monster heeft haar te pakken! Ik weet het zeker!'",
-        "I baked some {b}cookies{/b} this morning, but I'm out of flour now.": "Ik heb vanochtend nog wat {b}koekjes{/b} gebakken, maar nu zit ik zonder meel.",
-        "And that is a problem, especially since the {b}mill{/b} broke down.": "En dat is een probleem, zeker nu de {b}molen{/b} stuk is.",
-        "And I need to make more money so that I can hire a {b}knight{/b},": "Ik kan het geld goed gebruiken om een {b}ridder{/b} te huren,",
-        "to slay that monster and save my daughter!": "om het monster te verslaan en mijn dochter te redden!",
-        "That ... beast ... in that tower ... in the woods.": "Dat ... beest ... in die toren ... in het woud.",
-        "My daughter is now missing for two days,": "Mijn dochter is nu al twee dagen vermist.",
-        "and there is a {i}terrifying roar{/i} coming out of the dark woods for two days as well.": "en sinds twee dagen komt er {i}vreselijk gebrul{/i} uit het donkere woud!",
-        "It all started with that big fire at farmer {b}[characters.farmer.name]{/b}'s place.": "Het begon allemaal met die grote brand bij boer {b}[characters.farmer.name]{/b}.",
-        "That creature must have my sweet {b}[characters.daughter.name]{/b}...": "Dat beest moet mijn lieve {b}[characters.daughter.name]{/b} wel hebben...",
-        "That creature lives {b}east{/b} of here, in the {b}dark woods{/b}.": "Het beest leeft in het {b}donkere woud{/b}, ten {b}oosten{/b} van hier.",
-        "We have to slay the beast! And save my daughter!": "We moeten dat beest verslaan! En mijn dochter redden!",
-        "You won't happen to have a {b}sword{/b} do you?": "Je hebt toch niet toevallig een {b}zwaard{/b} he?",
-        "You definitely would need a {b}sword{/b} to defend you against that monster.": "Je moet zeker een {b}zwaard{/b} hebben om je tegen het monster te kunnen verdedigen!",
-        "Uh, maybe... There is this lady see... uh...": "Euh, nee dat niet... Kijk er is een dame...",
-        "She lives in the {b}swamp{/b}. Lots of people are calling her a witch.": "Ze leeft in het {b}moeras{/b}. Veel mensen noemen haar een heks.",
-        "She could definitely help you.": "Zij kan je zeker weten helpen.",
-        "Don't tell anyone, but if people come here for medicine I always get those from her.": "Niet doorvertellen hoor, maar als mensen bij mij komen voor medicijnen dan regel ik het altijd via haar.",
-        "People don't dare to visit her. But she practically makes all medication for everyone here.": "Mensen durven niet bij haar langs te gaan. Maar eigenljk maakt zij alle medicijnen voor iedereen in de omgeving.",
-        "Normally I would arrange it for you, but with the current situation with my daughter {b}[characters.daughter.name]{/b}...": "Normaal zou ik het voor je regelen, maar nu met de situatie met {b}[characters.daughter.name]{/b}...",
-        "... Let's say I'm avoiding her for the moment.": "... Laten we zeggen dat ik nu even liever niet bij haar langs ga.",
-        "There are rumors.": "Er gaan geruchten.",
-        "But I don't believe any of it. But what I heard was that there is a special plant in the {b}swamp{/b},": "Maar ik geloof er niets van hoor, maar wat ik had gehoord is dat er een speiale plant in het {b}moeras{/b} is.",
-        "that had some kind of {b}Moonstone{/b} hidden beneath it.": "En dat er onder die plant een {b}Maansteen{/b} verborgen ligt.",
-        "And when it starts to glow, that you need to walk a special route.": "En wanneer die gloeit dan moet je een speciale route lopen.",
-        "The plant is said to have {b}diamond-shaped leaves{/b}.": "Het schijnt dat de plant {b}ruit vormige bladeren{/b} heeft.",
-        "Really? {i}Aww{/i}, with only grain I can't do much. Would you be able to {b}grind{/b} it to flour?": "Echt? {i}Ai{/i}, met alleen maar graan kan ik niet veel. Zou je het kunnen {b}malen{/b} tot meel?",
-        "Really? Thank you! This wont bring back my {b}[characters.daughter.name]{/b}, but now at least I could bake something as a distraction.": "Echt? Dank je! Dit brengt mijn {b}[characters.daughter.name]{/b} niet terug, maar nu kan ik tenminste iets bakken ter afleiding.",
-        "Why? Money is of no use to me if I can't even save my own daughter?": "Waarom? Geld heb ik niets aan als ik mijn eigen dochter niet eens kan redden?",
-        "Oh sorry, I didn't see you there.": "Oh sorry, ik had je even niet in de gaten.",
-        "We do have some {b}cookies{/b} for sale.": "We hebben nog wel wat {b}koeken{/b} te koop.",
-        "The price is {b}2 coins{/b}.": "Ze kosten {b}2 geldstukken{/b}.",
-        "That will be {b}2 coins{/b}.": "Dat is dan {b}2 geldstukken{/b}.",
-        "Here you go.": "Alsjeblieft.",
-        "Okay, fine": "Oké, prima."
       }
     },
     "smithsConversation": {
@@ -1201,12 +1217,16 @@
         "The problem with a dragon is that everything is bigger and stronger than by people.": "Het probleem met een draak is dat alles groter en sterker is dan bij mensen.",
         "With people you could tie the tooth with {b}a rope{/b} to a door, and slam the door shut.": "Bij mensen zou je de tand met {b}een touw{/b} aan de deur kunnen binden, en dan de deur dicht kunnen slaan.",
         "We need to think bigger here. Could you arrange a {b}heavy stone{/b}?": "We moeten iets groters bedenken hier. Zou jij {b}een zware steen{/b} kunnen regelen?",
+        "Yes, you are right. Pulling that tooth was awesome!": "Je hebt gelijk... Maar die tand trekken was echt te gek!",
+        "My career as dentist is making a great start, don't you think?": "Mijn carrière als tandarts begint zo wel goed, vind je niet?",
+        "Well, I'm off to the bakery. Will I see you there later?": "Nou dan ga ik nu wel naar de bakkerij. Zie ik je later misschien daar weer?",
         "My dad? {b}[characters.baker.name]{/b} is only good at baking, and only cares for {b}money{/b}.": "Mijn vader? {b}[characters.baker.name]{/b} kan alleen goed bakken en geeft alleen om geld.",
         "I'm staying here till I've helped this dragon. Why didn't {i}he{/i} come here himself?": "Ik blijf here tot ik de draak heb kunnen helpen. Hij had toch ook {i}zelf{/i} hier heen kunnen komen?",
         "That's why he sent you here right? Because he could not afford a proper knight.": "Daarom heeft hij jou gestuurd toch? Omdat hij niet een echte ridder kon betalen.",
         "Oh quite a bit actually. This dragon is called a {b}[characters.dragon.name]{/b}.": "O best wel wat eigenlijk. Deze draak heet een {b}[characters.dragon.name]{/b}.",
         "Yes, a {b}[characters.dragon.name]{/b}... He can fly, breathe fire and loves {b}apples{/b}.": "Ja, een {b}[characters.dragon.name]{/b}... Hij kan vliegen, spuwt vuur en is gek op {b}appels{/b}.",
-        "That is probably why he wanted to eat some {b}apples{/b} at the farm. And that is when he was {b}attacked{/b}.": "Dat is waarschijnlijk waarom hij een paar {b}apples{/b} wilde eten bij de boer. En dat is wanneer hij aangevallen werd.",
+        "That is probably why he wanted to eat some {b}apples{/b} at the farm. And that is when he was {b}attacked{/b}.": "Dat is waarschijnlijk waarom hij een paar {b}appels{/b} wilde eten bij de boer. En dat is wanneer hij aangevallen werd.",
+        "Yes, but luckily we got the bad tooth out now!": "Ja, maar gelukkig hebben we de tand er nu uit kunnen trekken!",
         "Yes, and the perpetrator is downstairs. There is a horseshoe stuck in the teeth of the [characters.dragon.name].": "Ja, en de dader staat beneden. Er zit een hoefijzer klem in de tand van de [characters.dragon.name].",
         "He got kicked by your horse.": "Hij is getrapt door jouw paard.",
         "Yes, and the perpetrator is {b}a horse{/b}. There is a horseshoe stuck in the teeth of the [characters.dragon.name].": "Ja, en de dader is {b}een paard{/b}. Er zit een hoefijzer klem in de tand van de [characters.dragon.name].",
@@ -1238,7 +1258,9 @@
         "The dragon lies tired but now without pain in the corner, slightly dozing off.": "De draak ligt moe maar zonder pijn in de hoek, een beetje in te dutten.",
         "You are perplexed.": "Je staat perplex.",
         "Difficult enough? What is she talking about?": "Moeilijk genoeg? Waar heeft ze het over?",
-        "You decide to put away your sword.": "Je bergt je zwaard maar op."
+        "You decide to put away your sword.": "Je bergt je zwaard maar op.",
+        "...": "...",
+        "{b}[characters.daughter.name]{/b} gives you and the {b}dragon{/b} a hug and leaves for the bakery.": "{b}[characters.daughter.name]{/b} geeft jou en de {b}draak{/b} een knuffel en vertrekt naar de bakkerij."
       },
       "interactions": {
         "Are you [characters.daughter.name]?": "Ben jij [characters.daughter.name]?",
@@ -1251,6 +1273,15 @@
         "Could you help me unload?": "Kan je me helpen met uitladen?",
         "I will see what I can do": "Ik kijk wat ik kan doen",
         "See you later": "Tot later!"
+      }
+    },
+    "dragonConversation": {
+      "text": {
+        "You walk up to the dragon. He lies dozed off in the corner.": "Je loopt naar de draak. Hij ligt te dutten in de hoek.",
+        "You hear his stomach growling with hunger.": "Je hoort zijn maag knorren van de honger."
+      },
+      "interactions": {
+        "Walk away": "Loop weg"
       }
     },
     "plants": {
@@ -1331,6 +1362,7 @@
         "- [items.mushrooms.counters.lightblue] lightblue mushrooms": "- [items.mushrooms.counters.lightblue] lichtblauwe paddenstoelen",
         "- 1 lightblue mushroom": "- 1 lichtblauwe paddenstoel",
         "- A nice sharp sword": "- Een mooi scherp zwaard",
+        "- The tooth of a dragon": "- De tand van een draak",
         "You carry the following items:": "Je hebt het volgende bij je:"
       },
       "interactions": {
@@ -1411,6 +1443,7 @@
         "- 2 lightblue toadstools": "- 2 lichtblauwe paddenstoelen",
         "{s}- 3 plants with thorny leaves{/s}": "{s}- 3 planten met stekelige bladeren{/s}",
         "- 3 plants with thorny leaves": "- 3 planten met stekelige bladeren",
+        "{s}- 1 tooth of a dragon{/s}": "{s}- 1 tand van een draak{/s}",
         "- 1 tooth of a dragon": "- 1 tand van een draak"
       },
       "player": {
