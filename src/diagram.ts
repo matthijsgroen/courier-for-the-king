@@ -133,7 +133,7 @@ g.definePuzzleDependencies<MetaData>({
   },
   getAccessToCabin: {
     dependsOn: ["pluckMushrooms", "pluckPlants", "getDragonTooth"],
-    tags: {},
+    tags: { state: "text", languages: ["en", "nl"] },
     hierarchy: ["swamp", "cabin"],
   },
   getBeaker: {

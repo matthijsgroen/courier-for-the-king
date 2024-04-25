@@ -10,10 +10,20 @@ g.defineOverlay(
     setPrompt,
     hasState,
     setState,
+    increaseCounter,
+    hasCounter,
   }) => {
-    setPrompt("What will you say:");
+    setPrompt(
+      "What will you say:",
+      g.or(
+        g.not(hasState("brewing")),
+        g.and(hasState("brewing"), hasCounter("brewStep").equals(3))
+      )
+    );
 
     onEnter(() => {
+      g.text("You knock on the door.");
+      g.text("A few seconds later, the door swings open.");
       g.onState(g.location("cabin").hasFlag("visited"), () => {
         g.character("witch").say(
           "Hi {b}[characters.player.name]{/b}, nice to see you back!"
@@ -34,11 +44,17 @@ g.defineOverlay(
     });
 
     onLeave(() => {
-      g.onState(g.isLocation("cabin"), () => {
-        g.descriptionText(
-          "You say goodbye to {b}[characters.witch.name]{/b} and she closes her door."
-        );
-      });
+      g.onState(
+        g.and(
+          g.isLocation("cabin"),
+          g.not(g.location("cabin").hasState("accessible"))
+        ),
+        () => {
+          g.descriptionText(
+            "You say goodbye to {b}[characters.witch.name]{/b} and she closes her door."
+          );
+        }
+      );
     });
 
     const intro1 = () => {
@@ -171,6 +187,109 @@ g.defineOverlay(
           "The powers of {b}plants{/b} and {b}magic{/b} is much bigger than that of money."
         );
         g.text("This doesn't help you.");
+      }
+    );
+
+    interaction(
+      "I collected all the ingredients",
+      g.and(
+        hasState("visited"),
+        g.item("ingredientList").hasFlag("roundLeaves"),
+        g.item("ingredientList").hasFlag("thornyLeaves"),
+        g.item("ingredientList").hasFlag("toadstools"),
+        g.item("ingredientList").hasFlag("tooth")
+      ),
+      () => {
+        g.character("player").say("I collected all the ingredients.");
+        g.text(
+          "You give all the ingredients to {b}[characters.witch.name]{/b}."
+        );
+        g.character("witch").say(
+          "Thanks! Please wait here, I will brew the medicine for you."
+        );
+        g.text(
+          "{b}[characters.witch.name]{/b} goes inside and closes the door."
+        );
+        setState("brewing");
+      }
+    );
+
+    interaction(
+      "Wait a bit",
+      g.and(hasState("brewing"), hasCounter("brewStep").equals(0)),
+      () => {
+        g.text(
+          "You are waiting for a while. You hear all kinds of {b}noises{/b} coming from the cabin.",
+          "Things are grabbed, you hear walking. You hear jars rattling and a fire burning.",
+          "Smoke rises from the chimney."
+        );
+
+        g.character("player").say("It seems the medicine is being brewed.");
+        increaseCounter("brewStep", 1);
+      }
+    );
+
+    interaction(
+      "Wait a bit more",
+      g.and(hasState("brewing"), hasCounter("brewStep").equals(1)),
+      () => {
+        g.text(
+          "You start pacing while you wait.",
+          "You hear a bubbling sound coming out of a cauldron. Now and then you hear a small splash, as if extra ingredients are added.",
+          "It seems the brewing has really started now.",
+          "",
+          "You're hoping that your patience gets rewarded."
+        );
+        g.character("player").say("Well... waiting a little bit more then...");
+
+        increaseCounter("brewStep", 1);
+      }
+    );
+
+    interaction(
+      "Wait a little bit more",
+      g.and(hasState("brewing"), hasCounter("brewStep").equals(2)),
+      () => {
+        g.text(
+          "You still hear the bubbling noise coming from the cauldron. A weird smell is coming out of the cabin.",
+          "You don't hear any footsteps anymore."
+        );
+        g.character("player").say("Hmm, this takes longer than I expected...");
+
+        increaseCounter("brewStep", 1);
+      }
+    );
+
+    interaction(
+      "Is everything alright?",
+      g.and(hasState("brewing"), hasCounter("brewStep").equals(3)),
+      () => {
+        g.character("player").say("Is everything alright?");
+        g.text(
+          "You don't get any reaction. The smell coming from the cabin seems {b}intoxicating{/b}."
+        );
+        g.character("player").say("Hmm, something doesn't feel right.");
+        increaseCounter("brewStep", 1);
+      }
+    );
+
+    interaction(
+      "Open door of the cabin",
+      g.and(hasState("brewing"), hasCounter("brewStep").equals(4)),
+      () => {
+        setState("visited");
+        g.location("cabin").setState("accessible");
+
+        g.text(
+          "You decide to open the door.",
+          "",
+          "You push the door open. A huge fume that smells intoxicating goes through the door outside.",
+          "You quickly go inside and open all windows, so that the fume disappears.",
+          ""
+        );
+
+        closeOverlay();
+        g.travel("cabinInside");
       }
     );
 

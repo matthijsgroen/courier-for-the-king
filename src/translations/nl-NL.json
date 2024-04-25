@@ -311,6 +311,7 @@
       "text": {
         "A nice smell of bread and cakes comes from the bakery.": "Uit de bakkerij komt een geur van heerlijke verse broodjes en taarten.",
         "You step into the shop with a mouth watering.": "Je stapt watertandend de winkel binnen.",
+        "You you walk back outside.": "Je loopt weer naar buiten.",
         "You have no idea how to deal with the situation, so you walk back outside.": "Je hebt geen idee wat je met de situatie aan moet, dus je loopt weer naar buiten.",
         "You untie {b}[characters.horse.name]{/b}.": "Je maakt {b}[characters.horse.name]{/b} weer los.",
         "You are in the bakery. {b}[characters.baker.name]{/b}, the baker, looks incredibly happy.": "Je bent in de bakkerij. {b}[characters.baker.name]{/b}, de bakker, kijkt ontzettend blij.",
@@ -653,6 +654,7 @@
     },
     "cabin": {
       "text": {
+        "You leave the cabin and go outside.": "Je verlaat de hut en gaat naar buiten.",
         "Together with [characters.horse.name] you walk into the swamp.": "Samen met [characters.horse.name] loop je terug het moeras in.",
         "You walk over the windy trail, into the swamp.": "Je loopt terug over het kronkelige pad, het moeras in."
       },
@@ -665,7 +667,28 @@
       },
       "interactions": {
         "Knock on door": "Klop op de deur",
+        "Go inside": "Ga naar binnen",
         "Go back to swamp": "Ga terug het moeras in"
+      }
+    },
+    "cabinInside": {
+      "text": {
+        "You are in the cabin of {b}[characters.witch.name]{/b}. In the middle of the cabin is a large {b}cauldron{/b} bubbling.": "Je bent in de hut van {b}[characters.witch.name]{/b}. In het midden van de hut staat een grote {b}ketel{/b} te borrelen.",
+        "There are books, beakers, pots and other stuff everywhere. Most of these things you see you have no idea what they are.": "Er staan boeken, bekers, potten en andere spullen overal. Van veel van de spullen die je ziet heb je geen idee waar ze voor dienen.",
+        "{b}[characters.witch.name]{/b} lies on the ground, it looks like she's sleeping.": "{b}[characters.witch.name]{/b} ligt op de grond, het lijkt erop alsof ze slaapt.",
+        "You go to {b}[characters.witch.name]{/b}. She is lying on the ground near the {b}cauldron{/b}.": "Je loopt naar {b}[characters.witch.name]{/b}. Ze ligt naast de {b}ketel{/b} op de grond.",
+        "You try to wake her up.": "Je probeert haar wakker te maken.",
+        "You shake her, but there is no reaction.": "Je schud haar heen en weer, maar ze reageert niet.",
+        "You walk to some books that are lying on a workbench.": "Je loopt naar wat boeken die op een werktafel liggen."
+      },
+      "interactions": {
+        "Wake up [characters.witch.name]": "Maak [characters.witch.name] wakker",
+        "Check books": "Bekijk boeken",
+        "Go to cauldron": "Ga naar de ketel",
+        "Leave cabin": "Verlaat hut"
+      },
+      "player": {
+        "{b}[characters.witch.name]{/b}, wake up.": "{b}[characters.witch.name]{/b}, wake up."
       }
     },
     "treasureRoute": {
@@ -1146,6 +1169,38 @@
       }
     },
     "witchConversation": {
+      "text": {
+        "You knock on the door.": "Je klopt op de deur.",
+        "A few seconds later, the door swings open.": "Een paar seconden later gaat de deur open.",
+        "You startle and jump backwards.": "Je schrikt je te pletter.",
+        "You are stammering, not knowing what to say.": "Je staat te stamelen, en weet even niet wat je zeggen moet.",
+        "The woman comes across as quite friendly and enthusiastic.": "De vrouw komt best vriendelijk en enthousiast over.",
+        "... is this a witch?": "... is dit nu een heks?",
+        "You imagined her very differently.": "Je had haar heel anders voorgesteld.",
+        "You are rendered {b}speechless{/b}.": "Je kan echt even niet op woorden komen.",
+        "How does she know all these things?": "Hoe weet ze al die dingen toch?",
+        "In the corner of your eye, you see a {b}raven{/b} fly away from a windowsill.": "In je ooghoek zie je een {b}raaf{/b} wegvliegen uit het venster.",
+        "You start to suspect she received a letter as well...": "Je begint het vermoeden te krijgen dat ze ook een brief heeft gehad...",
+        "{b}[characters.witch.name]{/b} looks at you. There is a smile on her face.": "{b}[characters.witch.name]{/b} kijkt je aan. Er is een glimlach op haar gezicht.",
+        "You let her know you will try your best.": "Je laat haar weten je uiterste best te doen.",
+        "{b}[characters.witch.name]{/b} goes inside and closes the door.": "{b}[characters.witch.name]{/b} gaat naar binnen en sluit de deur.",
+        "A while later she returns with a list of items.": "Even later komt ze terug met een lijstje.",
+        "This doesn't help you.": "Dit helpt je niet verder.",
+        "You give all the ingredients to {b}[characters.witch.name]{/b}.": "Je geeft alle ingrediënten aan {b}[characters.witch.name]{/b}.",
+        "You are waiting for a while. You hear all kinds of {b}noises{/b} coming from the cabin.": "Je wacht een tijdje. Je hoort allerlei {b}geluiden{/b} uit de hut komen.",
+        "Things are grabbed, you hear walking. You hear jars rattling and a fire burning.": "Dingen worden gepakt, je hoort lopen. Je hoort potten rammelen en een vuur branden.",
+        "Smoke rises from the chimney.": "Er komt rook uit de schoorsteen.",
+        "You start pacing while you wait.": "Je loopt wat heen en weer terwijl je wacht.",
+        "You hear a bubbling sound coming out of a cauldron. Now and then you hear a small splash, as if extra ingredients are added.": "Je hoort een bubbelend geluid uit een ketel komen. Af en toe hoor je een kleine plons, alsof er ingrediënten worden toegevoegd.",
+        "It seems the brewing has really started now.": "Het lijkt erop of het brouwen nu echt begonnen is.",
+        "You're hoping that your patience gets rewarded.": "Je hoopt dat je geduld wordt beloond.",
+        "You still hear the bubbling noise coming from the cauldron. A weird smell is coming out of the cabin.": "Je hoort nog steeds het bubbelende geluid uit de ketel komen. Een rare geur komt uit de hut.",
+        "You don't hear any footsteps anymore.": "Je hoort nu geen voetstappen meer.",
+        "You don't get any reaction. The smell coming from the cabin seems {b}intoxicating{/b}.": "Je krijgt geen reactie. De geur die uit de hut komt lijkt {b}bedwelmend{/b}.",
+        "You decide to open the door.": "Je besluit de deur te openen.",
+        "You push the door open. A huge fume that smells intoxicating goes through the door outside.": "Je duwt de deur open. Een flinke bedwelmende walm gaat via de deur naar buiten.",
+        "You quickly go inside and open all windows, so that the fume disappears.": "Je gaat snel naar binnen en opent alle ramen, zodat de walm wegtrekt."
+      },
       "witch": {
         "Hi {b}[characters.player.name]{/b}, nice to see you back!": "Hallo {b}[characters.player.name]{/b}, ben je daar weer?",
         "Hello handsome stud, what can I do for you!?": "Hallo knappe kerel, wat kan ik voor je doen!?",
@@ -1166,23 +1221,8 @@
         "Some items could be tricky to come by, but that should be no problem for a strong man like you.": "Sommige items zijn misschien lastig om aan te komen, maar voor een sterke man als jij moet dat geen probleem zijn.",
         "Some items could be tricky to come by, but that should be no problem for a strong woman like you.": "Sommige items zijn misschien lastig om aan te komen, maar voor een sterke vrouw als jij moet dat geen probleem zijn.",
         "Ah, you should not care about such things.": "Ach daar moet je niets om geven.",
-        "The powers of {b}plants{/b} and {b}magic{/b} is much bigger than that of money.": "De krachten van {b}planten{/b} en {b}magie{/b} is vele malen groter dan dat van geld."
-      },
-      "text": {
-        "You startle and jump backwards.": "Je schrikt je te pletter.",
-        "You are stammering, not knowing what to say.": "Je staat te stamelen, en weet even niet wat je zeggen moet.",
-        "The woman comes across as quite friendly and enthusiastic.": "De vrouw komt best vriendelijk en enthousiast over.",
-        "... is this a witch?": "... is dit nu een heks?",
-        "You imagined her very differently.": "Je had haar heel anders voorgesteld.",
-        "You are rendered {b}speechless{/b}.": "Je kan echt even niet op woorden komen.",
-        "How does she know all these things?": "Hoe weet ze al die dingen toch?",
-        "In the corner of your eye, you see a {b}raven{/b} fly away from a windowsill.": "In je ooghoek zie je een {b}raaf{/b} wegvliegen uit het venster.",
-        "You start to suspect she received a letter as well...": "Je begint het vermoeden te krijgen dat ze ook een brief heeft gehad...",
-        "{b}[characters.witch.name]{/b} looks at you. There is a smile on her face.": "{b}[characters.witch.name]{/b} kijkt je aan. Er is een glimlach op haar gezicht.",
-        "You let her know you will try your best.": "Je laat haar weten je uiterste best te doen.",
-        "{b}[characters.witch.name]{/b} goes inside and closes the door.": "{b}[characters.witch.name]{/b} gaat naar binnen en sluit de deur.",
-        "A while later she returns with a list of items.": "Even later komt ze terug met een lijstje.",
-        "This doesn't help you.": "Dit helpt je niet verder."
+        "The powers of {b}plants{/b} and {b}magic{/b} is much bigger than that of money.": "De krachten van {b}planten{/b} en {b}magie{/b} is vele malen groter dan dat van geld.",
+        "Thanks! Please wait here, I will brew the medicine for you.": "Bedankt! Wacht hier maar, dan brouw ik het medicijn voor je."
       },
       "descriptionText": {
         "You say goodbye to {b}[characters.witch.name]{/b} and she closes her door.": "Je zegt gedag tegen {b}[characters.witch.name]{/b} en ze sluit haar deur."
@@ -1197,11 +1237,23 @@
         "Give gemstone to [characters.witch.name]": "Geef edelsteen aan [characters.witch.name]",
         "Give necklace to [characters.witch.name]": "Geef halsketting aan [characters.witch.name]",
         "Did you also hear that there is a treasure hidden somewhere?": "Heb jij ook gehoord dat er een schat ergens verborgen is?",
+        "I collected all the ingredients": "Ik heb alle ingrediënten verzameld",
+        "Wait a bit": "Wacht eventjes",
+        "Wait a bit more": "Wacht even langer",
+        "Wait a little bit more": "Wacht nog even iets langer",
+        "Is everything alright?": "Gaat alles goed?",
+        "Open door of the cabin": "Open de deur van de hut",
         "Goodbye": "Tot ziens"
       },
       "player": {
         "...": "...",
-        "Did you also hear that there is a treasure hidden somewhere?": "Heb jij ook gehoord dat er een schat ergens verborgen is?"
+        "Did you also hear that there is a treasure hidden somewhere?": "Heb jij ook gehoord dat er een schat ergens verborgen is?",
+        "I collected all the ingredients.": "Ik heb alle ingrediënten verzameld.",
+        "It seems the medicine is being brewed.": "Zo te horen wordt het medicijn gemaakt.",
+        "Well... waiting a little bit more then...": "Nou... nog iets langer wachter dan...",
+        "Hmm, this takes longer than I expected...": "Hmm, dit duurt langer dan ik had verwacht...",
+        "Is everything alright?": "Gaat alles goed?",
+        "Hmm, something doesn't feel right.": "Hmm, iets lijkt mij niet in de haak."
       }
     },
     "daughterConversation": {
@@ -1343,6 +1395,88 @@
         "I have enough of these mushrooms already.": "Ik heb al genoeg van deze paddenstoelen.",
         "I'm not sure if I need the {b}light blue toadstools{/b}.": "Ik heb geen idee of ik de {b}lichtblauwe paddenstoelen{/b} wel nodig heb.",
         "I'm not sure if I need the {b}orange fungi{/b}.": "Ik heb geen idee of ik de {b}oranje zwammen{/b} wel nodig heb."
+      }
+    },
+    "books": {
+      "text": {
+        "There is a thick almanac called:": "Er ligt een dikke almanak genaamd:",
+        "{b}'100 things you always wanted to know about moss, herbs and toadstools, but never dared to ask'{/b}": "{b}'100 dingen die je altijd al wilde weten over mossen, kruiden en paddenstoelen, maar nooit durfde te vragen'{/b}",
+        "And there is an opened book, called:": "En een opengeslagen boek, genaamd:",
+        "{b}'Potion recipes 101. For starters to master witches'{/b}": "{b}'Toverdrankrecepten 101. Voor beginners tot meesterheksen'{/b}",
+        "Each book has some bookmarks.": "In elk boek zijn boekenleggers gestoken.",
+        "You step away from the books.": "Je stapt weg van de boeken."
+      },
+      "interactions": {
+        "Read the almanac": "Lees de almanak",
+        "Read the recipes": "Lees de recepten",
+        "Step away from the books": "Stap weg van de boeken"
+      }
+    },
+    "recipeBook": {
+      "text": {
+        "You open the book with the {b}recipes{/b}.": "Je opent het boek met {b}recepten{/b}.",
+        "Page 1. -- Introduction --": "Bladzijde 1. -- Introductie --",
+        "Did you buy the MagicCauldron 3000, but you are unaware of its abilities?": "Heb je een Toverketel 3000 aangeschaft, maar je weet niet wat je er mee kunt?",
+        "Thanks to this book, creating a magic potion will be child's play.": "Dankzij dit boek wordt het maken van een toverdrank kinderlijk eenvoudig.",
+        "All recipes can be made like this:": "Alle recepten werken als volgt:",
+        "  - Add all ingredients described in the recipe to the cauldron. The order of adding them does not matter.": "  - Plaats alle ingrediënten beschreven in het recept in de ketel. De volgorde doet er niet toe.",
+        "  - When all ingredients are added, raise both hands high into the air.": "  - Zodra alle ingrediënten erin zitten, steek je beide handen hoog in de lucht.",
+        "  - Use a mysterious voice, and loudly say the spell that accompanies the recipe.": "  - Met een geheimzinnige stem zeg je dan hardop de toverspreuk die bij het recept hoort.",
+        "  - If the recipe is successful, the cauldron will be filled with the magic potion.": "  - Indien het recept gelukt is, dan is de ketel gevuld met de toverdrank.",
+        "  - If the recipe is unsuccessful, the cauldron will be automatically cleaned and you can try again.": "  - Indien de spreuk mislukt omdat de ingrediënten niet kloppen, wordt de ketel automatisch schoongemaakt en kun je het nog eens proberen.",
+        "  - You will need a runestone to reveal the ingredients of the 'masterwitch'-recipes.": "  - Voor de 'meesterheks'-recepten is een runesteen nodig om de ingrediënten toonbaar te maken.",
+        "Have fun!": "Veel plezier!",
+        "Page 10. -- All healing medicinal potion --": "Bladzijde 10. -- Alleshelende medicinale drank --",
+        "Cranky in the morning? Pimples? Are you a very sick king?": "Last van ochtendhumeur? Pukkeltjes? Ben je een ernstig zieke koning?",
+        "This potion is not only fun to brew, it also helps against all ailments!": "Deze drank is niet alleen erg leuk om te maken, hij helpt ook nog eens tegen alle kwaaltjes!",
+        "Level: Intermediate": "Niveau: Gemiddeld",
+        "Ingredients:": "Benodigdheden:",
+        "  - 1 plant with round leaves": "  - 1 plant met ronde bladeren",
+        "  - 2 lightblue toadstools": "  - 2 lichtblauwe paddenstoelen",
+        "  - 4 plants with thorny leaves": "  - 4 planten met stekelige bladeren",
+        "  - 1 tooth of a dragon": "  - 1 tand van een draak",
+        "Spell: &##%$#@": "Spreuk: &##%$#@",
+        "Hmm, it looks like something was spilled over the spell. It is no longer readable.": "Hmm, het ziet er naar uit dat er iets over de spreuk geknoeid is. Het is niet langer leesbaar.",
+        "You also notice that the list of ingredients is slightly different than what you collected.": "Het valt je op dat de lijst van ingrediënten anders is dan wat je had gebracht.",
+        "Maybe {b}[characters.witch.name]{/b} knows the spell?": "Zou {b}[characters.witch.name]{/b} de spreuk weten?",
+        "Page 37. -- Waking up after a night of partying --": "Bladzijde 37. -- Wakker worden na een feestnacht --",
+        "Having been partying for too long? Can't get out of your bed? This potion will wake you up in no time!": "Iets te lang wezen feesten? Je kan maar niet je bed uit komen? Dit drankje maakt je zo wakker!",
+        "Level: Beginner": "Niveau: Beginner",
+        "  - 4 plants with heart-shaped leaves": "  - 4 planten met hartvormige bladeren",
+        "  - 2 light brown tree fungi": "  - 2 lichtbruine boomzwammen",
+        "  - 1 tuft of star moss": "  - 1 pluk Sterrenmos",
+        "  - 1 cup of red wine": "  - 1 beker rode wijn",
+        "Spell: 'Adacadabra hastaclap'": "Spreuk: 'Adacadabra hastaklap'",
+        "Page 85. -- Foreign languages translator --": "Page 85. -- Vreemde talenvertaler --",
+        "On vacation in Texas or Florida? Is someone speaking in three letter acronyms?": "Op vakantie in Limburg of Friesland? Praat iemand in drieletterige afkortingen?",
+        "Let the person drink this potion and you can understand them!": "Laat diegene deze drank drinken en je kan 'm verstaan!",
+        "Level: Masterwitch": "Niveau: Meesterheks",
+        "  - ????????????????": "  - ????????????????",
+        "Spell: '??????????????'": "Spreuk: '??????????????'",
+        "n.b. This potion will not help in understanding legal-speak in user agreements.": "n.b. This potion will not help in understanding legal-speak in user agreements.",
+        "Hmm, I think I will need something to make this page readable.": "Hmm, I think I will need something to make this page readable.",
+        "Page 114. -- 'sticky' door --": "Page 114. -- 'sticky' door --",
+        "You know the problem. You have a cellardoor that seems stuck. You don't even know if it was simply locked or not. You just want the door opened.": "You know the problem. You have a cellardoor that seems stuck. You don't even know if it was simply locked or not. You just want the door opened.",
+        "  - 1 light blue toadstool": "  - 1 light blue toadstool",
+        "  - 2 orange fungi": "  - 2 orange fungi",
+        "  - 3 tufts of Moon moss": "  - 3 tufts of Moon mos",
+        "Spell: 'Hocus Pilates!'": "Spreuk: 'Hocus Pilates!'",
+        "You close the book with recipes.": "Je doet het receptenboek dicht.",
+        "You are at some books that are lying on a workbench.": "Je bent bij wat boeken die op een werktafel liggen."
+      },
+      "interactions": {
+        "Previous bookmark": "Vorige boekenlegger",
+        "Next bookmark": "Volgende boekenlegger",
+        "Close book": "Sluit boek"
+      }
+    },
+    "ingredientBook": {
+      "text": {
+        "stuff -- almanac": "stuff -- almanac",
+        "You are at some books that are lying on a workbench.": "Je bent bij wat boeken die op een werktafel liggen."
+      },
+      "interactions": {
+        "close book": "close book"
       }
     },
     "inventory": {

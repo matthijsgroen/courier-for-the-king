@@ -5,5 +5,6 @@ import "./conversations/";
 import "./overlays/";
 import "./inventory/";
 import "./diagram";
+import "./map";
 
 export default world;

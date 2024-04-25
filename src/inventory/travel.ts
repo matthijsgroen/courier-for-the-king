@@ -137,6 +137,7 @@ g.globalInteraction(
       g.or(
         g.isLocation("smithy"),
         g.isLocation("bakery"),
+        g.isLocation("cabinInside"),
         g.and(
           g.isLocation("tower"),
           g.not(g.location("tower").hasState("visited"))

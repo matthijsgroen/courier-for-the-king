@@ -13,7 +13,8 @@ export type GameState = GameDefinition<
       mine: { flags: "visited" };
       mill: { flags: "visited"; states: "fixed" };
       swamp: { flags: "allowEntrance" };
-      cabin: { flags: "visited" };
+      cabin: { flags: "visited"; states: "accessible" };
+      cabinInside: { flags: "visited" };
       village: { flags: "visited" };
       bakery: { flags: "visited" };
       smithy: { flags: "visited"; states: "browsing" };
@@ -85,7 +86,10 @@ export type GameState = GameDefinition<
         states: "buyCookies" | "intro" | "visiting";
       };
       smithsConversation: { states: "fixHorseshoe" | "createNecklace" };
-      witchConversation: { states: "intro" | "visited" };
+      witchConversation: {
+        states: "intro" | "visited" | "brewing";
+        counters: "brewStep";
+      };
       daughterConversation: { states: "intro" | "visited" };
       dragonConversation: {};
       inventory: {};
@@ -94,6 +98,12 @@ export type GameState = GameDefinition<
       ingredientList: {};
       plants: {};
       mushrooms: {};
+
+      books: {};
+      ingredientBook: { counters: "page" };
+      recipeBook: { counters: "page" };
+      cauldron: {};
+
       gameIntro: { states: "name" };
     };
     lists: {

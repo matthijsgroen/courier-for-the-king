@@ -15,4 +15,5 @@ import "./towerTopElevator";
 import "./towerBaseElevator";
 import "./river";
 import "./cabin";
+import "./cabinInside";
 import "./treasureRoute";

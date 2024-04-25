@@ -51,15 +51,15 @@ g.defineLocation("bakery", ({ describe, onEnter, onLeave, interaction }) => {
   });
 
   onLeave("village", () => {
-    g.onState(g.character("horse").hasState("following"), () => {
-      g.text(
-        "You have no idea how to deal with the situation, so you walk back outside.",
-        "You untie {b}[characters.horse.name]{/b}."
-      );
+    g.onState(g.character("daughter").hasState("bakery"), () => {
+      g.text("You you walk back outside.");
     }).else(() => {
       g.text(
         "You have no idea how to deal with the situation, so you walk back outside."
       );
+    });
+    g.onState(g.character("horse").hasState("following"), () => {
+      g.text("You untie {b}[characters.horse.name]{/b}.");
     });
   });
 
