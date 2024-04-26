@@ -560,6 +560,8 @@
         "The elevator creaks. It really has trouble lifting the heavy weight.": "De lift kraakt. Het touw van de lift heeft heel veel moeite met dit gewicht.",
         "You push the handle.": "Je duwt tegen de hendel.",
         "The elevator slowly starts moving {b}up{/b}.": "De lift begint langzaam naar {b}boven{/b} te bewegen.",
+        "You pull the lever of the elevator. Nothing happens.": "Je haalt de hendel van de lift om. Er gebeurt niets.",
+        "Maybe it is because the elevator lies in ruins?": "Misschien is dat omdat de lift kapot is?",
         "You take your sword and in one fluent motion you cut through the thick rope of the elevator.": "Je pakt je zwaard en in één vloeiende beweging hak je door het dikke touw van de lift.",
         "With a loud rattle the elevator with the {b}millstone{/b} falls down.": "Met een luid gerommel valt de lift samen met de {b}molensteen{/b} naar beneden.",
         "The rope tied to the {b}millstone{/b} is instantly at full tension. With a sharp jerk the dragon's tooth flies {b}out of the window{/b}.": "Het touw dat aan de {b}molensteen{/b} zit staat meteen op volle spanning. Met een harde ruk vliegt de tand van de draak {b}door het raam{/b} naar buiten.",
@@ -676,14 +678,17 @@
         "You are in the cabin of {b}[characters.witch.name]{/b}. In the middle of the cabin is a large {b}cauldron{/b} bubbling.": "Je bent in de hut van {b}[characters.witch.name]{/b}. In het midden van de hut staat een grote {b}ketel{/b} te borrelen.",
         "There are books, beakers, pots and other stuff everywhere. Most of these things you see you have no idea what they are.": "Er staan boeken, bekers, potten en andere spullen overal. Van veel van de spullen die je ziet heb je geen idee waar ze voor dienen.",
         "{b}[characters.witch.name]{/b} lies on the ground, it looks like she's sleeping.": "{b}[characters.witch.name]{/b} ligt op de grond, het lijkt erop alsof ze slaapt.",
+        "The {b}dragon's tooth{/b} lies on a workbench.": "De {b}tand van de draak{/b} ligt op een werktafel.",
         "You go to {b}[characters.witch.name]{/b}. She is lying on the ground near the {b}cauldron{/b}.": "Je loopt naar {b}[characters.witch.name]{/b}. Ze ligt naast de {b}ketel{/b} op de grond.",
         "You try to wake her up.": "Je probeert haar wakker te maken.",
         "You shake her, but there is no reaction.": "Je schud haar heen en weer, maar ze reageert niet.",
-        "You walk to some books that are lying on a workbench.": "Je loopt naar wat boeken die op een werktafel liggen."
+        "You walk to some books that are lying on a workbench.": "Je loopt naar wat boeken die op een werktafel liggen.",
+        "You pick up the dragon's tooth.": "Je raapt de drakentand weer op."
       },
       "interactions": {
         "Wake up [characters.witch.name]": "Maak [characters.witch.name] wakker",
         "Check books": "Bekijk boeken",
+        "Pick up tooth": "Pak tand",
         "Go to cauldron": "Ga naar de ketel",
         "Leave cabin": "Verlaat hut"
       },
@@ -1444,7 +1449,7 @@
         "Level: Beginner": "Niveau: Beginner",
         "  - 4 plants with heart-shaped leaves": "  - 4 planten met hartvormige bladeren",
         "  - 2 light brown tree fungi": "  - 2 lichtbruine boomzwammen",
-        "  - 1 tuft of star moss": "  - 1 pluk Sterrenmos",
+        "  - 1 tuft of Starmoss": "  - 1 pluk Sterrenmos",
         "  - 1 cup of red wine": "  - 1 beker rode wijn",
         "Spell: 'Adacadabra hastaclap'": "Spreuk: 'Adacadabra hastaklap'",
         "Page 85. -- Foreign languages translator --": "Page 85. -- Vreemde talenvertaler --",
@@ -1459,24 +1464,54 @@
         "You know the problem. You have a cellardoor that seems stuck. You don't even know if it was simply locked or not. You just want the door opened.": "Je kent het wel. Je kelderdeur klemt ontzettend. Je weet niet eens of hij nu op slot zat of niet. Je wil gewoon die deur openkrijgen.",
         "  - 1 light blue toadstool": "  - 1 lichtblauwe paddenstoel",
         "  - 2 orange fungi": "  - 2 oranje zwammen",
-        "  - 3 tufts of Moon moss": "  - 3 plukken Maanmos",
+        "  - 3 tufts of Moonmoss": "  - 3 plukken Maanmos",
         "Spell: 'Hocus Pilates!'": "Spreuk: 'Hocus Pilates!'",
-        "You close the book with recipes.": "Je doet het receptenboek dicht.",
+        "You are at some books that are lying on a workbench.": "Je bent bij wat boeken die op een werktafel liggen.",
+        "You close the book with recipes.": "Je doet het receptenboek dicht."
+      },
+      "interactions": {
+        "Previous bookmark": "Vorige boekenlegger",
+        "Next bookmark": "Volgende boekenlegger",
+        "Keep the book open on this page": "Hou het boek op deze bladzijde open",
+        "Close book": "Sluit boek"
+      }
+    },
+    "ingredientBook": {
+      "text": {
+        "You open the large almanac.": "Je opent de grote almanak.",
+        "Page 42. -- Plants and herbs. --": "Bladzijde 42. -- Planten en kruiden. --",
+        "Tip no. 30: Which plants and herbs are dangerous?": "Tip nummer 30: Welke planten of kruiden zijn gevaarlijk?",
+        "Check if the plant has diamond shaped leaves. If the plant has these, they will be very poisonous and dangerous! {b}{i}Do not touch them!{/i}{/b}": "Let vooral op of de plant ruitvormige bladeren heeft. Als de plant dit heeft, zijn ze zeer giftig en gevaarlijk! {b}{i}Niet aanraken!{/i}{/b}",
+        "Location: Herbs and plands grow well in a {b}swamp environment{/b}.": "Locatie: Kruiden en planten groeien goed in een {b}moerasachtige omgeving{/b}.",
+        "Nice! You now know everything you need to know about herbs and plants!": "Mooi! Je weet nu alles wat je moet weten over kruiden en planten!",
+        "Page 1012. -- Toadstools and other fungi. --": "Bladzijde 1012. -- Paddenstoelen en ander gezwam. --",
+        "Tip no. 45: Which toadstools are dangerous?": "Tip nummer 45: Welke paddenstoelen zijn gevaarlijk?",
+        "These fungi are dangerous:": "Deze schimmels zijn gevaarlijk:",
+        "  - Red toadstools with white spots, {b}{u}don't pick{/u}{/b}! These can be houses of dangerous forest gnomes!": "  - Rode paddenstoelen met witte stippen, {u}{b}Niet plukken!{/b}{/u} Dit kunnen huizen van zeer gevaarlijke boskabouters zijn.",
+        "  - Black toadstool": "  - Zwarte paddenstoel",
+        "These fungi are not dangerous:": "Deze paddenstoelen zijn niet gevaarlijk:",
+        "  - Orange fungi, they ensure good adhesion of ingredients": "  - Oranje zwammen, zorgt voor goede hechting van ingrediënten.",
+        "  - Light brown tree fungi, {i}delicious{/i} on a cheese sandwich": "  - Lichtbruine boomzwammen, {i}heerlijk{/i} op een broodje kaas.",
+        "  - Light blue toadstools, have healing properties": "  - Lichtblauwe paddenstoelen, hebben een geneeskrachtige werking.",
+        "Location: Toadstools and fungi grow well in {b}dark woods{/b}.": "Locatie: Paddenstoelen en zwammen groeien goed in {b}donkere wouden{/b}.",
+        "Great! Now you know everything about fungi!": "Wow! Nu weet je alles over schimmels!",
+        "Page 6510. -- Moss and grasses. --": "Bladzijde 6510. -- Mossen en grassen. --",
+        "Tip no. 72: Which moss is poisonous or dangerous?": "Tip nummer 72: Welke mossen zijn giftig of gevaarlijk?",
+        "These types of moss are dangerous:": "Deze mossen zijn gevaarlijk:",
+        "  - Atmoss": "  - Atmos",
+        "  - Thundermoss": "  - Dondermos",
+        "These types of moss are harmless:": "Deze mossen zijn ongevaarlijk:",
+        "  - Starmoss": "  - Sterrenmos",
+        "  - Moonmoss": "  - Maanmos",
+        "  - Cosmoss": "  - Kosmos",
+        "Location: Moss grows well in {b}green forests{/b}.": "Locatie: Mossen groeien goed in {b}groene bossen{/b}.",
+        "Awesome! Now you know everything about moss!": "Fantastisch! Nu weet je alles over mossen!",
         "You are at some books that are lying on a workbench.": "Je bent bij wat boeken die op een werktafel liggen."
       },
       "interactions": {
         "Previous bookmark": "Vorige boekenlegger",
         "Next bookmark": "Volgende boekenlegger",
         "Close book": "Sluit boek"
-      }
-    },
-    "ingredientBook": {
-      "text": {
-        "stuff -- almanac": "stuff -- almanac",
-        "You are at some books that are lying on a workbench.": "Je bent bij wat boeken die op een werktafel liggen."
-      },
-      "interactions": {
-        "close book": "close book"
       }
     },
     "inventory": {

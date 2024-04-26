@@ -10,18 +10,6 @@ g.defineOverlay("books", ({ onEnter, onLeave, closeOverlay, interaction }) => {
     g.text("And there is an opened book, called:", "");
     g.text("{b}'Potion recipes 101. For starters to master witches'{/b}", "");
     g.text("Each book has some bookmarks.");
-
-    //
-    // "2=0;1=12;12=3;4=0;6=2", "*c2", "Je bent bij aantal boeken die op de werktafel liggen."
-    // "Er ligt een dikke almanak genaamd:", "&"
-    // "2=0;1=12;12=3;4=2;6=0", "*c2", "Je loopt naar een aantal boeken die op de werktafel liggen."
-    // "Er ligt een dikke almanak genaamd:", "&6=2;4=0"
-    // "2=0;1=12;12=3;4=0;6=2", "", "*c6"
-    // "  '100 dingen die je altijd al wilde weten over mossen, kruiden en paddenstoelen, maar nooit durfde te vragen'", ""
-    // "*c2", "en een opengeslagen boek, genaamd:", "*c6", ""
-    // "  'Toverdrankrecepten 101. Voor beginners tot meesterheksen'"
-    // "*c2", "", "In elk boek zijn boekenleggers gestoken."
-    // "&20=0"
   });
 
   onLeave(() => {});
@@ -98,7 +86,7 @@ g.defineOverlay(
             "Ingredients:",
             "  - 4 plants with heart-shaped leaves",
             "  - 2 light brown tree fungi",
-            "  - 1 tuft of star moss",
+            "  - 1 tuft of Starmoss",
             "  - 1 cup of red wine",
             "",
             "Spell: 'Adacadabra hastaclap'",
@@ -125,16 +113,6 @@ g.defineOverlay(
           );
         }
         if (pageNr === 4) {
-          // "2=0;1=12;12=3;6=4;4=0;51=4", "*c6", "Bladzijde 114. -- De deur 'klemt' --"
-          // "", "Je kent het wel. Je kelderdeur klemt ontzettend. Je weet niet eens of hij nu op slot zat of niet. Je wil gewoon die deur openkrijgen.", ""
-          // "Niveau: Beginner", ""
-          // "Benodigdheden:"
-          // "  - 4 planten met stekelige bladeren"
-          // "  - 1 lichtblauwe paddenstoel"
-          // "  - 2 oranje zwammen"
-          // "  - 3 plukken Maanmos"
-          // "", "Spreuk: 'Hocus pilates!'"
-          // "&50=4"
           g.text("", "Page 114. -- 'sticky' door --", "");
           g.text(
             "You know the problem. You have a cellardoor that seems stuck. You don't even know if it was simply locked or not. You just want the door opened.",
@@ -145,7 +123,7 @@ g.defineOverlay(
             "  - 4 plants with thorny leaves",
             "  - 1 light blue toadstool",
             "  - 2 orange fungi",
-            "  - 3 tufts of Moon moss",
+            "  - 3 tufts of Moonmoss",
             "",
             "Spell: 'Hocus Pilates!'",
             ""
@@ -170,6 +148,18 @@ g.defineOverlay(
       g.text("You open the book with the {b}recipes{/b}.");
       g.onState(hasCounter("page").equals(0), () => {
         recipePage(0);
+      });
+      g.onState(hasCounter("page").equals(1), () => {
+        recipePage(1);
+      });
+      g.onState(hasCounter("page").equals(2), () => {
+        recipePage(2);
+      });
+      g.onState(hasCounter("page").equals(3), () => {
+        recipePage(3);
+      });
+      g.onState(hasCounter("page").equals(4), () => {
+        recipePage(4);
       });
     });
 
@@ -207,6 +197,12 @@ g.defineOverlay(
         });
     });
 
+    interaction("Keep the book open on this page", g.always(), () => {
+      g.text("You are at some books that are lying on a workbench.");
+
+      closeOverlay();
+    });
+
     interaction("Close book", g.always(), () => {
       g.text("You close the book with recipes.");
       g.text("You are at some books that are lying on a workbench.");
@@ -217,13 +213,123 @@ g.defineOverlay(
   }
 );
 
-g.defineOverlay("ingredientBook", ({ onEnter, interaction, closeOverlay }) => {
-  onEnter(() => {
-    g.text("stuff -- almanac");
-  });
+g.defineOverlay(
+  "ingredientBook",
+  ({
+    onEnter,
+    interaction,
+    closeOverlay,
+    hasCounter,
+    increaseCounter,
+    decreaseCounter,
+  }) => {
+    const almanacPage = (pageNr: number) => {
+      g.page(() => {
+        if (pageNr === 0) {
+          g.text("", "Page 42. -- Plants and herbs. --", "");
+          g.text(
+            "Tip no. 30: Which plants and herbs are dangerous?",
+            "",
+            "Check if the plant has diamond shaped leaves. If the plant has these, they will be very poisonous and dangerous! {b}{i}Do not touch them!{/i}{/b}",
+            "",
+            "Location: Herbs and plands grow well in a {b}swamp environment{/b}.",
+            ""
+          );
+        }
 
-  interaction("close book", g.always(), () => {
-    g.text("You are at some books that are lying on a workbench.");
-    closeOverlay();
-  });
-});
+        if (pageNr === 1) {
+          g.text("", "Page 1012. -- Toadstools and other fungi. --", "");
+          g.text(
+            "Tip no. 45: Which toadstools are dangerous?",
+            "",
+            "These fungi are dangerous:",
+            "  - Red toadstools with white spots, {b}{u}don't pick{/u}{/b}! These can be houses of dangerous forest gnomes!",
+            "  - Black toadstool",
+            "",
+            "These fungi are not dangerous:",
+            "  - Orange fungi, they ensure good adhesion of ingredients",
+            "  - Light brown tree fungi, {i}delicious{/i} on a cheese sandwich",
+            "  - Light blue toadstools, have healing properties",
+            "",
+            "Location: Toadstools and fungi grow well in {b}dark woods{/b}.",
+            ""
+          );
+        }
+        if (pageNr === 2) {
+          g.text("", "Page 6510. -- Moss and grasses. --", "");
+          g.text(
+            "Tip no. 72: Which moss is poisonous or dangerous?",
+            "",
+            "These types of moss are dangerous:",
+            "  - Atmoss",
+            "  - Thundermoss",
+            "",
+            "These types of moss are harmless:",
+            "  - Starmoss",
+            "  - Moonmoss",
+            "  - Cosmoss",
+            "",
+            "Location: Moss grows well in {b}green forests{/b}.",
+            ""
+          );
+        }
+      });
+
+      if (pageNr === 0) {
+        g.onState(g.not(g.character("player").hasFlag("herbKnowledge")), () => {
+          g.text(
+            "Nice! You now know everything you need to know about herbs and plants!"
+          );
+          g.character("player").setFlag("herbKnowledge");
+        });
+      }
+      if (pageNr === 1) {
+        g.onState(
+          g.not(g.character("player").hasFlag("fungiKnowledge")),
+          () => {
+            g.text("Great! Now you know everything about fungi!");
+            g.character("player").setFlag("fungiKnowledge");
+          }
+        );
+      }
+      if (pageNr === 2) {
+        g.onState(g.not(g.character("player").hasFlag("mossKnowledge")), () => {
+          g.text("Awesome! Now you know everything about moss!");
+          g.character("player").setFlag("mossKnowledge");
+        });
+      }
+    };
+
+    onEnter(() => {
+      g.text("You open the large almanac.");
+      g.onState(hasCounter("page").equals(0), () => {
+        almanacPage(0);
+      });
+    });
+
+    interaction("Previous bookmark", hasCounter("page").moreThan(0), () => {
+      decreaseCounter("page", 1);
+
+      g.onState(hasCounter("page").equals(0), () => {
+        almanacPage(0);
+      }).else(hasCounter("page").equals(1), () => {
+        almanacPage(1);
+      });
+    });
+
+    interaction("Next bookmark", hasCounter("page").lessThan(2), () => {
+      increaseCounter("page", 1);
+
+      g.onState(hasCounter("page").equals(1), () => {
+        almanacPage(1);
+      }).else(hasCounter("page").equals(2), () => {
+        almanacPage(2);
+      });
+    });
+
+    interaction("Close book", g.always(), () => {
+      g.text("You are at some books that are lying on a workbench.");
+      closeOverlay();
+    });
+  }
+);

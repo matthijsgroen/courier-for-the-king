@@ -58,10 +58,13 @@ export type GameState = GameDefinition<
       runeStone: { states: "possession" };
       plants: { counters: "roundLeaves" | "thornyLeaves" };
       mushrooms: { counters: "lightblue" };
-      tooth: { states: "pulled" | "possession" };
+      tooth: { states: "pulled" | "possession" | "cauldron" | "workbench" };
     };
     characters: {
-      player: { counters: "coins"; flags: "male" };
+      player: {
+        counters: "coins";
+        flags: "male" | "herbKnowledge" | "fungiKnowledge" | "mossKnowledge";
+      };
       dwarf: { flags: "nameKnown"; states: "happy" };
       miller: {};
       horse: {

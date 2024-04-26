@@ -211,6 +211,13 @@ g.defineOverlay(
           "{b}[characters.witch.name]{/b} goes inside and closes the door."
         );
         setState("brewing");
+
+        g.list("inventory").remove("dragonTooth");
+        g.item("plants").decreaseCounter("roundLeaves", 2);
+        g.item("mushrooms").decreaseCounter("lightblue", 2);
+        g.item("plants").decreaseCounter("thornyLeaves", 3);
+
+        g.item("tooth").setState("workbench");
       }
     );
 

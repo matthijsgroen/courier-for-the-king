@@ -126,21 +126,28 @@ g.defineLocation("towerTopElevator", ({ describe, onEnter, interaction }) => {
         );
         g.item("elevator").setState("down");
       });
-    }).else(g.item("elevator").hasState("down"), () => {
-      g.onState(g.item("millstone").hasState("elevator"), () => {
+    })
+      .else(g.item("elevator").hasState("down"), () => {
+        g.onState(g.item("millstone").hasState("elevator"), () => {
+          g.text(
+            "You push the handle. A thick rope slowly starts moving at the outside of the tower.",
+            "The elevator slowly starts moving {b}up{/b}, carrying the {b}millstone{/b}.",
+            "The elevator creaks. It really has trouble lifting the heavy weight."
+          );
+        }).else(() => {
+          g.text(
+            "You push the handle.",
+            "The elevator slowly starts moving {b}up{/b}."
+          );
+        });
+        g.item("elevator").setState("unknown");
+      })
+      .else(g.item("elevator").hasState("broken"), () => {
         g.text(
-          "You push the handle. A thick rope slowly starts moving at the outside of the tower.",
-          "The elevator slowly starts moving {b}up{/b}, carrying the {b}millstone{/b}.",
-          "The elevator creaks. It really has trouble lifting the heavy weight."
-        );
-      }).else(() => {
-        g.text(
-          "You push the handle.",
-          "The elevator slowly starts moving {b}up{/b}."
+          "You pull the lever of the elevator. Nothing happens.",
+          "Maybe it is because the elevator lies in ruins?"
         );
       });
-      g.item("elevator").setState("unknown");
-    });
   });
 
   interaction(

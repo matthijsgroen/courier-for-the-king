@@ -11,6 +11,10 @@ g.defineLocation("cabinInside", ({ describe, interaction }) => {
       "",
       "{b}[characters.witch.name]{/b} lies on the ground, it looks like she's sleeping."
     );
+
+    g.onState(g.item("tooth").hasState("workbench"), () => {
+      g.text("The {b}dragon's tooth{/b} lies on a workbench.");
+    });
   });
 
   interaction("Wake up [characters.witch.name]", g.always(), () => {
@@ -25,6 +29,12 @@ g.defineLocation("cabinInside", ({ describe, interaction }) => {
   interaction("Check books", g.always(), () => {
     g.text("You walk to some books that are lying on a workbench.");
     g.openOverlay("books");
+  });
+
+  interaction("Pick up tooth", g.item("tooth").hasState("workbench"), () => {
+    g.text("You pick up the dragon's tooth.");
+    g.item("tooth").setState("possession");
+    g.list("inventory").add("dragonTooth");
   });
 
   interaction("Go to cauldron", g.always(), () => {
