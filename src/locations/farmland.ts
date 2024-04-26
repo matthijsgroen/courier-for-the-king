@@ -54,26 +54,36 @@ g.defineLocation("farmland", ({ describe, interaction, onLeave }) => {
     g.travel("farm");
   });
 
-  interaction("Go west, to the forest", g.always(), () => {
-    g.onState(
-      g.and(
-        g.character("horse").hasState("following"),
-        g.not(g.character("horse").hasFlag("hooves"))
-      ),
-      () => {
-        g.text(
-          "You want to walk to the west towards the forest, but [characters.horse.defaultName] starts to refuse."
-        );
-        g.character("player").say(
-          "Maybe I have to take him to the farm first?"
-        );
-      }
-    ).else(() => {
-      g.travel("forest");
-    });
-  });
+  interaction(
+    "Go west, to the forest",
+    g.always(),
+    () => {
+      g.onState(
+        g.and(
+          g.character("horse").hasState("following"),
+          g.not(g.character("horse").hasFlag("hooves"))
+        ),
+        () => {
+          g.text(
+            "You want to walk to the west towards the forest, but [characters.horse.defaultName] starts to refuse."
+          );
+          g.character("player").say(
+            "Maybe I have to take him to the farm first?"
+          );
+        }
+      ).else(() => {
+        g.travel("forest");
+      });
+    },
+    { shortcutKey: "w" }
+  );
 
-  interaction("Go south, towards the village", g.always(), () => {
-    g.travel("village");
-  });
+  interaction(
+    "Go south, towards the village",
+    g.always(),
+    () => {
+      g.travel("village");
+    },
+    { shortcutKey: "s" }
+  );
 });

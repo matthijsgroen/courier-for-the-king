@@ -87,15 +87,30 @@ g.defineLocation("village", ({ describe, interaction, onLeave }) => {
     g.travel("smithy");
   });
 
-  interaction("Go north, to the farmlands", g.always(), () => {
-    g.travel("farmland");
-  });
+  interaction(
+    "Go north, to the farmlands",
+    g.always(),
+    () => {
+      g.travel("farmland");
+    },
+    { shortcutKey: "n" }
+  );
 
-  interaction("Go east, to the dark woods", g.always(), () => {
-    g.travel("darkwoods");
-  });
+  interaction(
+    "Go east, to the dark woods",
+    g.always(),
+    () => {
+      g.travel("darkwoods");
+    },
+    { shortcutKey: "e" }
+  );
 
-  interaction("Go south, to the river", g.always(), () => {
-    g.travel("river");
-  });
+  interaction(
+    "Go south, to the river",
+    g.always(),
+    () => {
+      g.travel("river");
+    },
+    { shortcutKey: "s" }
+  );
 });

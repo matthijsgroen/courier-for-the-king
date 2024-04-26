@@ -29,7 +29,8 @@ g.defineLocation("treasureRoute", ({ interaction }) => {
       );
       g.text("It's now even more quiet than it already was at daytime.");
       g.location("treasureRoute").increaseCounter("steps", 1);
-    }
+    },
+    { shortcutKey: "n" }
   );
 
   interaction(
@@ -38,7 +39,8 @@ g.defineLocation("treasureRoute", ({ interaction }) => {
     () => {
       g.text("You walk along the river to the {b}east{/b}.");
       endRoute();
-    }
+    },
+    { shortcutKey: "e" }
   );
   interaction(
     "Go west, along the waterfront",
@@ -46,7 +48,8 @@ g.defineLocation("treasureRoute", ({ interaction }) => {
     () => {
       g.text("You walk along the river to the {b}west{/b}.");
       endRoute();
-    }
+    },
+    { shortcutKey: "w" }
   );
 
   interaction(
@@ -71,7 +74,8 @@ g.defineLocation("treasureRoute", ({ interaction }) => {
         "A glow of fire is coming from the other side of the farm"
       );
       g.location("treasureRoute").increaseCounter("steps", 1);
-    }
+    },
+    { shortcutKey: "n" }
   );
 
   interaction(
@@ -80,7 +84,8 @@ g.defineLocation("treasureRoute", ({ interaction }) => {
     () => {
       g.text("You go {b}east{/b}, towards the dark woods.");
       endRoute();
-    }
+    },
+    { shortcutKey: "e" }
   );
 
   interaction(
@@ -91,7 +96,8 @@ g.defineLocation("treasureRoute", ({ interaction }) => {
       g.location("treasureRoute").setCounter("steps", 0);
 
       g.travel("river");
-    }
+    },
+    { shortcutKey: "s" }
   );
 
   interaction(
@@ -102,7 +108,8 @@ g.defineLocation("treasureRoute", ({ interaction }) => {
         "You go {b}west{/b} between some shops, even if there is no real path."
       );
       endRoute();
-    }
+    },
+    { shortcutKey: "w" }
   );
 
   interaction(
@@ -114,7 +121,8 @@ g.defineLocation("treasureRoute", ({ interaction }) => {
         "You almost trip in the darkness."
       );
       endRoute();
-    }
+    },
+    { shortcutKey: "n" }
   );
 
   interaction(
@@ -127,7 +135,8 @@ g.defineLocation("treasureRoute", ({ interaction }) => {
         "You start to feel lost."
       );
       endRoute();
-    }
+    },
+    { shortcutKey: "e" }
   );
 
   interaction(
@@ -139,7 +148,8 @@ g.defineLocation("treasureRoute", ({ interaction }) => {
         "You were here before."
       );
       endRoute();
-    }
+    },
+    { shortcutKey: "s" }
   );
 
   interaction(
@@ -158,7 +168,8 @@ g.defineLocation("treasureRoute", ({ interaction }) => {
         "There are {b}hills{/b} in the {b}west{/b}."
       );
       g.location("treasureRoute").increaseCounter("steps", 1);
-    }
+    },
+    { shortcutKey: "w" }
   );
 
   interaction(
@@ -186,7 +197,8 @@ g.defineLocation("treasureRoute", ({ interaction }) => {
         .else(() => {
           g.descriptionText("You walk between the trees {b}northwards{/b}.");
         });
-    }
+    },
+    { shortcutKey: "n" }
   );
   interaction(
     "Go east, to the farmlands",
@@ -195,7 +207,8 @@ g.defineLocation("treasureRoute", ({ interaction }) => {
       g.descriptionText("You walk {b}eastwards{/b}, to the farmlands.");
       g.descriptionText("You were here before.");
       endRoute();
-    }
+    },
+    { shortcutKey: "e" }
   );
   interaction(
     "Go east, between some trees",
@@ -217,7 +230,8 @@ g.defineLocation("treasureRoute", ({ interaction }) => {
         g.descriptionText("You walk between the trees {b}eastwards{/b}.");
         endRoute();
       });
-    }
+    },
+    { shortcutKey: "e" }
   );
   interaction(
     "Go south, between some trees",
@@ -234,7 +248,8 @@ g.defineLocation("treasureRoute", ({ interaction }) => {
           g.location("treasureRoute").increaseCounter("steps", 1);
         }
       ).else(endRoute);
-    }
+    },
+    { shortcutKey: "s" }
   );
   interaction(
     "Go west, towards the hills",
@@ -243,7 +258,8 @@ g.defineLocation("treasureRoute", ({ interaction }) => {
       g.descriptionText("You walk {b}westwards{/b}, towards the hills.");
       g.descriptionText("You see the outline of a mill in the moonlight.");
       endRoute();
-    }
+    },
+    { shortcutKey: "w" }
   );
   interaction(
     "Go west, between some trees",
@@ -256,7 +272,8 @@ g.defineLocation("treasureRoute", ({ interaction }) => {
       g.text("You almost trip over a tree stump.");
       g.character("player").say("Ouch! Grmbl!");
       endRoute();
-    }
+    },
+    { shortcutKey: "w" }
   );
 
   interaction(

@@ -48,18 +48,28 @@ g.defineLocation("hills", ({ describe, onLeave, interaction }) => {
     g.travel("mill");
   });
 
-  interaction("Go east, to the forest", g.always(), () => {
-    g.travel("forest");
-  });
+  interaction(
+    "Go east, to the forest",
+    g.always(),
+    () => {
+      g.travel("forest");
+    },
+    { shortcutKey: "e" }
+  );
 
-  interaction("Go south, to the swamp", g.always(), () => {
-    g.onState(g.character("horse").hasFlag("cart"), () => {
-      g.text(
-        "You want to go into the {b}swamp{/b}, but the wheels of the carriage would get stuck in the soggy underground.",
-        "You turn around."
-      );
-    }).else(() => {
-      g.travel("swamp");
-    });
-  });
+  interaction(
+    "Go south, to the swamp",
+    g.always(),
+    () => {
+      g.onState(g.character("horse").hasFlag("cart"), () => {
+        g.text(
+          "You want to go into the {b}swamp{/b}, but the wheels of the carriage would get stuck in the soggy underground.",
+          "You turn around."
+        );
+      }).else(() => {
+        g.travel("swamp");
+      });
+    },
+    { shortcutKey: "s" }
+  );
 });

@@ -144,7 +144,12 @@ g.defineLocation("river", ({ describe, onLeave, interaction }) => {
     g.list("inventory").add("fabric");
   });
 
-  interaction("Go north, towards the village", g.always(), () => {
-    g.travel("village");
-  });
+  interaction(
+    "Go north, towards the village",
+    g.always(),
+    () => {
+      g.travel("village");
+    },
+    { shortcutKey: "n" }
+  );
 });

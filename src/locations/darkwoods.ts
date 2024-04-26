@@ -106,9 +106,14 @@ g.defineLocation(
       g.travel("tower");
     });
 
-    interaction("Go west, towards the village", g.always(), () => {
-      g.travel("village");
-    });
+    interaction(
+      "Go west, towards the village",
+      g.always(),
+      () => {
+        g.travel("village");
+      },
+      { shortcutKey: "w" }
+    );
 
     interaction(
       "Continue into the dark woods anyway",

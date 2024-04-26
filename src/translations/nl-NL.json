@@ -102,6 +102,10 @@
       "interactions": {
         "Go to the farm": "Ga naar de boerderij",
         "Go west, to the forest": "Ga naar het westen, richting het groene bos",
+        "shortcutKeys": {
+          "Go west, to the forest": "w",
+          "Go south, towards the village": "z"
+        },
         "Go south, towards the village": "Ga naar het zuiden, richting het dorp"
       },
       "player": {
@@ -131,6 +135,10 @@
       "interactions": {
         "Pick up branch": "Raap de tak op",
         "Go east, to the farmlands": "Ga naar het oosten, richting de akkers",
+        "shortcutKeys": {
+          "Go east, to the farmlands": "o",
+          "Go west, to the hills": "w"
+        },
         "Go west, to the hills": "Ga naar het westen, richting de heuvels"
       }
     },
@@ -154,6 +162,10 @@
         "Follow the path to the mine": "Volg het pad naar de mijn",
         "Go towards the mill": "Wandel naar de molen",
         "Go east, to the forest": "Ga naar het oosten, richting het groene bos",
+        "shortcutKeys": {
+          "Go east, to the forest": "o",
+          "Go south, to the swamp": "z"
+        },
         "Go south, to the swamp": "Ga naar het zuiden, richting het moeras"
       }
     },
@@ -240,7 +252,10 @@
       "interactions": {
         "Walk towards the cabin": "Loop richting de hut",
         "Inspect the plants": "Bekijk de planten",
-        "Go north, towards the hills": "Ga naar het noorden, richting de heuvels"
+        "Go north, towards the hills": "Ga naar het noorden, richting de heuvels",
+        "shortcutKeys": {
+          "Go north, towards the hills": "n"
+        }
       }
     },
     "farm": {
@@ -303,6 +318,11 @@
         "Go to bakery": "Wandel naar de bakkerij",
         "Go to smithy": "Wandel naar de smederij",
         "Go north, to the farmlands": "Ga naar het noorden, richting de akkers",
+        "shortcutKeys": {
+          "Go north, to the farmlands": "n",
+          "Go east, to the dark woods": "o",
+          "Go south, to the river": "z"
+        },
         "Go east, to the dark woods": "Ga naar het oosten, richting het donkere woud",
         "Go south, to the river": "Ga naar het zuiden, richting de rivier"
       }
@@ -431,6 +451,9 @@
         "Search for mushrooms": "Ga op zoek naar paddenstoelen",
         "Go to the tower of the dragon": "Ga naar de toren van de draak",
         "Go west, towards the village": "Ga naar het westen, richting het dorp",
+        "shortcutKeys": {
+          "Go west, towards the village": "w"
+        },
         "Continue into the dark woods anyway": "Ga toch verder, het donkere woud in"
       }
     },
@@ -651,7 +674,10 @@
         "Try to approach horse": "Probeer paard te benaderen",
         "Let [characters.horse.name] drink some water": "Laat [characters.horse.name] water drinken",
         "Pick up fabric": "Pak stof op",
-        "Go north, towards the village": "Ga naar het noorden, richting het dorp"
+        "Go north, towards the village": "Ga naar het noorden, richting het dorp",
+        "shortcutKeys": {
+          "Go north, towards the village": "n"
+        }
       }
     },
     "cabin": {
@@ -700,6 +726,25 @@
       "interactions": {
         "Inspect tree": "Onderzoek boom",
         "Go north, to the village": "Ga naar het noorden, naar het dorp",
+        "shortcutKeys": {
+          "Go north, to the village": "n",
+          "Go east, along the waterfront": "o",
+          "Go west, along the waterfront": "w",
+          "Go north, towards the farmlands": "n",
+          "Go east, towards the dark wood": "o",
+          "Go south, towards the river": "z",
+          "Go west, between some shops": "w",
+          "Go north, between the meadows": "n",
+          "Go east, to the other side of the farm": "o",
+          "Go south, towards village": "z",
+          "Go west, towards the forest": "w",
+          "Go north, between some trees": "n",
+          "Go east, to the farmlands": "o",
+          "Go east, between some trees": "o",
+          "Go south, between some trees": "z",
+          "Go west, towards the hills": "w",
+          "Go west, between some trees": "w"
+        },
         "Go east, along the waterfront": "Ga naar het oosten, langs de waterkant",
         "Go west, along the waterfront": "Ga naar het westen, langs de waterkant",
         "Wait for daylight": "Wacht tot het weer dag is",

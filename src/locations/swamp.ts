@@ -67,7 +67,12 @@ g.defineLocation("swamp", ({ describe, interaction, onLeave }) => {
     }
   );
 
-  interaction("Go north, towards the hills", g.always(), () => {
-    g.travel("hills");
-  });
+  interaction(
+    "Go north, towards the hills",
+    g.always(),
+    () => {
+      g.travel("hills");
+    },
+    { shortcutKey: "n" }
+  );
 });

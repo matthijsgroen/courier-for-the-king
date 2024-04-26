@@ -52,11 +52,21 @@ g.defineLocation("forest", ({ describe, interaction, onLeave }) => {
     g.list("inventory").add("branch");
   });
 
-  interaction("Go east, to the farmlands", g.always(), () => {
-    g.travel("farmland");
-  });
+  interaction(
+    "Go east, to the farmlands",
+    g.always(),
+    () => {
+      g.travel("farmland");
+    },
+    { shortcutKey: "e" }
+  );
 
-  interaction("Go west, to the hills", g.always(), () => {
-    g.travel("hills");
-  });
+  interaction(
+    "Go west, to the hills",
+    g.always(),
+    () => {
+      g.travel("hills");
+    },
+    { shortcutKey: "w" }
+  );
 });
