@@ -80,6 +80,7 @@ const game = world<GameState>({
     defaultTextColor: palette.color("default"),
   },
   initialState: {
+    version: 1,
     currentLocation: "home",
     characters: {
       player: {
