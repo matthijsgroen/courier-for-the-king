@@ -1,7 +1,6 @@
 import g from "../game";
 
 g.defineOverlay("moss", ({ onEnter, closeOverlay, interaction }) => {
-  //
   onEnter(() => {
     g.text(
       "You go deeper into the forest, in search for different types of moss.",
@@ -69,11 +68,6 @@ g.defineOverlay("moss", ({ onEnter, closeOverlay, interaction }) => {
       "You decide to not touch the {b}Thundermoss{/b}."
     );
   });
-
-  // "1=1;2=0;4=7", "*c2", "Je bukt om wat dondermos te verzamelen.", ""
-  // "Je bedenkt ineens dat je in de almanak van mossen gelezen had dat deze soort giftig is."
-  // "Je besluit om deze soort niet te verzamelen."
-  // "&4=2"
 
   interaction("Go back to the trail", g.always(), () => {
     g.text("You go back to the trail.");
