@@ -142,7 +142,7 @@ g.definePuzzleDependencies<MetaData>({
     hierarchy: ["swamp", "cabin"],
   },
   dissolvePotion: {
-    dependsOn: ["getAccessToCabin"],
+    dependsOn: ["getMoss"],
     tags: {},
     hierarchy: ["swamp", "cabin"],
   },
@@ -374,7 +374,7 @@ g.definePuzzleDependencies<MetaData>({
   },
   getMoss: {
     dependsOn: ["getAccessToCabin"],
-    tags: {},
+    tags: { state: "text", languages: ["en", "nl"] },
     hierarchy: ["forest"],
   },
   createPotionToTalkToDragon: {

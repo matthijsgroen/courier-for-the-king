@@ -43,6 +43,14 @@ g.defineLocation("forest", ({ describe, interaction, onLeave }) => {
     });
   });
 
+  interaction(
+    "Search for moss",
+    g.character("player").hasFlag("mossKnowledge"),
+    () => {
+      g.openOverlay("moss");
+    }
+  );
+
   interaction("Pick up branch", g.item("branch").hasState("unknown"), () => {
     g.text(
       "You pick up the branch. You feel a small bump on your head.",

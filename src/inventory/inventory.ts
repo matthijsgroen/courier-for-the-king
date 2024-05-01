@@ -94,6 +94,32 @@ g.defineOverlay("inventory", ({ onEnter, interaction, closeOverlay }) => {
         });
       });
 
+      onItem("starmoss", () => {
+        g.onState(g.item("moss").hasCounter("starmoss").moreThan(1), () => {
+          g.descriptionText(
+            "- [items.moss.counters.starmoss] tufts of Starmoss"
+          );
+        }).else(() => {
+          g.descriptionText("- 1 tuft of Starmoss");
+        });
+      });
+      onItem("cosmoss", () => {
+        g.onState(g.item("moss").hasCounter("cosmoss").moreThan(1), () => {
+          g.descriptionText("- [items.moss.counters.cosmoss] tufts of Cosmoss");
+        }).else(() => {
+          g.descriptionText("- 1 tuft of Cosmoss");
+        });
+      });
+      onItem("moonmoss", () => {
+        g.onState(g.item("moss").hasCounter("moonmoss").moreThan(1), () => {
+          g.descriptionText(
+            "- [items.moss.counters.moonmoss] tufts of Moonmoss"
+          );
+        }).else(() => {
+          g.descriptionText("- 1 tuft of Moonmoss");
+        });
+      });
+
       onItem("sword", () => {
         g.descriptionText("- A nice sharp sword");
       });

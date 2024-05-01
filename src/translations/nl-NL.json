@@ -133,6 +133,7 @@
         "There are {b}hills{/b} in the {b}west{/b}.": "In het {b}westen{/b} zijn {b}heuvels{/b}."
       },
       "interactions": {
+        "Search for moss": "Ga op zoek naar mossen",
         "Pick up branch": "Raap de tak op",
         "Go east, to the farmlands": "Ga naar het oosten, richting de akkers",
         "shortcutKeys": {
@@ -719,7 +720,7 @@
         "Leave cabin": "Verlaat hut"
       },
       "player": {
-        "{b}[characters.witch.name]{/b}, wake up.": "{b}[characters.witch.name]{/b}, wake up."
+        "{b}[characters.witch.name]{/b}, wake up.": "{b}[characters.witch.name]{/b}, wordt wakker."
       }
     },
     "treasureRoute": {
@@ -1447,6 +1448,37 @@
         "I'm not sure if I need the {b}orange fungi{/b}.": "Ik heb geen idee of ik de {b}oranje zwammen{/b} wel nodig heb."
       }
     },
+    "moss": {
+      "text": {
+        "You go deeper into the forest, in search for different types of moss.": "Je gaat dieper het bos in, op zoek naar verschillende soorten mos.",
+        "After a while you spotted different kinds:": "Na een tijdje heb je een aantal verschillende soorten gespot:",
+        "{b}Starmoss{/b}, {b}Cosmoss{/b}, {b}Atmoss{/b}, {b}Moonmoss{/b} and {b}Thundermoss{/b}": "{b}Sterrenmos{/b}, {b}Kosmos{/b}, {b}Atmos{/b}, {b}Maanmos{/b} en {b}Dondermos{/b}",
+        "You bend over to collect some {b}Starmoss{/b}.": "Je bukt om wat {b}Sterrenmos{/b} te verzamelen.",
+        "You collect a few tufts and put them in your bag.": "Je verzameld een paar plukken en stopt ze in je tas.",
+        "You bend over to collect some {b}Cosmoss{/b}.": "Je bukt om wat {b}Kosmos{/b} te verzamelen.",
+        "You bend over to collect some {b}Atmoss{/b}.": "Je bukt om wat {b}Atmos{/b} te verzamelen.",
+        "Then you remember reading in the {b}Almanac{/b} that this kind of moss is extremely poisonous.": "Ineens herinner je je dat je in de {b}Almanak{/b} had gelezen dat deze soort extreem giftig is.",
+        "You decide to leave the {b}Atmoss{/b} alone.": "Je besluit van de {b}Atmos{/b} af te blijven.",
+        "You bend over to collect some {b}Moonmoss{/b}.": "Je bukt om wat {b}Maanmos{/b} te verzamelen.",
+        "You bend over to collect some {b}Thundermoss{/b}.": "Je bukt om wat {b}Dondermos{/b} te verzamelen.",
+        "Then you remember reading in the {b}Almanac{/b} that this kind of moss is extremely dangerous.": "Ineens herinner je je dat in de {b}Almanak{/b} stond dat deze soort erg gevaarlijk was.",
+        "You decide to not touch the {b}Thundermoss{/b}.": "Je besluit de {b}Dondermos{/b} niet aan te raken.",
+        "You go back to the trail.": "Je gaat terug naar het pad."
+      },
+      "interactions": {
+        "Collect Starmoss": "Verzamel Sterrenmos",
+        "Collect Cosmoss": "Verzamel Kosmos",
+        "Collect Atmoss": "Verzamel Atmoss",
+        "Collect Moonmoss": "Verzamel Maanmos",
+        "Collect Thundermoss": "Verzamel Dondermos",
+        "Go back to the trail": "Ga terug naar het pad"
+      },
+      "player": {
+        "I already have plenty of {b}Starmoss{/b} in my bag.": "Ik heb al genoeg {b}Sterrenmos{/b} in mijn tas zitten.",
+        "I already have plenty of {b}Cosmoss{/b} in my bag.": "Ik heb al genoeg {b}Kosmos{/b} in mijn tas zitten.",
+        "I already have plenty of {b}Moonmoss{/b} in my bag.": "Ik heb al genoeg {b}Maanmos{/b} in mijn tas zitten."
+      }
+    },
     "books": {
       "text": {
         "There is a thick almanac called:": "Er ligt een dikke almanak genaamd:",
@@ -1583,6 +1615,12 @@
         "- 1 plant with round leaves": "- 1 plant met ronde bladeren",
         "- [items.mushrooms.counters.lightblue] lightblue mushrooms": "- [items.mushrooms.counters.lightblue] lichtblauwe paddenstoelen",
         "- 1 lightblue mushroom": "- 1 lichtblauwe paddenstoel",
+        "- [items.moss.counters.starmoss] tufts of Starmoss": "- [items.moss.counters.starmoss] plukken Sterrenmos",
+        "- 1 tuft of Starmoss": "- 1 pluk Sterrenmos",
+        "- [items.moss.counters.cosmoss] tufts of Cosmoss": "- [items.moss.counters.cosmoss] plukken Kosmos",
+        "- 1 tuft of Cosmoss": "- 1 pluk Kosmos",
+        "- [items.moss.counters.moonmoss] tufts of Moonmoss": "- [items.moss.counters.moonmoss] plukken Maanmos",
+        "- 1 tuft of Moonmoss": "- 1 pluk Maanmos",
         "- A nice sharp sword": "- Een mooi scherp zwaard",
         "- The tooth of a dragon": "- De tand van een draak",
         "You carry the following items:": "Je hebt het volgende bij je:"

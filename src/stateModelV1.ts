@@ -58,6 +58,8 @@ export type GameState = GameDefinition<
       runeStone: { states: "possession" };
       plants: { counters: "roundLeaves" | "thornyLeaves" };
       mushrooms: { counters: "lightblue" };
+      moss: { counters: "starmoss" | "cosmoss" | "moonmoss" };
+
       tooth: { states: "pulled" | "possession" | "cauldron" | "workbench" };
     };
     characters: {
@@ -99,8 +101,10 @@ export type GameState = GameDefinition<
       travel: {};
       treasureNotes: {};
       ingredientList: {};
+
       plants: {};
       mushrooms: {};
+      moss: {};
 
       books: {};
       ingredientBook: { counters: "page" };
@@ -129,7 +133,10 @@ export type GameState = GameDefinition<
         | "lightblueMushrooms"
         | "sword"
         | "repairedPickaxe"
-        | "dragonTooth";
+        | "dragonTooth"
+        | "starmoss"
+        | "moonmoss"
+        | "cosmoss";
     };
   }
 >;
