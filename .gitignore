@@ -11,3 +11,5 @@
 !.yarn/sdks
 !.yarn/versions
 saves/*.json
+
+*.code-workspace
