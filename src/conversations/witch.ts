@@ -296,7 +296,7 @@ g.defineOverlay(
         );
 
         closeOverlay();
-        g.travel("cabinInside");
+        g.location("cabinInside").travel();
       }
     );
 

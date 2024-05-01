@@ -47,7 +47,7 @@ g.defineLocation("forest", ({ describe, interaction, onLeave }) => {
     "Search for moss",
     g.character("player").hasFlag("mossKnowledge"),
     () => {
-      g.openOverlay("moss");
+      g.overlay("moss").open();
     }
   );
 
@@ -64,7 +64,7 @@ g.defineLocation("forest", ({ describe, interaction, onLeave }) => {
     "Go east, to the farmlands",
     g.always(),
     () => {
-      g.travel("farmland");
+      g.location("farmland").travel();
     },
     { shortcutKey: "e" }
   );
@@ -73,7 +73,7 @@ g.defineLocation("forest", ({ describe, interaction, onLeave }) => {
     "Go west, to the hills",
     g.always(),
     () => {
-      g.travel("hills");
+      g.location("hills").travel();
     },
     { shortcutKey: "w" }
   );

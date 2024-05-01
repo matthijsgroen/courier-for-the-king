@@ -38,7 +38,7 @@ g.defineLocation("mine", ({ describe, interaction, onLeave }) => {
   });
 
   interaction("Talk to the dwarf", g.always(), () => {
-    g.openOverlay("dwarfConversation");
+    g.overlay("dwarfConversation").open();
   });
 
   interaction(
@@ -54,6 +54,6 @@ g.defineLocation("mine", ({ describe, interaction, onLeave }) => {
   );
 
   interaction("Leave the mine", g.always(), () => {
-    g.travel("hills");
+    g.location("hills").travel();
   });
 });

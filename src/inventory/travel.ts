@@ -20,7 +20,7 @@ g.defineOverlay(
           "{b}[characters.horse.name]{/b} quickly brings you to the {b}farm{/b}.",
           ""
         );
-        g.travel("farm");
+        g.location("farm").travel();
       }
     );
 
@@ -33,7 +33,7 @@ g.defineOverlay(
           "{b}[characters.horse.name]{/b} quickly brings you to the {b}mine{/b}.",
           ""
         );
-        g.travel("mine");
+        g.location("mine").travel();
       }
     );
 
@@ -51,7 +51,7 @@ g.defineOverlay(
           "You enter the smithy.",
           ""
         );
-        g.travel("smithy");
+        g.location("smithy").travel();
       }
     );
 
@@ -69,7 +69,7 @@ g.defineOverlay(
           "You enter the bakery.",
           ""
         );
-        g.travel("bakery");
+        g.location("bakery").travel();
       }
     );
 
@@ -86,7 +86,7 @@ g.defineOverlay(
           "The last part you had to walk next to him, to make sure you didn't sink too much into the wet surface.",
           ""
         );
-        g.travel("cabin");
+        g.location("cabin").travel();
       }
     );
 
@@ -99,7 +99,7 @@ g.defineOverlay(
           "{b}[characters.horse.name]{/b} quickly brings you to the {b}mill{/b}.",
           ""
         );
-        g.travel("mill");
+        g.location("mill").travel();
       }
     );
 
@@ -115,7 +115,7 @@ g.defineOverlay(
           "{b}[characters.horse.name]{/b} quickly brings you to the {b}tower{/b}.",
           ""
         );
-        g.travel("tower");
+        g.location("tower").travel();
       }
     );
 
@@ -148,6 +148,6 @@ g.globalInteraction(
     )
   ),
   () => {
-    g.openOverlay("travel");
+    g.overlay("travel").open();
   }
 );

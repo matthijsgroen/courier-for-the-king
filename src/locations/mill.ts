@@ -79,7 +79,7 @@ g.defineLocation("mill", ({ describe, hasState, onLeave, interaction }) => {
   });
 
   interaction("Talk to the miller", g.always(), () => {
-    g.openOverlay("millerConversation");
+    g.overlay("millerConversation").open();
   });
 
   interaction(
@@ -117,6 +117,6 @@ g.defineLocation("mill", ({ describe, hasState, onLeave, interaction }) => {
   );
 
   interaction("Walk back to the road", g.always(), () => {
-    g.travel("hills");
+    g.location("hills").travel();
   });
 });

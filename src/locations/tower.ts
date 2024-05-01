@@ -96,11 +96,11 @@ g.defineLocation(
         "You try to peek into the darkness to make out your surroundings.",
         ""
       );
-      g.travel("towerTop");
+      g.location("towerTop").travel();
     });
 
     interaction("Enter the tower", hasState("visited"), () => {
-      g.travel("towerTop");
+      g.location("towerTop").travel();
     });
 
     interaction(
@@ -147,7 +147,7 @@ g.defineLocation(
     );
 
     interaction("Go to the elevator", hasState("visited"), () => {
-      g.travel("towerBaseElevator");
+      g.location("towerBaseElevator").travel();
     });
 
     interaction("Go into the dark wood", hasState("visited"), () => {
@@ -156,7 +156,7 @@ g.defineLocation(
           "{b}[characters.daughter.name]{/b} should be here soon to help unload the millstone."
         );
       }).else(() => {
-        g.travel("darkwoods");
+        g.location("darkwoods").travel();
       });
     });
   }

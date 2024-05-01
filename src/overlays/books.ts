@@ -15,11 +15,11 @@ g.defineOverlay("books", ({ onEnter, onLeave, closeOverlay, interaction }) => {
   onLeave(() => {});
 
   interaction("Read the almanac", g.always(), () => {
-    g.openOverlay("ingredientBook");
+    g.overlay("ingredientBook").open();
   });
 
   interaction("Read the recipes", g.always(), () => {
-    g.openOverlay("recipeBook");
+    g.overlay("recipeBook").open();
   });
 
   interaction("Step away from the books", g.always(), () => {
@@ -38,6 +38,8 @@ g.defineOverlay(
     increaseCounter,
     decreaseCounter,
     setCounter,
+    setFlag,
+    clearFlag,
   }) => {
     const recipePage = (pageNr: number) => {
       g.page(() => {
@@ -199,6 +201,7 @@ g.defineOverlay(
 
     interaction("Keep the book open on this page", g.always(), () => {
       g.text("You are at some books that are lying on a workbench.");
+      setFlag("open");
 
       closeOverlay();
     });
@@ -207,6 +210,7 @@ g.defineOverlay(
       g.text("You close the book with recipes.");
       g.text("You are at some books that are lying on a workbench.");
       setCounter("page", 0);
+      clearFlag("open");
 
       closeOverlay();
     });

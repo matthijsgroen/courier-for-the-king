@@ -29,7 +29,7 @@ g.defineLocation("farm", ({ describe, interaction, onLeave }) => {
   });
 
   interaction("Talk to farmer", g.always(), () => {
-    g.openOverlay("farmerConversation");
+    g.overlay("farmerConversation").open();
   });
 
   interaction(
@@ -83,6 +83,6 @@ g.defineLocation("farm", ({ describe, interaction, onLeave }) => {
   });
 
   interaction("Walk back to the road", g.always(), () => {
-    g.travel("farmland");
+    g.location("farmland").travel();
   });
 });

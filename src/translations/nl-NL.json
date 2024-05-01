@@ -1591,6 +1591,48 @@
         "Close book": "Sluit boek"
       }
     },
+    "cauldron": {
+      "text": {
+        "You walk to the cauldron in the center of the cabin.": "Je loopt naar de ketel in het midden van de hut.",
+        "The potion in the cauldron is clear and transparent.": "De drank in de ketel is helder en transparant.",
+        "The cauldron looks ready for some brewing.": "Het lijkt erop alsof de ketel klaar is om een drankje te brouwen.",
+        "You raise your arms high into the sky...": "Je steekt je handen hoog in de lucht...",
+        "...and you clear your throat.": "...en je schraapt je keel.",
+        "Nothing happens...": "Er gebeurt niets...",
+        "You step away from the cauldron.": "Je stapt weg bij de ketel."
+      },
+      "interactions": {
+        "Add ingredient": "Voeg ingrediënt toe",
+        "Say spell": "Zeg spreuk",
+        "Sim sala...": "Sim sala...",
+        "...Bim!": "...Bim!",
+        "...Bam!": "...Bam!",
+        "...Bom!": "...Bom!",
+        "Hocus...": "Hocus...",
+        "...Pocus!": "...Pocus!",
+        "...Poof!": "...Poef!",
+        "...Crocus!": "...Krokus!",
+        "Abracadabra...": "Abracadabra...",
+        "...Pop!": "...Knal!",
+        "...Clang!": "...Kletter!",
+        "...Hodgepodge!": "...Ratjetoe!",
+        "Step away from cauldron": "Stap weg van de ketel"
+      },
+      "player": {
+        "Sim sala...": "Sim sala...",
+        "...Bim!": "...Bim!",
+        "...Bam!": "...Bam!",
+        "...Bom!": "...Bom!",
+        "Hocus...": "Hocus...",
+        "...Pocus!": "...Pocus!",
+        "...Poof!": "...Poef!",
+        "...Crocus!": "...Krokus!",
+        "Abracadabra...": "Abracadabra...",
+        "...Pop!": "...Knal!",
+        "...Clang!": "...Kletter!",
+        "...Hodgepodge!": "...Ratjetoe!"
+      }
+    },
     "inventory": {
       "descriptionText": {
         "- [characters.player.counters.coins] coin": "- [characters.player.counters.coins] geldstuk",

@@ -52,7 +52,7 @@ g.defineLocation("swamp", ({ describe, interaction, onLeave }) => {
     "Walk towards the cabin",
     g.location("swamp").hasFlag("allowEntrance"),
     () => {
-      g.travel("cabin");
+      g.location("cabin").travel();
     }
   );
 
@@ -63,7 +63,7 @@ g.defineLocation("swamp", ({ describe, interaction, onLeave }) => {
       g.item("treasureNotes").hasFlag("moonStone")
     ),
     () => {
-      g.openOverlay("plants");
+      g.overlay("plants").open();
     }
   );
 
@@ -71,7 +71,7 @@ g.defineLocation("swamp", ({ describe, interaction, onLeave }) => {
     "Go north, towards the hills",
     g.always(),
     () => {
-      g.travel("hills");
+      g.location("hills").travel();
     },
     { shortcutKey: "n" }
   );

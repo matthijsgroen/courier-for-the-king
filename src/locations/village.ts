@@ -80,18 +80,18 @@ g.defineLocation("village", ({ describe, interaction, onLeave }) => {
   });
 
   interaction("Go to bakery", g.always(), () => {
-    g.travel("bakery");
+    g.location("bakery").travel();
   });
 
   interaction("Go to smithy", g.always(), () => {
-    g.travel("smithy");
+    g.location("smithy").travel();
   });
 
   interaction(
     "Go north, to the farmlands",
     g.always(),
     () => {
-      g.travel("farmland");
+      g.location("farmland").travel();
     },
     { shortcutKey: "n" }
   );
@@ -100,7 +100,7 @@ g.defineLocation("village", ({ describe, interaction, onLeave }) => {
     "Go east, to the dark woods",
     g.always(),
     () => {
-      g.travel("darkwoods");
+      g.location("darkwoods").travel();
     },
     { shortcutKey: "e" }
   );
@@ -109,7 +109,7 @@ g.defineLocation("village", ({ describe, interaction, onLeave }) => {
     "Go south, to the river",
     g.always(),
     () => {
-      g.travel("river");
+      g.location("river").travel();
     },
     { shortcutKey: "s" }
   );

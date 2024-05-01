@@ -28,7 +28,7 @@ g.defineLocation("cabinInside", ({ describe, interaction }) => {
 
   interaction("Check books", g.always(), () => {
     g.text("You walk to some books that are lying on a workbench.");
-    g.openOverlay("books");
+    g.overlay("books").open();
   });
 
   interaction("Pick up tooth", g.item("tooth").hasState("workbench"), () => {
@@ -38,10 +38,10 @@ g.defineLocation("cabinInside", ({ describe, interaction }) => {
   });
 
   interaction("Go to cauldron", g.always(), () => {
-    //
+    g.overlay("cauldron").open();
   });
 
   interaction("Leave cabin", g.always(), () => {
-    g.travel("cabin");
+    g.location("cabin").travel();
   });
 });

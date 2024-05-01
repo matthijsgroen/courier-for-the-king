@@ -108,8 +108,16 @@ export type GameState = GameDefinition<
 
       books: {};
       ingredientBook: { counters: "page" };
-      recipeBook: { counters: "page" };
-      cauldron: {};
+      recipeBook: { counters: "page"; flags: "open" };
+      cauldron: {
+        states:
+          | "addIngredient"
+          | "saySpell"
+          | "saySimSala"
+          | "sayHocus"
+          | "sayAbra";
+        flags: "hasIngredients";
+      };
 
       gameIntro: { states: "name" };
     };

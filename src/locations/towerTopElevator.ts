@@ -107,7 +107,7 @@ g.defineLocation("towerTopElevator", ({ describe, onEnter, interaction }) => {
           "The rope is so under tension, I don't think it is wise if I would also stand on the elevator. I could fall down."
         );
       }).else(() => {
-        g.travel("towerBaseElevator");
+        g.location("towerBaseElevator").travel();
       });
     }
   );
@@ -183,6 +183,6 @@ g.defineLocation("towerTopElevator", ({ describe, onEnter, interaction }) => {
   );
 
   interaction("Walk back into the room", g.always(), () => {
-    g.travel("towerTop");
+    g.location("towerTop").travel();
   });
 });

@@ -41,7 +41,7 @@ g.defineOverlay(
 g.defineLocation("home", ({ describe, interaction, hasState }) => {
   describe(() => {
     g.onState(hasState("unknown"), () => {
-      g.openOverlay("gameIntro");
+      g.overlay("gameIntro").open();
     }).else(() => {
       g.text("Once upon a time, there was a stalwart courier...");
 
@@ -80,6 +80,6 @@ g.defineLocation("home", ({ describe, interaction, hasState }) => {
   });
 
   interaction("Skip the rest of the intro for now", g.always(), () => {
-    g.travel("forest");
+    g.location("forest").travel();
   });
 });

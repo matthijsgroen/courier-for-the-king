@@ -101,7 +101,7 @@ g.defineLocation(
           "At the other side of the room you see a {b}young women{/b}."
         );
 
-        g.openOverlay("daughterConversation");
+        g.overlay("daughterConversation").open();
       }
     );
 
@@ -132,7 +132,7 @@ g.defineLocation(
     interaction("Dive left, behind some boxes", hasState("sneakIn"), () => {
       g.text("You try to dive away behind some stuff.");
       setState("unknown");
-      g.openOverlay("daughterConversation");
+      g.overlay("daughterConversation").open();
     });
     interaction(
       "Dive right, behind a pile of books",
@@ -140,7 +140,7 @@ g.defineLocation(
       () => {
         g.text("You try to dive away behind some stuff.");
         setState("unknown");
-        g.openOverlay("daughterConversation");
+        g.overlay("daughterConversation").open();
       }
     );
 
@@ -150,7 +150,7 @@ g.defineLocation(
           "{b}[characters.daughter.name]{/b} will go down the elevator, I should use the stairs."
         );
       }).else(() => {
-        g.travel("towerTopElevator");
+        g.location("towerTopElevator").travel();
       });
     });
 
@@ -166,7 +166,7 @@ g.defineLocation(
             "I wanted to go downstairs to help you, we talk later ok?"
           );
         }).else(() => {
-          g.openOverlay("daughterConversation");
+          g.overlay("daughterConversation").open();
         });
       }
     );
@@ -175,7 +175,7 @@ g.defineLocation(
       "Go to dragon",
       g.and(hasFlag("visited"), g.character("dragon").hasFlag("toothPulled")),
       () => {
-        g.openOverlay("dragonConversation");
+        g.overlay("dragonConversation").open();
       }
     );
 
@@ -195,7 +195,7 @@ g.defineLocation(
     );
 
     interaction("Go down the stairs", hasFlag("visited"), () => {
-      g.travel("tower");
+      g.location("tower").travel();
     });
   }
 );

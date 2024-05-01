@@ -143,7 +143,7 @@ g.definePuzzleDependencies<MetaData>({
   },
   dissolvePotion: {
     dependsOn: ["getMoss"],
-    tags: {},
+    tags: { state: "progress" },
     hierarchy: ["swamp", "cabin"],
   },
   getAccessToBasement: {

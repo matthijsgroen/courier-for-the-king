@@ -153,7 +153,7 @@ g.defineOverlay("inventory", ({ onEnter, interaction, closeOverlay }) => {
     "Check notes on treasure",
     g.list("inventory").isInList("treasureNotes"),
     () => {
-      g.openOverlay("treasureNotes");
+      g.overlay("treasureNotes").open();
     }
   );
 
@@ -161,7 +161,7 @@ g.defineOverlay("inventory", ({ onEnter, interaction, closeOverlay }) => {
     "Check list of ingredients",
     g.item("ingredientList").hasState("possession"),
     () => {
-      g.openOverlay("ingredientList");
+      g.overlay("ingredientList").open();
     }
   );
 
@@ -251,6 +251,6 @@ g.globalInteraction(
     g.not(g.item("treasureHunt").hasFlag("active"))
   ),
   () => {
-    g.openOverlay("inventory");
+    g.overlay("inventory").open();
   }
 );

@@ -51,7 +51,7 @@ g.defineLocation("farmland", ({ describe, interaction, onLeave }) => {
   });
 
   interaction("Go to the farm", g.always(), () => {
-    g.travel("farm");
+    g.location("farm").travel();
   });
 
   interaction(
@@ -72,7 +72,7 @@ g.defineLocation("farmland", ({ describe, interaction, onLeave }) => {
           );
         }
       ).else(() => {
-        g.travel("forest");
+        g.location("forest").travel();
       });
     },
     { shortcutKey: "w" }
@@ -82,7 +82,7 @@ g.defineLocation("farmland", ({ describe, interaction, onLeave }) => {
     "Go south, towards the village",
     g.always(),
     () => {
-      g.travel("village");
+      g.location("village").travel();
     },
     { shortcutKey: "s" }
   );

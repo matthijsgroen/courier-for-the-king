@@ -98,19 +98,19 @@ g.defineLocation(
       "Search for mushrooms",
       g.item("ingredientList").hasState("possession"),
       () => {
-        g.openOverlay("mushrooms");
+        g.overlay("mushrooms").open();
       }
     );
 
     interaction("Go to the tower of the dragon", hasFlag("visited"), () => {
-      g.travel("tower");
+      g.location("tower").travel();
     });
 
     interaction(
       "Go west, towards the village",
       g.always(),
       () => {
-        g.travel("village");
+        g.location("village").travel();
       },
       { shortcutKey: "w" }
     );
@@ -183,7 +183,7 @@ g.defineLocation(
 
         g.location("darkwoods").setFlag("visited");
 
-        g.travel("tower");
+        g.location("tower").travel();
       }
     );
   }

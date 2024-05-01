@@ -59,7 +59,7 @@ g.defineLocation("treasureRoute", ({ interaction }) => {
       g.text("You wait till the sun comes up.");
       g.item("treasureHunt").clearFlag("active");
 
-      g.travel("river");
+      g.location("river").travel();
     }
   );
 
@@ -95,7 +95,7 @@ g.defineLocation("treasureRoute", ({ interaction }) => {
       g.text("You decide to walk back to the starting point at the river.");
       g.location("treasureRoute").setCounter("steps", 0);
 
-      g.travel("river");
+      g.location("river").travel();
     },
     { shortcutKey: "s" }
   );
@@ -302,7 +302,7 @@ g.defineLocation("treasureRoute", ({ interaction }) => {
       g.item("runeStone").setState("possession");
       g.list("inventory").add("gold");
       g.list("inventory").add("runeStone");
-      g.travel("forest");
+      g.location("forest").travel();
     }
   );
 
@@ -313,7 +313,7 @@ g.defineLocation("treasureRoute", ({ interaction }) => {
       g.text("You decide to walk back to the starting point at the river.");
       g.location("treasureRoute").setCounter("steps", 0);
 
-      g.travel("river");
+      g.location("river").travel();
     }
   );
 });

@@ -36,7 +36,7 @@ g.defineLocation(
     });
 
     interaction("Talk to smiths", hasState("unknown"), () => {
-      g.openOverlay("smithsConversation");
+      g.overlay("smithsConversation").open();
     });
 
     interaction("Browse the shop", hasState("unknown"), () => {
@@ -67,7 +67,7 @@ g.defineLocation(
     });
 
     interaction("Leave the shop", hasState("unknown"), () => {
-      g.travel("village");
+      g.location("village").travel();
     });
 
     const notBuying = () => {

@@ -41,18 +41,18 @@ g.defineLocation("hills", ({ describe, onLeave, interaction }) => {
   });
 
   interaction("Follow the path to the mine", g.always(), () => {
-    g.travel("mine");
+    g.location("mine").travel();
   });
 
   interaction("Go towards the mill", g.always(), () => {
-    g.travel("mill");
+    g.location("mill").travel();
   });
 
   interaction(
     "Go east, to the forest",
     g.always(),
     () => {
-      g.travel("forest");
+      g.location("forest").travel();
     },
     { shortcutKey: "e" }
   );
@@ -67,7 +67,7 @@ g.defineLocation("hills", ({ describe, onLeave, interaction }) => {
           "You turn around."
         );
       }).else(() => {
-        g.travel("swamp");
+        g.location("swamp").travel();
       });
     },
     { shortcutKey: "s" }

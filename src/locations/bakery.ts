@@ -27,7 +27,7 @@ g.defineLocation("bakery", ({ describe, onEnter, onLeave, interaction }) => {
           g.not(g.character("baker").hasFlag("toldDaughter"))
         ),
         () => {
-          g.openOverlay("bakerConversation");
+          g.overlay("bakerConversation").open();
         }
       )
         .else(g.location("bakery").hasFlag("visited"), () => {
@@ -64,10 +64,10 @@ g.defineLocation("bakery", ({ describe, onEnter, onLeave, interaction }) => {
   });
 
   interaction("Talk to baker", g.always(), () => {
-    g.openOverlay("bakerConversation");
+    g.overlay("bakerConversation").open();
   });
 
   interaction("Leave bakery", g.always(), () => {
-    g.travel("village");
+    g.location("village").travel();
   });
 });

@@ -51,7 +51,7 @@ g.defineLocation("towerBaseElevator", ({ describe, onEnter, interaction }) => {
           g.text("You use the elevator to go up the tower.");
           g.text("");
           g.item("elevator").setState("unknown");
-          g.travel("towerTopElevator");
+          g.location("towerTopElevator").travel();
         });
       }).else(() => {
         g.text(
@@ -80,6 +80,6 @@ g.defineLocation("towerBaseElevator", ({ describe, onEnter, interaction }) => {
   );
 
   interaction("Go to front of tower", g.always(), () => {
-    g.travel("tower");
+    g.location("tower").travel();
   });
 });

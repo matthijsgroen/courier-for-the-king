@@ -7,7 +7,7 @@ g.defineLocation("river", ({ describe, onLeave, interaction }) => {
       g.descriptionText(
         "The light of the moon plays on the water of the river."
       );
-      g.travel("treasureRoute");
+      g.location("treasureRoute").travel();
     }).else(() => {
       g.text(
         "You are standing near a collapsed bridge that used to cross the river.",
@@ -148,7 +148,7 @@ g.defineLocation("river", ({ describe, onLeave, interaction }) => {
     "Go north, towards the village",
     g.always(),
     () => {
-      g.travel("village");
+      g.location("village").travel();
     },
     { shortcutKey: "n" }
   );

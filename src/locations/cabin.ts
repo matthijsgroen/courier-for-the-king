@@ -18,7 +18,7 @@ g.defineLocation(
         g.descriptionText(
           "You won't get much time to think about it, because the door sweeps open:"
         );
-        g.openOverlay("witchConversation");
+        g.overlay("witchConversation").open();
       });
     });
 
@@ -37,15 +37,15 @@ g.defineLocation(
     });
 
     interaction("Knock on door", g.not(hasState("accessible")), () => {
-      g.openOverlay("witchConversation");
+      g.overlay("witchConversation").open();
     });
 
     interaction("Go inside", hasState("accessible"), () => {
-      g.travel("cabinInside");
+      g.location("cabinInside").travel();
     });
 
     interaction("Go back to swamp", g.always(), () => {
-      g.travel("swamp");
+      g.location("swamp").travel();
     });
   }
 );
