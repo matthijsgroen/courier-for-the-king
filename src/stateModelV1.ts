@@ -129,7 +129,8 @@ export type GameState = GameDefinition<
           | "moonmoss"
           | "cosmoss"
           | "lightBlueMushrooms"
-          | "lightBrownFungi";
+          | "lightBrownFungi"
+          | "orangeFungi";
       };
 
       gameIntro: { states: "name" };
