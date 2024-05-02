@@ -7,12 +7,29 @@ g.defineOverlay("books", ({ onEnter, onLeave, closeOverlay, interaction }) => {
       "{b}'100 things you always wanted to know about moss, herbs and toadstools, but never dared to ask'{/b}",
       ""
     );
-    g.text("And there is an opened book, called:", "");
-    g.text("{b}'Potion recipes 101. For starters to master witches'{/b}", "");
-    g.text("Each book has some bookmarks.");
-  });
+    g.onState(g.overlay("recipeBook").hasFlag("open"), () => {
+      g.text("And there is an opened book, called:", "");
+    }).else(() => {
+      g.text("And there is a closed book, called:", "");
+    });
+    g.text("{b}'Potion recipes 101. For starters to master witches'{/b}");
+    g.onState(g.overlay("recipeBook").hasCounter("page").equals(1), () => {
+      g.text('The recipe "{b}All healing medicinal potion{/b}" is visible.');
+    })
+      .else(g.overlay("recipeBook").hasCounter("page").equals(2), () => {
+        g.text(
+          'The recipe "{b}Waking up after a night of partying{/b}" is visible.'
+        );
+      })
+      .else(g.overlay("recipeBook").hasCounter("page").equals(3), () => {
+        g.text('The recipe "{b}Foreign languages translator{/b}" is visible.');
+      })
+      .else(g.overlay("recipeBook").hasCounter("page").equals(4), () => {
+        g.text("The recipe \"{b}'Sticky' door{/b}\" is visible.");
+      });
 
-  onLeave(() => {});
+    g.text("", "Each book has some bookmarks.");
+  });
 
   interaction("Read the almanac", g.always(), () => {
     g.overlay("ingredientBook").open();
@@ -115,9 +132,9 @@ g.defineOverlay(
           );
         }
         if (pageNr === 4) {
-          g.text("", "Page 114. -- 'sticky' door --", "");
+          g.text("", "Page 114. -- 'Sticky' door --", "");
           g.text(
-            "You know the problem. You have a cellardoor that seems stuck. You don't even know if it was simply locked or not. You just want the door opened.",
+            "You know the problem. You have a cellar door that seems stuck. You don't even know if it was simply locked or not. You just want the door opened.",
             "",
             "Level: Beginner",
             "",

@@ -56,8 +56,8 @@ export type GameState = GameDefinition<
       moonStone: { states: "possession" };
       gold: { states: "possession" | "used" };
       runeStone: { states: "possession" };
-      plants: { counters: "roundLeaves" | "thornyLeaves" };
-      mushrooms: { counters: "lightblue" };
+      plants: { counters: "roundLeaves" | "thornyLeaves" | "heartLeaves" };
+      mushrooms: { counters: "lightblue" | "brown" | "orange" };
       moss: { counters: "starmoss" | "cosmoss" | "moonmoss" };
 
       tooth: { states: "pulled" | "possession" | "cauldron" | "workbench" };
@@ -116,7 +116,20 @@ export type GameState = GameDefinition<
           | "saySimSala"
           | "sayHocus"
           | "sayAbra";
-        flags: "hasIngredients";
+        flags:
+          | "hasIngredients"
+          | "hasMoonstone"
+          | "hasDragonTooth"
+          | "hasRunestone";
+        counters:
+          | "roundLeaves"
+          | "thornyLeaves"
+          | "heartLeaves"
+          | "starmoss"
+          | "moonmoss"
+          | "cosmoss"
+          | "lightBlueMushrooms"
+          | "lightBrownFungi";
       };
 
       gameIntro: { states: "name" };
@@ -138,7 +151,10 @@ export type GameState = GameDefinition<
         | "brokenPickaxe"
         | "thornyLeaves"
         | "roundLeaves"
+        | "heartLeaves"
         | "lightblueMushrooms"
+        | "lightBrownFungi"
+        | "orangeFungi"
         | "sword"
         | "repairedPickaxe"
         | "dragonTooth"

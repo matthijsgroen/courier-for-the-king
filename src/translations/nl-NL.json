@@ -1409,7 +1409,12 @@
         "Then you remember what {b}[characters.baker.name]{/b} said about a {b}Moonstone{/b}.": "Dan herinner je je iets wat {b}[characters.baker.name]{/b} had gezegt over een {b}Moonsteen{/b}.",
         "You start digging at the roots of the plant, and discover a smooth small stone.": "Je gaat graven bij de wortels van de plant, en vindt een gladde kleine steen.",
         "The {b}color{/b} seems a bit off. You put it in your bag.": "Hij is iets apart van {b}kleur{/b}. Je stopt hem in je tas.",
+        "You bend over to pick a few of the plants with {b}heart-shaped leaves{/b}, and put them in your bag": "Je bukt om een aantal planten met {b}hartvormige bladeren{/b} te plukken, en stopt ze in je tas.",
         "You bend over to pick the plant with {b}heart-shaped{/b} leaves.": "Je bukt om de plant met {b}hartvormige{/b} bladeren te plukken."
+      },
+      "player": {
+        "Convenient that I now know everything about these plants!": "Handig dat ik nu alles over deze planten weet!",
+        "Hmm, I have enough of those.": "Hmm, daar heb ik er genoeg van."
       },
       "interactions": {
         "Pick plant with thorny leaves": "Pluk de plant met stekelige bladeren",
@@ -1417,9 +1422,6 @@
         "Pick plant with diamond-shaped leaves": "Pluk de plant met ruitvormige bladeren",
         "Pick plant with heard-shaped leaves": "Pluk de plant met hartvormige bladeren",
         "Stop looking at the plants": "Stop met planten bestuderen"
-      },
-      "player": {
-        "Hmm, I have enough of those.": "Hmm, daar heb ik er genoeg van."
       }
     },
     "mushrooms": {
@@ -1428,7 +1430,9 @@
         "You see red toadstools with white spots, light brown tree fungi,": "Je ziet rode paddenstoelen met witte stippen, lichtbruine boomzwammen,",
         "light blue toadstools and orange fungi.": "lichtblauwe paddenstoelen en oranje zwammen.",
         "You decide not to collect them.": "Je besluit ze niet te verzamelen.",
+        "You carefully collect some {b}light brown tree fungi{/b}.": "Voorzichtig verzamel je een aantal {b}lichtbruine boomzwammen{/b}.",
         "You carefully collect some {b}light blue toadstools{/b}.": "Voorzichtig verzamel je een aantal {b}lichtblauwe paddenstoelen{/b}.",
+        "You carefully collect some {b}orange fungi{/b}.": "Voorzichtig verzamel je een aantal {b}oranje zwammen{/b}.",
         "You go back to the road.": "Je gaat terug naar de weg."
       },
       "interactions": {
@@ -1441,7 +1445,9 @@
       "player": {
         "Hmm mushrooms can be poisonous as well.": "Hmm, paddenstoelen kunnen ook giftig zijn.",
         "I need to be careful which ones to pick.": "Ik moet voorzichtig zijn met welke ik pluk.",
+        "I really should not pick these! I could be attacked by forest gnomes!": "Deze moet ik echt niet plukken! Straks wordt ik nog aangevallen door boskabouters!",
         "I'm not sure if I need the {b}red toadstools with white spots{/b}.": "Ik heb geen idee of ik de {b}rode paddenstoelen met witte stippen{/b} wel nodig heb.",
+        "I have enough of these fungi already.": "Ik heb al genoeg van deze zwammen.",
         "I'm not sure if I need the {b}light brown tree fungi{/b}.": "Ik heb geen idee of ik de {b}lichtbruine booomzwammen{/b} wel nodig heb.",
         "I have enough of these mushrooms already.": "Ik heb al genoeg van deze paddenstoelen.",
         "I'm not sure if I need the {b}light blue toadstools{/b}.": "Ik heb geen idee of ik de {b}lichtblauwe paddenstoelen{/b} wel nodig heb.",
@@ -1484,7 +1490,12 @@
         "There is a thick almanac called:": "Er ligt een dikke almanak genaamd:",
         "{b}'100 things you always wanted to know about moss, herbs and toadstools, but never dared to ask'{/b}": "{b}'100 dingen die je altijd al wilde weten over mossen, kruiden en paddenstoelen, maar nooit durfde te vragen'{/b}",
         "And there is an opened book, called:": "En een opengeslagen boek, genaamd:",
+        "And there is a closed book, called:": "En een dichtgeslagen boek, genaamd:",
         "{b}'Potion recipes 101. For starters to master witches'{/b}": "{b}'Toverdrankrecepten 101. Voor beginners tot meesterheksen'{/b}",
+        "The recipe \"{b}All healing medicinal potion{/b}\" is visible.": "Het recept \"{b}Alleshelende medicinale drank{/b}\" is zichtbaar.",
+        "The recipe \"{b}Waking up after a night of partying{/b}\" is visible.": "Het recept \"{b}Wakker worden na een feestnacht{/b}\" is zichtbaar.",
+        "The recipe \"{b}Foreign languages translator{/b}\" is visible.": "Het recept \"{b}Vreemde talenvertaler{/b}\" is zichtbaar.",
+        "The recipe \"{b}'Sticky' door{/b}\" is visible.": "Het recept \"{b}De deur 'klemt'{/b}\" is zichtbaar.",
         "Each book has some bookmarks.": "In elk boek zijn boekenleggers gestoken.",
         "You step away from the books.": "Je stapt weg van de boeken."
       },
@@ -1537,8 +1548,8 @@
         "Spell: '??????????????'": "Spreuk: '??????????????'",
         "n.b. This potion will not help in understanding legal-speak in user agreements.": "n.b. This potion will not help in understanding legal-speak in user agreements.",
         "Hmm, I think I will need something to make this page readable.": "Hmm, I think I will need something to make this page readable.",
-        "Page 114. -- 'sticky' door --": "Bladzijde 114. -- De deur 'klemt' --",
-        "You know the problem. You have a cellardoor that seems stuck. You don't even know if it was simply locked or not. You just want the door opened.": "Je kent het wel. Je kelderdeur klemt ontzettend. Je weet niet eens of hij nu op slot zat of niet. Je wil gewoon die deur openkrijgen.",
+        "Page 114. -- 'Sticky' door --": "Bladzijde 114. -- De deur 'klemt' --",
+        "You know the problem. You have a cellar door that seems stuck. You don't even know if it was simply locked or not. You just want the door opened.": "Je kent het wel. Je kelderdeur klemt ontzettend. Je weet niet eens of hij nu op slot zat of niet. Je wil gewoon die deur openkrijgen.",
         "  - 1 light blue toadstool": "  - 1 lichtblauwe paddenstoel",
         "  - 2 orange fungi": "  - 2 oranje zwammen",
         "  - 3 tufts of Moonmoss": "  - 3 plukken Maanmos",
@@ -1655,8 +1666,14 @@
         "- 1 plant with thorny leaves": "- 1 plant met stekelige bladeren",
         "- [items.plants.counters.roundLeaves] plants with round leaves": "- [items.plants.counters.roundLeaves] planten met ronde bladeren",
         "- 1 plant with round leaves": "- 1 plant met ronde bladeren",
+        "- [items.plants.counters.heartLeaves] plants with heart-shaped leaves": "- [items.plants.counters.heartLeaves] planten met hartvormige bladeren",
+        "- 1 plant with heart-shaped leaves": "- 1 plant met hartvormige bladeren",
         "- [items.mushrooms.counters.lightblue] lightblue mushrooms": "- [items.mushrooms.counters.lightblue] lichtblauwe paddenstoelen",
         "- 1 lightblue mushroom": "- 1 lichtblauwe paddenstoel",
+        "- [items.mushrooms.counters.orange] orange fungi": "- [items.mushrooms.counters.orange] oranje zwammen",
+        "- 1 orange fungus": "- 1 oranje zwam",
+        "- [items.mushrooms.counters.brown] light brown tree fungi": "- [items.mushrooms.counters.brown] lichtbruine boomzwammen",
+        "- 1 light brown tree fungus": "- 1 lichtbruine boomzwam",
         "- [items.moss.counters.starmoss] tufts of Starmoss": "- [items.moss.counters.starmoss] plukken Sterrenmos",
         "- 1 tuft of Starmoss": "- 1 pluk Sterrenmos",
         "- [items.moss.counters.cosmoss] tufts of Cosmoss": "- [items.moss.counters.cosmoss] plukken Kosmos",

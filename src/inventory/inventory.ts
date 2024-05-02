@@ -80,6 +80,18 @@ g.defineOverlay("inventory", ({ onEnter, interaction, closeOverlay }) => {
           g.descriptionText("- 1 plant with round leaves");
         });
       });
+      onItem("heartLeaves", () => {
+        g.onState(
+          g.item("plants").hasCounter("heartLeaves").moreThan(1),
+          () => {
+            g.descriptionText(
+              "- [items.plants.counters.heartLeaves] plants with heart-shaped leaves"
+            );
+          }
+        ).else(() => {
+          g.descriptionText("- 1 plant with heart-shaped leaves");
+        });
+      });
 
       onItem("lightblueMushrooms", () => {
         g.onState(
@@ -91,6 +103,22 @@ g.defineOverlay("inventory", ({ onEnter, interaction, closeOverlay }) => {
           }
         ).else(() => {
           g.descriptionText("- 1 lightblue mushroom");
+        });
+      });
+      onItem("orangeFungi", () => {
+        g.onState(g.item("mushrooms").hasCounter("orange").moreThan(1), () => {
+          g.descriptionText("- [items.mushrooms.counters.orange] orange fungi");
+        }).else(() => {
+          g.descriptionText("- 1 orange fungus");
+        });
+      });
+      onItem("lightBrownFungi", () => {
+        g.onState(g.item("mushrooms").hasCounter("brown").moreThan(1), () => {
+          g.descriptionText(
+            "- [items.mushrooms.counters.brown] light brown tree fungi"
+          );
+        }).else(() => {
+          g.descriptionText("- 1 light brown tree fungus");
         });
       });
 
