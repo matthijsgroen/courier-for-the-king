@@ -1629,12 +1629,6 @@
         "  - 3 tufts of Moonmoss": "  - 3 plukken Maanmos",
         "Spell: 'Hocus Pilates!'": "Spreuk: 'Hocus Pilates!'",
         "You add a plant with round leaves to the cauldron.": "Je voegt een plant met ronde bladeren toe aan de ketel.",
-        "Value: [.counters.addIngredientEffect]": "Value: [.counters.addIngredientEffect]",
-        "The cauldron makes a hissing sound.": "De ketel maakt een sissend geluid.",
-        "The cauldron shifts in color a bit.": "De ketel verkleurt een beetje.",
-        "The liquid in the cauldron stirs for a short while.": "De drank in de ketel begint even kort te kolken.",
-        "Bubbles are appearing all around, and then disappear again.": "Overal komen bubbels uit de ketel, en daarna stopt het weer.",
-        "Ugh, that produced a really funky smell.": "Jakkes, dat gaf even een flinke stink geur.",
         "You add a plant with thorny leaves to the cauldron.": "Je voegt een plant met stekelige bladeren toe aan de ketel.",
         "You add a plant with heart-shaped leaves to the cauldron.": "Je voegt een plant met hartvormige bladeren toe aan de ketel.",
         "You drop a tuft of Starmoss into the cauldron.": "Je gooit een pluk Sterrenmos in de ketel.",
@@ -1646,24 +1640,6 @@
         "You decide to stop adding ingredients for now.": "Je besluit om voor nu verder geen ingrediënten toe te voegen.",
         "You raise your arms high into the sky...": "Je steekt je handen hoog in de lucht...",
         "...and you clear your throat.": "...en je schraapt je keel.",
-        "Failed state: [.counters.failureOutcome]": "Failed state: [.counters.failureOutcome]",
-        "The cauldron starts to boil. Small eddies are appearing in the cauldron.": "De ketel begint te borrelen. Kleine draaikolken verschijnen in de ketel.",
-        "The liquid starts to dance. Everything around you appears to be swirling.": "De vloeistof begint te dansen. Alles om je heen begint te draaien.",
-        "You close your eyes. The swirling stopped, but you are {b}freezing{/b}.": "Je doet je ogen dicht. Het draaien stop, maar je hebt het nu heel {b}erg koud{/b}.",
-        "You open your eyes.": "Je opent je ogen.",
-        "Everywhere around you is ice and snow. In the distance you see penguins walking.": "Overal om je heen is alles ijs en sneeuw. In de verte zie je pinguïns lopen.",
-        "... Ten minutes later ...": "... Tien minuten later ...",
-        "You are suddenly back in the cabin.": "Ineens ben je weer terug in de hut.",
-        "Oof! You got lucky!": "Oef! Je hebt geluk gehad!",
-        "The cauldron starts to boil. The liquid starts to shift colors rapidly.": "De ketel begint te borrelen. De kleuren in de ketel wisselen elkaar steeds sneller af.",
-        "Beams of light in different colors start to shoot out of the cauldron.": "Er schieten allerlei stralen licht in alle kleuren uit de ketel.",
-        "You feel weird. You get the urge to say something.": "Je voelt je ineens heel raar. Je wilt wat zeggen.",
-        "You walk towards the mirror.": "Je loopt naar de spiegel.",
-        "Oh no! You've changed into {b}a goat{/b}!": "O nee! Je bent in een {b}geit{/b} veranderd!",
-        "You changed back again!": "Je bent weer terug veranderd!",
-        "The cauldron has reset its contents, so you can brew something new again.": "De ketel is weer teruggezet qua inhoud, dus je kan weer iets nieuws brouwen.",
-        "Nothing happens...": "Er gebeurt niets...",
-        "Maybe you need to add some ingredients?": "Misschien moet je wat ingrediënten toevoegen?",
         "You step away from the cauldron.": "Je stapt weg bij de ketel."
       },
       "interactions": {
@@ -1697,8 +1673,6 @@
         "Hmm, the book is open on its introduction page, that won't help me with adding ingredients.": "Hmm, het boek ligt open op de introductie pagina, dat helpt me nu niet met ingrediënten.",
         "Sim sala...": "Sim sala...",
         "...Bim!": "...Bim!",
-        "Where... ...am I?": "Waar... ...ben ik?",
-        "Bââââh": "Bêêêêh",
         "...Bam!": "...Bam!",
         "...Bom!": "...Bom!",
         "Hocus...": "Hocus...",
@@ -1847,6 +1821,50 @@
     "What will you say:": "Wat wil je zeggen:",
     "What will you add:": "Wat ga je toevoegen:",
     "Where do you want to go:": "Waar wil je heen:"
+  },
+  "scenes": {
+    "cauldronResult": {
+      "text": {
+        "Failed state: [overlays.cauldron.counters.failureOutcome]": "Failed state: [overlays.cauldron.counters.failureOutcome]",
+        "The cauldron makes a hissing sound.": "The cauldron makes a hissing sound.",
+        "The cauldron starts to boil. Small eddies are appearing in the cauldron.": "De ketel begint te borrelen. Kleine draaikolken verschijnen in de ketel.",
+        "The liquid starts to dance. Everything around you appears to be swirling.": "De vloeistof begint te dansen. Alles om je heen begint te draaien.",
+        "You close your eyes. The swirling stopped, but you are {b}freezing{/b}.": "Je doet je ogen dicht. Het draaien stop, maar je hebt het nu heel {b}erg koud{/b}.",
+        "You open your eyes.": "Je opent je ogen.",
+        "Everywhere around you is ice and snow. In the distance you see penguins walking.": "Overal om je heen is alles ijs en sneeuw. In de verte zie je pinguïns lopen.",
+        "{i}... Ten minutes later ...{/i}": "{i}... Tien minuten later ...{/i}",
+        "You are suddenly back in the cabin.": "Ineens ben je weer terug in de hut.",
+        "Oof! You got lucky!": "Oef! Je hebt geluk gehad!",
+        "The cauldron starts to boil. The liquid starts to shift colors rapidly.": "De ketel begint te borrelen. De kleuren in de ketel wisselen elkaar steeds sneller af.",
+        "Beams of light in different colors start to shoot out of the cauldron.": "Er schieten allerlei stralen licht in alle kleuren uit de ketel.",
+        "You feel weird. You get the urge to say something.": "Je voelt je ineens heel raar. Je wilt wat zeggen.",
+        "You walk towards the mirror.": "Je loopt naar de spiegel.",
+        "Oh no! You've changed into {b}a goat{/b}!": "O nee! Je bent in een {b}geit{/b} veranderd!",
+        "You changed back again!": "Je bent weer terug veranderd!",
+        "The cauldron starts to boil. Colors are shifting ever faster.": "De ketel begint te borrelen. De kleuren in de ketel verschieten steeds sneller.",
+        "Purple fumes starts to emerge from the liquid.": "Er komen paarse dampen uit de ketel.",
+        "Everything around you suddenly starts to become bigger and bigger.": "Ineens begint alles om je heen heel groot te worden.",
+        "You try to climb on the workbench to reach the cauldron, but the legs of the table are to smooth for climbing.": "Je probeert op de werktafel te klimmen om de ketel te bereiken, maar de poten van de tafel zijn te glad om te beklimmen.",
+        "You are growing again!": "Je wordt weer groter!",
+        "The cauldron has reset its contents, so you can brew something new again.": "De ketel is weer teruggezet qua inhoud, dus je kan weer iets nieuws brouwen.",
+        "Nothing happens...": "Er gebeurt niets...",
+        "Maybe you need to add some ingredients?": "Misschien moet je wat ingrediënten toevoegen?"
+      },
+      "player": {
+        "Where... ...am I?": "Waar... ...ben ik?",
+        "Bââââh": "Bêêêêh",
+        "Oh no! I'm shrinking!": "Oh nee! Ik ben aan het krimpen!"
+      }
+    },
+    "cauldronEffect": {
+      "text": {
+        "The cauldron makes a hissing sound.": "De ketel maakt een sissend geluid.",
+        "The cauldron shifts in color a bit.": "De ketel verkleurt een beetje.",
+        "The liquid in the cauldron stirs for a short while.": "De drank in de ketel begint even kort te kolken.",
+        "Bubbles are appearing all around, and then disappear again.": "Overal komen bubbels uit de ketel, en daarna stopt het weer.",
+        "Ugh, that produced a really funky smell.": "Jakkes, dat gaf even een flinke stink geur."
+      }
+    }
   },
   "global": {
     "interactions": {

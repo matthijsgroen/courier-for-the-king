@@ -1,5 +1,126 @@
 import g from "../game";
 
+g.defineScene("cauldronResult", () => {
+  const c = g.overlay("cauldron");
+  g.onState(c.hasFlag("hasIngredients"), () => {
+    // When failed:
+    c.setCounter("failureOutcome", 1, 3);
+    g.text("Failed state: [overlays.cauldron.counters.failureOutcome]");
+
+    // Show failed cases
+    g.onState(c.hasCounter("failureOutcome").equals(1), () => {
+      // "2=0;1=12;12=3;6=1;59=2", "*c2"
+      // "Het water in de ketel gaat dansen. Buiten lijken ineens allerlei wolken zich samen te pakken."
+      // "Het begint ineens erg hard te bliksemen buiten."
+      // "Je voelt je raar. Je bent iets kleiner en je botten lijken pijn te doen.", ""
+      // "&"
+      // "2=0;1=12;12=3;6=1;59=2;0=1", "Als je in de spiegel kijkt, zie je dat je veranderd bent in een hele oude man.", "&"
+      // "2=0;1=12;12=3;6=1;59=2;0=2", "Als je in de spiegel kijkt, zie je dat je veranderd bent in een hele oude vrouw.", "&"
+      // "2=0;1=12;12=3;6=1;59=2"
+      // "Oh nee, je bent ineens heel erg oud geworden!"
+      // "*c7", "", "...Tien minuten later...", "", "*s3", "*c2", "Je voelt jezelf ineens weer jonger worden."
+      // "Oef, je hebt geluk!", "&"
+
+      g.text("The cauldron makes a hissing sound.");
+    })
+      .else(c.hasCounter("failureOutcome").equals(2), () => {
+        g.text(
+          "The cauldron starts to boil. Small eddies are appearing in the cauldron.",
+          "The liquid starts to dance. Everything around you appears to be swirling.",
+          "You close your eyes. The swirling stopped, but you are {b}freezing{/b}.",
+          "You open your eyes.",
+          "",
+          "Everywhere around you is ice and snow. In the distance you see penguins walking."
+        );
+        g.character("player").say("Where... ...am I?");
+        // TODO: Change text color here
+        g.text("{i}... Ten minutes later ...{/i}", "");
+        // TODO: Add some delay here
+
+        g.text(
+          "You are suddenly back in the cabin.",
+          "Oof! You got lucky!",
+          ""
+        );
+      })
+      .else(c.hasCounter("failureOutcome").equals(3), () => {
+        g.text(
+          "The cauldron starts to boil. The liquid starts to shift colors rapidly.",
+          "Beams of light in different colors start to shoot out of the cauldron.",
+          "You feel weird. You get the urge to say something."
+        );
+        g.character("player").say("Bââââh");
+        g.text("You walk towards the mirror.");
+        g.text("Oh no! You've changed into {b}a goat{/b}!");
+        // TODO: Change text color here
+        g.text("{i}... Ten minutes later ...{/i}", "");
+        // TODO: Add some delay here
+        g.text("You changed back again!", "Oof! You got lucky!", "");
+      })
+      .else(c.hasCounter("failureOutcome").equals(4), () => {
+        g.text("The cauldron starts to boil. Colors are shifting ever faster.");
+        g.text("Purple fumes starts to emerge from the liquid.");
+        g.text(
+          "Everything around you suddenly starts to become bigger and bigger."
+        );
+        g.character("player").say("Oh no! I'm shrinking!");
+        g.text(
+          "You try to climb on the workbench to reach the cauldron, but the legs of the table are to smooth for climbing."
+        );
+        // TODO: Change text color here
+        g.text("", "{i}... Ten minutes later ...{/i}", "");
+        // TODO: Add some delay here
+        g.text("You are growing again!", "Oof! You got lucky!", "");
+      });
+
+    g.text(
+      "The cauldron has reset its contents, so you can brew something new again."
+    );
+
+    // Reset cauldron
+    // reset special ingredients
+    c.setState("unknown");
+    c.clearFlag("hasIngredients");
+    // plants
+    c.setCounter("roundLeaves", 0);
+    c.setCounter("thornyLeaves", 0);
+    c.setCounter("heartLeaves", 0);
+    // fungi
+    c.setCounter("lightBrownFungi", 0);
+    c.setCounter("orangeFungi", 0);
+    c.setCounter("lightBlueMushrooms", 0);
+    // mosses
+    c.setCounter("cosmoss", 0);
+    c.setCounter("moonmoss", 0);
+    c.setCounter("starmoss", 0);
+  }).else(() => {
+    g.text("Nothing happens...", "Maybe you need to add some ingredients?");
+    c.setState("unknown");
+  });
+});
+
+g.defineScene("cauldronEffect", () => {
+  const { setFlag, setCounter, hasCounter } = g.overlay("cauldron");
+  setFlag("hasIngredients");
+  setCounter("addIngredientEffect", 0, 4);
+
+  g.onState(hasCounter("addIngredientEffect").equals(0), () => {
+    g.text("The cauldron makes a hissing sound.");
+  })
+    .else(hasCounter("addIngredientEffect").equals(1), () => {
+      g.text("The cauldron shifts in color a bit.");
+    })
+    .else(hasCounter("addIngredientEffect").equals(2), () => {
+      g.text("The liquid in the cauldron stirs for a short while.");
+    })
+    .else(hasCounter("addIngredientEffect").equals(3), () => {
+      g.text("Bubbles are appearing all around, and then disappear again.");
+    })
+    .else(hasCounter("addIngredientEffect").equals(4), () => {
+      g.text("Ugh, that produced a really funky smell.");
+    });
+});
+
 g.defineOverlay(
   "cauldron",
   ({
@@ -8,11 +129,8 @@ g.defineOverlay(
     closeOverlay,
     hasFlag,
     hasState,
-    hasCounter,
-    clearFlag,
     setState,
     setCounter,
-    setFlag,
     increaseCounter,
     setPrompt,
   }) => {
@@ -43,126 +161,6 @@ g.defineOverlay(
         );
       });
     });
-
-    const cauldronResult = (_spell: string) => {
-      g.onState(hasFlag("hasIngredients"), () => {
-        // When failed:
-        setCounter("failureOutcome", 1, 3);
-        g.text("Failed state: [.counters.failureOutcome]");
-
-        // Show failed cases
-        g.onState(hasCounter("failureOutcome").equals(1), () => {
-          // "2=0;1=12;12=3;6=1;59=2", "*c2"
-          // "Het water in de ketel gaat dansen. Buiten lijken ineens allerlei wolken zich samen te pakken."
-          // "Het begint ineens erg hard te bliksemen buiten."
-          // "Je voelt je raar. Je bent iets kleiner en je botten lijken pijn te doen.", ""
-          // "&"
-          // "2=0;1=12;12=3;6=1;59=2;0=1", "Als je in de spiegel kijkt, zie je dat je veranderd bent in een hele oude man.", "&"
-          // "2=0;1=12;12=3;6=1;59=2;0=2", "Als je in de spiegel kijkt, zie je dat je veranderd bent in een hele oude vrouw.", "&"
-          // "2=0;1=12;12=3;6=1;59=2"
-          // "Oh nee, je bent ineens heel erg oud geworden!"
-          // "*c7", "", "...Tien minuten later...", "", "*s3", "*c2", "Je voelt jezelf ineens weer jonger worden."
-          // "Oef, je hebt geluk!", "&"
-
-          g.text("The cauldron makes a hissing sound.");
-        })
-          .else(hasCounter("failureOutcome").equals(2), () => {
-            g.text(
-              "The cauldron starts to boil. Small eddies are appearing in the cauldron.",
-              "The liquid starts to dance. Everything around you appears to be swirling.",
-              "You close your eyes. The swirling stopped, but you are {b}freezing{/b}.",
-              "You open your eyes.",
-              "",
-              "Everywhere around you is ice and snow. In the distance you see penguins walking."
-            );
-            g.character("player").say("Where... ...am I?");
-            // TODO: Change text color here
-            g.text("... Ten minutes later ...", "");
-            // TODO: Add some delay here
-
-            g.text(
-              "You are suddenly back in the cabin.",
-              "Oof! You got lucky!",
-              ""
-            );
-          })
-          .else(hasCounter("failureOutcome").equals(3), () => {
-            g.text(
-              "The cauldron starts to boil. The liquid starts to shift colors rapidly.",
-              "Beams of light in different colors start to shoot out of the cauldron.",
-              "You feel weird. You get the urge to say something."
-            );
-            g.character("player").say("Bââââh");
-            g.text("You walk towards the mirror.");
-            g.text("Oh no! You've changed into {b}a goat{/b}!");
-            // TODO: Change text color here
-            g.text("", "... Ten minutes later ...", "");
-            // TODO: Add some delay here
-            g.text("You changed back again!", "Oof! You got lucky!", "");
-          })
-          .else(hasCounter("failureOutcome").equals(4), () => {
-            // "2=0;1=12;12=3;6=1;59=5", "*c2"
-            // "De ketel begint te borrelen. De kleuren in de ketel verschieten steeds sneller."
-            // "Er komen paarse dampen uit de ketel."
-            // "Ineens begint alles om je heen heel groot te worden.", ""
-            // "*c3", "$n: 'Oh nee! Ik ben aan het krimpen!'", "*c2", ""
-            // "Je probeert de tafel op te klimmen richting de ketel, maar de poten van de tafel"
-            // "zijn te glad om tegenop te klimmen."
-            // "*c7", "", "...Tien minuten later...", "", "*s3", "*c2", "Je verandert weer naar normale lengte."
-            // "Oef, je hebt geluk!", "&"
-
-            g.text("The cauldron shifts in color a bit.");
-          });
-
-        g.text(
-          "The cauldron has reset its contents, so you can brew something new again."
-        );
-
-        // Reset cauldron
-        // reset special ingredients
-        setState("unknown");
-        clearFlag("hasIngredients");
-        // plants
-        setCounter("roundLeaves", 0);
-        setCounter("thornyLeaves", 0);
-        setCounter("heartLeaves", 0);
-        // fungi
-        setCounter("lightBrownFungi", 0);
-        setCounter("orangeFungi", 0);
-        setCounter("lightBlueMushrooms", 0);
-        // mosses
-        setCounter("cosmoss", 0);
-        setCounter("moonmoss", 0);
-        setCounter("starmoss", 0);
-      }).else(() => {
-        g.text("Nothing happens...", "Maybe you need to add some ingredients?");
-        setState("unknown");
-      });
-    };
-
-    const addEffect = () => {
-      setFlag("hasIngredients");
-      setCounter("addIngredientEffect", 0, 4);
-
-      // TODO: Remove when tested thoroughly
-      g.text("Value: [.counters.addIngredientEffect]");
-
-      g.onState(hasCounter("addIngredientEffect").equals(0), () => {
-        g.text("The cauldron makes a hissing sound.");
-      })
-        .else(hasCounter("addIngredientEffect").equals(1), () => {
-          g.text("The cauldron shifts in color a bit.");
-        })
-        .else(hasCounter("addIngredientEffect").equals(2), () => {
-          g.text("The liquid in the cauldron stirs for a short while.");
-        })
-        .else(hasCounter("addIngredientEffect").equals(3), () => {
-          g.text("Bubbles are appearing all around, and then disappear again.");
-        })
-        .else(hasCounter("addIngredientEffect").equals(4), () => {
-          g.text("Ugh, that produced a really funky smell.");
-        });
-    };
 
     interaction("Add ingredient", hasState("unknown"), () => {
       g.text(
@@ -275,7 +273,7 @@ g.defineOverlay(
       ),
       () => {
         g.text("You add a plant with round leaves to the cauldron.");
-        addEffect();
+        g.playScene("cauldronEffect");
 
         increaseCounter("roundLeaves");
         g.item("plants").decreaseCounter("roundLeaves");
@@ -293,7 +291,7 @@ g.defineOverlay(
       ),
       () => {
         g.text("You add a plant with thorny leaves to the cauldron.");
-        addEffect();
+        g.playScene("cauldronEffect");
 
         increaseCounter("thornyLeaves");
         g.item("plants").decreaseCounter("thornyLeaves");
@@ -311,7 +309,7 @@ g.defineOverlay(
       ),
       () => {
         g.text("You add a plant with heart-shaped leaves to the cauldron.");
-        addEffect();
+        g.playScene("cauldronEffect");
 
         increaseCounter("heartLeaves");
         g.item("plants").decreaseCounter("heartLeaves");
@@ -329,7 +327,7 @@ g.defineOverlay(
       ),
       () => {
         g.text("You drop a tuft of Starmoss into the cauldron.");
-        addEffect();
+        g.playScene("cauldronEffect");
 
         increaseCounter("starmoss");
         g.item("moss").decreaseCounter("starmoss");
@@ -347,7 +345,7 @@ g.defineOverlay(
       ),
       () => {
         g.text("You drop a tuft of Moonmoss into the cauldron.");
-        addEffect();
+        g.playScene("cauldronEffect");
 
         increaseCounter("moonmoss");
         g.item("moss").decreaseCounter("moonmoss");
@@ -365,7 +363,7 @@ g.defineOverlay(
       ),
       () => {
         g.text("You drop a tuft of Cosmoss into the cauldron.");
-        addEffect();
+        g.playScene("cauldronEffect");
 
         increaseCounter("cosmoss");
         g.item("moss").decreaseCounter("cosmoss");
@@ -383,7 +381,7 @@ g.defineOverlay(
       ),
       () => {
         g.text("You add a light blue toadstool to the cauldron.");
-        addEffect();
+        g.playScene("cauldronEffect");
 
         increaseCounter("lightBlueMushrooms");
         g.item("mushrooms").decreaseCounter("lightblue");
@@ -401,7 +399,7 @@ g.defineOverlay(
       ),
       () => {
         g.text("You add a orange fungus to the cauldron.");
-        addEffect();
+        g.playScene("cauldronEffect");
 
         increaseCounter("orangeFungi");
         g.item("mushrooms").decreaseCounter("orange");
@@ -419,7 +417,7 @@ g.defineOverlay(
       ),
       () => {
         g.text("You add a light brown tree fungus to the cauldron.");
-        addEffect();
+        g.playScene("cauldronEffect");
 
         increaseCounter("lightBrownFungi");
         g.item("mushrooms").decreaseCounter("brown");
@@ -487,19 +485,25 @@ g.defineOverlay(
 
     interaction("...Bim!", hasState("saySimSala"), () => {
       g.character("player").say("...Bim!");
-      cauldronResult("simsala-bim");
+      setCounter("spellPart2", 1);
+      // cauldronResult();
+      g.playScene("cauldronResult");
     });
 
     interaction("...Bam!", hasState("saySimSala"), () => {
       g.character("player").say("...Bam!");
-      cauldronResult("simsala-bam");
+      setCounter("spellPart2", 2);
+      // cauldronResult();
+      g.playScene("cauldronResult");
     });
     // ' Sim sala...
     // "2=0;1=12;12=3;6=1;4=3;50>3;47=0", "Zeg: `...baklava!'", "4=6"
 
     interaction("...Bom!", hasState("saySimSala"), () => {
       g.character("player").say("...Bom!");
-      cauldronResult("simsalab-om");
+      setCounter("spellPart2", 3);
+      // cauldronResult();
+      g.playScene("cauldronResult");
     });
 
     interaction("Hocus...", hasState("saySpell"), () => {
@@ -509,19 +513,25 @@ g.defineOverlay(
 
     interaction("...Pocus!", hasState("sayHocus"), () => {
       g.character("player").say("...Pocus!");
-      cauldronResult("hocus-pocus");
+      setCounter("spellPart2", 1);
+      // cauldronResult();
+      g.playScene("cauldronResult");
     });
 
     interaction("...Poof!", hasState("sayHocus"), () => {
       g.character("player").say("...Poof!");
-      cauldronResult("hocus-poof");
+      setCounter("spellPart2", 2);
+      // cauldronResult();
+      g.playScene("cauldronResult");
     });
 
     // "2=0;1=12;12=3;6=1;4=3;50>3;47=0", "Zeg: `...pilates!'", "4=6"
 
     interaction("...Crocus!", hasState("sayHocus"), () => {
       g.character("player").say("...Crocus!");
-      cauldronResult("hocus-crocus");
+      setCounter("spellPart2", 3);
+      // cauldronResult();
+      g.playScene("cauldronResult");
     });
 
     interaction("Abracadabra...", hasState("saySpell"), () => {
@@ -531,24 +541,32 @@ g.defineOverlay(
 
     interaction("...Poof!", hasState("sayAbra"), () => {
       g.character("player").say("...Poof!");
-      cauldronResult("abracadabra-poof");
+      setCounter("spellPart2", 1);
+      // cauldronResult();
+      g.playScene("cauldronResult");
     });
 
     interaction("...Pop!", hasState("sayAbra"), () => {
       g.character("player").say("...Pop!");
-      cauldronResult("abracadabra-pop");
+      setCounter("spellPart2", 2);
+      // cauldronResult();
+      g.playScene("cauldronResult");
     });
 
     interaction("...Clang!", hasState("sayAbra"), () => {
       g.character("player").say("...Clang!");
-      cauldronResult("abracadabra-clang");
+      setCounter("spellPart2", 2);
+      // cauldronResult();
+      g.playScene("cauldronResult");
     });
 
     // "2=0;1=12;12=3;6=1;4=4;50>3;26<6", "Zeg: `...hastaklap!'", "4=7"
 
     interaction("...Hodgepodge!", hasState("sayAbra"), () => {
       g.character("player").say("...Hodgepodge!");
-      cauldronResult("abracadabra-hodgepodge");
+      setCounter("spellPart2", 3);
+      // cauldronResult();
+      g.playScene("cauldronResult");
     });
 
     // "2=0;1=12;12=3;4=0;6=1;59=0", "*c2", "De drank in de ketel heeft een heldere doorzichtige kleur.", ""

@@ -132,7 +132,8 @@ export type GameState = GameDefinition<
           | "lightBrownFungi"
           | "orangeFungi"
           | "failureOutcome"
-          | "addIngredientEffect";
+          | "addIngredientEffect"
+          | "spellPart2";
       };
 
       gameIntro: { states: "name" };
@@ -165,5 +166,6 @@ export type GameState = GameDefinition<
         | "moonmoss"
         | "cosmoss";
     };
+    scenes: "cauldronResult" | "cauldronEffect";
   }
 >;
