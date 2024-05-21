@@ -18,6 +18,8 @@ const palette = createColorPalette([
   "goldsmith",
   "armorer",
   "villager",
+  "forging",
+  "pain",
 ]);
 
 const darkColors = palette.defineColorScheme({
@@ -35,6 +37,8 @@ const darkColors = palette.defineColorScheme({
   goldsmith: hexColor("ffd700"),
   armorer: hexColor("2879C0"),
   villager: hexColor("ee4040"),
+  forging: hexColor("20ff00"),
+  pain: hexColor("cc0000"),
 });
 
 const lightColors = palette.defineColorScheme({
@@ -52,6 +56,8 @@ const lightColors = palette.defineColorScheme({
   goldsmith: hexColor("806C00"),
   armorer: hexColor("2879C0"),
   villager: hexColor("ee4040"),
+  forging: hexColor("204000"),
+  pain: hexColor("400000"),
 });
 
 const game = world<GameState>({

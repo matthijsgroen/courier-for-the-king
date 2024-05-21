@@ -82,7 +82,11 @@ g.defineLocation(
           "Now and then you come by a window that lets in a shaft of light, so that it is not entirely pitch black.",
           "At the top of the stairs is a {b}door{/b}."
         );
-        g.text("", "{b}{i}<GGRROOAAAAARRRRH!!!!!>{/i}{/b}", "");
+        g.text(
+          "",
+          "{b}{i}{color=pain}<GGRROOAAAAARRRRH!!!!!>{/color}{/i}{/b}",
+          ""
+        );
         g.text(
           "Suddenly, underneath the sound of the loud roar, you also hear a women's voice.",
           "But you can not make out what she is saying.",

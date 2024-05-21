@@ -78,7 +78,7 @@ g.defineLocation(
         "",
         "You are now inside the tower. It is {i}really{/i} {b}dark{/b}."
       );
-      g.text("", "{i}<Ggrrooaaaaarrrrh!!!!!>{/i}", "");
+      g.text("", "{i}{color=pain}<Ggrrooaaaaarrrrh!!!!!>{/color}{/i}", "");
       g.text(
         "You startle and dive aside. That sound was really close. Still it seems to come from the top of the tower.",
         "For a moment you are lying still in the {b}darkness{/b} and decide to stand up.",

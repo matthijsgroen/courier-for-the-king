@@ -166,8 +166,9 @@ g.defineLocation("towerTopElevator", ({ describe, onEnter, interaction }) => {
         "The rope tied to the {b}millstone{/b} is instantly at full tension. With a sharp jerk the dragon's tooth flies {b}out of the window{/b}.",
         ""
       );
-      // TODO: Add color
-      g.text("{b}{i}<Gggrrrrrooaaaaaaaarggggggggh!!!!!>{/i}{/b}");
+      g.text(
+        "{b}{i}{color=pain}<Gggrrrrrooaaaaaaaarggggggggh!!!!!>{/color}{/i}{/b}"
+      );
       g.text(
         "",
         "The enormous dragon's roar echoes far into the distance.",

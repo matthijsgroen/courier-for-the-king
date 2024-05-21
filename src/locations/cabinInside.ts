@@ -4,7 +4,8 @@ g.defineLocation("cabinInside", ({ describe, interaction }) => {
   describe(() => {
     g.text(
       "You are in the cabin of {b}[characters.witch.name]{/b}. In the middle of the cabin is a large {b}cauldron{/b} bubbling.",
-      "There are books, beakers, pots and other stuff everywhere. Most of these things you see you have no idea what they are."
+      "There are books, beakers, pots and other stuff everywhere. A mirror stands in the corner.",
+      "Most of these things you see you have no idea what they are."
     );
 
     g.text(
