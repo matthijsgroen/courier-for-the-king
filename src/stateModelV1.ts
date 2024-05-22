@@ -164,7 +164,8 @@ export type GameState = GameDefinition<
         | "dragonTooth"
         | "starmoss"
         | "moonmoss"
-        | "cosmoss";
+        | "cosmoss"
+        | "doorSticksPotion";
     };
     scenes: "cauldronResult" | "cauldronEffect";
   }

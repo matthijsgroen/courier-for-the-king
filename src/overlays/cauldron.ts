@@ -3,9 +3,41 @@ import g from "../game";
 g.defineScene("cauldronResult", () => {
   const c = g.overlay("cauldron");
   g.onState(c.hasFlag("hasIngredients"), () => {
-    // When failed:
-    c.setCounter("failureOutcome", 1, 3);
-    g.text("Failed state: [overlays.cauldron.counters.failureOutcome]");
+    c.setCounter("failureOutcome", 0);
+    g.onState(
+      g.and(
+        c.hasCounter("thornyLeaves").equals(4),
+        c.hasCounter("lightBlueMushrooms").equals(1),
+        c.hasCounter("orangeFungi").equals(2),
+        c.hasCounter("moonmoss").equals(3),
+        c.hasState("sayHocus"),
+        c.hasCounter("spellPart2").equals(4)
+      ),
+      () => {
+        // The door sticks potion
+        g.text(
+          "The cauldron starts to boil. Small eddies are appearing in the cauldron.",
+          "Suddenly the liquid becomes quiet and the contents changes to a clear blue color.",
+          "You get a bottle from a shelf and fill it with the contents of the cauldron.",
+          "",
+          "You just filled the entire bottle and see the cauldron shift to a clear liquid again.",
+          'You add the label {b}"The door sticks"{/b} to the potion.',
+          ""
+        );
+        g.list("inventory").add("doorSticksPotion");
+
+        // "De ketel begint te borrelen. Er ontstaan kleine draaikolken in de ketel."
+        // "Opeens wordt het rustig en verandert de kleur van de vloeistof in helder blauw."
+        // "Je pakt een flesje van een schap en vult het met de inhoud van de ketel."
+        // ""
+        // "Je hebt net het flesje vol en dan zie je ineens de hele ketel weer verkleuren naar helder doorzichtig."
+        // "Je plakt er maar het labeltje 'deur klemt' op."
+      }
+    ).else(() => {
+      // When failed:
+      c.setCounter("failureOutcome", 1, 3);
+      g.text("Failed state: [overlays.cauldron.counters.failureOutcome]");
+    });
 
     // Show failed cases
     g.onState(c.hasCounter("failureOutcome").equals(1), () => {
@@ -486,14 +518,12 @@ g.defineOverlay(
     interaction("...Bim!", hasState("saySimSala"), () => {
       g.character("player").say("...Bim!");
       setCounter("spellPart2", 1);
-      // cauldronResult();
       g.playScene("cauldronResult");
     });
 
     interaction("...Bam!", hasState("saySimSala"), () => {
       g.character("player").say("...Bam!");
       setCounter("spellPart2", 2);
-      // cauldronResult();
       g.playScene("cauldronResult");
     });
     // ' Sim sala...
@@ -502,7 +532,6 @@ g.defineOverlay(
     interaction("...Bom!", hasState("saySimSala"), () => {
       g.character("player").say("...Bom!");
       setCounter("spellPart2", 3);
-      // cauldronResult();
       g.playScene("cauldronResult");
     });
 
@@ -514,23 +543,33 @@ g.defineOverlay(
     interaction("...Pocus!", hasState("sayHocus"), () => {
       g.character("player").say("...Pocus!");
       setCounter("spellPart2", 1);
-      // cauldronResult();
       g.playScene("cauldronResult");
     });
 
     interaction("...Poof!", hasState("sayHocus"), () => {
       g.character("player").say("...Poof!");
       setCounter("spellPart2", 2);
-      // cauldronResult();
       g.playScene("cauldronResult");
     });
+
+    interaction(
+      "...Pilates!",
+      g.and(
+        hasState("sayHocus"),
+        g.overlay("recipeBook").hasCounter("page").equals(4)
+      ),
+      () => {
+        g.character("player").say("...Pilates!");
+        setCounter("spellPart2", 4);
+        g.playScene("cauldronResult");
+      }
+    );
 
     // "2=0;1=12;12=3;6=1;4=3;50>3;47=0", "Zeg: `...pilates!'", "4=6"
 
     interaction("...Crocus!", hasState("sayHocus"), () => {
       g.character("player").say("...Crocus!");
       setCounter("spellPart2", 3);
-      // cauldronResult();
       g.playScene("cauldronResult");
     });
 
@@ -542,21 +581,18 @@ g.defineOverlay(
     interaction("...Poof!", hasState("sayAbra"), () => {
       g.character("player").say("...Poof!");
       setCounter("spellPart2", 1);
-      // cauldronResult();
       g.playScene("cauldronResult");
     });
 
     interaction("...Pop!", hasState("sayAbra"), () => {
       g.character("player").say("...Pop!");
       setCounter("spellPart2", 2);
-      // cauldronResult();
       g.playScene("cauldronResult");
     });
 
     interaction("...Clang!", hasState("sayAbra"), () => {
       g.character("player").say("...Clang!");
       setCounter("spellPart2", 2);
-      // cauldronResult();
       g.playScene("cauldronResult");
     });
 
@@ -565,7 +601,6 @@ g.defineOverlay(
     interaction("...Hodgepodge!", hasState("sayAbra"), () => {
       g.character("player").say("...Hodgepodge!");
       setCounter("spellPart2", 3);
-      // cauldronResult();
       g.playScene("cauldronResult");
     });
 

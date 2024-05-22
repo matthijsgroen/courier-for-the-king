@@ -1662,6 +1662,7 @@
         "Hocus...": "Hocus...",
         "...Pocus!": "...Pocus!",
         "...Poof!": "...Poef!",
+        "...Pilates!": "...Pilates!",
         "...Crocus!": "...Krokus!",
         "Abracadabra...": "Abracadabra...",
         "...Pop!": "...Knal!",
@@ -1678,6 +1679,7 @@
         "Hocus...": "Hocus...",
         "...Pocus!": "...Pocus!",
         "...Poof!": "...Poef!",
+        "...Pilates!": "...Pilates!",
         "...Crocus!": "...Krokus!",
         "Abracadabra...": "Abracadabra...",
         "...Pop!": "...Knal!",
@@ -1723,6 +1725,7 @@
         "- 1 tuft of Moonmoss": "- 1 pluk Maanmos",
         "- A nice sharp sword": "- Een mooi scherp zwaard",
         "- The tooth of a dragon": "- De tand van een draak",
+        "- A potion \"The door sticks\"": "- Een drankje \"De deur klemt\"",
         "You carry the following items:": "Je hebt het volgende bij je:"
       },
       "interactions": {
@@ -1825,9 +1828,13 @@
   "scenes": {
     "cauldronResult": {
       "text": {
-        "Failed state: [overlays.cauldron.counters.failureOutcome]": "Failed state: [overlays.cauldron.counters.failureOutcome]",
-        "The cauldron makes a hissing sound.": "The cauldron makes a hissing sound.",
         "The cauldron starts to boil. Small eddies are appearing in the cauldron.": "De ketel begint te borrelen. Kleine draaikolken verschijnen in de ketel.",
+        "Suddenly the liquid becomes quiet and the contents changes to a clear blue color.": "Plotseling wordt de vloeistof rustig en de inhoud veranderd in een heldere blauwe kleur.",
+        "You get a bottle from a shelf and fill it with the contents of the cauldron.": "Je pakt een flesje uit het schap en vult het met de inhoud van de ketel.",
+        "You just filled the entire bottle and see the cauldron shift to a clear liquid again.": "Je vult het gehele flesje. Net als het vol is veranderd de drank in de ketel weer naar helder en transparant.",
+        "You add the label {b}\"The door sticks\"{/b} to the potion.": "Je plakt het label {b}\"De deur klemt\"{/b} op het drankje.",
+        "Failed state: [overlays.cauldron.counters.failureOutcome]": "Failed state: [overlays.cauldron.counters.failureOutcome]",
+        "The cauldron makes a hissing sound.": "De ketel maakt een sissend geluid.",
         "The liquid starts to dance. Everything around you appears to be swirling.": "De vloeistof begint te dansen. Alles om je heen begint te draaien.",
         "You close your eyes. The swirling stopped, but you are {b}freezing{/b}.": "Je doet je ogen dicht. Het draaien stop, maar je hebt het nu heel {b}erg koud{/b}.",
         "You open your eyes.": "Je opent je ogen.",
@@ -1848,7 +1855,8 @@
         "You are growing again!": "Je wordt weer groter!",
         "The cauldron has reset its contents, so you can brew something new again.": "De ketel is weer teruggezet qua inhoud, dus je kan weer iets nieuws brouwen.",
         "Nothing happens...": "Er gebeurt niets...",
-        "Maybe you need to add some ingredients?": "Misschien moet je wat ingrediënten toevoegen?"
+        "Maybe you need to add some ingredients?": "Misschien moet je wat ingrediënten toevoegen?",
+        "DELETED The cauldron starts to bubble. Small eddies appear in the cauldron.": "De ketel begint te borrelen. Kleine draaikolken verschijnen in de ketel."
       },
       "player": {
         "Where... ...am I?": "Waar... ...ben ik?",

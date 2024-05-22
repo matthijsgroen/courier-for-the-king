@@ -154,6 +154,10 @@ g.defineOverlay("inventory", ({ onEnter, interaction, closeOverlay }) => {
       onItem("dragonTooth", () => {
         g.descriptionText("- The tooth of a dragon");
       });
+
+      onItem("doorSticksPotion", () => {
+        g.descriptionText('- A potion "The door sticks"');
+      });
     });
   });
 
